@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from '../components/home/home.component';
 import { StutiesComponent } from '../components/stuties/stuties.component';
 import { StutieListComponent } from '../components/stuties/stutie-list/stutie-list.component';
+import { ErrorComponent } from '../components/shared/error/error.component';
 
 export const routes: Routes = [
     {
@@ -23,7 +24,7 @@ export const routes: Routes = [
     },
     {
         path: '**',
-        component: HomeComponent
+        component: ErrorComponent
     },
 ];
 
