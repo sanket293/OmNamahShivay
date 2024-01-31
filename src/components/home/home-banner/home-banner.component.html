@@ -2,30 +2,11 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-9 mx-auto">
+       
         <h1 class="mb-5">What Would You <br> Love To Read About Shiva?</h1>
-
-        <!-- <ul class="list-inline widget-list-inline">
-            <li class="list-inline-item"><a routerLink="/stuties" [state]="{ hello: 'world' } ">शिव पूजा</a></li>
-            <li class="list-inline-item"><a routerLink="/stuties">Shiv Stuties</a></li>
-            <li class="list-inline-item"><a routerLink="/stuties">Mantra</a></li>
-            <li class="list-inline-item"><a routerLink="/stuties">Katha</a></li>
-            <li class="list-inline-item"><a routerLink="/stuties">शिव स्तुति</a></li>
-            <li class="list-inline-item"><a routerLink="/stuties">Shiv Pooja</a></li>
-            <li class="list-inline-item"><a routerLink="/stuties">12 ज्योतिर्लिंग</a></li>
-            <li class="list-inline-item"><a routerLink="/stuties">Bhajan</a></li>
-            <li class="list-inline-item"><a routerLink="/stuties">मंत्र</a></li>
-            <li class="list-inline-item"><a routerLink="/stuties">कथा</a></li>
-            <li class="list-inline-item"><a routerLink="/stuties">शिवजी के 108 नाम</a></li>
-            <li class="list-inline-item"><a routerLink="/stuties">12 Jyortilinga</a></li>
-            <li class="list-inline-item"><a routerLink="/stuties">भजन</a></li>
-          </ul> -->
-        <!-- <li class="list-inline-item"><a routerLink="/stuties" [state]="{ hello: 'world' } ">शिव पूजा</a></li> -->
-
-
-
         <ul class="list-inline widget-list-inline">
           <li class="list-inline-item" *ngFor="let tag of homeBannerTags">
-            <a routerLink="{{tag.tagUrl}}">{{tag.tagName}}</a>
+            <a routerLink="{{tag.tagUrl}}" [state]="tag">{{tag.tagName}}</a>
           </li>
         </ul>
 
