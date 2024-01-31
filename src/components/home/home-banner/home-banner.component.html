@@ -6,10 +6,11 @@
         <h1 class="mb-5">What Would You <br> Love To Read About Shiva?</h1>
         <ul class="list-inline widget-list-inline">
           <li class="list-inline-item" *ngFor="let tag of homeBannerTags">
-            <a routerLink="{{tag.tagUrl}}" [state]="tag">{{tag.tagName}}</a>
+            <a routerLink="{{tag.tagUrl}}" [state]="{ itemKey:tag.tagName,language:tag.tagLanguage}">{{tag.tagName}}</a>
           </li>
         </ul>
 
+ 
       </div>
     </div>
   </div>

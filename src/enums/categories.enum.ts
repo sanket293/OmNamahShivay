@@ -5,8 +5,8 @@ export enum Categories {
     Status,
     Jyortilingas_12,
     Bhajans,
-    Names_108,
-    Names_1000,
+    ShivNames108,
+    ShivNames1000,
     Tamples,
     Images,
     ShivChalisa     

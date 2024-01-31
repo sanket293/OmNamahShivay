@@ -52,11 +52,11 @@ export class HomeService {
       //   tagUrl: `/${Categories[Categories.Status]}/MahakalAttitudeStatus/${Languages[Languages.English]}`.toLowerCase()
       // },
       {
-        tagCategory: Categories.Names_1000,
+        tagCategory: Categories.ShivNames1000,
         tagLanguage: Languages.English,
         tagName: "1000 Names of Lord Shiva",
         tagValue: "ShivaNames1000",
-        tagUrl: `/${Categories[Categories.Names_1000]}/ShivaNames100/${Languages[Languages.English]}`.toLowerCase()
+        tagUrl: `/${Categories[Categories.ShivNames1000]}/${Languages[Languages.English]}`.toLowerCase()
       },
     ];
 

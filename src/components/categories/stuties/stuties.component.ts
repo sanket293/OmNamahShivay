@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RecentPostComponent } from "../../shared/recent-post/recent-post.component";
-import { Observable, map } from 'rxjs';
+import { Observable, map, tap } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+import { QueryParams } from '../../../model/query-params.model';
 
 @Component({
   selector: 'app-stuties',
@@ -11,11 +12,11 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './stuties.component.css',
   imports: [CommonModule, RecentPostComponent]
 })
-export class StutiesComponent implements OnInit{
+export class StutiesComponent implements OnInit {
 
-  constructor(public activatedRoute: ActivatedRoute) {}
+  constructor(public activatedRoute: ActivatedRoute) { }
 
-  state$!: Observable<object>;
+  state$!: Observable<QueryParams>;
 
   stutiePosterImageUrl: string = "/assets/images/post/post-2.jpg";
   stutieLanguage: string = "Shiv Mahimna Strotam"
@@ -40,9 +41,25 @@ export class StutiesComponent implements OnInit{
   
   ममाप्येष स्तोत्रे हर निरपवादः परिकरः॥ १॥`;
 
+  queryParams: QueryParams = { itemKey: "", language: "" };
+
   ngOnInit() {
     this.state$ = this.activatedRoute.paramMap
-      .pipe(map(() => window.history.state))
+      .pipe(map(() => window.history.state)
+
+        , tap((item) => {
+
+          this.queryParams = item
+
+          //TODO: make an api call here
+
+
+        })
+      );
+
+
+
+
   }
 
 }

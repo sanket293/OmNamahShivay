@@ -32,7 +32,12 @@
             <p>
               {{state$ |async | json }}
             </p>
-             <p>
+
+            <p>
+              {{queryParams | json }}
+            </p>
+
+            <p>
               {{stutieContent}}
             </p>
 
@@ -42,7 +47,7 @@
       </div>
 
       <app-recent-post></app-recent-post>
- 
+
       <!-- <div class="col-lg-9 col-md-12">
         <div class="mb-5 border-top mt-4 pt-5">
           <h3 class="mb-4">Comments</h3>

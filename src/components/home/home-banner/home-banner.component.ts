@@ -42,4 +42,6 @@ export class HomeBannerComponent implements OnInit {
     return array;
   };
 
+
+  
 }

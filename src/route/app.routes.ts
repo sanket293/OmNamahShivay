@@ -39,16 +39,16 @@ export const routes: Routes = [
     },
 
     {
-        path: 'Names_108:languageId',
+        path: 'shivnames108:languageId',
         component: Names108Component
     },
     {
-        path: 'Names_1000/:languageId',
+        path: 'names_1000/:languageId',
         component: Names1000Component
     },
 
     {
-        path: 'ShivChalisa/:languageId',
+        path: 'shivchalisa/:languageId',
         component: ShivChalisaComponent
     },
     
