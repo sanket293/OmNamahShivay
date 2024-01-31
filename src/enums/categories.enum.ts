@@ -5,7 +5,7 @@ export enum Categories {
     Status,
     Jyortilingas_12,
     Bhajans,
-    Names_100,
+    Names_108,
     Names_1000,
     Tamples,
     Images,

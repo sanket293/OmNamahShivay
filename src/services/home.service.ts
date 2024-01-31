@@ -35,7 +35,7 @@ export class HomeService {
         tagLanguage: Languages.Sanskrit,
         tagName: "श्री शिव चालीसा",
         tagValue: "ShivChalisa",
-        tagUrl: `/${Categories[Categories.ShivChalisa]}/ShivChalisa/${Languages[Languages.Sanskrit]}`.toLowerCase()
+        tagUrl: `/${Categories[Categories.ShivChalisa]}/${Languages[Languages.Sanskrit]}`.toLowerCase()
       },
       {
         tagCategory: Categories.Mantra,
@@ -44,19 +44,19 @@ export class HomeService {
         tagValue: "MahaMrityunjayaMantra",
         tagUrl: `/${Categories[Categories.Mantra]}/MahaMrityunjayaMantra/${Languages[Languages.Sanskrit]}`.toLowerCase()
       },
+      // {
+      //   tagCategory: Categories.Status,
+      //   tagLanguage: Languages.English,
+      //   tagName: "Mahakal Attitude Status",
+      //   tagValue: "Status",
+      //   tagUrl: `/${Categories[Categories.Status]}/MahakalAttitudeStatus/${Languages[Languages.English]}`.toLowerCase()
+      // },
       {
-        tagCategory: Categories.Status,
+        tagCategory: Categories.Names_1000,
         tagLanguage: Languages.English,
-        tagName: "Mahakal Attitude Status",
-        tagValue: "ShivMahimnaStotam",
-        tagUrl: `/${Categories[Categories.Status]}/ShivMahimnaStotam/${Languages[Languages.English]}`.toLowerCase()
-      },
-      {
-        tagCategory: Categories.Names_100,
-        tagLanguage: Languages.English,
-        tagName: "100 Names of Lord Shiva",
-        tagValue: "ShivaNames100",
-        tagUrl: `/${Categories[Categories.Names_100]}/ShivaNames100/${Languages[Languages.English]}`.toLowerCase()
+        tagName: "1000 Names of Lord Shiva",
+        tagValue: "ShivaNames1000",
+        tagUrl: `/${Categories[Categories.Names_1000]}/ShivaNames100/${Languages[Languages.English]}`.toLowerCase()
       },
     ];
 

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { RecentPostComponent } from "../shared/recent-post/recent-post.component";
+import { RecentPostComponent } from "../../shared/recent-post/recent-post.component";
 import { Observable, map } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 
