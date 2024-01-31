@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RecentPostComponent } from "../body/content/recent-post/recent-post.component";
+import { Observable, map } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-stuties',
@@ -9,7 +11,11 @@ import { RecentPostComponent } from "../body/content/recent-post/recent-post.com
   styleUrl: './stuties.component.css',
   imports: [CommonModule, RecentPostComponent]
 })
-export class StutiesComponent {
+export class StutiesComponent implements OnInit{
+
+  constructor(public activatedRoute: ActivatedRoute) {}
+
+  state$!: Observable<object>;
 
   stutiePosterImageUrl: string = "/assets/images/post/post-2.jpg";
   stutieLanguage: string = "Shiv Mahimna Strotam"
@@ -34,5 +40,9 @@ export class StutiesComponent {
   
   ममाप्येष स्तोत्रे हर निरपवादः परिकरः॥ १॥`;
 
+  ngOnInit() {
+    this.state$ = this.activatedRoute.paramMap
+      .pipe(map(() => window.history.state))
+  }
 
 }
