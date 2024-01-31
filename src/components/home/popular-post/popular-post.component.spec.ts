@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SidebarRightComponent } from './sidebar-right.component';
+import { PopularPostComponent } from './popular-post.component';
 
-describe('SidebarRightComponent', () => {
-  let component: SidebarRightComponent;
-  let fixture: ComponentFixture<SidebarRightComponent>;
+describe('PopularPostComponent', () => {
+  let component: PopularPostComponent;
+  let fixture: ComponentFixture<PopularPostComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SidebarRightComponent]
+      imports: [PopularPostComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(SidebarRightComponent);
+    fixture = TestBed.createComponent(PopularPostComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

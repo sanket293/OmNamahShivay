@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { CategoriesComponent } from "../sidebar-right/categories/categories.component";
-import { SocialLinksComponent } from "../sidebar-right/social-links/social-links.component";
-import { TagsComponent } from "../sidebar-right/tags/tags.component";
+import { CategoriesComponent } from "../side-nav/categories/categories.component";
+import { SocialLinksComponent } from "../side-nav/social-links/social-links.component";
+import { TagsComponent } from "../side-nav/tags/tags.component";
 
 @Component({
     selector: 'app-recent-post',
