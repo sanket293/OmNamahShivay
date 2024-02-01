@@ -1,10 +1,12 @@
 export enum Languages {
     Sanskrit = 1,
-    Gujarati,
     Hindi,
     English,
+    Gujrati,
+    Gujarati,
     Marathi,
     Telugu,
     Malyalam,
     Kannad
 }
+ 

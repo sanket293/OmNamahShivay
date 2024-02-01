@@ -29,17 +29,27 @@
           </ul>
           <div class="content">
 
-            <p>
-              {{state$ |async | json }}
-            </p>
+            <p>Markdown</p>
+            <markdown [data]="markdown$ |async"></markdown>
+            <hr>
 
-            <p>
+            <!-- <p>{{currentRoute|json}}</p>
+            <hr> -->
+
+            <!-- <p>
+              {{state$ |async | json }}
+            </p> -->
+
+            <!-- <p>
               {{queryParams | json }}
-            </p>
+            </p> -->
 
             <p>
               {{stutieContent}}
             </p>
+
+
+
 
           </div>
         </article>

@@ -7,8 +7,7 @@ import { MantraListComponent } from '../components/categories/mantras/mantra-lis
 import { MantrasComponent } from '../components/categories/mantras/mantras.component';
 import { Names108Component } from '../components/categories/names/names-108/names-108.component';
 import { Names1000Component } from '../components/categories/names/names-1000/names-1000.component';
-import { ShivChalisaComponent } from '../components/categories/shiv-chalisa/shiv-chalisa.component';
-import { StatusComponent } from '../components/categories/status/status.component';
+import { ShivChalisaComponent } from '../components/categories/shiv-chalisa/shiv-chalisa.component'; 
 
 export const routes: Routes = [
     {
@@ -25,16 +24,16 @@ export const routes: Routes = [
         component: StutieListComponent
     },
     {
-        path: 'stuties/:stutiId/:languageId',
-        component: StutiesComponent
+        path: 'Stuties/:stutiKey/:language',
+        component: StutiesComponent,
     },
 
     {
-        path: 'mantras',
+        path: 'Mantras',
         component: MantraListComponent
     },
     {
-        path: 'mantras/:mantraId/:languageId',
+        path: 'Mantras/:mantraId/:languageId',
         component: MantrasComponent
     },
 
@@ -51,7 +50,7 @@ export const routes: Routes = [
         path: 'shivchalisa/:languageId',
         component: ShivChalisaComponent
     },
-    
+
     {
         path: '**',
         component: ErrorComponent

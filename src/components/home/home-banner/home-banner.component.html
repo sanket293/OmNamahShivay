@@ -2,15 +2,15 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-9 mx-auto">
-       
+
         <h1 class="mb-5">What Would You <br> Love To Read About Shiva?</h1>
         <ul class="list-inline widget-list-inline">
           <li class="list-inline-item" *ngFor="let tag of homeBannerTags">
-            <a routerLink="{{tag.tagUrl}}" [state]="{ itemKey:tag.tagName,language:tag.tagLanguage}">{{tag.tagName}}</a>
+            <a routerLink="{{tag.routeUrl}}" [state]="{ item:tag }">{{tag.name}}</a>
           </li>
         </ul>
 
- 
+
       </div>
     </div>
   </div>

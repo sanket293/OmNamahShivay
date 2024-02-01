@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { Tag } from '../../../model/tag.model';
+import { ItemProperty } from '../../../model/ItemProperty.model';
 import { HomeService } from '../../../services/home.service';
 
 @Component({
@@ -13,7 +13,7 @@ import { HomeService } from '../../../services/home.service';
 })
 export class HomeBannerComponent implements OnInit {
 
-  homeBannerTags: Tag[] = [];
+  homeBannerTags: ItemProperty[] = [];
 
   constructor(private homeService: HomeService) {
 
@@ -21,7 +21,7 @@ export class HomeBannerComponent implements OnInit {
   ngOnInit(): void {
 
     this.homeService.getHomeBannerTags().subscribe({
-      next: (tags: Tag[]) => {
+      next: (tags: ItemProperty[]) => {
         this.homeBannerTags = tags;
       },
       error: (error) => {
@@ -34,7 +34,7 @@ export class HomeBannerComponent implements OnInit {
   }
 
 
-  shuffle = (array: Tag[]) => {
+  shuffle = (array: ItemProperty[]) => {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];
