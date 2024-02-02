@@ -1,1 +1,273 @@
-<p>stutie-list works!</p>
+<app-category-card-info [itemText]="itemText" [postTitle]="postTitle" [categoryCardInfo$]="categoryCardInfo$"></app-category-card-info>
+
+<!-- <div class="banner text-center no-bg no-bottom-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 mx-auto">
+
+                <h1 class="mb-5">{{itemText}}</h1>
+
+            </div>
+        </div>
+        <div class="border-bottom border-default"></div>
+    </div>
+</div>
+
+<section class="section pt-5 pb-0">
+    <div class="container">
+        <h2 class="h5 section-title">{{postTitle}}</h2>
+        <div class="row">
+
+            <div class="col-lg-4 mb-3">
+
+                <article class="card">
+                    <div class="post-slider slider-sm">
+                        <img src="/assets/images/post/post-1.jpg" class="card-img-top" alt="post-thumb">
+                    </div>
+
+                    <div class="card-body">
+                        <h3 class="h4 mb-3"><a class="post-title" href="post-details.html">Shiv Mahimna Stotam</a></h3>
+                        <ul class="card-meta list-inline">
+                            <li class="list-inline-item">
+                                <a href="author-single.html" class="card-meta-author">
+                                    <img src="/assets/images/john-doe.jpg">
+                                    <span>Mahrshi Ved Vyas</span>
+                                </a>
+                            </li>
+
+
+                            <li class="list-inline-item">
+                                <ul class="card-meta-tag list-inline">
+                                    <li class="list-inline-item"><a href="tags.html">Color</a></li>
+                                    <li class="list-inline-item"><a href="tags.html">Recipe</a></li>
+                                    <li class="list-inline-item"><a href="tags.html">Fish</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <a href="post-details.html" class="btn btn-outline-primary">Read More</a>
+                    </div>
+
+                </article>
+            </div>
+
+            <div class="col-lg-4 mb-3">
+
+                <article class="card">
+                    <div class="post-slider slider-sm">
+                        <img src="/assets/images/post/post-1.jpg" class="card-img-top" alt="post-thumb">
+                    </div>
+
+                    <div class="card-body">
+                        <h3 class="h4 mb-3"><a class="post-title" href="post-details.html">Shiv Mahimna Stotam</a></h3>
+                        <ul class="card-meta list-inline">
+                            <li class="list-inline-item">
+                                <a href="author-single.html" class="card-meta-author">
+                                    <img src="/assets/images/john-doe.jpg">
+                                    <span>Mahrshi Ved Vyas</span>
+                                </a>
+                            </li>
+
+
+                            <li class="list-inline-item">
+                                <ul class="card-meta-tag list-inline">
+                                    <li class="list-inline-item"><a href="tags.html">Color</a></li>
+                                    <li class="list-inline-item"><a href="tags.html">Recipe</a></li>
+                                    <li class="list-inline-item"><a href="tags.html">Fish</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <a href="post-details.html" class="btn btn-outline-primary">Read More</a>
+                    </div>
+
+                </article>
+            </div>
+
+            <div class="col-lg-4 mb-3">
+
+                <article class="card">
+                    <div class="post-slider slider-sm">
+                        <img src="/assets/images/post/post-1.jpg" class="card-img-top" alt="post-thumb">
+                    </div>
+
+                    <div class="card-body">
+                        <h3 class="h4 mb-3"><a class="post-title" href="post-details.html">Shiv Mahimna Stotam</a></h3>
+                        <ul class="card-meta list-inline">
+                            <li class="list-inline-item">
+                                <a href="author-single.html" class="card-meta-author">
+                                    <img src="/assets/images/john-doe.jpg">
+                                    <span>Mahrshi Ved Vyas</span>
+                                </a>
+                            </li>
+
+
+                            <li class="list-inline-item">
+                                <ul class="card-meta-tag list-inline">
+                                    <li class="list-inline-item"><a href="tags.html">Color</a></li>
+                                    <li class="list-inline-item"><a href="tags.html">Recipe</a></li>
+                                    <li class="list-inline-item"><a href="tags.html">Fish</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <a href="post-details.html" class="btn btn-outline-primary">Read More</a>
+                    </div>
+
+                </article>
+            </div>
+
+            <div class="col-lg-4 mb-3">
+
+                <article class="card">
+                    <div class="post-slider slider-sm">
+                        <img src="/assets/images/post/post-1.jpg" class="card-img-top" alt="post-thumb">
+                    </div>
+
+                    <div class="card-body">
+                        <h3 class="h4 mb-3"><a class="post-title" href="post-details.html">Shiv Mahimna Stotam</a></h3>
+                        <ul class="card-meta list-inline">
+                            <li class="list-inline-item">
+                                <a href="author-single.html" class="card-meta-author">
+                                    <img src="/assets/images/john-doe.jpg">
+                                    <span>Mahrshi Ved Vyas</span>
+                                </a>
+                            </li>
+
+
+                            <li class="list-inline-item">
+                                <ul class="card-meta-tag list-inline">
+                                    <li class="list-inline-item"><a href="tags.html">Color</a></li>
+                                    <li class="list-inline-item"><a href="tags.html">Recipe</a></li>
+                                    <li class="list-inline-item"><a href="tags.html">Fish</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <a href="post-details.html" class="btn btn-outline-primary">Read More</a>
+                    </div>
+
+                </article>
+            </div>
+
+            <div class="col-lg-4 mb-3">
+
+                <article class="card">
+                    <div class="post-slider slider-sm">
+                        <img src="/assets/images/post/post-1.jpg" class="card-img-top" alt="post-thumb">
+                    </div>
+
+                    <div class="card-body">
+                        <h3 class="h4 mb-3"><a class="post-title" href="post-details.html">Shiv Mahimna Stotam</a></h3>
+                        <ul class="card-meta list-inline">
+                            <li class="list-inline-item">
+                                <a href="author-single.html" class="card-meta-author">
+                                    <img src="/assets/images/john-doe.jpg">
+                                    <span>Mahrshi Ved Vyas</span>
+                                </a>
+                            </li>
+
+
+                            <li class="list-inline-item">
+                                <ul class="card-meta-tag list-inline">
+                                    <li class="list-inline-item"><a href="tags.html">Color</a></li>
+                                    <li class="list-inline-item"><a href="tags.html">Recipe</a></li>
+                                    <li class="list-inline-item"><a href="tags.html">Fish</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <a href="post-details.html" class="btn btn-outline-primary">Read More</a>
+                    </div>
+
+                </article>
+            </div>
+
+            <div class="col-lg-4 mb-3">
+
+                <article class="card">
+                    <div class="post-slider slider-sm">
+                        <img src="/assets/images/post/post-1.jpg" class="card-img-top" alt="post-thumb">
+                    </div>
+
+                    <div class="card-body">
+                        <h3 class="h4 mb-3"><a class="post-title" href="post-details.html">Shiv Mahimna Stotam</a></h3>
+                        <ul class="card-meta list-inline">
+                            <li class="list-inline-item">
+                                <a href="author-single.html" class="card-meta-author">
+                                    <img src="/assets/images/john-doe.jpg">
+                                    <span>Mahrshi Ved Vyas</span>
+                                </a>
+                            </li>
+
+
+                            <li class="list-inline-item">
+                                <ul class="card-meta-tag list-inline">
+                                    <li class="list-inline-item"><a href="tags.html">Color</a></li>
+                                    <li class="list-inline-item"><a href="tags.html">Recipe</a></li>
+                                    <li class="list-inline-item"><a href="tags.html">Fish</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <a href="post-details.html" class="btn btn-outline-primary">Read More</a>
+                    </div>
+
+                </article>
+            </div>
+
+            <div class="col-lg-4 mb-3">
+
+                <article class="card">
+                    <div class="post-slider slider-sm">
+                        <img src="/assets/images/post/post-1.jpg" class="card-img-top" alt="post-thumb">
+                    </div>
+
+                    <div class="card-body">
+                        <h3 class="h4 mb-3"><a class="post-title" href="post-details.html">Shiv Mahimna Stotam</a></h3>
+                        <ul class="card-meta list-inline">
+                            <li class="list-inline-item">
+                                <ul class="card-meta-tag list-inline">
+                                    <li class="list-inline-item"><a href="tags.html">Color</a></li>
+                                    <li class="list-inline-item"><a href="tags.html">Recipe</a></li>
+                                    <li class="list-inline-item"><a href="tags.html">Fish</a></li>
+                                    <li class="list-inline-item"><a href="tags.html">Fish</a></li>
+                                    <li class="list-inline-item"><a href="tags.html">Fish</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <a href="post-details.html" class="btn btn-outline-primary">Read More</a>
+                    </div>
+
+                </article>
+            </div>
+
+            <div class="col-lg-4 mb-3">
+
+                <article class="card">
+                    <div class="post-slider slider-sm">
+                        <img src="/assets/images/post/post-1.jpg" class="card-img-top" alt="post-thumb">
+                    </div>
+
+                    <div class="card-body">
+                        <h3 class="h4 mb-3"><a class="post-title" href="post-details.html">Shiv Mahimna Stotam</a></h3>
+                        <ul class="card-meta list-inline">
+                            <li class="list-inline-item">
+                                <a href="author-single.html" class="card-meta-author">
+                                    <img src="/assets/images/john-doe.jpg">
+                                    <span>Mahrshi Ved Vyas</span>
+                                </a>
+                            </li>
+
+
+                            <li class="list-inline-item">
+                                <ul class="card-meta-tag list-inline">
+                                    <li class="list-inline-item"><a href="tags.html">Color</a></li>
+                                    <li class="list-inline-item"><a href="tags.html">Recipe</a></li>
+                                    <li class="list-inline-item"><a href="tags.html">Fish</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <a href="post-details.html" class="btn btn-outline-primary">Read More</a>
+                    </div>
+
+                </article>
+            </div>
+
+        </div>
+    </div>
+</section> -->

@@ -31,15 +31,17 @@ export class StutiesComponent implements OnInit {
 
   stutieLanguages: string[] = ["Sanskrit", "Hindi", "Gujarati", "English"];
   currentStutieLanguage: string = "Sanskrit";
- 
+
 
   ngOnInit() {
- 
+
     this.activatedRoute.paramMap.subscribe((routeParameters) => {
 
       let stutiKey = routeParameters.get('stutiKey');
       let language = routeParameters.get('language');
- 
+
+      this.stutieLanguage = stutiKey?.toString() ?? "";
+
       let markDownContantUrl = `/data/${Categories[Categories.Stuties]}/${stutiKey}/${stutiKey}-${language}.md`;
       this.markdown$ = this.mdService.getSource(markDownContantUrl); //TODO: get markdown value form API
 

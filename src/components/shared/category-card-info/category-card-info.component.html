@@ -1,0 +1,47 @@
+<div class="banner text-center no-bg no-bottom-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 mx-auto">
+
+                <h1 class="mb-5">{{itemText}}</h1>
+
+            </div>
+        </div>
+        <div class="border-bottom border-default"></div>
+    </div>
+</div>
+
+<section class="section pt-5 pb-0">
+    <div class="container">
+        <h2 class="h5 section-title">{{postTitle}}</h2>
+        <div class="row">
+
+            <ng-container *ngFor="let item of (categoryCardInfo$ | async)">
+                <div class="col-lg-4 mb-3">
+                    <article class="card">
+                        <div class="post-slider slider-sm">
+                            <img src="{{item.imgUrl}}" class="card-img-top" alt="post-thumb">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="h4 mb-3"><a class="post-title" href="post-details.html">{{item.title}}</a>
+                            </h3>
+                            <ul class="card-meta list-inline">
+                                <li class="list-inline-item" *ngFor="let languageId of item.availableLanguages">
+                                    <ul class="card-meta-tag list-inline">
+                                        <li class="list-inline-item"><a
+                                                href="{{getRouteUrlForTag(item, languageId)}}">{{getLanguageName(languageId)}}</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <a routerLink="{{item.routeUrl}}" class="btn btn-outline-primary">Read More</a>
+
+                        </div>
+
+                    </article>
+                </div>
+            </ng-container>
+
+        </div>
+    </div>
+</section>

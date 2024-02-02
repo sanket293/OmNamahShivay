@@ -3,69 +3,57 @@ import { Observable, of } from 'rxjs';
 import { Categories } from '../../enums/categories.enum';
 import { Languages } from '../../enums/languages.enum';
 import { ItemProperty } from '../../model/ItemProperty.model';
+import { CategoryCardInfo } from '../../model/category-card-info.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StutieService {
 
+
   constructor() { }
 
-  getHomeBannerTags(): Observable<ItemProperty[]> {
+  getStutiecategoryCardInfo(): Observable<CategoryCardInfo[]> {
 
-
-    let tags: ItemProperty[] = [
+    let stutieInfo: CategoryCardInfo[] = [
       {
         category: Categories.Stuties,
-        language: Languages.Sanskrit,
-        name: "शिवमहिम्न:स्तोत्र",
-        key: "ShivMahimnaStotam",
-        routeUrl: `/${Categories[Categories.Stuties]}/ShivMahimnaStotam/${Languages[Languages.Sanskrit]}`
+        availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
+        imgUrl: "/assets/images/post/post-1.jpg",
+        routeUrl: `/${Categories[Categories.Stuties]}/ShivMahimnaStotam/${Languages[Languages.Sanskrit]}`,
+        title: "श्री शिवमहिम्नस्तोत्रम्‌",
+        itemKey: "ShivMahimnaStotam"
       },
       {
         category: Categories.Stuties,
-        language: Languages.Sanskrit,
-        name: "श्री शिव रुद्राष्टकम स्तोत्रम",
-        key: "Rudrashtakam",
-        routeUrl: `/${Categories[Categories.Stuties]}/Rudrashtakam/${Languages[Languages.Sanskrit]}`.toLowerCase()
+        availableLanguages: [Languages.Sanskrit, Languages.Hindi, Languages.Gujarati],
+        imgUrl: "/assets/images/post/post-2.jpg",
+        routeUrl: `/${Categories[Categories.Stuties]}/Rudrashtakam/${Languages[Languages.Sanskrit]}`,
+        title: "शिव रुद्राष्टकम",
+        itemKey: "Rudrashtakam"
       },
       {
-        category: Categories.ShivChalisa,
-        language: Languages.Sanskrit,
-        name: "श्री शिव चालीसा",
-        key: "ShivChalisa",
-        routeUrl: `/${Categories[Categories.ShivChalisa]}/${Languages[Languages.Sanskrit]}`.toLowerCase()
+        category: Categories.Stuties,
+        availableLanguages: [Languages.Sanskrit, Languages.Telugu, Languages.Gujarati],
+        imgUrl: "/assets/images/post/post-3.jpg",
+        routeUrl: `/${Categories[Categories.Stuties]}/Lingashtakam/${Languages[Languages.Sanskrit]}`,
+        title: "लिंगाष्टकम स्तोत्र",
+        itemKey: "Lingashtakam"
       },
       {
-        category: Categories.Mantras,
-        language: Languages.Sanskrit,
-        name: "महामृत्युंजय मंत्र",
-        key: "MahaMrityunjayaMantra",
-        routeUrl: `/${Categories[Categories.Mantras]}/MahaMrityunjayaMantra/${Languages[Languages.Sanskrit]}`.toLowerCase()
-      },
-      // {
-      //   tagCategory: Categories.Status,
-      //   tagLanguage: Languages.English,
-      //   tagName: "Mahakal Attitude Status",
-      //   tagValue: "Status",
-      //   tagUrl: `/${Categories[Categories.Status]}/MahakalAttitudeStatus/${Languages[Languages.English]}`.toLowerCase()
-      // },
-      {
-        category: Categories.ShivNames1000,
-        language: Languages.English,
-        name: "1000 Names of Lord Shiva",
-        key: "ShivaNames1000",
-        routeUrl: `/${Categories[Categories.ShivNames1000]}/${Languages[Languages.English]}`.toLowerCase()
+        category: Categories.Stuties,
+        availableLanguages: [Languages.Sanskrit, Languages.Kannad, Languages.Malyalam],
+        imgUrl: "/assets/images/post/post-1.jpg",
+        routeUrl: `/${Categories[Categories.Stuties]}/Shivashtakam/${Languages[Languages.Sanskrit]}`,
+        title: "श्री शिवाष्टकं",
+        itemKey: "Shivashtakam"
       },
     ];
 
-    return of(tags);
-
+    return of(stutieInfo);
   }
 
-  getStutieContent() {
-  }
-
+   
 
 
 
@@ -83,8 +71,3 @@ export class StutieService {
 
 }
 
-
-export interface StutieItemProperty {
-
- 
- }
