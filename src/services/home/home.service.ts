@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { ItemProperty } from '../model/ItemProperty.model';
-import { Categories } from '../enums/categories.enum';
-import { Languages } from '../enums/languages.enum';
+import { ItemProperty } from '../../model/ItemProperty.model';
+import { Categories } from '../../enums/categories.enum';
+import { Languages } from '../../enums/languages.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -38,11 +38,11 @@ export class HomeService {
         routeUrl: `/${Categories[Categories.ShivChalisa]}/${Languages[Languages.Sanskrit]}`.toLowerCase()
       },
       {
-        category: Categories.Mantra,
+        category: Categories.Mantras,
         language: Languages.Sanskrit,
         name: "महामृत्युंजय मंत्र",
         key: "MahaMrityunjayaMantra",
-        routeUrl: `/${Categories[Categories.Mantra]}/MahaMrityunjayaMantra/${Languages[Languages.Sanskrit]}`.toLowerCase()
+        routeUrl: `/${Categories[Categories.Mantras]}/MahaMrityunjayaMantra/${Languages[Languages.Sanskrit]}`.toLowerCase()
       },
       // {
       //   tagCategory: Categories.Status,

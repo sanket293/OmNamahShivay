@@ -7,7 +7,10 @@ import { MantraListComponent } from '../components/categories/mantras/mantra-lis
 import { MantrasComponent } from '../components/categories/mantras/mantras.component';
 import { Names108Component } from '../components/categories/names/names-108/names-108.component';
 import { Names1000Component } from '../components/categories/names/names-1000/names-1000.component';
-import { ShivChalisaComponent } from '../components/categories/shiv-chalisa/shiv-chalisa.component'; 
+import { ShivChalisaComponent } from '../components/categories/shiv-chalisa/shiv-chalisa.component';
+import { AppStrings } from '../constants/appstrings.model';
+import { BhajanListComponent } from '../components/categories/bhajans/bhajan-list/bhajan-list.component';
+import { BhajansComponent } from '../components/categories/bhajans/bhajans.component';
 
 export const routes: Routes = [
     {
@@ -20,39 +23,49 @@ export const routes: Routes = [
         component: HomeComponent
     },
     {
-        path: 'stuties',
+        path: AppStrings.StutieListRoute,
         component: StutieListComponent
     },
     {
-        path: 'Stuties/:stutiKey/:language',
+        path: AppStrings.StutieItemRoute,
         component: StutiesComponent,
     },
 
     {
-        path: 'Mantras',
+        path: AppStrings.MantrasListRoute,
         component: MantraListComponent
     },
     {
-        path: 'Mantras/:mantraId/:languageId',
+        path: AppStrings.MantraItemRoute,
         component: MantrasComponent
     },
 
     {
-        path: 'shivnames108:languageId',
+        path: AppStrings.BhajansListRoute,
+        component: BhajanListComponent
+    },
+    {
+        path: AppStrings.BhajanItemRoute,
+        component: BhajansComponent
+    },
+
+
+    {
+        path: AppStrings.Names108Route,
         component: Names108Component
     },
     {
-        path: 'names_1000/:languageId',
+        path: AppStrings.Names1000Route,
         component: Names1000Component
     },
 
     {
-        path: 'shivchalisa/:languageId',
+        path: AppStrings.ShivchalisaRoute,
         component: ShivChalisaComponent
     },
 
     {
-        path: '**',
+        path: AppStrings.ErrorRoute,
         component: ErrorComponent
     },
 ];

@@ -1,7 +1,7 @@
 export enum Categories {
 
     Stuties = 1,
-    Mantra,
+    Mantras,
     Status,
     Jyortilingas_12,
     Bhajans,

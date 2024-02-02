@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ItemProperty } from '../../../model/ItemProperty.model';
-import { HomeService } from '../../../services/home.service';
+import { HomeService } from '../../../services/home/home.service';
 
 @Component({
   selector: 'app-home-banner',
@@ -15,9 +15,7 @@ export class HomeBannerComponent implements OnInit {
 
   homeBannerTags: ItemProperty[] = [];
 
-  constructor(private homeService: HomeService) {
-
-  }
+  constructor(private homeService: HomeService) {  }
   ngOnInit(): void {
 
     this.homeService.getHomeBannerTags().subscribe({
