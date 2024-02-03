@@ -21,7 +21,7 @@ export class CategoryService {
         categoryNameSanskrit: "शिव जी की स्तुति",
         itemCount: 12,
         displayOrder: 1,
-        routeUrl: AppStrings.Stutie
+        routeUrl: AppStrings.Stuties
       },
       {
         categoryId: Categories.Mantras,

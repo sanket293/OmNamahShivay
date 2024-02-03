@@ -3,7 +3,7 @@ import { Languages } from "../enums/languages.enum";
 
 export interface ItemProperty {
     name: string;
-    itemkey: string;
+    itemKey: string;
     category: Categories;
     language: Languages;
     routeUrl: string;

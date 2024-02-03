@@ -3,8 +3,9 @@ export class AppStrings {
     //Make sure that starting route matches exactly as Categories enum
 
     public static Home: string = 'Home';
+    public static HomeLower: string = 'home';
 
-    public static Stutie: string = 'Stuties';
+    public static Stuties: string = 'Stuties';
     public static StutieItemRoute: string = 'Stuties/:itemKey/:language';
 
     public static Mantras: string = 'Mantras';

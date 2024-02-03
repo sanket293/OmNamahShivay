@@ -16,15 +16,5 @@ import { ItemComponent } from "../../shared/item/item.component";
     imports: [RouterModule, CommonModule, CategoryCardInfoComponent, ItemComponent]
 })
 export class Jyortilingas12Component {
-
-  // itemText: string = "शिव जी के 12 ज्योर्तिलिङ्गाः";
-  // postTitle: string = "12 Jyortilingas of Lord Shiva";
-  // categoryCardInfo$!: Observable<CategoryCardInfo[]>;
-
-  // constructor(private categoryCardInfoService: CategoryCardInfoService) { }
-
-  // ngOnInit(): void {
-  //   this.categoryCardInfo$ = this.categoryCardInfoService.getCategoryCardInfo(Categories.Mantras);
-  // }
-  
+ 
 }

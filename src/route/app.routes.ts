@@ -21,11 +21,16 @@ export const routes: Routes = [
         pathMatch: 'full'
     },
     {
+        path: AppStrings.HomeLower,
+        redirectTo: AppStrings.Home,
+        pathMatch: 'full'
+    },
+    {
         path: AppStrings.Home,
         component: HomeComponent
     },
     {
-        path: AppStrings.Stutie,
+        path: AppStrings.Stuties,
         component: StutieListComponent
     },
     {

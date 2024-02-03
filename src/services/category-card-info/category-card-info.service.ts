@@ -42,7 +42,7 @@ export class CategoryCardInfoService {
       },
       {
         category: Categories.Stuties,
-        availableLanguages: [Languages.Sanskrit, Languages.Hindi, Languages.Gujarati],
+        availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
         imgUrl: "/assets/images/post/post-2.jpg",
         routeUrl: `/${Categories[Categories.Stuties]}/Rudrashtakam/${Languages[Languages.Sanskrit]}`,
         title: "शिव रुद्राष्टकम",
@@ -50,7 +50,7 @@ export class CategoryCardInfoService {
       },
       {
         category: Categories.Stuties,
-        availableLanguages: [Languages.Sanskrit, Languages.Telugu, Languages.Gujarati],
+        availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
         imgUrl: "/assets/images/post/post-3.jpg",
         routeUrl: `/${Categories[Categories.Stuties]}/Lingashtakam/${Languages[Languages.Sanskrit]}`,
         title: "लिंगाष्टकम स्तोत्र",
@@ -58,7 +58,7 @@ export class CategoryCardInfoService {
       },
       {
         category: Categories.Stuties,
-        availableLanguages: [Languages.Sanskrit, Languages.Kannad, Languages.Malyalam],
+        availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
         imgUrl: "/assets/images/post/post-1.jpg",
         routeUrl: `/${Categories[Categories.Stuties]}/Shivashtakam/${Languages[Languages.Sanskrit]}`,
         title: "श्री शिवाष्टकं",
@@ -77,34 +77,44 @@ export class CategoryCardInfoService {
         category: Categories.Mantras,
         availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
         imgUrl: "/assets/images/post/post-1.jpg",
-        routeUrl: `/${AppStrings.Mantras}/OmNamahShivay/${Languages[Languages.Sanskrit]}`,
+        routeUrl: `/${AppStrings.Mantras}/OmNamahShivayMantra/${Languages[Languages.Sanskrit]}`,
         title: "ॐ नमः शिवाय",
-        itemKey: "OmNamahShivay"
+        itemKey: "OmNamahShivayMantra"
       },
+
       {
         category: Categories.Mantras,
-        availableLanguages: [Languages.Sanskrit, Languages.Hindi, Languages.Gujarati],
+        availableLanguages: [Languages.Sanskrit],
         imgUrl: "/assets/images/post/post-2.jpg",
-        routeUrl: `/${AppStrings.Mantras}/RudraMantra/${Languages[Languages.Sanskrit]}`,
-        title: "RudraMantra",
-        itemKey: "RudraMantra"
+        title: "महामृत्युंजय मंत्र",
+        itemKey: "MahaMrityunjayaMantra",
+        routeUrl: `/${Categories[Categories.Mantras]}/MahaMrityunjayaMantra/${Languages[Languages.Sanskrit]}`
       },
-      {
-        category: Categories.Mantras,
-        availableLanguages: [Languages.Sanskrit, Languages.Telugu, Languages.Gujarati],
-        imgUrl: "/assets/images/post/post-3.jpg",
-        routeUrl: `/${AppStrings.Mantras}/ShivDhyaanaMantra/${Languages[Languages.Sanskrit]}`,
-        title: "ShivDhyaanaMantra",
-        itemKey: "ShivDhyaanaMantra"
-      },
-      {
-        category: Categories.Mantras,
-        availableLanguages: [Languages.Sanskrit, Languages.Kannad, Languages.Malyalam],
-        imgUrl: "/assets/images/post/post-1.jpg",
-        routeUrl: `/${AppStrings.Mantras}/PanchakshariMantra/${Languages[Languages.Sanskrit]}`,
-        title: "PanchakshariMantra",
-        itemKey: "Panchakshari Mantra"
-      },
+
+      // {
+      //   category: Categories.Mantras,
+      //   availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
+      //   imgUrl: "/assets/images/post/post-2.jpg",
+      //   routeUrl: `/${AppStrings.Mantras}/RudraMantra/${Languages[Languages.Sanskrit]}`,
+      //   title: "RudraMantra",
+      //   itemKey: "RudraMantra"
+      // },
+      // {
+      //   category: Categories.Mantras,
+      //   availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
+      //   imgUrl: "/assets/images/post/post-3.jpg",
+      //   routeUrl: `/${AppStrings.Mantras}/ShivDhyaanaMantra/${Languages[Languages.Sanskrit]}`,
+      //   title: "ShivDhyaanaMantra",
+      //   itemKey: "ShivDhyaanaMantra"
+      // },
+      // {
+      //   category: Categories.Mantras,
+      //   availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
+      //   imgUrl: "/assets/images/post/post-1.jpg",
+      //   routeUrl: `/${AppStrings.Mantras}/PanchakshariMantra/${Languages[Languages.Sanskrit]}`,
+      //   title: "PanchakshariMantra",
+      //   itemKey: "Panchakshari Mantra"
+      // },
     ];
 
 
@@ -116,7 +126,7 @@ export class CategoryCardInfoService {
     let categoryCardInfo: CategoryCardInfo[] = [
       {
         category: Categories.Jyortilingas12,
-        availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
+        availableLanguages: [Languages.Hindi, Languages.Gujarati, Languages.English],
         imgUrl: "/assets/images/post/post-1.jpg",
         routeUrl: `/${AppStrings.Jyortilingas12}/SomnathJyortiling/${Languages[Languages.Sanskrit]}`,
         title: "Somnath Jyortiling",
@@ -124,7 +134,7 @@ export class CategoryCardInfoService {
       },
       {
         category: Categories.Jyortilingas12,
-        availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
+        availableLanguages: [Languages.Hindi, Languages.Gujarati, Languages.English],
         imgUrl: "/assets/images/post/post-2.jpg",
         routeUrl: `/${AppStrings.Jyortilingas12}/MallikarjunJyortiling/${Languages[Languages.Sanskrit]}`,
         title: "Mallikarjun Jyortiling",
@@ -132,7 +142,7 @@ export class CategoryCardInfoService {
       },
       {
         category: Categories.Jyortilingas12,
-        availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
+        availableLanguages: [Languages.Hindi, Languages.Gujarati, Languages.English],
         imgUrl: "/assets/images/post/post-3.jpg",
         routeUrl: `/${AppStrings.Jyortilingas12}/KedarnathJyortiling/${Languages[Languages.Sanskrit]}`,
         title: "Kedarnath Jyortiling",
