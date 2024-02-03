@@ -1,7 +1,6 @@
 export class AppStrings {
 
-    //Make sure that starting route matches exactly as Categories
-
+    //Make sure that starting route matches exactly as Categories enum
 
     public static Home: string = 'Home';
 
