@@ -9,5 +9,6 @@ export enum Categories {
     ShivNames1000, 
     // Images,
     ShivChalisa,
-    // SongLyrics     
+    // SongLyrics,
+    //ShivMahaPuran     
 }

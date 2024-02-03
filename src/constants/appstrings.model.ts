@@ -4,6 +4,10 @@ export class AppStrings {
 
     public static Home: string = 'Home';
     public static HomeLower: string = 'home';
+    
+    public static AboutUs: string = 'About-Us';
+
+    public static ContactUs: string = 'Contact-Us';
 
     public static Stuties: string = 'Stuties';
     public static StutieItemRoute: string = 'Stuties/:itemKey/:language';
@@ -16,9 +20,7 @@ export class AppStrings {
 
     public static Jyortilingas12: string = 'Jyortilingas12';
     public static JyortilingaItemRoute: string = 'Jyortilingas12/:itemKey/:language';
-
-    // http://localhost:4200/Jyortilingas12/Sanskrit
-
+ 
     public static ShivNames108: string = 'Shivnames108/';
     public static ShivNames108Route: string = 'Shivnames108/:language';
     

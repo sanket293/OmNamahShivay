@@ -13,6 +13,8 @@ import { BhajanListComponent } from '../components/categories/bhajans/bhajan-lis
 import { BhajansComponent } from '../components/categories/bhajans/bhajans.component';
 import { Jyortilingas12Component } from '../components/categories/jyortilingas12/jyortilingas12.component';
 import { Jyortilingsas12ListComponent } from '../components/categories/jyortilingas12/jyortilingsas12-list/jyortilingsas12-list.component';
+import { AboutUsComponent } from '../components/about-us/about-us.component';
+import { ContactUsComponent } from '../components/contact-us/contact-us.component';
 
 export const routes: Routes = [
     {
@@ -28,6 +30,14 @@ export const routes: Routes = [
     {
         path: AppStrings.Home,
         component: HomeComponent
+    },
+    {
+        path: AppStrings.AboutUs,
+        component: AboutUsComponent
+    },
+    {
+        path: AppStrings.ContactUs,
+        component: ContactUsComponent
     },
     {
         path: AppStrings.Stuties,
@@ -63,9 +73,7 @@ export const routes: Routes = [
     {
         path: AppStrings.BhajanItemRoute,
         component: BhajansComponent
-    },
-
-
+    }, 
     {
         path: AppStrings.ShivNames108Route,
         component: Names108Component
