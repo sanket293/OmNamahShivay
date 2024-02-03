@@ -7,7 +7,10 @@ export class AppStrings {
     
     public static AboutUs: string = 'About-Us';
 
-    public static ContactUs: string = 'Contact-Us';
+    public static ContactUs: string = 'Contact';
+
+    public static PrivacyPolicy: string = 'Privacy-Policy';
+    public static TermsNConditions: string = 'Terms-Conditions';
 
     public static Stuties: string = 'Stuties';
     public static StutieItemRoute: string = 'Stuties/:itemKey/:language';

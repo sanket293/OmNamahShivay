@@ -15,6 +15,8 @@ import { Jyortilingas12Component } from '../components/categories/jyortilingas12
 import { Jyortilingsas12ListComponent } from '../components/categories/jyortilingas12/jyortilingsas12-list/jyortilingsas12-list.component';
 import { AboutUsComponent } from '../components/about-us/about-us.component';
 import { ContactUsComponent } from '../components/contact-us/contact-us.component';
+import { PrivacyPolicyComponent } from '../components/shared/footer/privacy-policy/privacy-policy.component';
+import { TermsConditionsComponent } from '../components/shared/footer/terms-conditions/terms-conditions.component';
 
 export const routes: Routes = [
     {
@@ -27,6 +29,7 @@ export const routes: Routes = [
         redirectTo: AppStrings.Home,
         pathMatch: 'full'
     },
+    // Header n Footer
     {
         path: AppStrings.Home,
         component: HomeComponent
@@ -39,6 +42,15 @@ export const routes: Routes = [
         path: AppStrings.ContactUs,
         component: ContactUsComponent
     },
+    {
+        path: AppStrings.PrivacyPolicy,
+        component: PrivacyPolicyComponent
+    },
+    {
+        path: AppStrings.TermsNConditions,
+        component: TermsConditionsComponent
+    },
+    //Categories
     {
         path: AppStrings.Stuties,
         component: StutieListComponent
@@ -73,7 +85,7 @@ export const routes: Routes = [
     {
         path: AppStrings.BhajanItemRoute,
         component: BhajansComponent
-    }, 
+    },
     {
         path: AppStrings.ShivNames108Route,
         component: Names108Component
