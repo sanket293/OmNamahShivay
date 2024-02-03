@@ -10,13 +10,13 @@ import { Observable, tap } from 'rxjs';
 import { LanguageTagsComponent } from "../language-tags/language-tags.component";
 
 @Component({
-  selector: 'app-item',
+  selector: 'app-item-display',
   standalone: true,
-  templateUrl: './item.component.html',
-  styleUrl: './item.component.css',
+  templateUrl: './item-display.component.html',
+  styleUrl: './item-display.component.css',
   imports: [CommonModule, RecentPostComponent, MarkdownComponent, LanguageTagsComponent, RouterModule]
 })
-export class ItemComponent {
+export class ItemDisplayComponent {
   itemDisplay: ItemDisplay | undefined;
   markdown$: Observable<string> | undefined;
 

@@ -5,7 +5,7 @@ import { Observable, map, tap } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { MarkdownComponent, MarkdownService } from 'ngx-markdown';
 import { Categories } from '../../../enums/categories.enum';
-import { ItemComponent } from "../../shared/item/item.component";
+import { ItemDisplayComponent } from "../../shared/item-display/item-display.component";
 
 
 @Component({
@@ -13,7 +13,7 @@ import { ItemComponent } from "../../shared/item/item.component";
     standalone: true,
     templateUrl: './stuties.component.html',
     styleUrl: './stuties.component.css',
-    imports: [CommonModule, RecentPostComponent, MarkdownComponent, ItemComponent]
+    imports: [CommonModule, RecentPostComponent, MarkdownComponent, ItemDisplayComponent]
 })
 export class StutiesComponent implements OnInit {
   // markdown$: any;
