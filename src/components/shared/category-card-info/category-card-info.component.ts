@@ -15,6 +15,7 @@ import { Categories } from '../../../enums/categories.enum';
 })
 export class CategoryCardInfoComponent implements OnInit {
 
+
   @Input() itemText: string = "शिव";
   @Input() postTitle: string = "Shiv";
   @Input() categoryCardInfo$!: Observable<CategoryCardInfo[] | null>;
@@ -25,9 +26,12 @@ export class CategoryCardInfoComponent implements OnInit {
   getLanguageName(languageId: number) {
     return Languages[languageId];
   }
- 
+
   getRouteUrlForTag(item: CategoryCardInfo, languageId: number) {
     return `${Categories[item.category]}/${item.itemKey}/${Languages[languageId]}`;
   }
 
+  getPostUrl(item: CategoryCardInfo) {
+    return `${Categories[item.category]}/${item.itemKey}/${Languages[1]}`;
+  }
 }
