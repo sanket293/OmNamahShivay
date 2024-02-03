@@ -16,7 +16,7 @@ import { ItemComponent } from "../../shared/item/item.component";
     imports: [CommonModule, RecentPostComponent, MarkdownComponent, ItemComponent]
 })
 export class StutiesComponent implements OnInit {
-  markdown$: any;
+  // markdown$: any;
 
   constructor(public activatedRoute: ActivatedRoute, private mdService: MarkdownService) { }
 

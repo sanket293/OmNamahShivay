@@ -23,17 +23,8 @@
                         </li>
 
                         <li class="list-inline-item">
-                            <!-- <ul class="card-meta-tag list-inline"> 
-                                <li class="list-inline-item"
-                                    *ngFor="let language of (itemDisplay?.availableInLanguages)">
-                                    <a routerLink="#">{{language}}</a>
-                                </li> 
-                            </ul> -->
-
                             <app-language-tags [itemLanguageTags]="(itemDisplay?.availableInLanguages)">
                             </app-language-tags>
-
-
                         </li>
                     </ul>
                     <div class="content">

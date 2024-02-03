@@ -33,14 +33,14 @@ export class ItemComponent {
         return;
       }
 
-      let stutiKey = routeParameters.get('stutiKey') ?? "";
+      let itemKey = routeParameters.get('itemKey') ?? "";
       let language = routeParameters.get('language') ?? "";
 
-      // console.log(JSON.stringify(routeParameters));
+      console.log(JSON.stringify(routeParameters));
 
-      this.itemDisplayService.getItemDisplayDetails(category, stutiKey, language).subscribe((itemDisplay: ItemDisplay) => {
+      this.itemDisplayService.getItemDisplayDetails(category, itemKey, language).subscribe((itemDisplay: ItemDisplay) => {
 
-        // console.log(JSON.stringify(itemDisplay));
+        console.log(JSON.stringify(itemDisplay));
 
         this.itemDisplay = itemDisplay;
         this.markdown$ = this.mdService.getSource(this.itemDisplay.markDownContantUrl);

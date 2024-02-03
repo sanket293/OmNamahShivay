@@ -6,24 +6,25 @@ import { CategoryCardInfoService } from '../../../services/category-card-info/ca
 import { CategoryCardInfo } from '../../../model/category-card-info.model';
 import { Observable } from 'rxjs';
 import { Categories } from '../../../enums/categories.enum';
+import { ItemComponent } from "../../shared/item/item.component";
 
 @Component({
     selector: 'app-jyortilingas12',
     standalone: true,
     templateUrl: './jyortilingas12.component.html',
     styleUrl: './jyortilingas12.component.css',
-    imports: [RouterModule, CommonModule, CategoryCardInfoComponent]
+    imports: [RouterModule, CommonModule, CategoryCardInfoComponent, ItemComponent]
 })
 export class Jyortilingas12Component {
 
-  itemText: string = "शिव जी के 12 ज्योर्तिलिङ्गाः";
-  postTitle: string = "12 Jyortilingas of Lord Shiva";
-  categoryCardInfo$!: Observable<CategoryCardInfo[]>;
+  // itemText: string = "शिव जी के 12 ज्योर्तिलिङ्गाः";
+  // postTitle: string = "12 Jyortilingas of Lord Shiva";
+  // categoryCardInfo$!: Observable<CategoryCardInfo[]>;
 
-  constructor(private categoryCardInfoService: CategoryCardInfoService) { }
+  // constructor(private categoryCardInfoService: CategoryCardInfoService) { }
 
-  ngOnInit(): void {
-    this.categoryCardInfo$ = this.categoryCardInfoService.getCategoryCardInfo(Categories.Mantras);
-  }
+  // ngOnInit(): void {
+  //   this.categoryCardInfo$ = this.categoryCardInfoService.getCategoryCardInfo(Categories.Mantras);
+  // }
   
 }

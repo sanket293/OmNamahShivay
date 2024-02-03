@@ -17,12 +17,29 @@ export class ItemDisplayService {
 
   getItemDisplayDetails(category: string, itemKey: string, language: string): Observable<ItemDisplay> {
 
+
+    // switch (category) {
+
+    //   case Categories[Categories.Stuties]: {
+
+    //     break;
+    //   }
+    //   case Categories[Categories.Mantras]: {
+    //     break;
+    //   }
+    //   case Categories[Categories.Jyortilingas12]: {
+    //     break;
+    //   }
+
+    // }
+ 
+
     let itemDisplay: ItemDisplay = {
       auther: this.getAuther(category, itemKey),
       availableInLanguages: this.getItemLanguageTags(category, itemKey),
       currentItemLanguage: language,
       markDownContantUrl: `/data/${category}/${itemKey}/${itemKey}-${language}.md`,
-      posterUrl: "/assets/images/post/post-2.jpg",
+      posterUrl: this.getItemPosterUrl(),
       timeToRead: "7 Min To Read",
       title: itemKey
     };
@@ -42,6 +59,7 @@ export class ItemDisplayService {
 
   getItemLanguageTags(category: string, itemKey: string): ItemLanguageTag[] {
 
+
     var itemLanguageTags: ItemLanguageTag[] = [
       {
         name: Languages[Languages.Sanskrit],
@@ -57,6 +75,10 @@ export class ItemDisplayService {
       },
     ];
     return itemLanguageTags;
+  }
+
+  getItemPosterUrl(): string {
+    return "/assets/images/post/post-2.jpg";
   }
 
 }
