@@ -5,47 +5,46 @@ import { Observable, map, tap } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { MarkdownComponent, MarkdownService } from 'ngx-markdown';
 import { Categories } from '../../../enums/categories.enum';
+import { ItemComponent } from "../../shared/item/item.component";
 
 
 @Component({
-  selector: 'app-stuties',
-  standalone: true,
-  templateUrl: './stuties.component.html',
-  styleUrl: './stuties.component.css',
-
-  imports: [CommonModule, RecentPostComponent, MarkdownComponent],
-
+    selector: 'app-stuties',
+    standalone: true,
+    templateUrl: './stuties.component.html',
+    styleUrl: './stuties.component.css',
+    imports: [CommonModule, RecentPostComponent, MarkdownComponent, ItemComponent]
 })
 export class StutiesComponent implements OnInit {
   markdown$: any;
 
   constructor(public activatedRoute: ActivatedRoute, private mdService: MarkdownService) { }
 
-  stutiePosterImageUrl: string = "/assets/images/post/post-2.jpg";
-  stutieLanguage: string = "Shiv Mahimna Strotam"
+  // stutiePosterImageUrl: string = "/assets/images/post/post-2.jpg";
+  // stutieLanguage: string = "Shiv Mahimna Strotam"
 
-  authorName: string = "Sanket Vagadiya";
-  authorImageUrl: String = "/assets/images/john-doe.jpg";
+  // authorName: string = "Sanket Vagadiya";
+  // authorImageUrl: String = "/assets/images/john-doe.jpg";
 
-  timeToRead: string = "7 Min To Read";
+  // timeToRead: string = "7 Min To Read";
 
-  stutieLanguages: string[] = ["Sanskrit", "Hindi", "Gujarati", "English"];
-  currentStutieLanguage: string = "Sanskrit";
+  // stutieLanguages: string[] = ["Sanskrit", "Hindi", "Gujarati", "English"];
+  // currentStutieLanguage: string = "Sanskrit";
 
 
   ngOnInit() {
 
-    this.activatedRoute.paramMap.subscribe((routeParameters) => {
+    // this.activatedRoute.paramMap.subscribe((routeParameters) => {
 
-      let stutiKey = routeParameters.get('stutiKey');
-      let language = routeParameters.get('language');
+    //   let stutiKey = routeParameters.get('stutiKey');
+    //   let language = routeParameters.get('language');
 
-      this.stutieLanguage = stutiKey?.toString() ?? "";
+    //   this.stutieLanguage = stutiKey?.toString() ?? "";
 
-      let markDownContantUrl = `/data/${Categories[Categories.Stuties]}/${stutiKey}/${stutiKey}-${language}.md`;
-      this.markdown$ = this.mdService.getSource(markDownContantUrl); //TODO: get markdown value form API
+    //   let markDownContantUrl = `/data/${Categories[Categories.Stuties]}/${stutiKey}/${stutiKey}-${language}.md`;
+    //   this.markdown$ = this.mdService.getSource(markDownContantUrl); //TODO: get markdown value form API
 
-    });
+    // });
 
 
   }
