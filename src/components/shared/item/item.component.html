@@ -13,7 +13,7 @@
 
                     <ul class="card-meta my-3 list-inline">
                         <li class="list-inline-item">
-                            <a [href]="itemDisplay?.auther?.autherPageUrl" class="card-meta-author">
+                            <a [routerLink]="itemDisplay?.auther?.autherPageUrl" class="card-meta-author">
                                 <img [src]="itemDisplay?.auther?.authorImageUrl">
                                 <span>{{itemDisplay?.auther?.authorName}}</span>
                             </a>
@@ -23,14 +23,17 @@
                         </li>
 
                         <li class="list-inline-item">
-                            <ul class="card-meta-tag list-inline">
-
+                            <!-- <ul class="card-meta-tag list-inline"> 
                                 <li class="list-inline-item"
                                     *ngFor="let language of (itemDisplay?.availableInLanguages)">
-                                    <a href="#">{{language}}</a>
-                                </li>
+                                    <a routerLink="#">{{language}}</a>
+                                </li> 
+                            </ul> -->
 
-                            </ul>
+                            <app-language-tags [itemLanguageTags]="(itemDisplay?.availableInLanguages)">
+                            </app-language-tags>
+
+
                         </li>
                     </ul>
                     <div class="content">

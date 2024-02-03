@@ -5,6 +5,7 @@ import { Observable, of } from 'rxjs';
 import { Languages } from '../../enums/languages.enum';
 import { ItemProperty } from '../../model/ItemProperty.model';
 import { Auther } from '../../model/auther.model';
+import { ItemLanguageTag } from '../../model/item-language-tag.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,13 +13,15 @@ import { Auther } from '../../model/auther.model';
 
 export class ItemDisplayService {
 
-  getItemDisplayDetails(categoryId: Categories, itemKey: string, language: string): Observable<ItemDisplay> {
+  constructor() { }
+
+  getItemDisplayDetails(category: string, itemKey: string, language: string): Observable<ItemDisplay> {
 
     let itemDisplay: ItemDisplay = {
-      auther: this.getAuther(),
-      availableInLanguages: [Languages[Languages.Sanskrit], Languages[Languages.Gujarati]],
+      auther: this.getAuther(category, itemKey),
+      availableInLanguages: this.getItemLanguageTags(category, itemKey),
       currentItemLanguage: language,
-      markDownContantUrl: `/data/${Categories[categoryId]}/${itemKey}/${itemKey}-${language}.md`,
+      markDownContantUrl: `/data/${category}/${itemKey}/${itemKey}-${language}.md`,
       posterUrl: "/assets/images/post/post-2.jpg",
       timeToRead: "7 Min To Read",
       title: itemKey
@@ -27,7 +30,7 @@ export class ItemDisplayService {
     return of(itemDisplay);
   }
 
-  getAuther(): Auther {
+  getAuther(category: string, itemKey: string): Auther {
 
     return {
       autherPageUrl: "/assets/images/john-doe.jpg",
@@ -37,10 +40,29 @@ export class ItemDisplayService {
 
   }
 
- 
+  getItemLanguageTags(category: string, itemKey: string): ItemLanguageTag[] {
 
-  constructor() { }
+    var itemLanguageTags: ItemLanguageTag[] = [
+      {
+        name: Languages[Languages.Sanskrit],
+        routeUrl: `/${category}/${itemKey}/${Languages[Languages.Sanskrit]}`
+      },
+      {
+        name: Languages[Languages.Hindi],
+        routeUrl: `/${category}/${itemKey}/${Languages[Languages.Hindi]}`
+      },
+      {
+        name: Languages[Languages.Gujarati],
+        routeUrl: `/${category}/${itemKey}/${Languages[Languages.Gujarati]}`
+      },
+    ];
+    return itemLanguageTags;
+  }
+
 }
+
+
+
 
 //     let markDownContantUrl = `/data/${Categories[Categories.Stuties]}/${stutiKey}/${stutiKey}-${language}.md`;
 // stutiePosterImageUrl: string = "/assets/images/post/post-2.jpg";

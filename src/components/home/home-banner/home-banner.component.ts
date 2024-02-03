@@ -27,7 +27,7 @@ export class HomeBannerComponent implements OnInit {
       this.tagService.getHomeBannerTags().subscribe({
         next: (tags: ItemProperty[]) => {
           this.homeBannerTags = tags;
-          this.homeBannerTags.forEach(s=>{ console.log(s.routeUrl)});
+          // this.homeBannerTags.forEach(s=>{ console.log(s.routeUrl)});
         },
         error: (error) => {
           console.log('Something is wrong' + JSON.stringify(error));
