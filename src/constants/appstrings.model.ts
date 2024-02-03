@@ -4,19 +4,25 @@ export class AppStrings {
 
     public static Home: string = 'Home';
 
-    public static StutieListRoute: string = 'Stuties';
+    public static Stutie: string = 'Stuties';
     public static StutieItemRoute: string = 'Stuties/:stutiKey/:language';
 
-    public static MantrasListRoute: string = 'Mantras';
+    public static Mantras: string = 'Mantras';
     public static MantraItemRoute: string = 'Mantras/:mantraId/:languageId';
 
-    public static BhajansListRoute: string = 'Bhajans';
+    public static Bhajans: string = 'Bhajans';
     public static BhajanItemRoute: string = 'Bhajans/:bhajansId/:languageId';
 
-    public static Names108Route: string = 'Shivnames108/:languageId';
+    public static Jyortilingas12: string = 'Jyortilingas12';
+    public static JyortilingaItemRoute: string = 'Jyortilingas12/:jyortilingId/:languageId';
 
-    public static Names1000: string = 'Shivnames1000';
-    public static Names1000Route: string = 'Shivnames1000/:languageId';
+    // http://localhost:4200/Jyortilingas12/Sanskrit
+
+    public static ShivNames108: string = 'Shivnames108/';
+    public static ShivNames108Route: string = 'Shivnames108/:languageId';
+    
+    public static ShivNames1000: string = 'Shivnames1000';
+    public static ShivNames1000Route: string = 'Shivnames1000/:languageId';
 
     public static ShivChalisa: string = 'ShivChalisa';
     public static ShivChalisaRoute: string = 'ShivChalisa/:languageId';

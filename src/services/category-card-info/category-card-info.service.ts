@@ -1,0 +1,150 @@
+import { Injectable } from '@angular/core';
+import { Categories } from '../../enums/categories.enum';
+import { Observable, of } from 'rxjs';
+import { Languages } from '../../enums/languages.enum';
+import { CategoryCardInfo } from '../../model/category-card-info.model';
+import { AppStrings } from '../../constants/appstrings.model';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class CategoryCardInfoService {
+
+  constructor() { }
+  getCategoryCardInfo(category: Categories): Observable<CategoryCardInfo[]> {
+
+
+    switch (category) {
+      case Categories.Stuties: {
+        return this.getStutieCategoryCardInfo();
+      }
+      case Categories.Mantras: {
+        return this.getMantraCategoryCardInfo();
+      }
+      case Categories.Jyortilingas12: {
+        return this.getJyortilingsCategoryCardInfo();
+      }
+
+    }
+
+    return this.getStutieCategoryCardInfo();
+  }
+
+  getStutieCategoryCardInfo(): Observable<CategoryCardInfo[]> {
+    let categoryCardInfo: CategoryCardInfo[] = [
+      {
+        category: Categories.Stuties,
+        availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
+        imgUrl: "/assets/images/post/post-1.jpg",
+        routeUrl: `/${Categories[Categories.Stuties]}/ShivMahimnaStotam/${Languages[Languages.Sanskrit]}`,
+        title: "श्री शिवमहिम्नस्तोत्रम्‌",
+        itemKey: "ShivMahimnaStotam"
+      },
+      {
+        category: Categories.Stuties,
+        availableLanguages: [Languages.Sanskrit, Languages.Hindi, Languages.Gujarati],
+        imgUrl: "/assets/images/post/post-2.jpg",
+        routeUrl: `/${Categories[Categories.Stuties]}/Rudrashtakam/${Languages[Languages.Sanskrit]}`,
+        title: "शिव रुद्राष्टकम",
+        itemKey: "Rudrashtakam"
+      },
+      {
+        category: Categories.Stuties,
+        availableLanguages: [Languages.Sanskrit, Languages.Telugu, Languages.Gujarati],
+        imgUrl: "/assets/images/post/post-3.jpg",
+        routeUrl: `/${Categories[Categories.Stuties]}/Lingashtakam/${Languages[Languages.Sanskrit]}`,
+        title: "लिंगाष्टकम स्तोत्र",
+        itemKey: "Lingashtakam"
+      },
+      {
+        category: Categories.Stuties,
+        availableLanguages: [Languages.Sanskrit, Languages.Kannad, Languages.Malyalam],
+        imgUrl: "/assets/images/post/post-1.jpg",
+        routeUrl: `/${Categories[Categories.Stuties]}/Shivashtakam/${Languages[Languages.Sanskrit]}`,
+        title: "श्री शिवाष्टकं",
+        itemKey: "Shivashtakam"
+      },
+    ];
+
+
+    return of(categoryCardInfo);
+  }
+
+  getMantraCategoryCardInfo(): Observable<CategoryCardInfo[]> {
+
+    let categoryCardInfo: CategoryCardInfo[] = [
+      {
+        category: Categories.Mantras,
+        availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
+        imgUrl: "/assets/images/post/post-1.jpg",
+        routeUrl: `/${AppStrings.Mantras}/OmNamahShivay/${Languages[Languages.Sanskrit]}`,
+        title: "ॐ नमः शिवाय",
+        itemKey: "OmNamahShivay"
+      },
+      {
+        category: Categories.Mantras,
+        availableLanguages: [Languages.Sanskrit, Languages.Hindi, Languages.Gujarati],
+        imgUrl: "/assets/images/post/post-2.jpg",
+        routeUrl: `/${AppStrings.Mantras}/RudraMantra/${Languages[Languages.Sanskrit]}`,
+        title: "RudraMantra",
+        itemKey: "RudraMantra"
+      },
+      {
+        category: Categories.Mantras,
+        availableLanguages: [Languages.Sanskrit, Languages.Telugu, Languages.Gujarati],
+        imgUrl: "/assets/images/post/post-3.jpg",
+        routeUrl: `/${AppStrings.Mantras}/ShivDhyaanaMantra/${Languages[Languages.Sanskrit]}`,
+        title: "ShivDhyaanaMantra",
+        itemKey: "ShivDhyaanaMantra"
+      },
+      {
+        category: Categories.Mantras,
+        availableLanguages: [Languages.Sanskrit, Languages.Kannad, Languages.Malyalam],
+        imgUrl: "/assets/images/post/post-1.jpg",
+        routeUrl: `/${AppStrings.Mantras}/PanchakshariMantra/${Languages[Languages.Sanskrit]}`,
+        title: "PanchakshariMantra",
+        itemKey: "Panchakshari Mantra"
+      },
+    ];
+
+
+    return of(categoryCardInfo);
+  }
+
+  getJyortilingsCategoryCardInfo(): Observable<CategoryCardInfo[]> {
+
+    let categoryCardInfo: CategoryCardInfo[] = [
+      {
+        category: Categories.Jyortilingas12,
+        availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
+        imgUrl: "/assets/images/post/post-1.jpg",
+        routeUrl: `/${AppStrings.Jyortilingas12}/SomnathJyortiling/${Languages[Languages.Sanskrit]}`,
+        title: "Somnath Jyortiling",
+        itemKey: "SomnathJyortiling"
+      },
+      {
+        category: Categories.Jyortilingas12,
+        availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
+        imgUrl: "/assets/images/post/post-2.jpg",
+        routeUrl: `/${AppStrings.Jyortilingas12}/MallikarjunJyortiling/${Languages[Languages.Sanskrit]}`,
+        title: "Mallikarjun Jyortiling",
+        itemKey: "MallikarjunJyortiling"
+      },
+      {
+        category: Categories.Jyortilingas12,
+        availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
+        imgUrl: "/assets/images/post/post-3.jpg",
+        routeUrl: `/${AppStrings.Jyortilingas12}/KedarnathJyortiling/${Languages[Languages.Sanskrit]}`,
+        title: "Kedarnath Jyortiling",
+        itemKey: "KedarnathJyortiling"
+      },
+
+    ];
+
+
+    return of(categoryCardInfo);
+  }
+
+
+
+}

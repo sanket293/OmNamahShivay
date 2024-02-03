@@ -11,6 +11,8 @@ import { ShivChalisaComponent } from '../components/categories/shiv-chalisa/shiv
 import { AppStrings } from '../constants/appstrings.model';
 import { BhajanListComponent } from '../components/categories/bhajans/bhajan-list/bhajan-list.component';
 import { BhajansComponent } from '../components/categories/bhajans/bhajans.component';
+import { Jyortilingas12Component } from '../components/categories/jyortilingas12/jyortilingas12.component';
+import { Jyortilingsas12ListComponent } from '../components/categories/jyortilingas12/jyortilingsas12-list/jyortilingsas12-list.component';
 
 export const routes: Routes = [
     {
@@ -23,7 +25,7 @@ export const routes: Routes = [
         component: HomeComponent
     },
     {
-        path: AppStrings.StutieListRoute,
+        path: AppStrings.Stutie,
         component: StutieListComponent
     },
     {
@@ -32,7 +34,7 @@ export const routes: Routes = [
     },
 
     {
-        path: AppStrings.MantrasListRoute,
+        path: AppStrings.Mantras,
         component: MantraListComponent
     },
     {
@@ -41,7 +43,16 @@ export const routes: Routes = [
     },
 
     {
-        path: AppStrings.BhajansListRoute,
+        path: AppStrings.Jyortilingas12,
+        component: Jyortilingsas12ListComponent
+    },
+    {
+        path: AppStrings.JyortilingaItemRoute,
+        component: Jyortilingas12Component
+    },
+
+    {
+        path: AppStrings.Bhajans,
         component: BhajanListComponent
     },
     {
@@ -51,11 +62,11 @@ export const routes: Routes = [
 
 
     {
-        path: AppStrings.Names108Route,
+        path: AppStrings.ShivNames108Route,
         component: Names108Component
     },
     {
-        path: AppStrings.Names1000Route,
+        path: AppStrings.ShivNames1000Route,
         component: Names1000Component
     },
 

@@ -4,6 +4,8 @@ import { CategoryCardInfoComponent } from "../../../shared/category-card-info/ca
 import { Observable } from 'rxjs';
 import { CategoryCardInfo } from '../../../../model/category-card-info.model';
 import { StutieService } from '../../../../services/stutie/stutie.service';
+import { CategoryCardInfoService } from '../../../../services/category-card-info/category-card-info.service';
+import { Categories } from '../../../../enums/categories.enum';
 
 @Component({
   selector: 'app-stutie-list',
@@ -18,17 +20,10 @@ export class StutieListComponent implements OnInit {
   postTitle: string = "Shiv Stuties";
   categoryCardInfo$!: Observable<CategoryCardInfo[]>;
 
-  constructor(private stutieService: StutieService) { }
+  constructor(private categoryCardInfoService: CategoryCardInfoService) { }
 
-  async ngOnInit(): Promise<void> {
-
-    this.categoryCardInfo$ = this.stutieService.getStutiecategoryCardInfo();
-
-
+  ngOnInit(): void {
+    this.categoryCardInfo$ = this.categoryCardInfoService.getCategoryCardInfo(Categories.Stuties);
   }
-
-
-
 }
-
 

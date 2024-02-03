@@ -21,7 +21,7 @@ export class CategoryService {
         categoryNameSanskrit: "शिव जी की स्तुति",
         itemCount: 12,
         displayOrder: 1,
-        routeUrl: AppStrings.StutieListRoute
+        routeUrl: AppStrings.Stutie
       },
       {
         categoryId: Categories.Mantras,
@@ -29,16 +29,16 @@ export class CategoryService {
         categoryNameSanskrit: "भगवान शिव के मंत्र",
         itemCount: 7,
         displayOrder: 2,
-        routeUrl: AppStrings.MantrasListRoute
+        routeUrl: AppStrings.Mantras
       },
-      {
-        categoryId: Categories.Bhajans,
-        categoryName: "Lord Shiva Bhajans",
-        categoryNameSanskrit: "शिव जी के भजन",
-        itemCount: 25,
-        displayOrder: 3,
-        routeUrl: AppStrings.BhajansListRoute
-      },
+      // {
+      //   categoryId: Categories.Bhajans,
+      //   categoryName: "Lord Shiva Bhajans",
+      //   categoryNameSanskrit: "शिव जी के भजन",
+      //   itemCount: 25,
+      //   displayOrder: 3,
+      //   routeUrl: AppStrings.BhajansListRoute
+      // },
       {
         categoryId: Categories.ShivChalisa,
         categoryName: "Shiv Chalisa",
@@ -53,12 +53,22 @@ export class CategoryService {
         categoryNameSanskrit: "शिव जी के 1000 नाम",
         itemCount: 1,
         displayOrder: 3,
-        routeUrl: `${AppStrings.Names1000}/${Languages[Languages.Sanskrit]}`
+        routeUrl: `${AppStrings.ShivNames1000}/${Languages[Languages.Sanskrit]}`
+      },
+      {
+        categoryId: Categories.Jyortilingas12,
+        categoryName: "12 Jyortilingas of Lord Shiva",
+        categoryNameSanskrit: "शिव जी के 12 ज्योर्तिलिङ्गाः",
+        itemCount: 1,
+        displayOrder: 5,
+        routeUrl: `${AppStrings.Jyortilingas12}`
       },
 
     ];
 
     return of(categories.sort(s => s.displayOrder));
   }
+
+  
 }
 

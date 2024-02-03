@@ -44,19 +44,19 @@ export class TagService {
         itemkey: "MahaMrityunjayaMantra",
         routeUrl: `/${Categories[Categories.Mantras]}/MahaMrityunjayaMantra/${Languages[Languages.Sanskrit]}`
       },
-      {
-        category: Categories.Status,
-        language: Languages.English,
-        name: "Mahakal Attitude Status",
-        itemkey: "Status",
-        routeUrl: `/${Categories[Categories.Status]}/MahakalAttitudeStatus/${Languages[Languages.English]}`
-      },
+      // {
+      //   category: Categories.Status,
+      //   language: Languages.English,
+      //   name: "Mahakal Attitude Status",
+      //   itemkey: "Status",
+      //   routeUrl: `/${Categories[Categories.Status]}/MahakalAttitudeStatus/${Languages[Languages.English]}`
+      // },
       {
         category: Categories.ShivNames1000,
         language: Languages.English,
         name: "1000 Names of Lord Shiva",
         itemkey: "ShivaNames1000",
-        routeUrl: `/${AppStrings.Names1000}/${Languages[Languages.English]}`
+        routeUrl: `/${AppStrings.ShivNames1000}/${Languages[Languages.English]}`
       },
     ];
 
@@ -101,26 +101,26 @@ export class TagService {
         itemkey: "MahaMrityunjayaMantra",
         routeUrl: `/${Categories[Categories.Mantras]}/MahaMrityunjayaMantra/${Languages[Languages.Sanskrit]}`
       },
-      {
-        category: Categories.Status,
-        language: Languages.English,
-        name: "Mahakal Attitude Status",
-        itemkey: "Status",
-        routeUrl: `/${Categories[Categories.Status]}/MahakalAttitudeStatus/${Languages[Languages.English]}`
-      },
+      // {
+      //   category: Categories.Status,
+      //   language: Languages.English,
+      //   name: "Mahakal Attitude Status",
+      //   itemkey: "Status",
+      //   routeUrl: `/${Categories[Categories.Status]}/MahakalAttitudeStatus/${Languages[Languages.English]}`
+      // },
       {
         category: Categories.ShivNames1000,
         language: Languages.English,
         name: "1000 Names of Lord Shiva",
         itemkey: "ShivaNames1000",
-        routeUrl: `/${Categories[Categories.ShivNames1000]}/${Languages[Languages.English]}`
+        routeUrl: `/${AppStrings.ShivNames1000}/${Languages[Languages.English]}`
       },
       {
         category: Categories.ShivNames108,
         language: Languages.English,
         name: "108 Names of Lord Shiva",
         itemkey: "ShivaNames108",
-        routeUrl: `/${Categories[Categories.ShivNames108]}/${Languages[Languages.English]}`
+        routeUrl: `/${AppStrings.ShivNames108}/${Languages[Languages.English]}`
       },
     ];
 
