@@ -45,7 +45,7 @@ export class CategoryService {
         categoryNameSanskrit: "शिव चालीसा",
         itemCount: 1,
         displayOrder: 4,
-        routeUrl: `${AppStrings.ShivChalisa}/${Languages[Languages.Sanskrit]}`
+        routeUrl: `${AppStrings.ShivChalisa}/${Categories[Categories.ShivChalisa]}/${Languages[Languages.Sanskrit]}`
       },
       {
         categoryId: Categories.ShivNames1000,

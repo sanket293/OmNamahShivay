@@ -26,7 +26,7 @@ export class AppStrings {
     public static ShivNames1000Route: string = 'Shivnames1000/:language';
 
     public static ShivChalisa: string = 'ShivChalisa';
-    public static ShivChalisaRoute: string = 'ShivChalisa/:language';
+    public static ShivChalisaRoute: string = 'ShivChalisa/:itemKey/:language';
 
     public static ErrorRoute: string = '**';
  }

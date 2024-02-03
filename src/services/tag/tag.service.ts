@@ -35,7 +35,7 @@ export class TagService {
         language: Languages.Sanskrit,
         name: "श्री शिव चालीसा",
         itemKey: "ShivChalisa",
-        routeUrl: `/${AppStrings.ShivChalisa}/${Languages[Languages.Sanskrit]}`
+        routeUrl: `/${AppStrings.ShivChalisa}/ShivChalisa/${Languages[Languages.Sanskrit]}`
       },
       {
         category: Categories.Mantras,
@@ -92,7 +92,7 @@ export class TagService {
         language: Languages.Sanskrit,
         name: "श्री शिव चालीसा",
         itemKey: "ShivChalisa",
-        routeUrl: `/${Categories[Categories.ShivChalisa]}/${Languages[Languages.Sanskrit]}`
+        routeUrl: `/${Categories[Categories.ShivChalisa]}/ShivChalisa/${Languages[Languages.Sanskrit]}`
       },
       {
         category: Categories.Mantras,
@@ -129,7 +129,7 @@ export class TagService {
         itemKey: "SomnathJyortiling",
         routeUrl: `/${AppStrings.Jyortilingas12}/SomnathJyortiling/${Languages[Languages.English]}`
       },
-     
+
     ];
 
     return of(tags);

@@ -15,8 +15,7 @@ import { RouterModule } from '@angular/router';
 export class CategoriesComponent implements OnInit {
 
   categories$: Observable<Category[]> | undefined ;
-  // categories: Category[] = [];
- 
+  
   constructor(private categoryService: CategoryService) { }
 
   ngOnInit(): void {

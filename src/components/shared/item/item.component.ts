@@ -10,11 +10,11 @@ import { Observable, tap } from 'rxjs';
 import { LanguageTagsComponent } from "../language-tags/language-tags.component";
 
 @Component({
-    selector: 'app-item',
-    standalone: true,
-    templateUrl: './item.component.html',
-    styleUrl: './item.component.css',
-    imports: [CommonModule, RecentPostComponent, MarkdownComponent, LanguageTagsComponent, RouterModule]
+  selector: 'app-item',
+  standalone: true,
+  templateUrl: './item.component.html',
+  styleUrl: './item.component.css',
+  imports: [CommonModule, RecentPostComponent, MarkdownComponent, LanguageTagsComponent, RouterModule]
 })
 export class ItemComponent {
   itemDisplay: ItemDisplay | undefined;
@@ -25,7 +25,7 @@ export class ItemComponent {
 
   ngOnInit() {
 
-     this.activatedRoute.paramMap.subscribe((routeParameters) => {
+    this.activatedRoute.paramMap.subscribe((routeParameters) => {
 
       let category = this.activatedRoute.routeConfig?.path?.split("/")?.[0];
       if (!category) {

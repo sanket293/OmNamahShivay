@@ -32,7 +32,6 @@ export class ItemDisplayService {
     //   }
 
     // }
- 
 
     let itemDisplay: ItemDisplay = {
       auther: this.getAuther(category, itemKey),
