@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Categories } from '../../enums/categories.enum';
-import { Languages } from '../../enums/languages.enum';
-import { ItemProperty } from '../../model/ItemProperty.model';
+import { Languages } from '../../enums/languages.enum'; 
 import { CategoryCardInfo } from '../../model/category-card-info.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StutieService {
-
 
   constructor() { }
 
@@ -52,11 +50,7 @@ export class StutieService {
 
     return of(stutieInfo);
   }
-
-   
-
-
-
+  
   // stutiePosterImageUrl: string = "/assets/images/post/post-2.jpg";
   // stutieLanguage: string = "Shiv Mahimna Strotam"
 

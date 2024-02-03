@@ -22,9 +22,7 @@ export class CategoryService {
         itemCount: 12,
         displayOrder: 1,
         routeUrl: AppStrings.StutieListRoute
-
       },
-
       {
         categoryId: Categories.Mantras,
         categoryName: "Lord Shiva Mantra",
@@ -47,7 +45,7 @@ export class CategoryService {
         categoryNameSanskrit: "शिव चालीसा",
         itemCount: 1,
         displayOrder: 4,
-        routeUrl: `${AppStrings.Shivchalisa}/${Languages[Languages.Sanskrit]}`
+        routeUrl: `${AppStrings.ShivChalisa}/${Languages[Languages.Sanskrit]}`
       },
       {
         categoryId: Categories.ShivNames1000,

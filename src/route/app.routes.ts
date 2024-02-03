@@ -15,11 +15,11 @@ import { BhajansComponent } from '../components/categories/bhajans/bhajans.compo
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: 'home',
+        redirectTo: AppStrings.Home,
         pathMatch: 'full'
     },
     {
-        path: 'home',
+        path: AppStrings.Home,
         component: HomeComponent
     },
     {
@@ -60,7 +60,7 @@ export const routes: Routes = [
     },
 
     {
-        path: AppStrings.ShivchalisaRoute,
+        path: AppStrings.ShivChalisaRoute,
         component: ShivChalisaComponent
     },
 

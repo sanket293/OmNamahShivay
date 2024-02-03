@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ItemProperty } from '../../../model/ItemProperty.model';
 import { HomeService } from '../../../services/home/home.service';
+import { TagService } from '../../../services/tag/tag.service';
+import { AppUtilites } from '../../../constants/apputilities.model';
+import { AppStrings } from '../../../constants/appstrings.model';
 
 @Component({
   selector: 'app-home-banner',
@@ -12,34 +15,27 @@ import { HomeService } from '../../../services/home/home.service';
   styleUrl: './home-banner.component.css'
 })
 export class HomeBannerComponent implements OnInit {
-
+  
   homeBannerTags: ItemProperty[] = [];
+  static AppStrings: AppStrings;
 
-  constructor(private homeService: HomeService) {  }
-  ngOnInit(): void {
+  constructor(private homeService: HomeService, private tagService: TagService) {
 
-    this.homeService.getHomeBannerTags().subscribe({
-      next: (tags: ItemProperty[]) => {
-        this.homeBannerTags = tags;
-      },
-      error: (error) => {
-        console.log('Something is wrong' + JSON.stringify(error));
-      },
-      complete: () => {
-        this.homeBannerTags = this.shuffle(this.homeBannerTags);
-      }
-    });
   }
 
+  ngOnInit(): void {
+      this.tagService.getHomeBannerTags().subscribe({
+        next: (tags: ItemProperty[]) => {
+          this.homeBannerTags = tags;
+          this.homeBannerTags.forEach(s=>{ console.log(s.routeUrl)});
+        },
+        error: (error) => {
+          console.log('Something is wrong' + JSON.stringify(error));
+        },
+        complete: () => {
+          this.homeBannerTags = AppUtilites.shuffle(this.homeBannerTags);
+        }
+      });
+  }
 
-  shuffle = (array: ItemProperty[]) => {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-  };
-
-
-  
 }
