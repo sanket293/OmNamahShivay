@@ -1,0 +1,37 @@
+<div class="py-2"></div>
+
+<section class="section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class=" col-lg-9 mb-5 mb-lg-0">
+                <article>
+                    <div class="post-slider mb-4">
+                        <img [src]="(post$|async)?.postImageUrl" class="card-img" alt="item-post-image">
+                    </div>
+
+                    <h2 class="h2">{{(post$|async)?.postTitle}}</h2>
+
+                    <ul class="card-meta my-3 list-inline">
+                        <!-- <li class="list-inline-item">
+                            <a [routerLink]="post?.auther?.autherPageUrl" class="card-meta-author">
+                                <img [src]="itemDisplay?.auther?.authorImageUrl">
+                                <span>{{itemDisplay?.auther?.authorName}}</span>
+                            </a>
+                        </li> -->
+                        <li class="list-inline-item">
+                            <i class="ti-timer"></i>{{(post$|async)?.timeToRead}}
+                        </li>
+ 
+                    </ul>
+                    <div class="content">
+                        <p>{{(post$|async)?.postContent}}</p>
+                         <hr>
+                    </div>
+                </article>
+
+            </div>
+ 
+
+        </div>
+    </div>
+</section>

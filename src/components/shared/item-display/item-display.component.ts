@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RecentPostComponent } from "../recent-post/recent-post.component";
 import { CommonModule } from '@angular/common';
 import { MarkdownComponent, MarkdownService } from 'ngx-markdown';
@@ -16,7 +16,7 @@ import { LanguageTagsComponent } from "../language-tags/language-tags.component"
   styleUrl: './item-display.component.css',
   imports: [CommonModule, RecentPostComponent, MarkdownComponent, LanguageTagsComponent, RouterModule]
 })
-export class ItemDisplayComponent {
+export class ItemDisplayComponent implements OnInit{
   itemDisplay: ItemDisplay | undefined;
   markdown$: Observable<string> | undefined;
 

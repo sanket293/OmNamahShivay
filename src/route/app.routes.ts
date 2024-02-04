@@ -17,6 +17,7 @@ import { AboutUsComponent } from '../components/shared/header/about-us/about-us.
 import { ContactUsComponent } from '../components/shared/header/contact-us/contact-us.component';
 import { PrivacyPolicyComponent } from '../components/shared/footer/privacy-policy/privacy-policy.component';
 import { TermsConditionsComponent } from '../components/shared/footer/terms-conditions/terms-conditions.component';
+import { PostComponent } from '../components/shared/post/post.component';
 
 export const routes: Routes = [
     {
@@ -49,6 +50,11 @@ export const routes: Routes = [
     {
         path: AppStrings.TermsNConditions,
         component: TermsConditionsComponent
+    },
+    //Posts
+    {
+        path: AppStrings.PostRoute,
+        component: PostComponent
     },
     //Categories
     {

@@ -8,6 +8,8 @@ export class AppStrings {
     public static AboutUs: string = 'About';
 
     public static ContactUs: string = 'Contact';
+   
+    public static PostRoute: string = 'Post/:postId';
 
     public static PrivacyPolicy: string = 'Privacy-Policy';
     public static TermsNConditions: string = 'Terms-Conditions';
