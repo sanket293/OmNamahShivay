@@ -13,8 +13,8 @@ import { BhajanListComponent } from '../components/categories/bhajans/bhajan-lis
 import { BhajansComponent } from '../components/categories/bhajans/bhajans.component';
 import { Jyortilingas12Component } from '../components/categories/jyortilingas12/jyortilingas12.component';
 import { Jyortilingsas12ListComponent } from '../components/categories/jyortilingas12/jyortilingsas12-list/jyortilingsas12-list.component';
-import { AboutUsComponent } from '../components/about-us/about-us.component';
-import { ContactUsComponent } from '../components/contact-us/contact-us.component';
+import { AboutUsComponent } from '../components/shared/header/about-us/about-us.component';
+import { ContactUsComponent } from '../components/shared/header/contact-us/contact-us.component';
 import { PrivacyPolicyComponent } from '../components/shared/footer/privacy-policy/privacy-policy.component';
 import { TermsConditionsComponent } from '../components/shared/footer/terms-conditions/terms-conditions.component';
 

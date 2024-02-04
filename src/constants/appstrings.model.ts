@@ -5,7 +5,7 @@ export class AppStrings {
     public static Home: string = 'Home';
     public static HomeLower: string = 'home';
     
-    public static AboutUs: string = 'About-Us';
+    public static AboutUs: string = 'About';
 
     public static ContactUs: string = 'Contact';
 
