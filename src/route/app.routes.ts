@@ -22,12 +22,12 @@ import { PostComponent } from '../components/shared/post/post.component';
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: AppStrings.Home,
+        redirectTo: AppStrings.RedirectHome,
         pathMatch: 'full'
     },
     {
         path: AppStrings.HomeLower,
-        redirectTo: AppStrings.Home,
+        redirectTo: AppStrings.RedirectHome,
         pathMatch: 'full'
     },
     // Header n Footer

@@ -2,6 +2,7 @@ export class AppStrings {
 
     //Make sure that starting route matches exactly as Categories enum
 
+    public static RedirectHome: string = '/Home';
     public static Home: string = 'Home';
     public static HomeLower: string = 'home';
     
