@@ -1,5 +1,5 @@
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { RouterModule, provideRouter } from '@angular/router';
 
 import { routes } from '../route/app.routes';
 import { provideHttpClient } from '@angular/common/http';
@@ -8,11 +8,11 @@ import { MarkdownModule } from 'ngx-markdown';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes),
-    provideClientHydration(),
-    provideHttpClient(),
-    importProvidersFrom(
-      MarkdownModule.forRoot()
-
-    )
+  provideClientHydration(),
+  provideHttpClient(),
+  importProvidersFrom(
+    RouterModule.forRoot(routes, { useHash: true }),
+    MarkdownModule.forRoot()
+  )
   ]
 };
