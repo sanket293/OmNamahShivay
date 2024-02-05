@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { CategoryCardInfoComponent } from "../../shared/category-card-info/category-card-info.component";
+import { CategoryCardInfoComponent } from "../../category/category-card-info/category-card-info.component";
 import { CategoryCardInfoService } from '../../../services/category-card-info/category-card-info.service';
 import { CategoryCardInfo } from '../../../model/category-card-info.model';
 import { Observable } from 'rxjs';
-import { Categories } from '../../../enums/categories.enum';
+import { CategoryListItem } from '../../../enums/category-list-item.enum';
 import { ItemDisplayComponent } from "../../shared/item-display/item-display.component";
 
 @Component({

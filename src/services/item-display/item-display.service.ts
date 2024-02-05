@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Categories } from '../../enums/categories.enum';
+import { CategoryListItem } from '../../enums/category-list-item.enum';
 import { ItemDisplay } from '../../model/item-display.model';
 import { Observable, of } from 'rxjs';
 import { Languages } from '../../enums/languages.enum';

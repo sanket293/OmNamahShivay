@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CategoryCardInfo } from '../../../../model/category-card-info.model';
 import { StutieService } from '../../../../services/stutie/stutie.service';
-import { CategoryCardInfoComponent } from "../../../shared/category-card-info/category-card-info.component";
+import { CategoryCardInfoComponent } from "../../../category/category-card-info/category-card-info.component";
 import { CategoryCardInfoService } from '../../../../services/category-card-info/category-card-info.service';
-import { Categories } from '../../../../enums/categories.enum';
+import { CategoryListItem } from '../../../../enums/category-list-item.enum';
 
 @Component({
     selector: 'app-mantra-list',
@@ -22,6 +22,6 @@ export class MantraListComponent {
   constructor(private categoryCardInfoService: CategoryCardInfoService) { }
 
   ngOnInit(): void {
-    this.categoryCardInfo$ = this.categoryCardInfoService.getCategoryCardInfo(Categories.Mantras);
+    this.categoryCardInfo$ = this.categoryCardInfoService.getCategoryCardInfo(CategoryListItem.Mantras);
   }
 }

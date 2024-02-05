@@ -1,9 +1,9 @@
-import { Categories } from "../enums/categories.enum";
+import { CategoryListItem } from "../enums/category-list-item.enum";
 import { Languages } from "../enums/languages.enum";
 
 export interface CategoryCardInfo {
 
-    category:Categories;
+    category:CategoryListItem;
     imgUrl:string;
     availableLanguages:Languages[];
     routeUrl:string;

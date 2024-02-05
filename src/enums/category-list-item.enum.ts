@@ -1,4 +1,4 @@
-export enum Categories {
+export enum CategoryListItem {
 
     Stuties = 1,
     Mantras,

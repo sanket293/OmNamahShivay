@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Post } from '../../../model/post.model';
+import { Post } from '../../model/post.model';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
-import { PostService } from '../../../services/post.service';
+import { PostService } from '../../services/post.service';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { MarkdownService } from 'ngx-markdown';

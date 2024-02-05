@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import { Categories } from '../../enums/categories.enum';
-import { Observable, of } from 'rxjs';
-import { Category } from '../../model/category.model';
+import { Injectable } from '@angular/core'; 
+import { Observable, of } from 'rxjs'; 
 import { AppStrings } from '../../constants/appstrings.model';
 import { Languages } from '../../enums/languages.enum';
+import { Category } from '../../model/category.model';
+import { CategoryListItem } from '../../enums/category-list-item.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,7 @@ export class CategoryService {
 
     var categories: Category[] = [
       {
-        categoryId: Categories.Stuties,
+        categoryId: CategoryListItem.Stuties,
         categoryName: "Shiv Stuties",
         categoryNameSanskrit: "शिव जी की स्तुति",
         itemCount: 12,
@@ -24,7 +24,7 @@ export class CategoryService {
         routeUrl: AppStrings.Stuties
       },
       {
-        categoryId: Categories.Mantras,
+        categoryId: CategoryListItem.Mantras,
         categoryName: "Lord Shiva Mantra",
         categoryNameSanskrit: "भगवान शिव के मंत्र",
         itemCount: 7,
@@ -40,15 +40,15 @@ export class CategoryService {
       //   routeUrl: AppStrings.BhajansListRoute
       // },
       {
-        categoryId: Categories.ShivChalisa,
+        categoryId: CategoryListItem.ShivChalisa,
         categoryName: "Shiv Chalisa",
         categoryNameSanskrit: "शिव चालीसा",
         itemCount: 1,
         displayOrder: 4,
-        routeUrl: `${AppStrings.ShivChalisa}/${Categories[Categories.ShivChalisa]}/${Languages[Languages.Sanskrit]}`
+        routeUrl: `${AppStrings.ShivChalisa}/${CategoryListItem[CategoryListItem.ShivChalisa]}/${Languages[Languages.Sanskrit]}`
       },
       {
-        categoryId: Categories.ShivNames1000,
+        categoryId: CategoryListItem.ShivNames1000,
         categoryName: "1000 Names of Lord Shiva",
         categoryNameSanskrit: "शिव जी के 1000 नाम",
         itemCount: 1,
@@ -56,7 +56,7 @@ export class CategoryService {
         routeUrl: `${AppStrings.ShivNames1000}/${Languages[Languages.Sanskrit]}`
       },
       {
-        categoryId: Categories.Jyortilingas12,
+        categoryId: CategoryListItem.Jyortilingas12,
         categoryName: "12 Jyortilingas of Lord Shiva",
         categoryNameSanskrit: "शिव जी के 12 ज्योर्तिलिङ्गाः",
         itemCount: 1,

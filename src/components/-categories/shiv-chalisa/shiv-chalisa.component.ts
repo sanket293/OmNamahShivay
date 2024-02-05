@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { RecentPostComponent } from "../../shared/recent-post/recent-post.component";
+import { RecentPostComponent } from "../../post/recent-post/recent-post.component";
 import { ItemDisplayComponent } from "../../shared/item-display/item-display.component";
 
 @Component({

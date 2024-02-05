@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Categories } from '../../enums/categories.enum';
+import { CategoryListItem } from '../../enums/category-list-item.enum';
 import { Languages } from '../../enums/languages.enum';
 import { CategoryCardInfo } from '../../model/category-card-info.model';
 

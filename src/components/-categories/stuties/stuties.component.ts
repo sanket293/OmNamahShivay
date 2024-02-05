@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, NgModule, OnInit } from '@angular/core';
-import { RecentPostComponent } from "../../shared/recent-post/recent-post.component";
+import { RecentPostComponent } from "../../post/recent-post/recent-post.component";
 import { Observable, map, tap } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { MarkdownComponent, MarkdownService } from 'ngx-markdown';
-import { Categories } from '../../../enums/categories.enum';
+import { CategoryListItem } from '../../../enums/category-list-item.enum';
 import { ItemDisplayComponent } from "../../shared/item-display/item-display.component";
 
 

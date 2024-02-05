@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CategoriesComponent } from "../side-nav/categories/categories.component";
-import { SocialLinksComponent } from "../side-nav/social-links/social-links.component";
-import { TagsComponent } from "../side-nav/tags/tags.component";
+import { CategoriesComponent } from "../../shared/side-nav/categories/categories.component";
+import { SocialLinksComponent } from "../../shared/side-nav/social-links/social-links.component";
+import { TagsComponent } from "../../shared/side-nav/tags/tags.component";
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Observable } from 'rxjs';

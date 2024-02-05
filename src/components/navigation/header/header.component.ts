@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Category } from '../../../model/category.model';
+import { Observable } from 'rxjs'; 
 import { CategoryService } from '../../../services/category/category.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TagService } from '../../../services/tag/tag.service';
 import { ItemProperty } from '../../../model/ItemProperty.model';
+import { Category } from '../../../model/category.model';
 
 @Component({
   selector: 'app-header',

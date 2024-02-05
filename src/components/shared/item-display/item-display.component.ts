@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { RecentPostComponent } from "../recent-post/recent-post.component";
+import { RecentPostComponent } from "../../post/recent-post/recent-post.component";
 import { CommonModule } from '@angular/common';
 import { MarkdownComponent, MarkdownService } from 'ngx-markdown';
 import { ActivatedRoute, Route, Router, RouterModule } from '@angular/router';
-import { Categories } from '../../../enums/categories.enum';
+import { CategoryListItem } from '../../../enums/category-list-item.enum';
 import { ItemDisplayService } from '../../../services/item-display/item-display.service';
 import { ItemDisplay } from '../../../model/item-display.model';
 import { Observable, tap } from 'rxjs';

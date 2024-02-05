@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Categories } from '../../enums/categories.enum';
+import { CategoryListItem } from '../../enums/category-list-item.enum';
 import { Observable, of } from 'rxjs';
 import { Languages } from '../../enums/languages.enum';
 import { CategoryCardInfo } from '../../model/category-card-info.model';
@@ -11,17 +11,17 @@ import { AppStrings } from '../../constants/appstrings.model';
 export class CategoryCardInfoService {
 
   constructor() { }
-  getCategoryCardInfo(category: Categories): Observable<CategoryCardInfo[]> {
+  getCategoryCardInfo(category: CategoryListItem): Observable<CategoryCardInfo[]> {
 
 
     switch (category) {
-      case Categories.Stuties: {
+      case CategoryListItem.Stuties: {
         return this.getStutieCategoryCardInfo();
       }
-      case Categories.Mantras: {
+      case CategoryListItem.Mantras: {
         return this.getMantraCategoryCardInfo();
       }
-      case Categories.Jyortilingas12: {
+      case CategoryListItem.Jyortilingas12: {
         return this.getJyortilingsCategoryCardInfo();
       }
 
@@ -33,7 +33,7 @@ export class CategoryCardInfoService {
   getStutieCategoryCardInfo(): Observable<CategoryCardInfo[]> {
     let categoryCardInfo: CategoryCardInfo[] = [
       {
-        category: Categories.Stuties,
+        category: CategoryListItem.Stuties,
         availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
         imgUrl: "/assets/images/post/post-1.jpg",
         routeUrl: `/ShivMahimnaStotam/${Languages[Languages.Sanskrit]}`,
@@ -42,7 +42,7 @@ export class CategoryCardInfoService {
         itemKey: "ShivMahimnaStotam"
       },
       {
-        category: Categories.Stuties,
+        category: CategoryListItem.Stuties,
         availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
         imgUrl: "/assets/images/post/post-2.jpg",
         routeUrl: `/Rudrashtakam/${Languages[Languages.Sanskrit]}`,
@@ -51,7 +51,7 @@ export class CategoryCardInfoService {
         itemKey: "Rudrashtakam"
       },
       {
-        category: Categories.Stuties,
+        category: CategoryListItem.Stuties,
         availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
         imgUrl: "/assets/images/post/post-3.jpg",
         routeUrl: `/Lingashtakam/${Languages[Languages.Sanskrit]}`,
@@ -60,7 +60,7 @@ export class CategoryCardInfoService {
         itemKey: "Lingashtakam"
       },
       {
-        category: Categories.Stuties,
+        category: CategoryListItem.Stuties,
         availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
         imgUrl: "/assets/images/post/post-1.jpg",
         routeUrl: `/Shivashtakam/${Languages[Languages.Sanskrit]}`,
@@ -78,7 +78,7 @@ export class CategoryCardInfoService {
 
     let categoryCardInfo: CategoryCardInfo[] = [
       {
-        category: Categories.Mantras,
+        category: CategoryListItem.Mantras,
         availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
         imgUrl: "/assets/images/post/post-1.jpg",
         routeUrl: `/OmNamahShivayMantra/${Languages[Languages.Sanskrit]}`,
@@ -88,7 +88,7 @@ export class CategoryCardInfoService {
       },
 
       {
-        category: Categories.Mantras,
+        category: CategoryListItem.Mantras,
         availableLanguages: [Languages.Sanskrit],
         imgUrl: "/assets/images/post/post-2.jpg",
         title: "महामृत्युंजय मंत्र",
@@ -131,7 +131,7 @@ export class CategoryCardInfoService {
 
     let categoryCardInfo: CategoryCardInfo[] = [
       {
-        category: Categories.Jyortilingas12,
+        category: CategoryListItem.Jyortilingas12,
         availableLanguages: [Languages.Hindi, Languages.Gujarati, Languages.English],
         imgUrl: "/assets/images/post/post-1.jpg",
         routeUrl: `/SomnathJyortiling/${Languages[Languages.Sanskrit]}`,
@@ -140,7 +140,7 @@ export class CategoryCardInfoService {
         itemKey: "SomnathJyortiling"
       },
       {
-        category: Categories.Jyortilingas12,
+        category: CategoryListItem.Jyortilingas12,
         availableLanguages: [Languages.Hindi, Languages.Gujarati, Languages.English],
         imgUrl: "/assets/images/post/post-2.jpg",
         routeUrl: `/MallikarjunJyortiling/${Languages[Languages.Sanskrit]}`,
@@ -149,7 +149,7 @@ export class CategoryCardInfoService {
         itemKey: "MallikarjunJyortiling"
       },
       {
-        category: Categories.Jyortilingas12,
+        category: CategoryListItem.Jyortilingas12,
         availableLanguages: [Languages.Hindi, Languages.Gujarati, Languages.English],
         imgUrl: "/assets/images/post/post-3.jpg",
         routeUrl: `/KedarnathJyortiling/${Languages[Languages.Sanskrit]}`,
