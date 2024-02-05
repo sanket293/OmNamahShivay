@@ -29,7 +29,7 @@
                                 <li class="list-inline-item" *ngFor="let languageId of item.availableLanguages">
                                     <ul class="card-meta-tag list-inline">
                                         <li class="list-inline-item">
-                                             <a   [routerLink]="getRouteUrlForLanguageTag(item, languageId)">{{getLanguageName(languageId)}}</a>
+                                             <a [routerLink]="getRouteUrlForLanguageTag(item, languageId)">{{getLanguageName(languageId)}}</a>
                                         </li>
                                     </ul>
                                 </li>
