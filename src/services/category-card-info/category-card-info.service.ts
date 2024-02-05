@@ -36,7 +36,8 @@ export class CategoryCardInfoService {
         category: Categories.Stuties,
         availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
         imgUrl: "/assets/images/post/post-1.jpg",
-        routeUrl: `/${Categories[Categories.Stuties]}/ShivMahimnaStotam/${Languages[Languages.Sanskrit]}`,
+        routeUrl: `/ShivMahimnaStotam/${Languages[Languages.Sanskrit]}`,
+        // routeUrl: `/${Categories[Categories.Stuties]}/ShivMahimnaStotam/${Languages[Languages.Sanskrit]}`,
         title: "श्री शिवमहिम्नस्तोत्रम्‌",
         itemKey: "ShivMahimnaStotam"
       },
@@ -44,7 +45,8 @@ export class CategoryCardInfoService {
         category: Categories.Stuties,
         availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
         imgUrl: "/assets/images/post/post-2.jpg",
-        routeUrl: `/${Categories[Categories.Stuties]}/Rudrashtakam/${Languages[Languages.Sanskrit]}`,
+        routeUrl: `/Rudrashtakam/${Languages[Languages.Sanskrit]}`,
+        // routeUrl: `/${Categories[Categories.Stuties]}/Rudrashtakam/${Languages[Languages.Sanskrit]}`,
         title: "शिव रुद्राष्टकम",
         itemKey: "Rudrashtakam"
       },
@@ -52,7 +54,8 @@ export class CategoryCardInfoService {
         category: Categories.Stuties,
         availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
         imgUrl: "/assets/images/post/post-3.jpg",
-        routeUrl: `/${Categories[Categories.Stuties]}/Lingashtakam/${Languages[Languages.Sanskrit]}`,
+        routeUrl: `/Lingashtakam/${Languages[Languages.Sanskrit]}`,
+        // routeUrl: `/${Categories[Categories.Stuties]}/Lingashtakam/${Languages[Languages.Sanskrit]}`,
         title: "लिंगाष्टकम स्तोत्र",
         itemKey: "Lingashtakam"
       },
@@ -60,7 +63,8 @@ export class CategoryCardInfoService {
         category: Categories.Stuties,
         availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
         imgUrl: "/assets/images/post/post-1.jpg",
-        routeUrl: `/${Categories[Categories.Stuties]}/Shivashtakam/${Languages[Languages.Sanskrit]}`,
+        routeUrl: `/Shivashtakam/${Languages[Languages.Sanskrit]}`,
+        // routeUrl: `/${Categories[Categories.Stuties]}/Shivashtakam/${Languages[Languages.Sanskrit]}`,
         title: "श्री शिवाष्टकं",
         itemKey: "Shivashtakam"
       },
@@ -77,7 +81,8 @@ export class CategoryCardInfoService {
         category: Categories.Mantras,
         availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
         imgUrl: "/assets/images/post/post-1.jpg",
-        routeUrl: `/${AppStrings.Mantras}/OmNamahShivayMantra/${Languages[Languages.Sanskrit]}`,
+        routeUrl: `/OmNamahShivayMantra/${Languages[Languages.Sanskrit]}`,
+        // routeUrl: `/${AppStrings.Mantras}/OmNamahShivayMantra/${Languages[Languages.Sanskrit]}`,
         title: "ॐ नमः शिवाय",
         itemKey: "OmNamahShivayMantra"
       },
@@ -88,7 +93,8 @@ export class CategoryCardInfoService {
         imgUrl: "/assets/images/post/post-2.jpg",
         title: "महामृत्युंजय मंत्र",
         itemKey: "MahaMrityunjayaMantra",
-        routeUrl: `/${Categories[Categories.Mantras]}/MahaMrityunjayaMantra/${Languages[Languages.Sanskrit]}`
+        routeUrl: `/MahaMrityunjayaMantra/${Languages[Languages.Sanskrit]}`
+        // routeUrl: `/${Categories[Categories.Mantras]}/MahaMrityunjayaMantra/${Languages[Languages.Sanskrit]}`
       },
 
       // {
@@ -128,7 +134,8 @@ export class CategoryCardInfoService {
         category: Categories.Jyortilingas12,
         availableLanguages: [Languages.Hindi, Languages.Gujarati, Languages.English],
         imgUrl: "/assets/images/post/post-1.jpg",
-        routeUrl: `/${AppStrings.Jyortilingas12}/SomnathJyortiling/${Languages[Languages.Sanskrit]}`,
+        routeUrl: `/SomnathJyortiling/${Languages[Languages.Sanskrit]}`,
+        // routeUrl: `/${AppStrings.Jyortilingas12}/SomnathJyortiling/${Languages[Languages.Sanskrit]}`,
         title: "Somnath Jyortiling",
         itemKey: "SomnathJyortiling"
       },
@@ -136,7 +143,8 @@ export class CategoryCardInfoService {
         category: Categories.Jyortilingas12,
         availableLanguages: [Languages.Hindi, Languages.Gujarati, Languages.English],
         imgUrl: "/assets/images/post/post-2.jpg",
-        routeUrl: `/${AppStrings.Jyortilingas12}/MallikarjunJyortiling/${Languages[Languages.Sanskrit]}`,
+        routeUrl: `/MallikarjunJyortiling/${Languages[Languages.Sanskrit]}`,
+        // routeUrl: `/${AppStrings.Jyortilingas12}/MallikarjunJyortiling/${Languages[Languages.Sanskrit]}`,
         title: "Mallikarjun Jyortiling",
         itemKey: "MallikarjunJyortiling"
       },
@@ -144,7 +152,8 @@ export class CategoryCardInfoService {
         category: Categories.Jyortilingas12,
         availableLanguages: [Languages.Hindi, Languages.Gujarati, Languages.English],
         imgUrl: "/assets/images/post/post-3.jpg",
-        routeUrl: `/${AppStrings.Jyortilingas12}/KedarnathJyortiling/${Languages[Languages.Sanskrit]}`,
+        routeUrl: `/KedarnathJyortiling/${Languages[Languages.Sanskrit]}`,
+        // routeUrl: `/${AppStrings.Jyortilingas12}/KedarnathJyortiling/${Languages[Languages.Sanskrit]}`,
         title: "Kedarnath Jyortiling",
         itemKey: "KedarnathJyortiling"
       },

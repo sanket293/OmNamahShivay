@@ -62,15 +62,18 @@ export class ItemDisplayService {
     var itemLanguageTags: ItemLanguageTag[] = [
       {
         name: Languages[Languages.Sanskrit],
-        routeUrl: `/${category}/${itemKey}/${Languages[Languages.Sanskrit]}`
+        routeUrl: `/${itemKey}/${Languages[Languages.Sanskrit]}`
+        // routeUrl: `/${category}/${itemKey}/${Languages[Languages.Sanskrit]}`
       },
       {
         name: Languages[Languages.Hindi],
-        routeUrl: `/${category}/${itemKey}/${Languages[Languages.Hindi]}`
+        routeUrl: `/${itemKey}/${Languages[Languages.Hindi]}`
+        // routeUrl: `/${category}/${itemKey}/${Languages[Languages.Hindi]}`
       },
       {
         name: Languages[Languages.Gujarati],
-        routeUrl: `/${category}/${itemKey}/${Languages[Languages.Gujarati]}`
+        routeUrl: `/${itemKey}/${Languages[Languages.Gujarati]}`
+        // routeUrl: `/${category}/${itemKey}/${Languages[Languages.Gujarati]}`
       },
     ];
     return itemLanguageTags;
