@@ -27,11 +27,11 @@ export class CategoryCardInfoComponent implements OnInit {
     return Languages[languageId];
   }
 
-  getRouteUrlForTag(item: CategoryCardInfo, languageId: number) {
-    return `${Categories[item.category]}/${item.itemKey}/${Languages[languageId]}`;
+  getRouteUrlForLanguageTag(item: CategoryCardInfo, languageId: number) {
+    return `/${Categories[item.category]}/${item.itemKey}/${Languages[languageId]}`; //Don't forget to use absolute path, put / infront of route, this will replace whole path insted of just append 
   }
 
   getPostUrl(item: CategoryCardInfo) {
-    return `${Categories[item.category]}/${item.itemKey}/${Languages[1]}`;
+    return `/${Categories[item.category]}/${item.itemKey}/${Languages[1]}`;
   }
 }

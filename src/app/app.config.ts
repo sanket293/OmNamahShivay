@@ -7,7 +7,8 @@ import { provideClientHydration } from '@angular/platform-browser';
 import { MarkdownModule } from 'ngx-markdown';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes),
+  providers: [
+    // provideRouter(routes),
   provideClientHydration(),
   provideHttpClient(),
   importProvidersFrom(
