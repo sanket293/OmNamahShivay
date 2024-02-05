@@ -23,13 +23,13 @@
                             <img src="{{item.imgUrl}}" class="card-img-top" alt="post-thumb">
                         </div>
                         <div class="card-body">
-                            <h3 class="h4 mb-3"><a class="post-title" href="{{getPostUrl(item)}}">{{item.title}}</a>
+                            <h3 class="h4 mb-3"><a class="post-title" routerLink="{{getPostUrl(item)}}">{{item.title}}</a>
                             </h3>
                             <ul class="card-meta list-inline">
                                 <li class="list-inline-item" *ngFor="let languageId of item.availableLanguages">
                                     <ul class="card-meta-tag list-inline">
                                         <li class="list-inline-item"><a
-                                                href="{{getRouteUrlForTag(item, languageId)}}">{{getLanguageName(languageId)}}</a>
+                                            routerLink="{{getRouteUrlForTag(item, languageId)}}">{{getLanguageName(languageId)}}</a>
                                         </li>
                                     </ul>
                                 </li>
