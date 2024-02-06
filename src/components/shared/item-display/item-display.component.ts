@@ -16,7 +16,7 @@ import { LanguageTagsComponent } from "../language-tags/language-tags.component"
   styleUrl: './item-display.component.css',
   imports: [CommonModule, RecentPostComponent, MarkdownComponent, LanguageTagsComponent, RouterModule]
 })
-export class ItemDisplayComponent implements OnInit{
+export class ItemDisplayComponent implements OnInit {
   itemDisplay: ItemDisplay | undefined;
   markdown$: Observable<string> | undefined;
 
@@ -65,3 +65,4 @@ export class ItemDisplayComponent implements OnInit{
 // this.itemTitle = stutiKey?.toString() ?? ""; //get this from api
 // let markDownContantUrl = `/data/${Categories[Categories.Stuties]}/${stutiKey}/${stutiKey}-${language}.md`;
 // this.markdown$ = this.mdService.getSource(markDownContantUrl); //TODO: get markdown value form API
+

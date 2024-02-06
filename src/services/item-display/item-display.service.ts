@@ -1,9 +1,7 @@
-import { Injectable } from '@angular/core';
-import { CategoryEnum } from '../../enums/category-enum.enum';
+import { Injectable } from '@angular/core'; 
 import { ItemDisplay } from '../../model/item-display.model';
 import { Observable, of } from 'rxjs';
 import { Languages } from '../../enums/languages.enum';
-import { ItemProperty } from '../../model/ItemProperty.model';
 import { Auther } from '../../model/auther.model';
 import { ItemLanguageTag } from '../../model/item-language-tag.model';
 
@@ -17,27 +15,11 @@ export class ItemDisplayService {
 
   getItemDisplayDetails(category: string, itemKey: string, language: string): Observable<ItemDisplay> {
 
-
-    // switch (category) {
-
-    //   case Categories[Categories.Stuties]: {
-
-    //     break;
-    //   }
-    //   case Categories[Categories.Mantras]: {
-    //     break;
-    //   }
-    //   case Categories[Categories.Jyortilingas12]: {
-    //     break;
-    //   }
-
-    // }
-
     let itemDisplay: ItemDisplay = {
       auther: this.getAuther(category, itemKey),
       availableInLanguages: this.getItemLanguageTags(category, itemKey),
       currentItemLanguage: language,
-      markDownContantUrl: `/data/${category}/${itemKey}/${itemKey}-${language}.md`,
+      markDownContantUrl: `/data/CategoryListItem/${category}/${itemKey}/${itemKey}-${language}.md`,
       posterUrl: this.getItemPosterUrl(),
       timeToRead: "7 Min To Read",
       title: itemKey
@@ -46,7 +28,8 @@ export class ItemDisplayService {
     return of(itemDisplay);
   }
 
-  getAuther(category: string, itemKey: string): Auther {  
+  getAuther(category: string, itemKey: string): Auther {
+    //TODO: get Auther details from API
 
     return {
       autherPageUrl: "/assets/images/john-doe.jpg",
@@ -57,29 +40,29 @@ export class ItemDisplayService {
   }
 
   getItemLanguageTags(category: string, itemKey: string): ItemLanguageTag[] {
-
-
+    //TODO: get tags from API
     var itemLanguageTags: ItemLanguageTag[] = [
       {
         name: Languages[Languages.Sanskrit],
         // routeUrl: `/${itemKey}/${Languages[Languages.Sanskrit]}`
-        routeUrl: `/${category}/${itemKey}/${Languages[Languages.Sanskrit]}`
+        routeUrl: `/CategoryList/${category}/${itemKey}/${Languages[Languages.Sanskrit]}`
       },
       {
         name: Languages[Languages.Hindi],
         // routeUrl: `/${itemKey}/${Languages[Languages.Hindi]}`
-        routeUrl: `/${category}/${itemKey}/${Languages[Languages.Hindi]}`
+        routeUrl: `/CategoryList/${category}/${itemKey}/${Languages[Languages.Hindi]}`
       },
       {
         name: Languages[Languages.Gujarati],
         // routeUrl: `/${itemKey}/${Languages[Languages.Gujarati]}`
-        routeUrl: `/${category}/${itemKey}/${Languages[Languages.Gujarati]}`
+        routeUrl: `/CategoryList/${category}/${itemKey}/${Languages[Languages.Gujarati]}`
       },
     ];
     return itemLanguageTags;
   }
 
   getItemPosterUrl(): string {
+        //TODO: get Image Poster Url from API
     return "/assets/images/post/post-2.jpg";
   }
 
