@@ -1,4 +1,4 @@
-import { CategoryListItem } from "../enums/category-list-item.enum";
+import { CategoryEnum } from "../enums/category-enum.enum";
 import { Languages } from "../enums/languages.enum";
 
 export interface ItemLanguageTag {

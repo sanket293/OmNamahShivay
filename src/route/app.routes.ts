@@ -18,7 +18,7 @@ import { ContactUsComponent } from '../components/navigation/header/contact-us/c
 import { PrivacyPolicyComponent } from '../components/navigation/footer/privacy-policy/privacy-policy.component';
 import { TermsConditionsComponent } from '../components/navigation/footer/terms-conditions/terms-conditions.component';
 import { PostComponent } from '../components/post/post.component'; 
-import { CategoriesComponent } from '../components/shared/side-nav/categories/categories.component';
+import { CategoriesComponent } from '../components/navigation/side-nav/categories/categories.component';
 import { CategoryListComponent } from '../components/category/category-list/category-list.component';
 import { CategoryListItemComponent } from '../components/category/category-list-item/category-list-item.component';
 import { CategoryItemDisplayComponent } from '../components/category/category-item-display/category-item-display.component';

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { CategoryCardInfoComponent } from "../../../category/category-card-info/category-card-info.component";
 import { Observable } from 'rxjs';
-import { CategoryListItem } from '../../../../enums/category-list-item.enum';
-import { CategoryCardInfo } from '../../../../model/category-card-info.model';
+import { CategoryEnum } from '../../../../enums/category-enum.enum';
+import { CategoryCardInfo } from '../../../../model/category/category-card-info.model';
 import { CategoryCardInfoService } from '../../../../services/category-card-info/category-card-info.service';
 
 @Component({
@@ -20,7 +20,7 @@ export class Jyortilingsas12ListComponent {
   constructor(private categoryCardInfoService: CategoryCardInfoService) { }
 
   ngOnInit(): void {
-    this.categoryCardInfo$ = this.categoryCardInfoService.getCategoryCardInfo(CategoryListItem.Jyortilingas12);
+    this.categoryCardInfo$ = this.categoryCardInfoService.getCategoryCardInfo("CategoryEnum.Jyortilingas12");
   }
   
 }

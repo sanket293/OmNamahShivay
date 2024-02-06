@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { CategoryListItem } from '../../enums/category-list-item.enum';
+import { CategoryEnum } from '../../enums/category-enum.enum';
 import { Languages } from '../../enums/languages.enum';
 import { ItemProperty } from '../../model/ItemProperty.model';
 import { AppStrings } from '../../constants/appstrings.model';
@@ -17,28 +17,28 @@ export class TagService {
 
     let tags: ItemProperty[] = [
       {
-        category: CategoryListItem.Stuties,
+        category: CategoryEnum.Stuties,
         language: Languages.Sanskrit,
         name: "शिवमहिम्न:स्तोत्र",
         itemKey: "ShivMahimnaStotam",
         routeUrl: `/${AppStrings.Stuties}/ShivMahimnaStotam/${Languages[Languages.Sanskrit]}`
       },
       {
-        category: CategoryListItem.Stuties,
+        category: CategoryEnum.Stuties,
         language: Languages.Sanskrit,
         name: "श्री शिव रुद्राष्टकम स्तोत्रम",
         itemKey: "Rudrashtakam",
         routeUrl: `/${AppStrings.Stuties}/Rudrashtakam/${Languages[Languages.Sanskrit]}`
       },
       {
-        category: CategoryListItem.ShivChalisa,
+        category: CategoryEnum.ShivChalisa,
         language: Languages.Sanskrit,
         name: "श्री शिव चालीसा",
         itemKey: "ShivChalisa",
         routeUrl: `/${AppStrings.ShivChalisa}/ShivChalisa/${Languages[Languages.Sanskrit]}`
       },
       {
-        category: CategoryListItem.Mantras,
+        category: CategoryEnum.Mantras,
         language: Languages.Sanskrit,
         name: "महामृत्युंजय मंत्र",
         itemKey: "MahaMrityunjayaMantra",
@@ -52,7 +52,7 @@ export class TagService {
       //   routeUrl: `/${Categories[Categories.Status]}/MahakalAttitudeStatus/${Languages[Languages.English]}`
       // },
       {
-        category: CategoryListItem.ShivNames1000,
+        category: CategoryEnum.ShivNames1000,
         language: Languages.English,
         name: "1000 Names of Lord Shiva",
         itemKey: "ShivaNames1000",
@@ -67,39 +67,39 @@ export class TagService {
 
     let tags: ItemProperty[] = [
       {
-        category: CategoryListItem.Stuties,
+        category: CategoryEnum.Stuties,
         language: Languages.Sanskrit,
         name: "शिवमहिम्न:स्तोत्र",
         itemKey: "ShivMahimnaStotam",
-        routeUrl: `/${CategoryListItem[CategoryListItem.Stuties]}/ShivMahimnaStotam/${Languages[Languages.Sanskrit]}`
+        routeUrl: `/${CategoryEnum[CategoryEnum.Stuties]}/ShivMahimnaStotam/${Languages[Languages.Sanskrit]}`
       },
       {
-        category: CategoryListItem.Stuties,
+        category: CategoryEnum.Stuties,
         language: Languages.Sanskrit,
         name: "लिंगाष्टकम स्तोत्र",
         itemKey: "Lingashtakam",
-        routeUrl: `/${CategoryListItem[CategoryListItem.Stuties]}/Rudrashtakam/${Languages[Languages.Sanskrit]}`
+        routeUrl: `/${CategoryEnum[CategoryEnum.Stuties]}/Rudrashtakam/${Languages[Languages.Sanskrit]}`
       },
       {
-        category: CategoryListItem.Stuties,
+        category: CategoryEnum.Stuties,
         language: Languages.Sanskrit,
         name: "श्री शिव रुद्राष्टकम स्तोत्रम",
         itemKey: "Rudrashtakam",
-        routeUrl: `/${CategoryListItem[CategoryListItem.Stuties]}/Rudrashtakam/${Languages[Languages.Sanskrit]}`
+        routeUrl: `/${CategoryEnum[CategoryEnum.Stuties]}/Rudrashtakam/${Languages[Languages.Sanskrit]}`
       },
       {
-        category: CategoryListItem.ShivChalisa,
+        category: CategoryEnum.ShivChalisa,
         language: Languages.Sanskrit,
         name: "श्री शिव चालीसा",
         itemKey: "ShivChalisa",
-        routeUrl: `/${CategoryListItem[CategoryListItem.ShivChalisa]}/ShivChalisa/${Languages[Languages.Sanskrit]}`
+        routeUrl: `/${CategoryEnum[CategoryEnum.ShivChalisa]}/ShivChalisa/${Languages[Languages.Sanskrit]}`
       },
       {
-        category: CategoryListItem.Mantras,
+        category: CategoryEnum.Mantras,
         language: Languages.Sanskrit,
         name: "महामृत्युंजय मंत्र",
         itemKey: "MahaMrityunjayaMantra",
-        routeUrl: `/${CategoryListItem[CategoryListItem.Mantras]}/MahaMrityunjayaMantra/${Languages[Languages.Sanskrit]}`
+        routeUrl: `/${CategoryEnum[CategoryEnum.Mantras]}/MahaMrityunjayaMantra/${Languages[Languages.Sanskrit]}`
       },
       // {
       //   category: Categories.Status,
@@ -109,21 +109,21 @@ export class TagService {
       //   routeUrl: `/${Categories[Categories.Status]}/MahakalAttitudeStatus/${Languages[Languages.English]}`
       // },
       {
-        category: CategoryListItem.ShivNames1000,
+        category: CategoryEnum.ShivNames1000,
         language: Languages.English,
         name: "1000 Names of Lord Shiva",
         itemKey: "ShivaNames1000",
         routeUrl: `/${AppStrings.ShivNames1000}/${Languages[Languages.English]}`
       },
       {
-        category: CategoryListItem.ShivNames108,
+        category: CategoryEnum.ShivNames108,
         language: Languages.English,
         name: "108 Names of Lord Shiva",
         itemKey: "ShivaNames108",
         routeUrl: `/${AppStrings.ShivNames108}/${Languages[Languages.English]}`
       },
       {
-        category: CategoryListItem.Jyortilingas12,
+        category: CategoryEnum.Jyortilingas12,
         language: Languages.English,
         name: "Somnath Mahadev",
         itemKey: "SomnathJyortiling",

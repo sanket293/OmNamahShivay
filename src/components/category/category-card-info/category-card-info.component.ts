@@ -1,10 +1,10 @@
 import { Component, Input, OnInit, input } from '@angular/core';
-import { CategoryCardInfo } from '../../../model/category-card-info.model';
+import { CategoryCardInfo } from '../../../model/category/category-card-info.model';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { Languages } from '../../../enums/languages.enum';
 import { RouterModule } from '@angular/router';
-import { CategoryListItem } from '../../../enums/category-list-item.enum';
+import { CategoryEnum } from '../../../enums/category-enum.enum';
 
 @Component({
   selector: 'app-category-card-info',
@@ -27,10 +27,10 @@ export class CategoryCardInfoComponent implements OnInit {
   }
 
   getRouteUrlForLanguageTag(item: CategoryCardInfo, languageId: number) {
-    return `/${CategoryListItem[item.category]}/${item.itemKey}/${Languages[languageId]}`; //Don't forget to use absolute path, put / infront of route, this will replace whole path insted of just append 
+    return `/${CategoryEnum[item.category]}/${item.itemKey}/${Languages[languageId]}`; //Don't forget to use absolute path, put / infront of route, this will replace whole path insted of just append 
   }
 
   getPostUrl(item: CategoryCardInfo) {
-    return `/${CategoryListItem[item.category]}/${item.itemKey}/${Languages[1]}`;
+    return `/${CategoryEnum[item.category]}/${item.itemKey}/${Languages[1]}`;
   }
 }

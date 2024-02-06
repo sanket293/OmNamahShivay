@@ -1,7 +1,7 @@
-import { CategoryListItem } from "../enums/category-list-item.enum";
+import { CategoryEnum } from "../../enums/category-enum.enum";
 
 export interface Category { 
-    categoryId: CategoryListItem;
+    categoryId: CategoryEnum;
     categoryName: String;
     categoryNameSanskrit: String;
     itemCount: number;

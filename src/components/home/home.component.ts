@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
- import { CategoriesComponent } from "../shared/side-nav/categories/categories.component";
-import { TagsComponent } from "../shared/side-nav/tags/tags.component";
-import { SocialLinksComponent } from "../shared/side-nav/social-links/social-links.component";
+ import { CategoriesComponent } from "../navigation/side-nav/categories/categories.component";
+import { TagsComponent } from "../navigation/side-nav/tags/tags.component";
+import { SocialLinksComponent } from "../navigation/side-nav/social-links/social-links.component";
 import { RecentPostComponent } from "../post/recent-post/recent-post.component";
 import { HomeBannerComponent } from "./home-banner/home-banner.component";
 import { PopularPostComponent } from "./popular-post/popular-post.component";

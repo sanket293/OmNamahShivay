@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { Category } from '../../../../model/category.model';
+import { Category } from '../../../../model/category/category.model';
 
 @Component({
   selector: 'app-categories',

@@ -3,7 +3,7 @@ import { RecentPostComponent } from "../../post/recent-post/recent-post.componen
 import { CommonModule } from '@angular/common';
 import { MarkdownComponent, MarkdownService } from 'ngx-markdown';
 import { ActivatedRoute, Route, Router, RouterModule } from '@angular/router';
-import { CategoryListItem } from '../../../enums/category-list-item.enum';
+import { CategoryEnum } from '../../../enums/category-enum.enum';
 import { ItemDisplayService } from '../../../services/item-display/item-display.service';
 import { ItemDisplay } from '../../../model/item-display.model';
 import { Observable, tap } from 'rxjs';

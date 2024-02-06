@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Languages } from '../../../../enums/languages.enum';
 import { CategoryCardInfoComponent } from "../../../category/category-card-info/category-card-info.component";
 import { Observable } from 'rxjs';
-import { CategoryCardInfo } from '../../../../model/category-card-info.model';
+import { CategoryCardInfo } from '../../../../model/category/category-card-info.model';
 import { StutieService } from '../../../../services/stutie/stutie.service';
 import { CategoryCardInfoService } from '../../../../services/category-card-info/category-card-info.service';
-import { CategoryListItem } from '../../../../enums/category-list-item.enum';
+import { CategoryEnum } from '../../../../enums/category-enum.enum';
 
 @Component({
   selector: 'app-stutie-list',
@@ -23,7 +23,7 @@ export class StutieListComponent implements OnInit {
   constructor(private categoryCardInfoService: CategoryCardInfoService) { }
 
   ngOnInit(): void {
-    this.categoryCardInfo$ = this.categoryCardInfoService.getCategoryCardInfo(CategoryListItem.Stuties);
+    this.categoryCardInfo$ = this.categoryCardInfoService.getCategoryCardInfo("CategoryEnum.Stuties");
   }
 }
 

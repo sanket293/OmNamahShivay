@@ -4,7 +4,7 @@ import { RecentPostComponent } from "../../post/recent-post/recent-post.componen
 import { Observable, map, tap } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { MarkdownComponent, MarkdownService } from 'ngx-markdown';
-import { CategoryListItem } from '../../../enums/category-list-item.enum';
+import { CategoryEnum } from '../../../enums/category-enum.enum';
 import { ItemDisplayComponent } from "../../shared/item-display/item-display.component";
 
 

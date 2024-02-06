@@ -1,14 +1,17 @@
-import { Injectable } from '@angular/core'; 
-import { Observable, of } from 'rxjs'; 
+import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { AppStrings } from '../../constants/appstrings.model';
 import { Languages } from '../../enums/languages.enum';
-import { Category } from '../../model/category.model';
-import { CategoryListItem } from '../../enums/category-list-item.enum';
+import { Category } from '../../model/category/category.model';
+import { CategoryEnum } from '../../enums/category-enum.enum';
+import { CategoryCardInfo } from '../../model/category/category-card-info.model';
+import { CategoryListItem } from '../../model/category/category-list-item.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoryService {
+
 
   constructor() { }
 
@@ -16,7 +19,7 @@ export class CategoryService {
 
     var categories: Category[] = [
       {
-        categoryId: CategoryListItem.Stuties,
+        categoryId: CategoryEnum.Stuties,
         categoryName: "Shiv Stuties",
         categoryNameSanskrit: "शिव जी की स्तुति",
         itemCount: 12,
@@ -24,7 +27,7 @@ export class CategoryService {
         routeUrl: AppStrings.Stuties
       },
       {
-        categoryId: CategoryListItem.Mantras,
+        categoryId: CategoryEnum.Mantras,
         categoryName: "Lord Shiva Mantra",
         categoryNameSanskrit: "भगवान शिव के मंत्र",
         itemCount: 7,
@@ -40,15 +43,15 @@ export class CategoryService {
       //   routeUrl: AppStrings.BhajansListRoute
       // },
       {
-        categoryId: CategoryListItem.ShivChalisa,
+        categoryId: CategoryEnum.ShivChalisa,
         categoryName: "Shiv Chalisa",
         categoryNameSanskrit: "शिव चालीसा",
         itemCount: 1,
         displayOrder: 4,
-        routeUrl: `${AppStrings.ShivChalisa}/${CategoryListItem[CategoryListItem.ShivChalisa]}/${Languages[Languages.Sanskrit]}`
+        routeUrl: `${AppStrings.ShivChalisa}/${CategoryEnum[CategoryEnum.ShivChalisa]}/${Languages[Languages.Sanskrit]}`
       },
       {
-        categoryId: CategoryListItem.ShivNames1000,
+        categoryId: CategoryEnum.ShivNames1000,
         categoryName: "1000 Names of Lord Shiva",
         categoryNameSanskrit: "शिव जी के 1000 नाम",
         itemCount: 1,
@@ -56,7 +59,7 @@ export class CategoryService {
         routeUrl: `${AppStrings.ShivNames1000}/${Languages[Languages.Sanskrit]}`
       },
       {
-        categoryId: CategoryListItem.Jyortilingas12,
+        categoryId: CategoryEnum.Jyortilingas12,
         categoryName: "12 Jyortilingas of Lord Shiva",
         categoryNameSanskrit: "शिव जी के 12 ज्योर्तिलिङ्गाः",
         itemCount: 1,
@@ -69,6 +72,198 @@ export class CategoryService {
     return of(categories.sort(s => s.displayOrder));
   }
 
-  
-}
+  getCategoryListItemInfo(categoryEnum: string): Observable<CategoryListItem> {
 
+    console.log(' '+categoryEnum);
+
+    switch (categoryEnum) {
+      case CategoryEnum[CategoryEnum.Stuties]: {
+        console.log('Stuties');
+
+        return of({
+          categoryCardInfo$: this.getStutieCategoryCardInfo(),
+          itemText: "शिव जी की स्तुति",
+          postTitle: "Shiv Stuties"
+        });
+      }
+      case CategoryEnum[CategoryEnum.Mantras]: {
+        console.log('Mantras');
+        return of({
+          categoryCardInfo$: this.getMantraCategoryCardInfo(),
+          itemText: "भगवान शिव के मंत्र",
+          postTitle: "Lord Shiva Mantra"
+        });
+      }
+      case CategoryEnum[CategoryEnum.Jyortilingas12]: {
+        console.log('Jyortilingas12');
+        return of({
+          categoryCardInfo$: this.getJyortilingsCategoryCardInfo(),
+          itemText: "शिव जी के 12 ज्योर्तिलिङ्गाः",
+          postTitle: "12 Jyortilingas of Lord Shiva"
+        });
+      }
+    }
+
+    //todo: if not from anything send null or undefined
+    return of({
+      categoryCardInfo$: this.getStutieCategoryCardInfo(),
+      itemText: "शिव",
+      postTitle: "Shiv"
+    });
+  }
+
+
+
+  getCategoryCardInfo(categoryEnum: CategoryEnum): Observable<CategoryCardInfo[]> {
+
+    switch (categoryEnum) {
+      case CategoryEnum.Stuties: {
+        return this.getStutieCategoryCardInfo();
+      }
+      case CategoryEnum.Mantras: {
+        return this.getMantraCategoryCardInfo();
+      }
+      case CategoryEnum.Jyortilingas12: {
+        return this.getJyortilingsCategoryCardInfo();
+      }
+    }
+
+    return this.getStutieCategoryCardInfo();
+  }
+
+  getStutieCategoryCardInfo(): Observable<CategoryCardInfo[]> {
+    let categoryCardInfo: CategoryCardInfo[] = [
+      {
+        category: CategoryEnum.Stuties,
+        availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
+        imgUrl: "/assets/images/post/post-1.jpg",
+        routeUrl: `/ShivMahimnaStotam/${Languages[Languages.Sanskrit]}`,
+        // routeUrl: `/${Categories[Categories.Stuties]}/ShivMahimnaStotam/${Languages[Languages.Sanskrit]}`,
+        title: "श्री शिवमहिम्नस्तोत्रम्‌",
+        itemKey: "ShivMahimnaStotam"
+      },
+      {
+        category: CategoryEnum.Stuties,
+        availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
+        imgUrl: "/assets/images/post/post-2.jpg",
+        routeUrl: `/Rudrashtakam/${Languages[Languages.Sanskrit]}`,
+        // routeUrl: `/${Categories[Categories.Stuties]}/Rudrashtakam/${Languages[Languages.Sanskrit]}`,
+        title: "शिव रुद्राष्टकम",
+        itemKey: "Rudrashtakam"
+      },
+      {
+        category: CategoryEnum.Stuties,
+        availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
+        imgUrl: "/assets/images/post/post-3.jpg",
+        routeUrl: `/Lingashtakam/${Languages[Languages.Sanskrit]}`,
+        // routeUrl: `/${Categories[Categories.Stuties]}/Lingashtakam/${Languages[Languages.Sanskrit]}`,
+        title: "लिंगाष्टकम स्तोत्र",
+        itemKey: "Lingashtakam"
+      },
+      {
+        category: CategoryEnum.Stuties,
+        availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
+        imgUrl: "/assets/images/post/post-1.jpg",
+        routeUrl: `/Shivashtakam/${Languages[Languages.Sanskrit]}`,
+        // routeUrl: `/${Categories[Categories.Stuties]}/Shivashtakam/${Languages[Languages.Sanskrit]}`,
+        title: "श्री शिवाष्टकं",
+        itemKey: "Shivashtakam"
+      },
+    ];
+
+
+    return of(categoryCardInfo);
+  }
+
+  getMantraCategoryCardInfo(): Observable<CategoryCardInfo[]> {
+
+    let categoryCardInfo: CategoryCardInfo[] = [
+      {
+        category: CategoryEnum.Mantras,
+        availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
+        imgUrl: "/assets/images/post/post-1.jpg",
+        routeUrl: `/OmNamahShivayMantra/${Languages[Languages.Sanskrit]}`,
+        // routeUrl: `/${AppStrings.Mantras}/OmNamahShivayMantra/${Languages[Languages.Sanskrit]}`,
+        title: "ॐ नमः शिवाय",
+        itemKey: "OmNamahShivayMantra"
+      },
+
+      {
+        category: CategoryEnum.Mantras,
+        availableLanguages: [Languages.Sanskrit],
+        imgUrl: "/assets/images/post/post-2.jpg",
+        title: "महामृत्युंजय मंत्र",
+        itemKey: "MahaMrityunjayaMantra",
+        routeUrl: `/MahaMrityunjayaMantra/${Languages[Languages.Sanskrit]}`
+        // routeUrl: `/${Categories[Categories.Mantras]}/MahaMrityunjayaMantra/${Languages[Languages.Sanskrit]}`
+      },
+
+      // {
+      //   category: Categories.Mantras,
+      //   availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
+      //   imgUrl: "/assets/images/post/post-2.jpg",
+      //   routeUrl: `/${AppStrings.Mantras}/RudraMantra/${Languages[Languages.Sanskrit]}`,
+      //   title: "RudraMantra",
+      //   itemKey: "RudraMantra"
+      // },
+      // {
+      //   category: Categories.Mantras,
+      //   availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
+      //   imgUrl: "/assets/images/post/post-3.jpg",
+      //   routeUrl: `/${AppStrings.Mantras}/ShivDhyaanaMantra/${Languages[Languages.Sanskrit]}`,
+      //   title: "ShivDhyaanaMantra",
+      //   itemKey: "ShivDhyaanaMantra"
+      // },
+      // {
+      //   category: Categories.Mantras,
+      //   availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
+      //   imgUrl: "/assets/images/post/post-1.jpg",
+      //   routeUrl: `/${AppStrings.Mantras}/PanchakshariMantra/${Languages[Languages.Sanskrit]}`,
+      //   title: "PanchakshariMantra",
+      //   itemKey: "Panchakshari Mantra"
+      // },
+    ];
+
+
+    return of(categoryCardInfo);
+  }
+
+  getJyortilingsCategoryCardInfo(): Observable<CategoryCardInfo[]> {
+
+    let categoryCardInfo: CategoryCardInfo[] = [
+      {
+        category: CategoryEnum.Jyortilingas12,
+        availableLanguages: [Languages.Hindi, Languages.Gujarati, Languages.English],
+        imgUrl: "/assets/images/post/post-1.jpg",
+        routeUrl: `/SomnathJyortiling/${Languages[Languages.Sanskrit]}`,
+        // routeUrl: `/${AppStrings.Jyortilingas12}/SomnathJyortiling/${Languages[Languages.Sanskrit]}`,
+        title: "Somnath Jyortiling",
+        itemKey: "SomnathJyortiling"
+      },
+      {
+        category: CategoryEnum.Jyortilingas12,
+        availableLanguages: [Languages.Hindi, Languages.Gujarati, Languages.English],
+        imgUrl: "/assets/images/post/post-2.jpg",
+        routeUrl: `/MallikarjunJyortiling/${Languages[Languages.Sanskrit]}`,
+        // routeUrl: `/${AppStrings.Jyortilingas12}/MallikarjunJyortiling/${Languages[Languages.Sanskrit]}`,
+        title: "Mallikarjun Jyortiling",
+        itemKey: "MallikarjunJyortiling"
+      },
+      {
+        category: CategoryEnum.Jyortilingas12,
+        availableLanguages: [Languages.Hindi, Languages.Gujarati, Languages.English],
+        imgUrl: "/assets/images/post/post-3.jpg",
+        routeUrl: `/KedarnathJyortiling/${Languages[Languages.Sanskrit]}`,
+        // routeUrl: `/${AppStrings.Jyortilingas12}/KedarnathJyortiling/${Languages[Languages.Sanskrit]}`,
+        title: "Kedarnath Jyortiling",
+        itemKey: "KedarnathJyortiling"
+      },
+
+    ];
+
+
+    return of(categoryCardInfo);
+  }
+ 
+
+}
