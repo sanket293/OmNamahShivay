@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CategoryCardInfo } from '../../../../model/category/category-card-info.model';
 import { StutieService } from '../../../../services/stutie/stutie.service';
-import { CategoryCardInfoComponent } from "../../../category/category-card-info/category-card-info.component";
-import { CategoryCardInfoService } from '../../../../services/category-card-info/category-card-info.service';
+ import { CategoryCardInfoService } from '../../../../services/category-card-info/category-card-info.service';
 import { CategoryEnum } from '../../../../enums/category-enum.enum';
 
 @Component({
@@ -11,7 +10,7 @@ import { CategoryEnum } from '../../../../enums/category-enum.enum';
     standalone: true,
     templateUrl: './mantra-list.component.html',
     styleUrl: './mantra-list.component.css',
-    imports: [CategoryCardInfoComponent]
+    imports: [ ]
 })
 export class MantraListComponent {
 

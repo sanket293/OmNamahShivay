@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { CategoryCardInfoComponent } from "../../../category/category-card-info/category-card-info.component";
-import { Observable } from 'rxjs';
+ import { Observable } from 'rxjs';
 import { CategoryEnum } from '../../../../enums/category-enum.enum';
 import { CategoryCardInfo } from '../../../../model/category/category-card-info.model';
 import { CategoryCardInfoService } from '../../../../services/category-card-info/category-card-info.service';
@@ -10,7 +9,7 @@ import { CategoryCardInfoService } from '../../../../services/category-card-info
     standalone: true,
     templateUrl: './jyortilingsas12-list.component.html',
     styleUrl: './jyortilingsas12-list.component.css',
-    imports: [CategoryCardInfoComponent]
+    imports: [ ]
 })
 export class Jyortilingsas12ListComponent {
   itemText: string = "शिव जी के 12 ज्योर्तिलिङ्गाः";

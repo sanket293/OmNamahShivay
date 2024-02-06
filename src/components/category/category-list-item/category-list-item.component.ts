@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CategoryCardInfoComponent } from "../category-card-info/category-card-info.component";
+// import { CategoryCardInfoComponent } from "../category-card-info/category-card-info.component";
 import { Observable } from 'rxjs';
 import { CategoryEnum } from '../../../enums/category-enum.enum';
 import { CategoryCardInfo } from '../../../model/category/category-card-info.model';
@@ -15,7 +15,7 @@ import { Languages } from '../../../enums/languages.enum';
   standalone: true,
   templateUrl: './category-list-item.component.html',
   styleUrl: './category-list-item.component.css',
-  imports: [CategoryCardInfoComponent, CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule],
 })
 
 //Stutie or Mantras or Bhajans
