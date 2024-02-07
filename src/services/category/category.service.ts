@@ -24,7 +24,7 @@ export class CategoryService {
         categoryNameSanskrit: "शिव जी की स्तुति",
         itemCount: 12,
         displayOrder: 1,
-        routeUrl: AppStrings.Stuties
+        routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Stuties]}`
       },
       {
         categoryId: CategoryEnum.Mantras,
@@ -32,7 +32,7 @@ export class CategoryService {
         categoryNameSanskrit: "भगवान शिव के मंत्र",
         itemCount: 7,
         displayOrder: 2,
-        routeUrl: AppStrings.Mantras
+        routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Mantras]}`
       },
       // {
       //   categoryId: Categories.Bhajans,
@@ -48,7 +48,7 @@ export class CategoryService {
         categoryNameSanskrit: "शिव चालीसा",
         itemCount: 1,
         displayOrder: 4,
-        routeUrl: `${AppStrings.ShivChalisa}/${CategoryEnum[CategoryEnum.ShivChalisa]}/${Languages[Languages.Sanskrit]}`
+        routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.ShivChalisa]}/${CategoryEnum[CategoryEnum.ShivChalisa]}/${Languages[Languages.Sanskrit]}`
       },
       {
         categoryId: CategoryEnum.ShivNames1000,
@@ -56,7 +56,7 @@ export class CategoryService {
         categoryNameSanskrit: "शिव जी के 1000 नाम",
         itemCount: 1,
         displayOrder: 3,
-        routeUrl: `${AppStrings.ShivNames1000}/${Languages[Languages.Sanskrit]}`
+        routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.ShivNames1000]}/${Languages[Languages.Sanskrit]}`
       },
       {
         categoryId: CategoryEnum.Jyortilingas12,
@@ -64,7 +64,7 @@ export class CategoryService {
         categoryNameSanskrit: "शिव जी के 12 ज्योर्तिलिङ्गाः",
         itemCount: 1,
         displayOrder: 5,
-        routeUrl: `${AppStrings.Jyortilingas12}`
+        routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Jyortilingas12]}`
       },
 
     ];
@@ -72,14 +72,10 @@ export class CategoryService {
     return of(categories.sort(s => s.displayOrder));
   }
 
-  getCategoryListItemInfo(categoryEnum: string): Observable<CategoryListItem> {
+  getCategoryListItemInfo(categoryEnumStr: string): Observable<CategoryListItem> {
 
-    console.log(' '+categoryEnum);
-
-    switch (categoryEnum) {
+    switch (categoryEnumStr) {
       case CategoryEnum[CategoryEnum.Stuties]: {
-        console.log('Stuties');
-
         return of({
           categoryCardInfo$: this.getStutieCategoryCardInfo(),
           itemText: "शिव जी की स्तुति",
@@ -87,16 +83,14 @@ export class CategoryService {
         });
       }
       case CategoryEnum[CategoryEnum.Mantras]: {
-        console.log('Mantras');
-        return of({
+         return of({
           categoryCardInfo$: this.getMantraCategoryCardInfo(),
           itemText: "भगवान शिव के मंत्र",
           postTitle: "Lord Shiva Mantra"
         });
       }
       case CategoryEnum[CategoryEnum.Jyortilingas12]: {
-        console.log('Jyortilingas12');
-        return of({
+         return of({
           categoryCardInfo$: this.getJyortilingsCategoryCardInfo(),
           itemText: "शिव जी के 12 ज्योर्तिलिङ्गाः",
           postTitle: "12 Jyortilingas of Lord Shiva"
@@ -113,24 +107,7 @@ export class CategoryService {
   }
 
 
-
-  getCategoryCardInfo(categoryEnum: CategoryEnum): Observable<CategoryCardInfo[]> {
-
-    switch (categoryEnum) {
-      case CategoryEnum.Stuties: {
-        return this.getStutieCategoryCardInfo();
-      }
-      case CategoryEnum.Mantras: {
-        return this.getMantraCategoryCardInfo();
-      }
-      case CategoryEnum.Jyortilingas12: {
-        return this.getJyortilingsCategoryCardInfo();
-      }
-    }
-
-    return this.getStutieCategoryCardInfo();
-  }
-
+ 
   getStutieCategoryCardInfo(): Observable<CategoryCardInfo[]> {
     let categoryCardInfo: CategoryCardInfo[] = [
       {

@@ -16,16 +16,16 @@ export class AppStrings {
     public static TermsNConditions: string = 'Terms-Conditions';
 
     public static Stuties: string = 'Stuties';
-    public static StutieItemRoute: string = 'Stuties/:itemKey/:language';
+    // public static StutieItemRoute: string = 'Stuties/:itemKey/:language';
 
     public static Mantras: string = 'Mantras';
-    public static MantraItemRoute: string = 'Mantras/:itemKey/:language';
+    // public static MantraItemRoute: string = 'Mantras/:itemKey/:language';
 
     public static Bhajans: string = 'Bhajans';
-    public static BhajanItemRoute: string = 'Bhajans/:itemKey/:language';
+    // public static BhajanItemRoute: string = 'Bhajans/:itemKey/:language';
 
     public static Jyortilingas12: string = 'Jyortilingas12';
-    public static JyortilingaItemRoute: string = 'Jyortilingas12/:itemKey/:language';
+    // public static JyortilingaItemRoute: string = 'Jyortilingas12/:itemKey/:language';
  
     public static ShivNames108: string = 'Shivnames108/';
     public static ShivNames108Route: string = 'Shivnames108/:language';
@@ -38,3 +38,5 @@ export class AppStrings {
 
     public static ErrorRoute: string = '**';
  }
+
+ 
