@@ -12,7 +12,7 @@ export const appConfig: ApplicationConfig = {
   provideClientHydration(),
   provideHttpClient(),
   importProvidersFrom(
-    RouterModule.forRoot(routes, { useHash: true }),
+    RouterModule.forRoot(routes, { useHash: true , scrollPositionRestoration: 'enabled' }),
     MarkdownModule.forRoot()
   )
   ]
