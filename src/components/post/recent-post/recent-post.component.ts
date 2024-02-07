@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Post } from '../../../model/post.model';
-import { PostService } from '../../../services/post.service';
+import { PostService } from '../../../services/post/post.service';
 
 @Component({
     selector: 'app-recent-post',

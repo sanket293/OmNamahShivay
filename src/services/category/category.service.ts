@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { AppStrings } from '../../constants/appstrings.model';
+import { Observable, of } from 'rxjs'; 
 import { Languages } from '../../enums/languages.enum';
 import { Category } from '../../model/category/category.model';
 import { CategoryEnum } from '../../enums/category-enum.enum';
@@ -11,7 +10,6 @@ import { CategoryListItem } from '../../model/category/category-list-item.model'
   providedIn: 'root'
 })
 export class CategoryService {
-
 
   constructor() { }
 
@@ -115,8 +113,7 @@ export class CategoryService {
         availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
         imgUrl: "/assets/images/post/post-1.jpg",
         routeUrl: `/ShivMahimnaStotam/${Languages[Languages.Sanskrit]}`,
-        // routeUrl: `/${Categories[Categories.Stuties]}/ShivMahimnaStotam/${Languages[Languages.Sanskrit]}`,
-        title: "श्री शिवमहिम्नस्तोत्रम्‌",
+         title: "श्री शिवमहिम्नस्तोत्रम्‌",
         itemKey: "ShivMahimnaStotam"
       },
       {
@@ -124,8 +121,7 @@ export class CategoryService {
         availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
         imgUrl: "/assets/images/post/post-2.jpg",
         routeUrl: `/Rudrashtakam/${Languages[Languages.Sanskrit]}`,
-        // routeUrl: `/${Categories[Categories.Stuties]}/Rudrashtakam/${Languages[Languages.Sanskrit]}`,
-        title: "शिव रुद्राष्टकम",
+         title: "शिव रुद्राष्टकम",
         itemKey: "Rudrashtakam"
       },
       {
@@ -133,8 +129,7 @@ export class CategoryService {
         availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
         imgUrl: "/assets/images/post/post-3.jpg",
         routeUrl: `/Lingashtakam/${Languages[Languages.Sanskrit]}`,
-        // routeUrl: `/${Categories[Categories.Stuties]}/Lingashtakam/${Languages[Languages.Sanskrit]}`,
-        title: "लिंगाष्टकम स्तोत्र",
+         title: "लिंगाष्टकम स्तोत्र",
         itemKey: "Lingashtakam"
       },
       {
@@ -142,8 +137,7 @@ export class CategoryService {
         availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
         imgUrl: "/assets/images/post/post-1.jpg",
         routeUrl: `/Shivashtakam/${Languages[Languages.Sanskrit]}`,
-        // routeUrl: `/${Categories[Categories.Stuties]}/Shivashtakam/${Languages[Languages.Sanskrit]}`,
-        title: "श्री शिवाष्टकं",
+         title: "श्री शिवाष्टकं",
         itemKey: "Shivashtakam"
       },
     ];
@@ -160,8 +154,7 @@ export class CategoryService {
         availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
         imgUrl: "/assets/images/post/post-1.jpg",
         routeUrl: `/OmNamahShivayMantra/${Languages[Languages.Sanskrit]}`,
-        // routeUrl: `/${AppStrings.Mantras}/OmNamahShivayMantra/${Languages[Languages.Sanskrit]}`,
-        title: "ॐ नमः शिवाय",
+         title: "ॐ नमः शिवाय",
         itemKey: "OmNamahShivayMantra"
       },
 
@@ -172,7 +165,6 @@ export class CategoryService {
         title: "महामृत्युंजय मंत्र",
         itemKey: "MahaMrityunjayaMantra",
         routeUrl: `/MahaMrityunjayaMantra/${Languages[Languages.Sanskrit]}`
-        // routeUrl: `/${Categories[Categories.Mantras]}/MahaMrityunjayaMantra/${Languages[Languages.Sanskrit]}`
       },
 
       // {
@@ -213,8 +205,7 @@ export class CategoryService {
         availableLanguages: [Languages.Hindi, Languages.Gujarati, Languages.English],
         imgUrl: "/assets/images/post/post-1.jpg",
         routeUrl: `/SomnathJyortiling/${Languages[Languages.Sanskrit]}`,
-        // routeUrl: `/${AppStrings.Jyortilingas12}/SomnathJyortiling/${Languages[Languages.Sanskrit]}`,
-        title: "Somnath Jyortiling",
+         title: "Somnath Jyortiling",
         itemKey: "SomnathJyortiling"
       },
       {
@@ -222,8 +213,7 @@ export class CategoryService {
         availableLanguages: [Languages.Hindi, Languages.Gujarati, Languages.English],
         imgUrl: "/assets/images/post/post-2.jpg",
         routeUrl: `/MallikarjunJyortiling/${Languages[Languages.Sanskrit]}`,
-        // routeUrl: `/${AppStrings.Jyortilingas12}/MallikarjunJyortiling/${Languages[Languages.Sanskrit]}`,
-        title: "Mallikarjun Jyortiling",
+         title: "Mallikarjun Jyortiling",
         itemKey: "MallikarjunJyortiling"
       },
       {
@@ -231,16 +221,12 @@ export class CategoryService {
         availableLanguages: [Languages.Hindi, Languages.Gujarati, Languages.English],
         imgUrl: "/assets/images/post/post-3.jpg",
         routeUrl: `/KedarnathJyortiling/${Languages[Languages.Sanskrit]}`,
-        // routeUrl: `/${AppStrings.Jyortilingas12}/KedarnathJyortiling/${Languages[Languages.Sanskrit]}`,
-        title: "Kedarnath Jyortiling",
+         title: "Kedarnath Jyortiling",
         itemKey: "KedarnathJyortiling"
       },
-
     ];
-
-
+ 
     return of(categoryCardInfo);
   }
  
-
 }

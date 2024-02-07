@@ -27,29 +27,14 @@ export class CategoryItemDisplayComponent implements OnInit {
 
     this.activatedRoute.paramMap.subscribe((routeParameters) => {
 
-      // let category = this.activatedRoute.routeConfig?.path?.split("/")?.[0];
-      // if (!category) {
-      //   this.router.navigate(["home"]);
-      //   return;
-      // }
-
-
       let category = this.activatedRoute.snapshot.params['categoryListItem'];
-
-
 
       let itemKey = routeParameters.get('itemKey') ?? "";
       let language = routeParameters.get('language') ?? "";
 
-      console.log(JSON.stringify(routeParameters));
-
       this.itemDisplayService.getItemDisplayDetails(category, itemKey, language).subscribe((itemDisplay: ItemDisplay) => {
-
-        console.log(JSON.stringify(itemDisplay));
-
         this.itemDisplay = itemDisplay;
-        this.markdown$ = this.mdService.getSource(this.itemDisplay.markDownContantUrl);
-
+        this.markdown$ = this.mdService.getSource(this.itemDisplay.markDownContantUrl)
       });
 
     });

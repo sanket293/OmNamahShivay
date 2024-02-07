@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
- import { CategoriesComponent } from "../navigation/side-nav/categories/categories.component";
+import { CategoriesComponent } from "../navigation/side-nav/categories/categories.component";
 import { TagsComponent } from "../navigation/side-nav/tags/tags.component";
 import { SocialLinksComponent } from "../navigation/side-nav/social-links/social-links.component";
 import { RecentPostComponent } from "../post/recent-post/recent-post.component";

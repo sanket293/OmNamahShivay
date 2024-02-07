@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
-// import { CategoryCardInfoComponent } from "../category-card-info/category-card-info.component";
 import { Observable } from 'rxjs';
 import { CategoryEnum } from '../../../enums/category-enum.enum';
 import { CategoryCardInfo } from '../../../model/category/category-card-info.model';
-import { CategoryCardInfoService } from '../../../services/category-card-info/category-card-info.service';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { CategoryService } from '../../../services/category/category.service';
 import { CategoryListItem } from '../../../model/category/category-list-item.model';
