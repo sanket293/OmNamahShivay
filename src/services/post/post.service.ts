@@ -17,23 +17,13 @@ export class PostService {
       postUrl: "/123",
       timeToRead: "12 Mins to Read"
     },
-    // {
-    //   postId: 456,
-    //   postContent: "Some Post Content 456",
-    //   postDate: "29 March 2024",
-    //   postImageUrl: "assets/images/post/post-2.jpg",
-    //   postTitle: "Post Title 456",
-    //   postUrl: "/Post/456",
-    //   timeToRead: "2 Mins to Read"
-    // },
   ];
 
   getRecentPossts(): Observable<Post[]> {
     return of(this.recentPost);
   }
 
-  getPostDetails(postId: number): Observable<Post|undefined> | undefined {
-
+  getPostDetails(postId: number): Observable<Post|undefined> | undefined { 
     return of(this.recentPost.find(f => f.postId === postId));
   }
 
