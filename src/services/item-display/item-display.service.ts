@@ -43,15 +43,15 @@ export class ItemDisplayService {
 
     if (category === CategoryEnum[CategoryEnum.Stuties]) {
       return {
-        autherPageUrl: "/assets/images/john-doe.jpg",
-        authorImageUrl: "/assets/images/john-doe.jpg",
+        autherPageUrl: "/assets/images/shivay1.png",
+        authorImageUrl: "/assets/images/shivay1.png",
         authorName: 'Gandharva Pushpadant',
       }
     }
     // return "श्री शिव चालीसा";
     return {
-      autherPageUrl: "/assets/images/john-doe.jpg",
-      authorImageUrl: "/assets/images/john-doe.jpg",
+      autherPageUrl: "/assets/images/shivay1.png",
+      authorImageUrl: "/assets/images/shivay1.png",
       authorName: 'Ayodhya Das',
     }
 

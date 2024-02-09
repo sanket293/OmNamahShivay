@@ -104,8 +104,6 @@ export class CategoryService {
     });
   }
 
-
-
   getStutieCategoryCardInfo(): Observable<CategoryCardInfo[]> {
     let categoryCardInfo: CategoryCardInfo[] = [
       {
