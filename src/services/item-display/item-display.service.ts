@@ -79,9 +79,9 @@ export class ItemDisplayService {
   getItemPosterUrl(category: string): string {
     //TODO: get Image Poster Url from API
     if (category === CategoryEnum[CategoryEnum.Stuties]) {
-      return "/assets/images/post/post-1.jpg";
+      return "/assets/images/categories/ShivMahimnaStotam.png";
     }
-    return "/assets/images/post/post-2.jpg";
+    return "/assets/images/categories/ShivChalisa.png";
   }
 
 }

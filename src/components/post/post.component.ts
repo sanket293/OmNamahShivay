@@ -4,19 +4,20 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { PostService } from '../../services/post/post.service';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
-import { MarkdownService } from 'ngx-markdown';
+import { MarkdownComponent, MarkdownService } from 'ngx-markdown';
 
 @Component({
   selector: 'app-post',
   standalone: true,
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule,MarkdownComponent],
   templateUrl: './post.component.html',
   styleUrl: './post.component.css'
 })
 export class PostComponent implements OnInit {
   post$: Observable<Post | undefined> | undefined;
 
-  constructor(public activatedRoute: ActivatedRoute, public router: Router, private postService: PostService) { }
+  constructor(public activatedRoute: ActivatedRoute, public router: Router, private postService: PostService, 
+    private mdService: MarkdownService,) { }
 
   ngOnInit() {
 

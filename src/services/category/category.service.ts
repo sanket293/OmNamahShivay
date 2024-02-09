@@ -112,7 +112,7 @@ export class CategoryService {
         category: CategoryEnum.Stuties,
         availableLanguages: [Languages.Sanskrit],
         // availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
-        imgUrl: "/assets/images/post/post-1.jpg",
+        imgUrl: "/assets/images/categories/ShivMahimnaStotam.png",
         routeUrl: `/ShivMahimnaStotam/${Languages[Languages.Sanskrit]}`,
         title: "श्री शिवमहिम्नस्तोत्रम्‌",
         itemKey: "ShivMahimnaStotam"

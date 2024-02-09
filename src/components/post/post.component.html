@@ -21,16 +21,16 @@
                         <li class="list-inline-item">
                             <i class="ti-timer"></i>{{(post$|async)?.timeToRead}}
                         </li>
- 
+
                     </ul>
                     <div class="content">
-                        <p>{{(post$|async)?.postContent}}</p>
-                         <hr>
+                        <markdown [data]="( post$ |async)?.postContent"></markdown>
+                        <hr>
                     </div>
                 </article>
 
             </div>
- 
+
 
         </div>
     </div>
