@@ -23,6 +23,13 @@ export class TagService {
         itemKey: "ShivMahimnaStotam",
         routeUrl: `/CategoryList/${AppStrings.Stuties}/ShivMahimnaStotam/${Languages[Languages.Sanskrit]}`
       },
+      {
+        category: CategoryEnum.Stuties,
+        language: Languages.Sanskrit,
+        name: "लिंगाष्टकम स्तोत्र",
+        itemKey: "Lingashtakam",
+        routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Stuties]}/Lingashtakam/${Languages[Languages.Sanskrit]}`
+      },
       // {
       //   category: CategoryEnum.Stuties,
       //   language: Languages.Sanskrit,
@@ -73,13 +80,13 @@ export class TagService {
         itemKey: "ShivMahimnaStotam",
         routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Stuties]}/ShivMahimnaStotam/${Languages[Languages.Sanskrit]}`
       },
-      // {
-      //   category: CategoryEnum.Stuties,
-      //   language: Languages.Sanskrit,
-      //   name: "लिंगाष्टकम स्तोत्र",
-      //   itemKey: "Lingashtakam",
-      //   routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Stuties]}/Rudrashtakam/${Languages[Languages.Sanskrit]}`
-      // },
+      {
+        category: CategoryEnum.Stuties,
+        language: Languages.Sanskrit,
+        name: "लिंगाष्टकम स्तोत्र",
+        itemKey: "Lingashtakam",
+        routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Stuties]}/Lingashtakam/${Languages[Languages.Sanskrit]}`
+      },
       // {
       //   category: CategoryEnum.Stuties,
       //   language: Languages.Sanskrit,

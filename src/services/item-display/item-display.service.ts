@@ -21,7 +21,7 @@ export class ItemDisplayService {
       availableInLanguages: this.getItemLanguageTags(category, itemKey),
       currentItemLanguage: language,
       markDownContantUrl: `/data/CategoryListItem/${category}/${itemKey}/${itemKey}-${language}.md`,
-      posterUrl: this.getItemPosterUrl(category),
+      posterUrl: this.getItemPosterUrl(category, itemKey),
       timeToRead: "7 Min To Read",
       title: this.getTitle(category, itemKey)
     };
@@ -31,22 +31,36 @@ export class ItemDisplayService {
 
   getTitle(category: string, itemKey: string): string {
     if (category === CategoryEnum[CategoryEnum.Stuties]) {
-      return "श्री शिवमहिम्नस्तोत्रम्";
+
+      if (itemKey === "ShivMahimnaStotam")
+        return "श्री शिवमहिम्नस्तोत्रम्";
+
+      if (itemKey === "Lingashtakam")
+        return "लिंगाष्टकम स्तोत्र";
+
     }
     return "श्री शिव चालीसा";
   }
 
-  
+
 
   getAuther(category: string, itemKey: string): Auther {
     //TODO: get Auther details from API
 
     if (category === CategoryEnum[CategoryEnum.Stuties]) {
-      return {
-        autherPageUrl: "/assets/images/shivay1.png",
-        authorImageUrl: "/assets/images/shivay1.png",
-        authorName: 'Gandharva Pushpadant',
-      }
+      if (itemKey === "ShivMahimnaStotam")
+        return {
+          autherPageUrl: "/assets/images/shivay1.png",
+          authorImageUrl: "/assets/images/shivay1.png",
+          authorName: 'Gandharva Pushpadant',
+        }
+      if (itemKey === "Lingashtakam")
+        return {
+          autherPageUrl: "/assets/images/shivay1.png",
+          authorImageUrl: "/assets/images/auther/adi-shankara.jpg",
+          authorName: 'Adi Shankaracharya',
+        }
+
     }
     // return "श्री शिव चालीसा";
     return {
@@ -76,10 +90,17 @@ export class ItemDisplayService {
     return itemLanguageTags;
   }
 
-  getItemPosterUrl(category: string): string {
+  getItemPosterUrl(category: string, itemKey: string): string {
     //TODO: get Image Poster Url from API
     if (category === CategoryEnum[CategoryEnum.Stuties]) {
-      return "/assets/images/categories/ShivMahimnaStotam.png";
+
+      if (itemKey === "ShivMahimnaStotam")
+        return "/assets/images/categories/ShivMahimnaStotam.png";
+
+        if (itemKey === "Lingashtakam")
+        return "/assets/images/categories/Lingashtakam.png";
+
+
     }
     return "/assets/images/categories/ShivChalisa.png";
   }

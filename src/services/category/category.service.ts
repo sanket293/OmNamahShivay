@@ -123,14 +123,14 @@ export class CategoryService {
       //    title: "शिव रुद्राष्टकम",
       //   itemKey: "Rudrashtakam"
       // },
-      // {
-      //   category: CategoryEnum.Stuties,
-      //   availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
-      //   imgUrl: "/assets/images/post/post-3.jpg",
-      //   routeUrl: `/Lingashtakam/${Languages[Languages.Sanskrit]}`,
-      //    title: "लिंगाष्टकम स्तोत्र",
-      //   itemKey: "Lingashtakam"
-      // },
+      {
+        category: CategoryEnum.Stuties,
+        availableLanguages: [Languages.Sanskrit],
+        imgUrl: "/assets/images/categories/Lingashtakam.png",
+        routeUrl: `/Lingashtakam/${Languages[Languages.Sanskrit]}`,
+         title: "लिंगाष्टकम स्तोत्र",
+        itemKey: "Lingashtakam"
+      },
       // {
       //   category: CategoryEnum.Stuties,
       //   availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
