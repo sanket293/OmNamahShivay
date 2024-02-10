@@ -7,6 +7,8 @@ import { RouterModule } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Post } from '../../../model/post.model';
 import { PostService } from '../../../services/post/post.service';
+import { Languages } from '../../../enums/languages.enum';
+import { AppUtilites } from '../../../constants/apputilities.model';
 
 @Component({
     selector: 'app-recent-post',
@@ -14,9 +16,9 @@ import { PostService } from '../../../services/post/post.service';
     templateUrl: './recent-post.component.html',
     styleUrl: './recent-post.component.css',
     imports: [CategoriesComponent, SocialLinksComponent, TagsComponent, RouterModule, CommonModule]
-
 })
 export class RecentPostComponent implements OnInit {
+    AppUtilites = AppUtilites;
 
     constructor(private postService: PostService) { }
 
@@ -26,6 +28,8 @@ export class RecentPostComponent implements OnInit {
         // Post
         this.recentPosts$ = this.postService.getRecentPossts();
     }
-
+    // getLanguageName(languageEnum: Languages = Languages.Hindi): string {
+    //     return Languages[languageEnum].toString();
+    // }
 }
 

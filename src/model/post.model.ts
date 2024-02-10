@@ -1,3 +1,5 @@
+import { Languages } from "../enums/languages.enum";
+
 export interface Post{ 
     postId:number;
     postImageUrl: string;
@@ -6,4 +8,5 @@ export interface Post{
     timeToRead: string;
     postDate: string;
     postContent: string;
+    postLanguage:Languages
 }

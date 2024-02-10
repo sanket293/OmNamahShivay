@@ -32,6 +32,14 @@
                 <li class="list-inline-item">
                   <i class="ti-calendar"></i>{{post.postDate}}
                 </li>
+                <li class="list-inline-item">
+                  <ul class="card-meta-tag list-inline">
+
+                    <li class="list-inline-item">
+                      <a>{{ AppUtilites.getLanguageName( post.postLanguage ) }}</a>
+                    </li>
+                  </ul>
+                </li>
               </ul>
               <p>
                 {{

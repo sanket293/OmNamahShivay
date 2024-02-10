@@ -1,3 +1,4 @@
+import { Languages } from "../enums/languages.enum";
 import { ItemProperty } from "../model/ItemProperty.model";
 
 export class AppUtilites {
@@ -10,4 +11,8 @@ export class AppUtilites {
         return array;
     };
 
+
+    public static getLanguageName(languageEnum: Languages = Languages.Hindi): string {
+        return Languages[languageEnum].toString();
+      }
 }

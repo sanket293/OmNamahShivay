@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Post } from '../../model/post.model';
+import { Languages } from '../../enums/languages.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +28,8 @@ export class PostService {
       postDate: "09 February 2024",
       postImageUrl: "/assets/images/shiva/shiva-1.jpg",
       postUrl: "Post/293",
-      timeToRead: "5 Mins to Read"
+      timeToRead: "5 Mins to Read",
+      postLanguage:Languages.Hindi
     },
     {
       postId: 294,
@@ -57,7 +59,8 @@ export class PostService {
       postDate: "10 February 2024",
       postImageUrl: "/assets/images/post/post-294.jpg",
       postUrl: "Post/294",
-      timeToRead: "6 Mins to Read"
+      timeToRead: "6 Mins to Read",
+      postLanguage:Languages.Hindi
     },
     {
       postId: 295,
@@ -86,7 +89,8 @@ export class PostService {
       postDate: "11 February 2024",
       postImageUrl: "/assets/images/post/post-295.png",
       postUrl: "Post/295",
-      timeToRead: "9 Mins to Read"
+      timeToRead: "9 Mins to Read",
+      postLanguage:Languages.Hindi
     },
     {
       postId: 296,
@@ -141,7 +145,8 @@ export class PostService {
       postDate: "12 February 2024",
       postImageUrl: "/assets/images/post/post-296.jpeg",
       postUrl: "Post/296",
-      timeToRead: "4 Mins to Read"
+      timeToRead: "4 Mins to Read",
+      postLanguage:Languages.Hindi
     },
   ];
 

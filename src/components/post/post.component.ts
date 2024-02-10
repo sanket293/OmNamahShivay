@@ -5,19 +5,21 @@ import { PostService } from '../../services/post/post.service';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { MarkdownComponent, MarkdownService } from 'ngx-markdown';
+import { Languages } from '../../enums/languages.enum';
+import { AppUtilites } from '../../constants/apputilities.model';
 
 @Component({
   selector: 'app-post',
   standalone: true,
-  imports: [RouterModule, CommonModule,MarkdownComponent],
+  imports: [RouterModule, CommonModule, MarkdownComponent],
   templateUrl: './post.component.html',
   styleUrl: './post.component.css'
 })
 export class PostComponent implements OnInit {
   post$: Observable<Post | undefined> | undefined;
-
-  constructor(public activatedRoute: ActivatedRoute, public router: Router, private postService: PostService, 
-    private mdService: MarkdownService,) { }
+  language: Languages = Languages.Hindi;
+  AppUtilites = AppUtilites;
+  constructor(public activatedRoute: ActivatedRoute, public router: Router, private postService: PostService) { }
 
   ngOnInit() {
 
@@ -43,10 +45,13 @@ export class PostComponent implements OnInit {
 
       // });
 
-
-
-
     });
+
   }
+  // getLanguageName(languageEnum: Languages = Languages.Hindi): string {
+  //   return Languages[languageEnum].toString();
+  // }
+
+
 
 }
