@@ -15,38 +15,38 @@ import { CategoryItemListDisplayComponent } from '../components/category/categor
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: AppStrings.RedirectHome,
+        redirectTo: '/home',
         pathMatch: 'full'
     },
     {
-        path: AppStrings.HomeLower,
+        path: 'home',
         redirectTo: AppStrings.RedirectHome,
         pathMatch: 'full'
     },
     // Header n Footer
     {
-        path: AppStrings.Home,
+        path: 'Home',
         component: HomeComponent
     },
     {
-        path: AppStrings.AboutUs,
+        path: 'About',
         component: AboutUsComponent
     },
     {
-        path: AppStrings.ContactUs,
+        path: 'Contact',
         component: ContactUsComponent
     },
     {
-        path: AppStrings.PrivacyPolicy,
+        path: 'Privacy-Policy',
         component: PrivacyPolicyComponent
     },
     {
-        path: AppStrings.TermsNConditions,
+        path: 'Terms-Conditions',
         component: TermsConditionsComponent
     },
     //Posts
     {
-        path: AppStrings.PostRoute,
+        path: 'Post/:postId',
         component: PostComponent
     },
     //Categories
@@ -68,7 +68,7 @@ export const routes: Routes = [
     },
 
     {
-        path: AppStrings.ErrorRoute,
+        path: '**',
         component: ErrorComponent
     },
 ];
