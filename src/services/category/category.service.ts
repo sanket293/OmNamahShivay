@@ -20,9 +20,17 @@ export class CategoryService {
         categoryId: CategoryEnum.Stuties,
         categoryName: "Shiv Stuties",
         categoryNameSanskrit: "शिव जी की स्तुति",
-        itemCount: 12,
+        itemCount: 2,
         displayOrder: 1,
         routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Stuties]}`
+      },
+      {
+        categoryId: CategoryEnum.Ashtaks,
+        categoryName: "Shiv Ashtakams",
+        categoryNameSanskrit: "शिव जी के अष्टक",
+        itemCount: 8,
+        displayOrder: 2,
+        routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Ashtaks]}`
       },
       // {
       //   categoryId: CategoryEnum.Mantras,
@@ -80,9 +88,16 @@ export class CategoryService {
           postTitle: "Shiv Stuties"
         });
       }
-      // case CategoryEnum[CategoryEnum.Mantras]: {
+      case CategoryEnum[CategoryEnum.Ashtaks]: {
+         return of({
+          categoryCardInfo$: this.getAshtaksCategoryCardInfo(),
+          itemText: "शिव जी के अष्टक",
+          postTitle: "Shiv Ashtaks"
+        });
+      }
+      // case CategoryEnum[CategoryEnum.Ashtaks]: {
       //    return of({
-      //     categoryCardInfo$: this.getMantraCategoryCardInfo(),
+      //     categoryCardInfo$: this.getAshtaksCategoryCardInfo(),
       //     itemText: "भगवान शिव के मंत्र",
       //     postTitle: "Lord Shiva Mantra"
       //   });
@@ -123,14 +138,6 @@ export class CategoryService {
       //    title: "शिव रुद्राष्टकम",
       //   itemKey: "Rudrashtakam"
       // },
-      {
-        category: CategoryEnum.Stuties,
-        availableLanguages: [Languages.Sanskrit],
-        imgUrl: "/assets/images/categories/Lingashtakam.png",
-        routeUrl: `/Lingashtakam/${Languages[Languages.Sanskrit]}`,
-         title: "लिंगाष्टकम स्तोत्र",
-        itemKey: "Lingashtakam"
-      },
       // {
       //   category: CategoryEnum.Stuties,
       //   availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
@@ -140,10 +147,33 @@ export class CategoryService {
       //   itemKey: "Shivashtakam"
       // },
     ];
-
-
+ 
     return of(categoryCardInfo);
   }
+
+  getAshtaksCategoryCardInfo(): Observable<CategoryCardInfo[]> {
+    let categoryCardInfo: CategoryCardInfo[] = [
+      {
+        category: CategoryEnum.Ashtaks,
+        availableLanguages: [Languages.Sanskrit],
+        imgUrl: "/assets/images/categories/ashtaks/Bilvashtakam.png",
+        routeUrl: `/Bilvashtakam/${Languages[Languages.Sanskrit]}`,
+        title: "बिल्वाश्टकम पाठ",
+        itemKey: "Bilvashtakam"
+      }, 
+      {
+        category: CategoryEnum.Ashtaks,
+        availableLanguages: [Languages.Sanskrit],
+        imgUrl: "/assets/images/categories/ashtaks/Lingashtakam.png",
+        routeUrl: `/Lingashtakam/${Languages[Languages.Sanskrit]}`,
+         title: "लिंगाष्टकम स्तोत्र",
+        itemKey: "Lingashtakam"
+      },
+    ];
+ 
+    return of(categoryCardInfo);
+  }
+
 
   // getMantraCategoryCardInfo(): Observable<CategoryCardInfo[]> {
 

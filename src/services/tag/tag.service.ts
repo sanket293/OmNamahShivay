@@ -24,11 +24,25 @@ export class TagService {
         routeUrl: `/CategoryList/${AppStrings.Stuties}/ShivMahimnaStotam/${Languages[Languages.Sanskrit]}`
       },
       {
-        category: CategoryEnum.Stuties,
+        category: CategoryEnum.Ashtaks,
         language: Languages.Sanskrit,
         name: "लिंगाष्टकम स्तोत्र",
         itemKey: "Lingashtakam",
-        routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Stuties]}/Lingashtakam/${Languages[Languages.Sanskrit]}`
+        routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Ashtaks]}/Lingashtakam/${Languages[Languages.Sanskrit]}`
+      },
+      {
+        category: CategoryEnum.Ashtaks,
+        language: Languages.Sanskrit,
+        name: "बिल्वाश्टकम पाठ",
+        itemKey: "Bilvashtakam",
+        routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Ashtaks]}/Bilvashtakam/${Languages[Languages.Sanskrit]}`
+      },
+      {
+        category: CategoryEnum.ShivChalisa,
+        language: Languages.Sanskrit,
+        name: "श्री शिव चालीसा",
+        itemKey: "ShivChalisa",
+        routeUrl: `/CategoryList/${AppStrings.ShivChalisa}/ShivChalisa/${Languages[Languages.Sanskrit]}`
       },
       // {
       //   category: CategoryEnum.Stuties,
@@ -37,13 +51,6 @@ export class TagService {
       //   itemKey: "Rudrashtakam",
       //   routeUrl: `/CategoryList/${AppStrings.Stuties}/Rudrashtakam/${Languages[Languages.Sanskrit]}`
       // },
-      {
-        category: CategoryEnum.ShivChalisa,
-        language: Languages.Sanskrit,
-        name: "श्री शिव चालीसा",
-        itemKey: "ShivChalisa",
-        routeUrl: `/CategoryList/${AppStrings.ShivChalisa}/ShivChalisa/${Languages[Languages.Sanskrit]}`
-      },
       // {
       //   category: CategoryEnum.Mantras,
       //   language: Languages.Sanskrit,
@@ -81,11 +88,25 @@ export class TagService {
         routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Stuties]}/ShivMahimnaStotam/${Languages[Languages.Sanskrit]}`
       },
       {
-        category: CategoryEnum.Stuties,
+        category: CategoryEnum.Ashtaks,
         language: Languages.Sanskrit,
         name: "लिंगाष्टकम स्तोत्र",
         itemKey: "Lingashtakam",
-        routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Stuties]}/Lingashtakam/${Languages[Languages.Sanskrit]}`
+        routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Ashtaks]}/Lingashtakam/${Languages[Languages.Sanskrit]}`
+      },
+      {
+        category: CategoryEnum.Ashtaks,
+        language: Languages.Sanskrit,
+        name: "बिल्वाश्टकम पाठ",
+        itemKey: "Bilvashtakam",
+        routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Ashtaks]}/Bilvashtakam/${Languages[Languages.Sanskrit]}`
+      },
+      {
+        category: CategoryEnum.ShivChalisa,
+        language: Languages.Sanskrit,
+        name: "श्री शिव चालीसा",
+        itemKey: "ShivChalisa",
+        routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.ShivChalisa]}/ShivChalisa/${Languages[Languages.Sanskrit]}`
       },
       // {
       //   category: CategoryEnum.Stuties,
@@ -94,13 +115,6 @@ export class TagService {
       //   itemKey: "Rudrashtakam",
       //   routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Stuties]}/Rudrashtakam/${Languages[Languages.Sanskrit]}`
       // },
-      {
-        category: CategoryEnum.ShivChalisa,
-        language: Languages.Sanskrit,
-        name: "श्री शिव चालीसा",
-        itemKey: "ShivChalisa",
-        routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.ShivChalisa]}/ShivChalisa/${Languages[Languages.Sanskrit]}`
-      },
       // {
       //   category: CategoryEnum.Mantras,
       //   language: Languages.Sanskrit,

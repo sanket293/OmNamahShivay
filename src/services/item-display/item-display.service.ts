@@ -34,11 +34,15 @@ export class ItemDisplayService {
 
       if (itemKey === "ShivMahimnaStotam")
         return "श्री शिवमहिम्नस्तोत्रम्";
-
+    }
+    if (category === CategoryEnum[CategoryEnum.Ashtaks]) {
       if (itemKey === "Lingashtakam")
         return "लिंगाष्टकम स्तोत्र";
 
+      if (itemKey === "Bilvashtakam")
+        return "बिल्वाश्टकम पाठ";
     }
+
     return "श्री शिव चालीसा";
   }
 
@@ -54,14 +58,22 @@ export class ItemDisplayService {
           authorImageUrl: "/assets/images/shivay1.png",
           authorName: 'Gandharva Pushpadant',
         }
+    }
+    if (category === CategoryEnum[CategoryEnum.Ashtaks]) {
+      if (itemKey === "Bilvashtakam")
+        return {
+          autherPageUrl: "/assets/images/shivay1.png",
+          authorImageUrl: "/assets/images/shivay1.png",
+          authorName: 'Adi Shankaracharya',
+        }
       if (itemKey === "Lingashtakam")
         return {
           autherPageUrl: "/assets/images/shivay1.png",
           authorImageUrl: "/assets/images/auther/adi-shankara.jpg",
           authorName: 'Adi Shankaracharya',
         }
-
     }
+
     // return "श्री शिव चालीसा";
     return {
       autherPageUrl: "/assets/images/shivay1.png",
@@ -70,6 +82,25 @@ export class ItemDisplayService {
     }
 
   }
+
+  
+  getItemPosterUrl(category: string, itemKey: string): string {
+    //TODO: get Image Poster Url from API
+    if (category === CategoryEnum[CategoryEnum.Stuties]) {
+
+      if (itemKey === "ShivMahimnaStotam")
+        return "/assets/images/categories/ShivMahimnaStotam.png";
+    }
+    if (category === CategoryEnum[CategoryEnum.Ashtaks]) {
+      if (itemKey === "Bilvashtakam")
+        return "/assets/images/categories/ashtaks/Bilvashtakam.png";
+        if (itemKey === "Lingashtakam")
+        return "/assets/images/categories/ashtaks/Lingashtakam.png";
+    }
+
+    return "/assets/images/categories/ShivChalisa.png";
+  }
+
 
   getItemLanguageTags(category: string, itemKey: string): ItemLanguageTag[] {
     //TODO: get tags from API
@@ -88,21 +119,6 @@ export class ItemDisplayService {
       // },
     ];
     return itemLanguageTags;
-  }
-
-  getItemPosterUrl(category: string, itemKey: string): string {
-    //TODO: get Image Poster Url from API
-    if (category === CategoryEnum[CategoryEnum.Stuties]) {
-
-      if (itemKey === "ShivMahimnaStotam")
-        return "/assets/images/categories/ShivMahimnaStotam.png";
-
-        if (itemKey === "Lingashtakam")
-        return "/assets/images/categories/Lingashtakam.png";
-
-
-    }
-    return "/assets/images/categories/ShivChalisa.png";
   }
 
 }

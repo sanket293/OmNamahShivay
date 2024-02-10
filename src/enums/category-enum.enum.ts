@@ -1,6 +1,7 @@
 export enum CategoryEnum {
 
     Stuties = 1,
+    Ashtaks,
     Mantras,
     // Status,
     Jyortilingas12,
