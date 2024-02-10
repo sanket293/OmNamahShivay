@@ -13,4 +13,5 @@ export enum CategoryEnum {
     ShivChalisa,
     // SongLyrics,
     //ShivMahaPuran     
+    //Vrats
 }
