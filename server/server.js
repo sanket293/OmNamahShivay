@@ -39,11 +39,13 @@ const routes = [
 app.get('/sitemap.xml', (req, res) => {
     const root = xmlbuilder.create('urlset', { version: '1.0', encoding: 'UTF-8' });
     root.att('xmlns', 'http://www.sitemaps.org/schemas/sitemap/0.9');
+    root.att('xmlns:xsi', 'http://www.w3.org/2001/XMLSchema-instance');
+    root.att('xsi:schemaLocation', 'http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd');
 
     routes.forEach(route => {
         const url = root.ele('url');
         url.ele('loc', `https://omnamahshivay.in/#${route}`);
-        // You can add more elements like <changefreq> and <priority> here if needed
+        //TODO: get this links dynamically, or through API, or set when build create sitemap file
     });
 
     res.header('Content-Type', 'application/xml');

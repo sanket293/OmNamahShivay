@@ -23,7 +23,9 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/data"
+              "src/data",
+              "src/sitemap.xml",
+              "src/robots.txt"
             ],
             "styles": [
               "src/assets/plugins/bootstrap/bootstrap.min.css",
