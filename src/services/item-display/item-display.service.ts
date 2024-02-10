@@ -35,6 +35,7 @@ export class ItemDisplayService {
       if (itemKey === "ShivMahimnaStotam")
         return "श्री शिवमहिम्नस्तोत्रम्";
     }
+
     if (category === CategoryEnum[CategoryEnum.Ashtaks]) {
       if (itemKey === "Lingashtakam")
         return "लिंगाष्टकम स्तोत्र";
@@ -43,10 +44,13 @@ export class ItemDisplayService {
         return "बिल्वाश्टकम पाठ";
     }
 
+    if (category === CategoryEnum[CategoryEnum.ShivPooja]) {
+      if (itemKey === "ShivManasPooja")
+        return "शिव मानस पूजा";
+    }
+
     return "श्री शिव चालीसा";
   }
-
-
 
   getAuther(category: string, itemKey: string): Auther {
     //TODO: get Auther details from API
@@ -59,6 +63,7 @@ export class ItemDisplayService {
           authorName: 'Gandharva Pushpadant',
         }
     }
+
     if (category === CategoryEnum[CategoryEnum.Ashtaks]) {
       if (itemKey === "Bilvashtakam")
         return {
@@ -67,6 +72,16 @@ export class ItemDisplayService {
           authorName: 'Adi Shankaracharya',
         }
       if (itemKey === "Lingashtakam")
+        return {
+          autherPageUrl: "/assets/images/shivay1.png",
+          authorImageUrl: "/assets/images/auther/adi-shankara.jpg",
+          authorName: 'Adi Shankaracharya',
+        }
+    }
+
+    if (category === CategoryEnum[CategoryEnum.ShivPooja]) {
+
+      if (itemKey === "ShivManasPooja")
         return {
           autherPageUrl: "/assets/images/shivay1.png",
           authorImageUrl: "/assets/images/auther/adi-shankara.jpg",
@@ -83,21 +98,24 @@ export class ItemDisplayService {
 
   }
 
-  
+
   getItemPosterUrl(category: string, itemKey: string): string {
     //TODO: get Image Poster Url from API
     if (category === CategoryEnum[CategoryEnum.Stuties]) {
-
       if (itemKey === "ShivMahimnaStotam")
-        return "/assets/images/categories/ShivMahimnaStotam.png";
+        return "/assets/images/categories/stuties/ShivMahimnaStotam.png";
     }
     if (category === CategoryEnum[CategoryEnum.Ashtaks]) {
       if (itemKey === "Bilvashtakam")
         return "/assets/images/categories/ashtaks/Bilvashtakam.png";
-        if (itemKey === "Lingashtakam")
+      if (itemKey === "Lingashtakam")
         return "/assets/images/categories/ashtaks/Lingashtakam.png";
     }
+    if (category === CategoryEnum[CategoryEnum.ShivPooja]) {
+      if (itemKey === "ShivManasPooja")
+        return "/assets/images/categories/shiv-pooja/ShivManasPooja.png";
 
+    }
     return "/assets/images/categories/ShivChalisa.png";
   }
 

@@ -2,6 +2,7 @@ export enum CategoryEnum {
 
     Stuties = 1,
     Ashtaks,
+    ShivPooja,
     Mantras,
     // Status,
     Jyortilingas12,

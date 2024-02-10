@@ -44,6 +44,13 @@ export class TagService {
         itemKey: "ShivChalisa",
         routeUrl: `/CategoryList/${AppStrings.ShivChalisa}/ShivChalisa/${Languages[Languages.Sanskrit]}`
       },
+      {
+        category: CategoryEnum.ShivPooja,
+        language: Languages.Sanskrit,
+        name: "शिव मानस पूजा",
+        itemKey: "ShivManasPooja",
+        routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.ShivPooja]}/ShivManasPooja/${Languages[Languages.Sanskrit]}`
+      },
       // {
       //   category: CategoryEnum.Stuties,
       //   language: Languages.Sanskrit,
@@ -94,6 +101,14 @@ export class TagService {
         itemKey: "Lingashtakam",
         routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Ashtaks]}/Lingashtakam/${Languages[Languages.Sanskrit]}`
       },
+      {
+        category: CategoryEnum.ShivPooja,
+        language: Languages.Sanskrit,
+        name: "शिव मानस पूजा",
+        itemKey: "ShivManasPooja",
+        routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.ShivPooja]}/ShivManasPooja/${Languages[Languages.Sanskrit]}`
+      },
+
       {
         category: CategoryEnum.Ashtaks,
         language: Languages.Sanskrit,

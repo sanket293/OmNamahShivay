@@ -32,6 +32,14 @@ export class CategoryService {
         displayOrder: 2,
         routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Ashtaks]}`
       },
+      {
+        categoryId: CategoryEnum.ShivPooja,
+        categoryName: "Shiv Pooja",
+        categoryNameSanskrit: "शिव जी की पूजा",
+        itemCount: 1,
+        displayOrder: 3,
+        routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.ShivPooja]}`
+      },
       // {
       //   categoryId: CategoryEnum.Mantras,
       //   categoryName: "Lord Shiva Mantra",
@@ -89,10 +97,17 @@ export class CategoryService {
         });
       }
       case CategoryEnum[CategoryEnum.Ashtaks]: {
-         return of({
+        return of({
           categoryCardInfo$: this.getAshtaksCategoryCardInfo(),
           itemText: "शिव जी के अष्टक",
           postTitle: "Shiv Ashtaks"
+        });
+      }
+      case CategoryEnum[CategoryEnum.ShivPooja]: {
+        return of({
+          categoryCardInfo$: this.getShivPoojaCategoryCardInfo(),
+          itemText: "शिव जी की पूजा",
+          postTitle: "Shiv Pojas"
         });
       }
       // case CategoryEnum[CategoryEnum.Ashtaks]: {
@@ -125,7 +140,7 @@ export class CategoryService {
         category: CategoryEnum.Stuties,
         availableLanguages: [Languages.Sanskrit],
         // availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
-        imgUrl: "/assets/images/categories/ShivMahimnaStotam.png",
+        imgUrl: "/assets/images/categories/stuties/ShivMahimnaStotam.png",
         routeUrl: `/ShivMahimnaStotam/${Languages[Languages.Sanskrit]}`,
         title: "श्री शिवमहिम्नस्तोत्रम्‌",
         itemKey: "ShivMahimnaStotam"
@@ -147,7 +162,7 @@ export class CategoryService {
       //   itemKey: "Shivashtakam"
       // },
     ];
- 
+
     return of(categoryCardInfo);
   }
 
@@ -160,17 +175,32 @@ export class CategoryService {
         routeUrl: `/Bilvashtakam/${Languages[Languages.Sanskrit]}`,
         title: "बिल्वाश्टकम पाठ",
         itemKey: "Bilvashtakam"
-      }, 
+      },
       {
         category: CategoryEnum.Ashtaks,
         availableLanguages: [Languages.Sanskrit],
         imgUrl: "/assets/images/categories/ashtaks/Lingashtakam.png",
         routeUrl: `/Lingashtakam/${Languages[Languages.Sanskrit]}`,
-         title: "लिंगाष्टकम स्तोत्र",
+        title: "लिंगाष्टकम स्तोत्र",
         itemKey: "Lingashtakam"
       },
     ];
- 
+
+    return of(categoryCardInfo);
+  }
+
+  getShivPoojaCategoryCardInfo(): Observable<CategoryCardInfo[]> {
+    let categoryCardInfo: CategoryCardInfo[] = [
+      {
+        category: CategoryEnum.ShivPooja,
+        availableLanguages: [Languages.Sanskrit],
+        imgUrl: "/assets/images/categories/shiv-pooja/ShivManasPooja.png",
+        routeUrl: `/ShivManasPooja/${Languages[Languages.Sanskrit]}`,
+        title: "शिव मानस पूजा",
+        itemKey: "ShivManasPooja"
+      },
+    ];
+
     return of(categoryCardInfo);
   }
 
