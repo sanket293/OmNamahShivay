@@ -17,9 +17,8 @@
               Categories <i class="ti-angle-down ml-1"></i>
             </a>
 
-            <div class="dropdown-menu">
-              <a *ngFor="let category of (categories$ | async)" class="dropdown-item"
-                routerLink="/{{category.routeUrl}}">
+             <div class="dropdown-menu">
+              <a *ngFor="let category of (categories$ | async)" class="dropdown-item" (click)="onNavLinkClick(category)">
                 {{category.categoryNameSanskrit}}
               </a>
             </div>
@@ -37,8 +36,8 @@
               target="_blank">Download App</a>
           </li>
         </ul>
-      </div>
-
+      </div> 
+      
       <div class="order-2 order-lg-3 d-flex align-items-center">
         <button class="navbar-toggler border-0 order-1" type="button" data-toggle="collapse" data-target="#navigation">
           <i class="ti-menu"></i>

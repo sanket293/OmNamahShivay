@@ -34,7 +34,6 @@ export class CategoryItemDisplayComponent implements OnInit {
 
       this.itemDisplayService.getItemDisplayDetails(category, itemKey, language).subscribe((itemDisplay: ItemDisplay) => {
         this.itemDisplay = itemDisplay;
-        console.log(JSON.stringify(itemDisplay));
         this.markdown$ = this.mdService.getSource(this.itemDisplay.markDownContantUrl)
       });
 
