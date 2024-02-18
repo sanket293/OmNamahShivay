@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Languages } from '../../enums/languages.enum';
-import { Category } from '../../model/category/category.model';
 import { CategoryEnum } from '../../enums/category-enum.enum';
 import { CategoryCardInfo } from '../../model/category/category-card-info.model';
 import { CategoryListItem } from '../../model/category/category-list-item.model';
 import { HttpClient } from '@angular/common/http';
-import { VCategoryList } from '../../model/category/categories.interface';
+import { CategoryEnumTbl, LanguageEnumTbl, VCategoryList } from '../../model/category/categories.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +15,12 @@ export class CategoryService {
   constructor(private http: HttpClient) {
   }
 
+  getCategoryEnums(): Observable<CategoryEnumTbl[]> {
+    return this.http.get<CategoryEnumTbl[]>("https://omnamahshivay-api.onrender.com/getCategoryEnums");
+  }
+  getLanguageEnums(): Observable<LanguageEnumTbl[]> {
+    return this.http.get<LanguageEnumTbl[]>("https://omnamahshivay-api.onrender.com/getLanguageEnums");
+  }
   getCategoryList(): Observable<VCategoryList[]> {
     return this.http.get<VCategoryList[]>("https://omnamahshivay-api.onrender.com/getCategoryList");
   }

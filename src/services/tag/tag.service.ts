@@ -4,13 +4,15 @@ import { CategoryEnum } from '../../enums/category-enum.enum';
 import { Languages } from '../../enums/languages.enum';
 import { ItemProperty } from '../../model/ItemProperty.model';
 import { AppStrings } from '../../constants/appstrings.model';
+import { CategoryService } from '../category/category.service';
+import { CategoryEnumTbl, LanguageEnumTbl } from '../../model/category/categories.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TagService {
 
-  constructor() { }
+  constructor(private categoryService: CategoryService) { }
 
   getHomeBannerTags(): Observable<ItemProperty[]> {
     //Can I add perma link?
@@ -84,63 +86,11 @@ export class TagService {
     return of(tags);
   }
 
-
-  //TODO: get these from API
-  //Get languageEnum
-  //Get categoryEnum
-  getSideNavTags(tagType: string): Observable<ItemProperty[]> {
-    //TODO: remove ItemProperty and just send link and value(in short whateveery is necessary)
-    if (tagType = "CategoryEnum") {
-      return of([
-        {
-          category: CategoryEnum.Stuties,
-          language: Languages.Sanskrit,
-          name: "Stuties",
-          itemKey: "ShivMahimnaStotam",
-          routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Stuties]}/ShivMahimnaStotam/${Languages[Languages.Sanskrit]}`
-        },
-        {
-          category: CategoryEnum.Stuties,
-          language: Languages.Sanskrit,
-          name: "Mantras",
-          itemKey: "ShivMahimnaStotam",
-          routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Stuties]}/ShivMahimnaStotam/${Languages[Languages.Sanskrit]}`
-        },
-        {
-          category: CategoryEnum.Stuties,
-          language: Languages.Sanskrit,
-          name: "Ashtasks",
-          itemKey: "ShivMahimnaStotam",
-          routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Stuties]}/ShivMahimnaStotam/${Languages[Languages.Sanskrit]}`
-        },
-      ]);
-    } else if ("LanguageEnum") {
-
-      return of([
-        {
-          category: CategoryEnum.Stuties,
-          language: Languages.Sanskrit,
-          name: "Sanskrit",
-          itemKey: "ShivMahimnaStotam",
-          routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Stuties]}/ShivMahimnaStotam/${Languages[Languages.Sanskrit]}`
-        },
-        {
-          category: CategoryEnum.Stuties,
-          language: Languages.Sanskrit,
-          name: "Hindi",
-          itemKey: "ShivMahimnaStotam",
-          routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Stuties]}/ShivMahimnaStotam/${Languages[Languages.Sanskrit]}`
-        },
-        {
-          category: CategoryEnum.Stuties,
-          language: Languages.Sanskrit,
-          name: "English",
-          itemKey: "ShivMahimnaStotam",
-          routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Stuties]}/ShivMahimnaStotam/${Languages[Languages.Sanskrit]}`
-        },
-      ]);
-    }
-    return of([]);
+  getCategoryEnumTags(): Observable<CategoryEnumTbl[]> {
+    return this.categoryService.getCategoryEnums()
+  }
+  getLanguageEnumTags(): Observable<LanguageEnumTbl[]> {
+    return this.categoryService.getLanguageEnums()
   }
 
 }

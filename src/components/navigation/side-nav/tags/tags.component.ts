@@ -1,8 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ItemProperty } from '../../../../model/ItemProperty.model';
 import { TagService } from '../../../../services/tag/tag.service';
- import { CommonModule } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { Observable, of } from 'rxjs';
+import { CategoryEnumTbl, LanguageEnumTbl } from '../../../../model/category/categories.interface';
 
 @Component({
   selector: 'app-tags',
@@ -13,28 +14,22 @@ import { RouterModule } from '@angular/router';
 })
 
 export class TagsComponent implements OnInit {
-
-
   @Input() tagTitle: string = "Enum";
   @Input() tagType: string = "CategoryEnum";
 
-  sideNavBannerTags: ItemProperty[] = [];
+  categoryEnums$: Observable<CategoryEnumTbl[]> = of([]);
+
+  languageEnums$: Observable<LanguageEnumTbl[]> = of([]);
 
   constructor(private tagService: TagService) { }
 
   ngOnInit(): void {
- 
-    this.tagService.getSideNavTags(this.tagType).subscribe({
-      next: (tags: ItemProperty[]) => {
-        this.sideNavBannerTags = tags;
-      },
-      error: (error) => {
-        console.log('Something is wrong' + JSON.stringify(error));
-      },
-      complete: () => {
-        // this.sideNavBannerTags = AppUtilites.shuffle(this.sideNavBannerTags);
-      }
-    });
+
+    if (this.tagType === "CategoryEnum")
+      this.categoryEnums$ = this.tagService.getCategoryEnumTags();
+
+    if (this.tagType === "LanguageEnum")
+      this.languageEnums$ = this.tagService.getLanguageEnumTags();
   }
 
 }

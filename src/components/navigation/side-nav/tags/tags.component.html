@@ -4,10 +4,19 @@
     </span>
   </h4>
 
+  <ng-container *ngIf="tagType === 'CategoryEnum'; else showLanguageEnum">
+    <ul class="list-inline widget-list-inline widget-card">
+      <li class="list-inline-item" *ngFor="let tag of (categoryEnums$|async)">
+        <a>{{tag.CategoryEnum}}</a>
+      </li>
+    </ul>
+  </ng-container>
+  <ng-template #showLanguageEnum>
+    <ul class="list-inline widget-list-inline widget-card">
+      <li class="list-inline-item" *ngFor="let tag of (languageEnums$|async)">
+        <a>{{tag.LanguageEnum}}</a>
+      </li>
+    </ul>
+  </ng-template>
 
-  <ul class="list-inline widget-list-inline widget-card">
-    <li class="list-inline-item" *ngFor="let tag of sideNavBannerTags">
-      <a routerLink="{{tag.routeUrl}}" [state]="{ item:tag }">{{tag.name}}</a>
-    </li>
-  </ul>
 </div>

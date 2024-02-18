@@ -1,9 +1,11 @@
-export interface CategoryEnum {
-  CategoryEnum: string
+export interface CategoryEnumTbl {
+  CategoryEnum: string,
+  CategoryEnumId:number
 }
 
-export interface LanguageEnum {
+export interface LanguageEnumTbl {
   LanguageEnum: string
+  LanguageEnumId:number
 }
 
 export interface Auther {
