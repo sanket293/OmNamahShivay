@@ -6,6 +6,7 @@ import { Router, RouterModule } from '@angular/router';
 import { TagService } from '../../../services/tag/tag.service';
 import { ItemProperty } from '../../../model/ItemProperty.model';
 import { Category } from '../../../model/category/category.model';
+import { VCategoryList } from '../../../model/category/categories.interface';
 
 @Component({
   selector: 'app-header',
@@ -16,13 +17,13 @@ import { Category } from '../../../model/category/category.model';
 })
 export class HeaderComponent {
 
-  onNavLinkClick(category: Category) {
-    this.router.navigate([category.routeUrl]).then(() => {
-      window.location.reload();
-    });
+  onNavLinkClick(category: VCategoryList) {
+    // this.router.navigate([category.routeUrl]).then(() => {
+    //   window.location.reload();
+    // });
   }
 
-  categories$: Observable<Category[]> | undefined;
+  categories$: Observable<VCategoryList[]> | undefined;
   // tags$: Observable<ItemProperty[]> | undefined;
 
   constructor(private categoryService: CategoryService, private tagService: TagService, private router: Router) { }

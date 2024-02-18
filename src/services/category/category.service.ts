@@ -5,86 +5,94 @@ import { Category } from '../../model/category/category.model';
 import { CategoryEnum } from '../../enums/category-enum.enum';
 import { CategoryCardInfo } from '../../model/category/category-card-info.model';
 import { CategoryListItem } from '../../model/category/category-list-item.model';
+import { HttpClient } from '@angular/common/http';
+import { VCategoryList } from '../../model/category/categories.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoryService {
 
-  constructor() { }
-
-  getCategoryList(): Observable<Category[]> {
-
-    var categories: Category[] = [
-      {
-        categoryId: CategoryEnum.Stuties,
-        categoryName: "Shiv Stuties",
-        categoryNameSanskrit: "शिव जी की स्तुति",
-        itemCount: 2,
-        displayOrder: 1,
-        routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Stuties]}`
-      },
-      {
-        categoryId: CategoryEnum.Ashtaks,
-        categoryName: "Shiv Ashtakams",
-        categoryNameSanskrit: "शिव जी के अष्टक",
-        itemCount: 8,
-        displayOrder: 2,
-        routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Ashtaks]}`
-      },
-      {
-        categoryId: CategoryEnum.ShivPooja,
-        categoryName: "Shiv Pooja",
-        categoryNameSanskrit: "शिव जी की पूजा",
-        itemCount: 1,
-        displayOrder: 3,
-        routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.ShivPooja]}`
-      },
-      // {
-      //   categoryId: CategoryEnum.Mantras,
-      //   categoryName: "Lord Shiva Mantra",
-      //   categoryNameSanskrit: "भगवान शिव के मंत्र",
-      //   itemCount: 7,
-      //   displayOrder: 2,
-      //   routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Mantras]}`
-      // },
-      // {
-      //   categoryId: Categories.Bhajans,
-      //   categoryName: "Lord Shiva Bhajans",
-      //   categoryNameSanskrit: "शिव जी के भजन",
-      //   itemCount: 25,
-      //   displayOrder: 3,
-      //   routeUrl: AppStrings.BhajansListRoute
-      // },
-      {
-        categoryId: CategoryEnum.ShivChalisa,
-        categoryName: "Shiv Chalisa",
-        categoryNameSanskrit: "शिव चालीसा",
-        itemCount: 1,
-        displayOrder: 4,
-        routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.ShivChalisa]}/${CategoryEnum[CategoryEnum.ShivChalisa]}/${Languages[Languages.Sanskrit]}`
-      },
-      // {
-      //   categoryId: CategoryEnum.ShivNames1000,
-      //   categoryName: "1000 Names of Lord Shiva",
-      //   categoryNameSanskrit: "शिव जी के 1000 नाम",
-      //   itemCount: 1,
-      //   displayOrder: 3,
-      //   routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.ShivNames1000]}/${Languages[Languages.Sanskrit]}`
-      // },
-      // {
-      //   categoryId: CategoryEnum.Jyortilingas12,
-      //   categoryName: "12 Jyortilingas of Lord Shiva",
-      //   categoryNameSanskrit: "शिव जी के 12 ज्योर्तिलिङ्गाः",
-      //   itemCount: 1,
-      //   displayOrder: 5,
-      //   routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Jyortilingas12]}`
-      // },
-
-    ];
-
-    return of(categories.sort(s => s.displayOrder));
+  constructor(private http: HttpClient) {
   }
+
+  getCategoryList(): Observable<VCategoryList[]> {
+    return this.http.get<VCategoryList[]>("https://omnamahshivay-api.onrender.com/getCategoryList");
+  }
+
+
+  // getCategoryList(): Observable<Category[]> {
+
+  //   var categories: Category[] = [
+  //     {
+  //       categoryId: CategoryEnum.Stuties,
+  //       categoryName: "Shiv Stuties",
+  //       categoryNameSanskrit: "शिव जी की स्तुति",
+  //       itemCount: 2,
+  //       displayOrder: 1,
+  //       routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Stuties]}`
+  //     },
+  //     {
+  //       categoryId: CategoryEnum.Ashtaks,
+  //       categoryName: "Shiv Ashtakams",
+  //       categoryNameSanskrit: "शिव जी के अष्टक",
+  //       itemCount: 8,
+  //       displayOrder: 2,
+  //       routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Ashtaks]}`
+  //     },
+  //     {
+  //       categoryId: CategoryEnum.ShivPooja,
+  //       categoryName: "Shiv Pooja",
+  //       categoryNameSanskrit: "शिव जी की पूजा",
+  //       itemCount: 1,
+  //       displayOrder: 3,
+  //       routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.ShivPooja]}`
+  //     },
+  //     // {
+  //     //   categoryId: CategoryEnum.Mantras,
+  //     //   categoryName: "Lord Shiva Mantra",
+  //     //   categoryNameSanskrit: "भगवान शिव के मंत्र",
+  //     //   itemCount: 7,
+  //     //   displayOrder: 2,
+  //     //   routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Mantras]}`
+  //     // },
+  //     // {
+  //     //   categoryId: Categories.Bhajans,
+  //     //   categoryName: "Lord Shiva Bhajans",
+  //     //   categoryNameSanskrit: "शिव जी के भजन",
+  //     //   itemCount: 25,
+  //     //   displayOrder: 3,
+  //     //   routeUrl: AppStrings.BhajansListRoute
+  //     // },
+  //     {
+  //       categoryId: CategoryEnum.ShivChalisa,
+  //       categoryName: "Shiv Chalisa",
+  //       categoryNameSanskrit: "शिव चालीसा",
+  //       itemCount: 1,
+  //       displayOrder: 4,
+  //       routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.ShivChalisa]}/${CategoryEnum[CategoryEnum.ShivChalisa]}/${Languages[Languages.Sanskrit]}`
+  //     },
+  //     // {
+  //     //   categoryId: CategoryEnum.ShivNames1000,
+  //     //   categoryName: "1000 Names of Lord Shiva",
+  //     //   categoryNameSanskrit: "शिव जी के 1000 नाम",
+  //     //   itemCount: 1,
+  //     //   displayOrder: 3,
+  //     //   routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.ShivNames1000]}/${Languages[Languages.Sanskrit]}`
+  //     // },
+  //     // {
+  //     //   categoryId: CategoryEnum.Jyortilingas12,
+  //     //   categoryName: "12 Jyortilingas of Lord Shiva",
+  //     //   categoryNameSanskrit: "शिव जी के 12 ज्योर्तिलिङ्गाः",
+  //     //   itemCount: 1,
+  //     //   displayOrder: 5,
+  //     //   routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Jyortilingas12]}`
+  //     // },
+
+  //   ];
+
+  //   return of(categories.sort(s => s.displayOrder));
+  // }
 
   getCategoryListItemInfo(categoryEnumStr: string): Observable<CategoryListItem> {
 

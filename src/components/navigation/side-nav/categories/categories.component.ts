@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Category } from '../../../../model/category/category.model';
+import { VCategoryList } from '../../../../model/category/categories.interface';
 
 @Component({
   selector: 'app-categories',
@@ -14,7 +15,7 @@ import { Category } from '../../../../model/category/category.model';
 })
 export class CategoriesComponent implements OnInit {
 
-  categories$: Observable<Category[]> | undefined ;
+  categories$: Observable<VCategoryList[]> | undefined ;
   
   constructor(private categoryService: CategoryService) { }
 
