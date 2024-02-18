@@ -11,6 +11,7 @@ import { PostComponent } from '../components/post/post.component';
 import { CategoryListItemComponent } from '../components/category/category-list-item/category-list-item.component';
 import { CategoryItemDisplayComponent } from '../components/category/category-item-display/category-item-display.component';
 import { CategoryItemListDisplayComponent } from '../components/category/category-item-list-display/category-item-list-display.component';
+import { AddCategoryListComponent } from '../components/category/category-list/add-category-list/add-category-list.component';
 
 export const routes: Routes = [
     {
@@ -54,6 +55,14 @@ export const routes: Routes = [
         path: 'CategoryList', //list of all categories i.e stutiess, mantras, bhajans etc...
         component: CategoryListComponent
     },
+    {
+        path: 'add-category-list', 
+        component: AddCategoryListComponent
+    },
+
+    
+
+
     {
         path: 'CategoryList/:categoryItem', //select one catagory out of many i.e stuties
         component: CategoryListItemComponent
