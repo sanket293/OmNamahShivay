@@ -23,13 +23,13 @@ export class HeaderComponent {
   }
 
   categories$: Observable<Category[]> | undefined;
-  tags$: Observable<ItemProperty[]> | undefined;
+  // tags$: Observable<ItemProperty[]> | undefined;
 
   constructor(private categoryService: CategoryService, private tagService: TagService, private router: Router) { }
 
   ngOnInit(): void {
     this.categories$ = this.categoryService.getCategoryList();
-    this.tags$ = this.tagService.getSideNavTags();
+    // this.tags$ = this.tagService.getSideNavTags();
   }
 
 }

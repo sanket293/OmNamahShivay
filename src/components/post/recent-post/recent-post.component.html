@@ -4,14 +4,14 @@
       <aside class="col-lg-4 sidebar-home">
 
         <app-categories></app-categories>
-        <app-tags></app-tags>
-        <app-social-links></app-social-links>
+        <app-tags tagTitle="Category Enum" tagType="CategoryEnum"></app-tags>
+        <app-tags tagTitle="Language Enum" tagType="LanguageEnum"></app-tags>
 
       </aside>
 
       <div class="col-lg-8  mb-5 mb-lg-0">
-        <h2 class="h5 section-title">Recent Post</h2>
-
+        <h2 class="h5 section-title">Recent Post <a style="float: right;" class="d-flex" routerLink="/add-post"> + Add </a></h2>
+ 
         <ng-container *ngFor="let post of (recentPosts$ | async)">
           <article class="card mb-4">
             <div class="post-slider">

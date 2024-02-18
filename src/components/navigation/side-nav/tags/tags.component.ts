@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ItemProperty } from '../../../../model/ItemProperty.model';
- import { TagService } from '../../../../services/tag/tag.service';
-import { AppUtilites } from '../../../../constants/apputilities.model';
-import { CommonModule } from '@angular/common';
+import { TagService } from '../../../../services/tag/tag.service';
+ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -15,12 +14,17 @@ import { RouterModule } from '@angular/router';
 
 export class TagsComponent implements OnInit {
 
+
+  @Input() tagTitle: string = "Enum";
+  @Input() tagType: string = "CategoryEnum";
+
   sideNavBannerTags: ItemProperty[] = [];
 
   constructor(private tagService: TagService) { }
 
-  ngOnInit(): void { 
-    this.tagService.getSideNavTags().subscribe({
+  ngOnInit(): void {
+ 
+    this.tagService.getSideNavTags(this.tagType).subscribe({
       next: (tags: ItemProperty[]) => {
         this.sideNavBannerTags = tags;
       },
@@ -28,9 +32,9 @@ export class TagsComponent implements OnInit {
         console.log('Something is wrong' + JSON.stringify(error));
       },
       complete: () => {
-        this.sideNavBannerTags = AppUtilites.shuffle(this.sideNavBannerTags);
+        // this.sideNavBannerTags = AppUtilites.shuffle(this.sideNavBannerTags);
       }
     });
   }
- 
+
 }

@@ -1,0 +1,7 @@
+.widget-categories a::before {
+    position: absolute;
+    content: "";
+    color: #917351;
+    left: 0;
+    top: 0;
+}
