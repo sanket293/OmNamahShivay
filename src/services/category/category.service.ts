@@ -140,8 +140,8 @@ export class CategoryService {
         category: CategoryEnum.Stuties,
         availableLanguages: [Languages.Sanskrit],
         // availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
-        imgUrl: "/assets/images/categories/stuties/ShivMahimnaStotam.png",
-        routeUrl: `/ShivMahimnaStotam/${Languages[Languages.Sanskrit]}`,
+        itemImgUrl: "/assets/images/categories/stuties/ShivMahimnaStotam.png",
+        titleRouteUrl: `/ShivMahimnaStotam/${Languages[Languages.Sanskrit]}`,
         title: "श्री शिवमहिम्नस्तोत्रम्‌",
         itemKey: "ShivMahimnaStotam"
       },
@@ -171,16 +171,16 @@ export class CategoryService {
       {
         category: CategoryEnum.Ashtaks,
         availableLanguages: [Languages.Sanskrit],
-        imgUrl: "/assets/images/categories/ashtaks/Bilvashtakam.png",
-        routeUrl: `/Bilvashtakam/${Languages[Languages.Sanskrit]}`,
+        itemImgUrl: "/assets/images/categories/ashtaks/Bilvashtakam.png",
+        titleRouteUrl: `/Bilvashtakam/${Languages[Languages.Sanskrit]}`,
         title: "बिल्वाश्टकम पाठ",
         itemKey: "Bilvashtakam"
       },
       {
         category: CategoryEnum.Ashtaks,
         availableLanguages: [Languages.Sanskrit],
-        imgUrl: "/assets/images/categories/ashtaks/Lingashtakam.png",
-        routeUrl: `/Lingashtakam/${Languages[Languages.Sanskrit]}`,
+        itemImgUrl: "/assets/images/categories/ashtaks/Lingashtakam.png",
+        titleRouteUrl: `/Lingashtakam/${Languages[Languages.Sanskrit]}`,
         title: "लिंगाष्टकम स्तोत्र",
         itemKey: "Lingashtakam"
       },
@@ -194,8 +194,8 @@ export class CategoryService {
       {
         category: CategoryEnum.ShivPooja,
         availableLanguages: [Languages.Sanskrit],
-        imgUrl: "/assets/images/categories/shiv-pooja/ShivManasPooja.png",
-        routeUrl: `/ShivManasPooja/${Languages[Languages.Sanskrit]}`,
+        itemImgUrl: "/assets/images/categories/shiv-pooja/ShivManasPooja.png",
+        titleRouteUrl: `/ShivManasPooja/${Languages[Languages.Sanskrit]}`,
         title: "शिव मानस पूजा",
         itemKey: "ShivManasPooja"
       },
