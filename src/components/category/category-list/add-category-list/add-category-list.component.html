@@ -20,8 +20,8 @@
             <div class="col-lg-8 mx-auto">
 
                 <form method="POST" action="#">
-                    <div class="form-group">
-                        <label for="CategoryListId">CategoryListId : TODO-Add CategoryListId if update</label>
+                    <div class="form-group" *ngIf="categoryListId>0">
+                        <label for="CategoryListId">CategoryListId : {{categoryListId}}</label>
                     </div>
                     <div class="form-group">
                         <label for="CategoryEnumId">Category :todo add dropddown below</label>

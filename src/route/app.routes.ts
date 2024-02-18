@@ -56,7 +56,7 @@ export const routes: Routes = [
         component: CategoryListComponent
     },
     {
-        path: 'add-category-list', 
+        path: 'add-category-list/:CategoryListId', 
         component: AddCategoryListComponent
     },
 
