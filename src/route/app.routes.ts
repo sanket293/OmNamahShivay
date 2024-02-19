@@ -59,14 +59,17 @@ export const routes: Routes = [
         path: 'add-category-list/:CategoryListId', 
         component: AddCategoryListComponent
     },
-
-    
-
-
+ 
     {
-        path: 'CategoryList/:categoryItem', //select one catagory out of many i.e stuties
+        path: 'CategoryList/:CategoryListId', //select one catagory out of many i.e stuties
         component: CategoryListItemComponent
     },
+
+
+
+
+
+    
     {
         path: 'CategoryList/:categoryItem/:itemKey/:language', //select one item out of many categoryItems i.e mahimna strotam in Sanskrit or Rudrashtakam in Gujarati
         component: CategoryItemDisplayComponent

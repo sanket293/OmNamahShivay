@@ -25,7 +25,7 @@ export class CategoryListItemComponent {
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    var categoryItemStr = this.route.snapshot.params['categoryListItem'];
+    var categoryItemStr = this.route.snapshot.params['categoryItemID'];
     this.categoryListItemInfo$ = this.categoryService.getCategoryListItemInfo(categoryItemStr);
   }
 

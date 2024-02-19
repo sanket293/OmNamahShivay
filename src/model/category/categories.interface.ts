@@ -1,11 +1,16 @@
 export interface CategoryEnumTbl {
   CategoryEnum: string,
-  CategoryEnumId:number
+  CategoryEnumId: number
+}
+
+export interface CategoryEnumNotEntered {
+  CategoryEnum: string,
+  CategoryEnumId: number
 }
 
 export interface LanguageEnumTbl {
   LanguageEnum: string
-  LanguageEnumId:number
+  LanguageEnumId: number
 }
 
 export interface Auther {
@@ -30,7 +35,7 @@ export interface VCategoryList {
   CategoryNameLabelSanskrit: string;
   DisplayOrder: string;
   IsActive: number;
-  itemCount:number;
+  ItemCount: number;
 }
 
 export interface CategoryListItem {

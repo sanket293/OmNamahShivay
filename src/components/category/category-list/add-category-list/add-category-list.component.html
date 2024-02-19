@@ -14,41 +14,55 @@
     </svg>
 </div>
 
+<app-loader [showLoader]="showLoader"></app-loader>
+
 <section class="section-sm">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto">
+                <div class="content" *ngIf="message">
+                    <div class="notices info">
+                        <p>{{message}}</p>
+                    </div>
+                </div>
 
                 <form method="POST" action="#">
                     <div class="form-group" *ngIf="categoryListId>0">
                         <label for="CategoryListId">CategoryListId : {{categoryListId}}</label>
                     </div>
                     <div class="form-group">
-                        <label for="CategoryEnumId">Category :todo add dropddown below</label>
-                        <input type="text" name="CategoryEnumId" id="CategoryEnumId" class="form-control"
-                            placeholder="Stutie" required>
+                        <label for="CategoryEnumId">Category</label>
+                        <select class="form-control" id="select-category" name="something"
+                            [(ngModel)]="categoryList.CategoryEnumId" required>
+                            <option *ngFor="let catEnum of (categoryEnums$|async)" [ngValue]="catEnum.CategoryEnumId">
+                                {{catEnum.CategoryEnum}}
+                            </option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="CategoryNameLabel">Category Name Label</label>
                         <input type="text" name="CategoryNameLabel" id="CategoryNameLabel" class="form-control"
-                            placeholder="Shiv Stuties" required>
+                            minlength="1" [(ngModel)]="categoryList.CategoryNameLabel" placeholder="Shiv Stuties"
+                            required>
                     </div>
                     <div class="form-group">
                         <label for="CategoryNameLabelSanskrit">Category Name Label Sanskrit</label>
-                        <input type="text" name="CategoryNameLabelSanskrit" id="CategoryNameLabelSanskrit"
-                            class="form-control" placeholder="शिव जी की स्तुति" required>
+                         <input type="text" name="CategoryNameLabelSanskrit" id="CategoryNameLabelSanskrit"
+                            [(ngModel)]="categoryList.CategoryNameLabelSanskrit" class="form-control" minlength="1"
+                            placeholder="शिव जी की स्तुति" required>
                     </div>
                     <div class="form-group">
                         <label for="DisplayOrder">Display Order</label>
-                        <input type="text" name="DisplayOrder" id="DisplayOrder" class="form-control"
-                            placeholder="a b c">
+                        <input type="text" name="DisplayOrder" id="DisplayOrder" class="form-control" minlength="1"
+                            [(ngModel)]="categoryList.DisplayOrder" placeholder="a b c" required>
                     </div>
                     <div class="form-group">
                         <label for="IsActive">IsActive : todo add checkbox below</label>
-                        <input type="text" name="DisplayOrder" id="DisplayOrder" class="form-control"
-                            placeholder="">
+                        <input type="text" name="DisplayOrder" id="DisplayOrder" class="form-control" placeholder=""
+                            minlength="1" [(ngModel)]="categoryList.IsActive" required>
                     </div>
-                    <button type="submit" class="btn btn-primary">Insert Record</button>
+                    <button (click)="onInsertRecordBtnClick()" type="submit" class="btn btn-primary">Insert
+                        Record</button>
                 </form>
             </div>
         </div>
