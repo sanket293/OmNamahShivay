@@ -1,6 +1,6 @@
 export interface CategoryEnumTbl {
   CategoryEnum: string,
-  CategoryEnumId: number
+  CategoryEnumId?: number
 }
 
 export interface CategoryEnumNotEntered {
@@ -10,7 +10,7 @@ export interface CategoryEnumNotEntered {
 
 export interface LanguageEnumTbl {
   LanguageEnum: string
-  LanguageEnumId: number
+  LanguageEnumId?: number
 }
 
 export interface Auther {

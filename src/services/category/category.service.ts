@@ -32,7 +32,7 @@ export class CategoryService {
     return this.http.get<VCategoryList[]>("https://omnamahshivay-api.onrender.com/getCategoryList");
   }
 
-  addCategoryList(categoryList: CategoryList): Observable<ResponseMessage>{
+  addCategoryList(categoryList: CategoryList): Observable<ResponseMessage> {
     try {
       const headers = { 'Content-Type': 'application/json' };
       let url = "https://omnamahshivay-api.onrender.com/addCategoryList"
@@ -46,6 +46,49 @@ export class CategoryService {
       return of(errResponseMsg);
     }
   }
+
+
+  addCategoryEnum(categoryEnum: string) {
+    try {
+
+      var categoryEnumObj: CategoryEnumTbl = {
+        CategoryEnum: categoryEnum
+      }
+
+      const headers = { 'Content-Type': 'application/json' };
+      let url = "https://omnamahshivay-api.onrender.com/addCategoryEnum"
+      return this.http.post<ResponseMessage>(url, JSON.stringify(categoryEnumObj), { headers });
+    } catch (ex) {
+      var errResponseMsg: ResponseMessage = {
+        success: false,
+        message: "Cannot enter category Enum. See error for more details",
+        error: JSON.stringify(ex)
+      };
+      return of(errResponseMsg);
+    }
+  }
+
+  addLanguageEnum(languageEnum: string) {
+    try {
+
+      var languageEnumObj: LanguageEnumTbl = {
+        LanguageEnum: languageEnum
+      }
+
+      const headers = { 'Content-Type': 'application/json' };
+      let url = "https://omnamahshivay-api.onrender.com/addLanguageEnum"
+      return this.http.post<ResponseMessage>(url, JSON.stringify(languageEnumObj), { headers });
+
+    } catch (ex) {
+      var errResponseMsg: ResponseMessage = {
+        success: false,
+        message: "Cannot enter languages Enum. See error for more details",
+        error: JSON.stringify(ex)
+      };
+      return of(errResponseMsg);
+    }
+  }
+
 
 
   getCategoryListItemInfo(categoryEnumStr: string): Observable<CategoryListItem> {

@@ -1,9 +1,22 @@
-<h2 mat-dialog-title>Install Angular</h2>
+<app-loader [showLoader]="showLoader"></app-loader>
+
+<h2 mat-dialog-title>Insert {{tagType}}</h2>
 <mat-dialog-content class="mat-typography">
 
-  <h1>{{tagType}}</h1>
+  <div class="row">
+    <div class="col-lg-12 mx-auto">
+
+      <div class="form-group">
+        <label for="enum">Enum Value</label>
+        <input type="text" [(ngModel)]="enumValue" name="enum" id="enum" class="form-control" minlength="1"
+          placeholder="Stuties or Sanskrit" required>
+      </div>
+
+    </div>
+  </div>
+
 </mat-dialog-content>
-<mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button cdkFocusInitial>Insert</button>
+<mat-dialog-actions align="center">
+  <button type="submit" class="btn btn-primary" (click)="onInsertEnumClick()">Insert
+    Record</button>
 </mat-dialog-actions>
