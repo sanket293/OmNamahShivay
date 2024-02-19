@@ -3,39 +3,40 @@
         <div class="row">
             <div class="col-lg-9 mx-auto">
 
-                <h1 class="mb-5">Name Of Category selected</h1>
+                <h1 class="mb-5">TODO: Name Of Category selected</h1>
 
             </div>
         </div>
-     </div>
+    </div>
 </div>
 
 <section class="section pt-5 pb-0">
     <div class="container">
-        <h2 class="h5 section-title">{{(categoryListItemInfo$|async)?.postTitle}}</h2>
+        <h2 class="h5 section-title">TODO: postTitle</h2>
         <div class="row">
 
-            <ng-container *ngFor="let item of ((categoryListItemInfo$|async)?.categoryCardInfo$| async)">
+            <ng-container *ngFor="let listItem of (categoryListItemInfo$|async)">
                 <div class="col-lg-4 mb-3">
                     <article class="card">
                         <div class="post-slider slider-sm">
-                            <img [src]="item.itemImgUrl" class="card-img-top" alt="post-thumb">
+                            <!-- <img [src]="listItem.itemImgUrl" class="card-img-top" alt="post-thumb"> -->
+                            <p>TODO: image</p>
                         </div>
                         <div class="card-body">
-                            <h3 class="h4 mb-3"><a class="post-title" [routerLink]="getPostUrl(item)">{{item.title}}</a>
+                            <h3 class="h4 mb-3"><a class="post-title" 
+                                >{{listItem.Title}}</a>
                             </h3>
                             <ul class="card-meta list-inline">
-                                <li class="list-inline-item" *ngFor="let languageId of item.availableLanguages">
+                                <li class="list-inline-item" *ngFor="let language of getAvailableLanguages(listItem.AvailableLanguages)">
                                     <ul class="card-meta-tag list-inline">
                                         <li class="list-inline-item">
                                             <a
-                                                [routerLink]="getRouteUrlForLanguageTag(item, languageId)">{{getLanguageName(languageId)}}</a>
+                                                [routerLink]="getRouteUrlForLanguageTag(listItem)">{{ language}}</a>
                                         </li>
                                     </ul>
                                 </li>
                             </ul>
-                            <!-- <a routerLink="{{item.routeUrl}}" class="btn btn-outline-primary">Read More</a> -->
-                        </div>
+                         </div>
 
                     </article>
                 </div>
@@ -44,4 +45,3 @@
         </div>
     </div>
 </section>
-

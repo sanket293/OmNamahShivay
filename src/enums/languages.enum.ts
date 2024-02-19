@@ -1,5 +1,5 @@
 export enum Languages {
-    Sanskrit = 1,
+    Sanskrit = 11,
     Gujarati,
     English,
     Hindi,

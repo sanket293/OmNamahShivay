@@ -5,7 +5,7 @@ import { CategoryEnum } from '../../enums/category-enum.enum';
 import { CategoryCardInfo } from '../../model/category/category-card-info.model';
 import { CategoryListItem } from '../../model/category/category-list-item.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { CategoryEnumNotEntered, CategoryEnumTbl, CategoryList, LanguageEnumTbl, VCategoryList } from '../../model/category/categories.interface';
+import { CategoryEnumNotEntered, CategoryEnumTbl, CategoryList, LanguageEnumTbl, VCategoryList, VCategoryListItem } from '../../model/category/categories.interface';
 import { ResponseMessage } from '../../model/response-message.model';
 
 @Injectable({
@@ -32,6 +32,14 @@ export class CategoryService {
     return this.http.get<VCategoryList[]>("https://omnamahshivay-api.onrender.com/getCategoryList");
   }
 
+  getCategoryListItem(categoryListId: string): Observable<VCategoryListItem[]> {
+    if (!categoryListId) return of([]);
+    return this.http.get<VCategoryListItem[]>(`https://omnamahshivay-api.onrender.com/getCategoryListItem/${categoryListId}`);
+  }
+
+
+
+
   addCategoryList(categoryList: CategoryList): Observable<ResponseMessage> {
     try {
       const headers = { 'Content-Type': 'application/json' };
@@ -46,7 +54,6 @@ export class CategoryService {
       return of(errResponseMsg);
     }
   }
-
 
   addCategoryEnum(categoryEnum: string) {
     try {
@@ -91,53 +98,58 @@ export class CategoryService {
 
 
 
-  getCategoryListItemInfo(categoryEnumStr: string): Observable<CategoryListItem> {
 
-    switch (categoryEnumStr) {
-      case CategoryEnum[CategoryEnum.Stuties]: {
-        return of({
-          categoryCardInfo$: this.getStutieCategoryCardInfo(),
-          itemText: "शिव जी की स्तुति",
-          postTitle: "Shiv Stuties"
-        });
-      }
-      case CategoryEnum[CategoryEnum.Ashtaks]: {
-        return of({
-          categoryCardInfo$: this.getAshtaksCategoryCardInfo(),
-          itemText: "शिव जी के अष्टक",
-          postTitle: "Shiv Ashtaks"
-        });
-      }
-      case CategoryEnum[CategoryEnum.ShivPooja]: {
-        return of({
-          categoryCardInfo$: this.getShivPoojaCategoryCardInfo(),
-          itemText: "शिव जी की पूजा",
-          postTitle: "Shiv Pojas"
-        });
-      }
-      // case CategoryEnum[CategoryEnum.Ashtaks]: {
-      //    return of({
-      //     categoryCardInfo$: this.getAshtaksCategoryCardInfo(),
-      //     itemText: "भगवान शिव के मंत्र",
-      //     postTitle: "Lord Shiva Mantra"
-      //   });
-      // }
-      // case CategoryEnum[CategoryEnum.Jyortilingas12]: {
-      //    return of({
-      //     categoryCardInfo$: this.getJyortilingsCategoryCardInfo(),
-      //     itemText: "शिव जी के 12 ज्योर्तिलिङ्गाः",
-      //     postTitle: "12 Jyortilingas of Lord Shiva"
-      //   });
-      // }
-    }
 
-    //todo: if not from anything send null or undefined
-    return of({
-      categoryCardInfo$: this.getStutieCategoryCardInfo(),
-      itemText: "शिव",
-      postTitle: "Shiv"
-    });
-  }
+
+
+  // getCategoryListItemInfo(categoryEnumStr: string): Observable<CategoryListItem> {
+
+ 
+  //   switch (categoryEnumStr) {
+  //     case CategoryEnum[CategoryEnum.Stuties]: {
+  //       return of({
+  //         categoryCardInfo$: this.getStutieCategoryCardInfo(),
+  //         itemText: "शिव जी की स्तुति",
+  //         postTitle: "Shiv Stuties"
+  //       });
+  //     }
+  //     case CategoryEnum[CategoryEnum.Ashtaks]: {
+  //       return of({
+  //         categoryCardInfo$: this.getAshtaksCategoryCardInfo(),
+  //         itemText: "शिव जी के अष्टक",
+  //         postTitle: "Shiv Ashtaks"
+  //       });
+  //     }
+  //     case CategoryEnum[CategoryEnum.ShivPooja]: {
+  //       return of({
+  //         categoryCardInfo$: this.getShivPoojaCategoryCardInfo(),
+  //         itemText: "शिव जी की पूजा",
+  //         postTitle: "Shiv Pojas"
+  //       });
+  //     }
+  //     // case CategoryEnum[CategoryEnum.Ashtaks]: {
+  //     //    return of({
+  //     //     categoryCardInfo$: this.getAshtaksCategoryCardInfo(),
+  //     //     itemText: "भगवान शिव के मंत्र",
+  //     //     postTitle: "Lord Shiva Mantra"
+  //     //   });
+  //     // }
+  //     // case CategoryEnum[CategoryEnum.Jyortilingas12]: {
+  //     //    return of({
+  //     //     categoryCardInfo$: this.getJyortilingsCategoryCardInfo(),
+  //     //     itemText: "शिव जी के 12 ज्योर्तिलिङ्गाः",
+  //     //     postTitle: "12 Jyortilingas of Lord Shiva"
+  //     //   });
+  //     // }
+  //   }
+
+  //   //todo: if not from anything send null or undefined
+  //   return of({
+  //     categoryCardInfo$: this.getStutieCategoryCardInfo(),
+  //     itemText: "शिव",
+  //     postTitle: "Shiv"
+  //   });
+  // }
 
   getStutieCategoryCardInfo(): Observable<CategoryCardInfo[]> {
     let categoryCardInfo: CategoryCardInfo[] = [
