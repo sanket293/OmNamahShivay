@@ -7,17 +7,16 @@ import { CategoryEnumNotEntered, CategoryList } from '../../../../model/category
 import { FormsModule } from '@angular/forms';
 import { ResponseMessage } from '../../../../model/response-message.model';
 import { LoaderComponent } from "../../../shared/loader/loader.component";
-
+ 
 @Component({
-  selector: 'app-add-category-list',
-  standalone: true,
-  templateUrl: './add-category-list.component.html',
-  styleUrl: './add-category-list.component.css',
-  imports: [RouterModule, CommonModule, FormsModule, LoaderComponent]
+    selector: 'app-add-category-list',
+    standalone: true,
+    templateUrl: './add-category-list.component.html',
+    styleUrl: './add-category-list.component.css',
+    imports: [RouterModule, CommonModule, FormsModule, LoaderComponent]
 })
 export class AddCategoryListComponent implements OnInit {
-
-
+ 
   constructor(private activatedRoute: ActivatedRoute,
     private router: Router,
     private categoryService: CategoryService) { }
