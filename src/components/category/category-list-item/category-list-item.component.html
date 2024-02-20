@@ -3,7 +3,11 @@
         <div class="row">
             <div class="col-lg-9 mx-auto">
 
-                <h1 class="mb-5">TODO: Name Of Category selected</h1>
+                <!-- <h1 class="mb-5">{{(this.state$ |async) |json}}</h1> -->
+                <h1 class="mb-5">{{ category?.CategoryNameLabelSanskrit}}
+                    <a routerLink="/add-category-list/{{category?.CategoryListId}}"><i
+                            class="ti-pencil"></i></a>
+                </h1>
 
             </div>
         </div>
@@ -12,31 +16,55 @@
 
 <section class="section pt-5 pb-0">
     <div class="container">
-        <h2 class="h5 section-title">TODO: postTitle</h2>
+        <h2 class="h5 section-title">{{( category?.CategoryNameLabel)}} </h2>
         <div class="row">
+
+            <div class="col-lg-4 mb-3">
+                <article class="card">
+                    <div class="post-slider slider-sm">
+                        <img src="/assets/images/add.png" class="card-img-top" alt="post-thumb">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="h4 mb-3"><a class="post-title" routerLink="/add-category-list-item/0">Add new
+                                Item</a>
+                        </h3>
+                        <ul class="card-meta list-inline">
+                            <li class="list-inline-item">
+                                <ul class="card-meta-tag list-inline">
+                                    <li class="list-inline-item">
+                                        <a> New List Item</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+
+                    </div>
+
+                </article>
+            </div>
 
             <ng-container *ngFor="let listItem of (categoryListItemInfo$|async)">
                 <div class="col-lg-4 mb-3">
                     <article class="card">
                         <div class="post-slider slider-sm">
-                            <!-- <img [src]="listItem.itemImgUrl" class="card-img-top" alt="post-thumb"> -->
-                            <p>TODO: image</p>
+                            <img [src]="listItem.ImageUrl" class="card-img-top" alt="post-thumb">
                         </div>
                         <div class="card-body">
-                            <h3 class="h4 mb-3"><a class="post-title" 
-                                >{{listItem.Title}}</a>
+                            <h3 class="h4 mb-3"><a class="post-title"
+                                    routerLink="/add-category-list-item/{{listItem.CategoryListItemId}}">{{listItem.Title}}</a>
                             </h3>
                             <ul class="card-meta list-inline">
-                                <li class="list-inline-item" *ngFor="let language of getAvailableLanguages(listItem.AvailableLanguages)">
+                                <li class="list-inline-item"
+                                    *ngFor="let language of getAvailableLanguages(listItem.AvailableLanguages)">
                                     <ul class="card-meta-tag list-inline">
                                         <li class="list-inline-item">
-                                            <a
-                                                [routerLink]="getRouteUrlForLanguageTag(listItem)">{{ language}}</a>
+                                            <a [routerLink]="getRouteUrlForLanguageTag(listItem)">{{ language}}</a>
                                         </li>
                                     </ul>
                                 </li>
                             </ul>
-                         </div>
+                        </div>
 
                     </article>
                 </div>

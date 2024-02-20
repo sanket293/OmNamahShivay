@@ -64,7 +64,10 @@ export const routes: Routes = [
         path: 'CategoryList/:CategoryListId', //select one catagory out of many i.e stuties
         component: CategoryListItemComponent
     },
-
+    {
+        path: 'add-category-list-item/:CategoryListItemId', 
+        component: AddCategoryListComponent
+    },
  
     
     {

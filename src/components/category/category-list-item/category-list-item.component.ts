@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { CategoryEnum } from '../../../enums/category-enum.enum';
 import { CategoryCardInfo } from '../../../model/category/category-card-info.model';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { CategoryService } from '../../../services/category/category.service';
-import { CategoryListItem } from '../../../model/category/category-list-item.model';
 import { CommonModule } from '@angular/common';
 import { Languages } from '../../../enums/languages.enum';
-import { VCategoryListItem } from '../../../model/category/categories.interface';
+import { VCategoryList, VCategoryListItem } from '../../../model/category/categories.interface';
 
 @Component({
   selector: 'app-category-list-item',
@@ -20,15 +19,22 @@ import { VCategoryListItem } from '../../../model/category/categories.interface'
 //Stutie or Mantras or Bhajans
 export class CategoryListItemComponent {
 
-  categoryListItemInfo$!: Observable<VCategoryListItem[]>;
+  categoryListItemInfo$: Observable<VCategoryListItem[]> = of([]);
+  category!: VCategoryList | undefined;
 
   constructor(private categoryService: CategoryService,
-    private route: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    var categoryListId = this.route.snapshot.params['CategoryListId'];
-    console.log(categoryListId)
+
+    var categoryListId = this.activatedRoute.snapshot.params['CategoryListId'];
+
     this.categoryListItemInfo$ = this.categoryService.getCategoryListItem(categoryListId);
+
+    this.categoryService.getCategoryList().subscribe(
+      data => {
+        this.category = data.find(f => f.CategoryListId.toString() === categoryListId)
+      })
   }
 
   getLanguageName(languageId: number) {
@@ -44,11 +50,11 @@ export class CategoryListItemComponent {
   }
 
   getAvailableLanguages(availableLanguages: string): string[] {
-    
+
     if (!availableLanguages.includes(',')) {
       return [Languages[parseInt(availableLanguages)]];
     }
-    
+
     let languages: string[] = [];
     availableLanguages.split(',').map(m => parseInt(m)).forEach(f => languages.push(Languages[f].toString()));
     return languages;
@@ -56,7 +62,7 @@ export class CategoryListItemComponent {
 
 
   getRouteUrlForLanguageTag(listItem: VCategoryListItem): string {
-    return "shree"; 
+    return "shree";
     //TODO: send next page for update
   }
 

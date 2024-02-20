@@ -3,8 +3,7 @@ import { Observable, of } from 'rxjs';
 import { Languages } from '../../enums/languages.enum';
 import { CategoryEnum } from '../../enums/category-enum.enum';
 import { CategoryCardInfo } from '../../model/category/category-card-info.model';
-import { CategoryListItem } from '../../model/category/category-list-item.model';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { CategoryEnumNotEntered, CategoryEnumTbl, CategoryList, LanguageEnumTbl, VCategoryList, VCategoryListItem } from '../../model/category/categories.interface';
 import { ResponseMessage } from '../../model/response-message.model';
 
@@ -37,9 +36,8 @@ export class CategoryService {
     return this.http.get<VCategoryListItem[]>(`https://omnamahshivay-api.onrender.com/getCategoryListItem/${categoryListId}`);
   }
 
-
-
-
+  
+  
   addCategoryList(categoryList: CategoryList): Observable<ResponseMessage> {
     try {
       const headers = { 'Content-Type': 'application/json' };
@@ -104,7 +102,7 @@ export class CategoryService {
 
   // getCategoryListItemInfo(categoryEnumStr: string): Observable<CategoryListItem> {
 
- 
+
   //   switch (categoryEnumStr) {
   //     case CategoryEnum[CategoryEnum.Stuties]: {
   //       return of({

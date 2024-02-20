@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-9 mx-auto">
-                <h1 class="mb-4">Add Category List</h1>
+                <h1 class="mb-4">{{categoryListId >0 ? 'Update':'Add' }} Category List</h1>
             </div>
         </div>
     </div>
@@ -32,12 +32,26 @@
                     </div>
                     <div class="form-group">
                         <label for="CategoryEnumId">Category</label>
-                        <select class="form-control" id="select-category" name="something"
-                            [(ngModel)]="categoryList.CategoryEnumId" required>
-                            <option *ngFor="let catEnum of (categoryEnums$|async)" [ngValue]="catEnum.CategoryEnumId">
-                                {{catEnum.CategoryEnum}}
-                            </option>
-                        </select>
+
+                        <ng-container *ngIf="categoryListId>0;  else showAllCategory">
+                            <select class="form-control" id="select-category" name="something"
+                                [(ngModel)]="categoryList.CategoryEnumId" required>
+                                <option *ngFor="let catEnum of (CategoryEnumList$|async)"
+                                    [ngValue]="catEnum.CategoryEnumId">
+                                    {{catEnum.CategoryEnum}}
+                                </option>
+                            </select>
+                        </ng-container>
+                        <ng-template #showAllCategory>
+                            <select class="form-control" id="select-category" name="something"
+                                [(ngModel)]="categoryList.CategoryEnumId" required #showAllCategory>
+                                <option *ngFor="let catEnum of (CategoryEnumNotEntered$|async)"
+                                    [ngValue]="catEnum.CategoryEnumId">
+                                    {{catEnum.CategoryEnum}}
+                                </option>
+                            </select>
+                        </ng-template>
+
                     </div>
                     <div class="form-group">
                         <label for="CategoryNameLabel">Category Name Label</label>
@@ -61,8 +75,9 @@
                         <input type="text" name="DisplayOrder" id="DisplayOrder" class="form-control" placeholder=""
                             minlength="1" [(ngModel)]="categoryList.IsActive" required>
                     </div>
-                    <button (click)="onInsertRecordBtnClick()" type="submit" class="btn btn-primary">Insert
-                        Record</button>
+                    <button (click)="onInsertRecordBtnClick()" type="submit" class="btn btn-primary">
+                        {{categoryListId >0 ? 'Update':'Add' }} Record
+                    </button>
                 </form>
             </div>
         </div>

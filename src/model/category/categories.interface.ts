@@ -45,6 +45,7 @@ export interface CategoryListItem {
   Title: string;
   DisplayOrder: string;
   IsActive: number;
+  ImageUrl:string;
 }
 
 export interface VCategoryListItem {
@@ -55,6 +56,7 @@ export interface VCategoryListItem {
   DisplayOrder: string;
   IsActive: number;
   AvailableLanguages: string;
+  ImageUrl:string;
 }
 
 export interface CategoryItemDisplay {

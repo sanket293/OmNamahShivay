@@ -3,37 +3,45 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router, RouterModule } from '@angular/router';
 import { CategoryService } from '../../../../services/category/category.service';
 import { Observable, of } from 'rxjs';
-import { CategoryEnumNotEntered, CategoryList } from '../../../../model/category/categories.interface';
+import { CategoryEnumNotEntered, CategoryEnumTbl, CategoryList } from '../../../../model/category/categories.interface';
 import { FormsModule } from '@angular/forms';
 import { ResponseMessage } from '../../../../model/response-message.model';
 import { LoaderComponent } from "../../../shared/loader/loader.component";
- 
+
 @Component({
-    selector: 'app-add-category-list',
-    standalone: true,
-    templateUrl: './add-category-list.component.html',
-    styleUrl: './add-category-list.component.css',
-    imports: [RouterModule, CommonModule, FormsModule, LoaderComponent]
+  selector: 'app-add-category-list',
+  standalone: true,
+  templateUrl: './add-category-list.component.html',
+  styleUrl: './add-category-list.component.css',
+  imports: [RouterModule, CommonModule, FormsModule, LoaderComponent]
 })
 export class AddCategoryListComponent implements OnInit {
- 
+
   constructor(private activatedRoute: ActivatedRoute,
     private router: Router,
     private categoryService: CategoryService) { }
 
   categoryList: CategoryList = { CategoryEnumId: 1, CategoryNameLabel: "", CategoryNameLabelSanskrit: "", DisplayOrder: "a", IsActive: 0 };
   categoryListId: number = 0;
-  categoryEnums$: Observable<CategoryEnumNotEntered[]> = of([]);
+  CategoryEnumNotEntered$: Observable<CategoryEnumNotEntered[]> = of([]);
+
+  CategoryEnumList$: Observable<CategoryEnumTbl[]> = of([]);
+
   message: string = "";
   showLoader: boolean = false;
 
   ngOnInit(): void {
-
-    this.categoryEnums$ = this.categoryService.getNotEnteredCategoryEnums();
-
     this.activatedRoute.params.subscribe((route) => {
       this.categoryListId = route["CategoryListId"];
     });
+
+
+    //TODO: for update category list; category selection should be automatics
+    if (this.categoryListId > 0) {
+      this.CategoryEnumList$ = this.categoryService.getCategoryEnums();
+    } else {
+      this.CategoryEnumNotEntered$ = this.categoryService.getNotEnteredCategoryEnums();
+    }
   }
 
   onInsertRecordBtnClick() {
@@ -60,21 +68,27 @@ export class AddCategoryListComponent implements OnInit {
       this.showLoader = false;
       return;
     }
+ 
+    if (this.categoryListId > 0) {
+      //TODO: update 
+    } else {
+      this.categoryService.addCategoryList(this.categoryList).subscribe({
+        next: (response: ResponseMessage) => {
+          this.message = response.message;
+          //loader false
+          //navigate to home 
+          this.router.navigate(['']);
+        },
+        error: (err) => {
+          this.message = "There is some error: " + JSON.stringify(err);
+        },
+        complete: () => {
+          this.showLoader = false;
+        }
+      });
+    }
 
-    this.categoryService.addCategoryList(this.categoryList).subscribe({
-      next: (response: ResponseMessage) => {
-        this.message = response.message;
-        //loader false
-        //navigate to home 
-        this.router.navigate(['']);
-      },
-      error: (err) => {
-        this.message = "There is some error: " + JSON.stringify(err);
-      },
-      complete: () => {
-        this.showLoader = false;
-      }
-    });
+
 
   }
 }

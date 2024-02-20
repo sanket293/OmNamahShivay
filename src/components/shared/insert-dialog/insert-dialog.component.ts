@@ -48,7 +48,7 @@ export class InsertDialogComponent implements OnInit {
         if (response.success) {
           this.dialogRef.close();
           window.location.reload();
-          this.snackBar.open("successfully inserted Category Enum");
+          this.snackBar.open("successfully inserted Category Enum, don't forgot to add this value to frontend");
         } else {
           this.snackBar.open("There is something wrong, check console log");
           console.log("There is something wrong: " + JSON.stringify(response.error));
@@ -70,7 +70,7 @@ export class InsertDialogComponent implements OnInit {
         if (response.success) {
           this.dialogRef.close();
           window.location.reload();
-          this.snackBar.open("successfully inserted Language Enum");
+          this.snackBar.open("successfully inserted Category Enum, don't forgot to add this value to frontend");
         } else {
           console.log("There is something wrong: " + JSON.stringify(response.error));
           this.snackBar.open("There is something wrong, check console log");
