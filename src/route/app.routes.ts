@@ -12,6 +12,7 @@ import { CategoryListItemComponent } from '../components/category/category-list-
 import { CategoryItemDisplayComponent } from '../components/category/category-item-display/category-item-display.component';
 import { CategoryItemListDisplayComponent } from '../components/category/category-item-list-display/category-item-list-display.component';
 import { AddCategoryListComponent } from '../components/category/category-list/add-category-list/add-category-list.component';
+import { AddCategoryListItemComponent } from '../components/category/category-list-item/add-category-list-item/add-category-list-item.component';
 
 export const routes: Routes = [
     {
@@ -66,7 +67,7 @@ export const routes: Routes = [
     },
     {
         path: 'add-category-list-item/:CategoryListItemId', 
-        component: AddCategoryListComponent
+        component: AddCategoryListItemComponent
     },
  
     

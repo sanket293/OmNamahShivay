@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-9 mx-auto">
-                <h1 class="mb-4">{{categoryListId >0 ? 'Update':'Add' }} Category List</h1>
+                <h1 class="mb-4">Add Category List</h1>
             </div>
         </div>
     </div>
@@ -56,25 +56,26 @@
                     <div class="form-group">
                         <label for="CategoryNameLabel">Category Name Label</label>
                         <input type="text" name="CategoryNameLabel" id="CategoryNameLabel" class="form-control"
-                            minlength="1" [(ngModel)]="categoryList.CategoryNameLabel" placeholder="Shiv Stuties"
-                            required>
+                            minlength="1" [(ngModel)]="categoryList.CategoryNameLabel" required>
                     </div>
                     <div class="form-group">
                         <label for="CategoryNameLabelSanskrit">Category Name Label Sanskrit</label>
                         <input type="text" name="CategoryNameLabelSanskrit" id="CategoryNameLabelSanskrit"
                             [(ngModel)]="categoryList.CategoryNameLabelSanskrit" class="form-control" minlength="1"
-                            placeholder="शिव जी की स्तुति" required>
+                            required>
                     </div>
                     <div class="form-group">
                         <label for="DisplayOrder">Display Order</label>
                         <input type="text" name="DisplayOrder" id="DisplayOrder" class="form-control" minlength="1"
-                            [(ngModel)]="categoryList.DisplayOrder" placeholder="a b c" required>
+                            [(ngModel)]="categoryList.DisplayOrder" required>
                     </div>
+
                     <div class="form-group">
-                        <label for="IsActive">IsActive : todo add checkbox below</label>
-                        <input type="text" name="DisplayOrder" id="DisplayOrder" class="form-control" placeholder=""
-                            minlength="1" [(ngModel)]="categoryList.IsActive" required>
+                        <label for="IsActive">IsActive :</label>
+                        <input type="checkbox" name="cbIsActive" id="cbIsActive" class="form-control"
+                            style="width: 20px;" [(ngModel)]="isActive" required>
                     </div>
+
                     <button (click)="onInsertRecordBtnClick()" type="submit" class="btn btn-primary">
                         {{categoryListId >0 ? 'Update':'Add' }} Record
                     </button>
