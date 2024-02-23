@@ -27,31 +27,15 @@
                 </div>
 
                 <form method="POST" action="#">
-                    <div class="form-group" *ngIf="categoryListId>0">
-                        <label for="CategoryListId">CategoryListId : {{categoryListId}}</label>
-                    </div>
                     <div class="form-group">
                         <label for="CategoryEnumId">Category</label>
-
-                        <ng-container *ngIf="categoryListId>0;  else showAllCategory">
-                            <select class="form-control" id="select-category" name="something"
-                                [(ngModel)]="categoryList.CategoryEnumId" required>
-                                <option *ngFor="let catEnum of (CategoryEnumList$|async)"
-                                    [ngValue]="catEnum.CategoryEnumId">
-                                    {{catEnum.CategoryEnum}}
-                                </option>
-                            </select>
-                        </ng-container>
-                        <ng-template #showAllCategory>
-                            <select class="form-control" id="select-category" name="something"
-                                [(ngModel)]="categoryList.CategoryEnumId" required #showAllCategory>
-                                <option *ngFor="let catEnum of (CategoryEnumNotEntered$|async)"
-                                    [ngValue]="catEnum.CategoryEnumId">
-                                    {{catEnum.CategoryEnum}}
-                                </option>
-                            </select>
-                        </ng-template>
-
+                        <select class="form-control" id="select-category" name="select-categorys"
+                            [(ngModel)]="categoryList.CategoryEnumId" required #showAllCategory>
+                            <option *ngFor="let catEnum of (CategoryEnumNotEntered$|async)"
+                                [ngValue]="catEnum.CategoryEnumId">
+                                {{catEnum.CategoryEnum}}
+                            </option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="CategoryNameLabel">Category Name Label</label>
@@ -77,7 +61,7 @@
                     </div>
 
                     <button (click)="onInsertRecordBtnClick()" type="submit" class="btn btn-primary">
-                        {{categoryListId >0 ? 'Update':'Add' }} Record
+                        Add Record
                     </button>
                 </form>
             </div>

@@ -4,7 +4,7 @@ import { Languages } from '../../enums/languages.enum';
 import { CategoryEnum } from '../../enums/category-enum.enum';
 import { CategoryCardInfo } from '../../model/category/category-card-info.model';
 import { HttpClient } from '@angular/common/http';
-import { CategoryEnumNotEntered, CategoryEnumTbl, CategoryList, LanguageEnumTbl, VCategoryList, VCategoryListItem } from '../../model/category/categories.interface';
+import { CategoryEnumNotEntered, CategoryEnumTbl, CategoryList, CategoryListItem, LanguageEnumTbl, VCategoryList, VCategoryListItem } from '../../model/category/categories.interface';
 import { ResponseMessage } from '../../model/response-message.model';
 
 @Injectable({
@@ -47,6 +47,21 @@ export class CategoryService {
       var errResponseMsg: ResponseMessage = {
         success: false,
         message: "Cannot enter category list. See error for more details",
+        error: JSON.stringify(ex)
+      };
+      return of(errResponseMsg);
+    }
+  }
+  
+  addCategoryListItem(categoryListItem: CategoryListItem): Observable<ResponseMessage> {
+    try {
+      const headers = { 'Content-Type': 'application/json' };
+      let url = "https://omnamahshivay-api.onrender.com/addCategoryListItem"
+      return this.http.post<ResponseMessage>(url, JSON.stringify(categoryListItem), { headers });
+    } catch (ex) {
+      var errResponseMsg: ResponseMessage = {
+        success: false,
+        message: "Cannot enter category list Item. See error for more details",
         error: JSON.stringify(ex)
       };
       return of(errResponseMsg);

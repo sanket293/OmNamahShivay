@@ -18,7 +18,7 @@ import { VCategoryList, VCategoryListItem } from '../../../model/category/catego
 
 //Stutie or Mantras or Bhajans
 export class CategoryListItemComponent {
-
+  categoryListId: string = "0";
   categoryListItemInfo$: Observable<VCategoryListItem[]> = of([]);
   category!: VCategoryList | undefined;
 
@@ -27,13 +27,13 @@ export class CategoryListItemComponent {
 
   ngOnInit(): void {
 
-    var categoryListId = this.activatedRoute.snapshot.params['CategoryListId'];
+    this.categoryListId = this.activatedRoute.snapshot.params['CategoryListId'];
 
-    this.categoryListItemInfo$ = this.categoryService.getCategoryListItem(categoryListId);
+    this.categoryListItemInfo$ = this.categoryService.getCategoryListItem(this.categoryListId);
 
     this.categoryService.getCategoryList().subscribe(
       data => {
-        this.category = data.find(f => f.CategoryListId.toString() === categoryListId)
+        this.category = data.find(f => f.CategoryListId.toString() === this.categoryListId)
       })
   }
 

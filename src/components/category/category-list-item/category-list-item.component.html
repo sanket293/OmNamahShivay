@@ -18,7 +18,9 @@
             <div class="col-lg-4 mb-3">
                 <article class="card show-cursor">
                     <div class="post-slider slider-sm">
-                        <img src="/assets/images/add.png" routerLink="/add-category-list-item/0" class="card-img-top" alt="post-thumb">
+                        <img src="/assets/images/add.png"
+                            routerLink="/add-category-list-item/{{categoryListId}}/{{category?.CategoryNameLabel}}"
+                            class="card-img-top" alt="post-thumb">
                     </div>
                     <div class="card-body">
                         <h3 class="h4 mb-3"><a class="post-title" routerLink="/add-category-list-item/0">Add new
@@ -45,9 +47,9 @@
                         </div>
                         <div class="card-body">
                             <h3 class="h4 mb-3"><a class="post-title"
-                                    routerLink="/add-category-list-item/{{listItem.CategoryListItemId}}">{{listItem.Title}}</a>
+                                    routerLink="/add-category-list-item-display/{{listItem.CategoryListItemId}}">{{listItem.Title}}</a>
                             </h3>
-                            <ul class="card-meta list-inline">
+                            <ul class="card-meta list-inline" *ngIf="listItem.AvailableLanguages">
                                 <li class="list-inline-item"
                                     *ngFor="let language of getAvailableLanguages(listItem.AvailableLanguages)">
                                     <ul class="card-meta-tag list-inline">
