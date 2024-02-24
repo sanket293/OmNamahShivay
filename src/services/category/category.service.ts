@@ -4,7 +4,7 @@ import { Languages } from '../../enums/languages.enum';
 import { CategoryEnum } from '../../enums/category-enum.enum';
 import { CategoryCardInfo } from '../../model/category/category-card-info.model';
 import { HttpClient } from '@angular/common/http';
-import { CategoryEnumNotEntered, CategoryEnumTbl, CategoryList, CategoryListItem, LanguageEnumTbl, VCategoryList, VCategoryListItem } from '../../model/category/categories.interface';
+import { Auther, CategoryEnumNotEntered, CategoryEnumTbl, CategoryItemDisplay, CategoryList, CategoryListItem, LanguageEnumTbl, VCategoryList, VCategoryListItem } from '../../model/category/categories.interface';
 import { ResponseMessage } from '../../model/response-message.model';
 
 @Injectable({
@@ -27,6 +27,10 @@ export class CategoryService {
     return this.http.get<LanguageEnumTbl[]>("https://omnamahshivay-api.onrender.com/getLanguageEnums");
   }
 
+  getLanguageEnumNotEntered(categoryListItemId: number): Observable<LanguageEnumTbl[]> {
+    return this.http.get<LanguageEnumTbl[]>(`https://omnamahshivay-api.onrender.com/getLanguageEnumNotEntered/${categoryListItemId}`);
+  }
+
   getCategoryList(): Observable<VCategoryList[]> {
     return this.http.get<VCategoryList[]>("https://omnamahshivay-api.onrender.com/getCategoryList");
   }
@@ -36,8 +40,10 @@ export class CategoryService {
     return this.http.get<VCategoryListItem[]>(`https://omnamahshivay-api.onrender.com/getCategoryListItem/${categoryListId}`);
   }
 
-  
-  
+  getAuthers(): Observable<Auther[]> {
+    return this.http.get<Auther[]>("https://omnamahshivay-api.onrender.com/getAuthers");
+  }
+
   addCategoryList(categoryList: CategoryList): Observable<ResponseMessage> {
     try {
       const headers = { 'Content-Type': 'application/json' };
@@ -52,7 +58,7 @@ export class CategoryService {
       return of(errResponseMsg);
     }
   }
-  
+
   addCategoryListItem(categoryListItem: CategoryListItem): Observable<ResponseMessage> {
     try {
       const headers = { 'Content-Type': 'application/json' };
@@ -62,6 +68,21 @@ export class CategoryService {
       var errResponseMsg: ResponseMessage = {
         success: false,
         message: "Cannot enter category list Item. See error for more details",
+        error: JSON.stringify(ex)
+      };
+      return of(errResponseMsg);
+    }
+  }
+
+  addCategoryItemDisplay(categoryItemDisplay: CategoryItemDisplay): Observable<ResponseMessage> {
+    try {
+      const headers = { 'Content-Type': 'application/json' };
+      let url = "https://omnamahshivay-api.onrender.com/addCategoryItemDisplay"
+      return this.http.post<ResponseMessage>(url, JSON.stringify(categoryItemDisplay), { headers });
+    } catch (ex) {
+      var errResponseMsg: ResponseMessage = {
+        success: false,
+        message: "Cannot enter category Item Display. See error for more details",
         error: JSON.stringify(ex)
       };
       return of(errResponseMsg);
@@ -90,7 +111,6 @@ export class CategoryService {
 
   addLanguageEnum(languageEnum: string) {
     try {
-
       var languageEnumObj: LanguageEnumTbl = {
         LanguageEnum: languageEnum
       }
@@ -109,10 +129,20 @@ export class CategoryService {
     }
   }
 
-
-
-
-
+  addAuther(auther: Auther) {
+    try {
+      const headers = { 'Content-Type': 'application/json' };
+      let url = "https://omnamahshivay-api.onrender.com/addAuther"
+      return this.http.post<ResponseMessage>(url, JSON.stringify(auther), { headers });
+    } catch (ex) {
+      var errResponseMsg: ResponseMessage = {
+        success: false,
+        message: "Cannot add Auther. See error for more details",
+        error: JSON.stringify(ex)
+      };
+      return of(errResponseMsg);
+    }
+  }
 
 
   // getCategoryListItemInfo(categoryEnumStr: string): Observable<CategoryListItem> {
@@ -166,15 +196,15 @@ export class CategoryService {
 
   getStutieCategoryCardInfo(): Observable<CategoryCardInfo[]> {
     let categoryCardInfo: CategoryCardInfo[] = [
-      {
-        category: CategoryEnum.Stuties,
-        availableLanguages: [Languages.Sanskrit],
-        // availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
-        itemImgUrl: "/assets/images/categories/stuties/ShivMahimnaStotam.png",
-        titleRouteUrl: `/ShivMahimnaStotam/${Languages[Languages.Sanskrit]}`,
-        title: "श्री शिवमहिम्नस्तोत्रम्‌",
-        itemKey: "ShivMahimnaStotam"
-      },
+      // {
+      //   category: CategoryEnum.Stuties,
+      //   availableLanguages: [Languages.Sanskrit],
+      //   // availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],
+      //   itemImgUrl: "/assets/images/categories/stuties/ShivMahimnaStotam.png",
+      //   titleRouteUrl: `/ShivMahimnaStotam/${Languages[Languages.Sanskrit]}`,
+      //   title: "श्री शिवमहिम्नस्तोत्रम्‌",
+      //   itemKey: "ShivMahimnaStotam"
+      // },
       // {
       //   category: CategoryEnum.Stuties,
       //   availableLanguages: [Languages.Sanskrit, Languages.Gujarati, Languages.English],

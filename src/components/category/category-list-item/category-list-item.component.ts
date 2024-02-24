@@ -51,12 +51,14 @@ export class CategoryListItemComponent {
 
   getAvailableLanguages(availableLanguages: string): string[] {
 
-    if (!availableLanguages.includes(',')) {
-      return [Languages[parseInt(availableLanguages)]];
-    }
-
     let languages: string[] = [];
-    availableLanguages.split(',').map(m => parseInt(m)).forEach(f => languages.push(Languages[f].toString()));
+    if (availableLanguages) {
+      if (!availableLanguages.includes(',')) {
+        return [Languages[parseInt(availableLanguages)]];
+      }
+
+      availableLanguages?.split(',').map(m => parseInt(m)).forEach(f => languages.push(Languages[f]?.toString()));
+    }
     return languages;
   }
 

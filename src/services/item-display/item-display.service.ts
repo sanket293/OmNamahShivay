@@ -97,8 +97,7 @@ export class ItemDisplayService {
     }
 
   }
-
-
+  
   getItemPosterUrl(category: string, itemKey: string): string {
     //TODO: get Image Poster Url from API
     if (category === CategoryEnum[CategoryEnum.Stuties]) {
@@ -118,7 +117,6 @@ export class ItemDisplayService {
     }
     return "/assets/images/categories/ShivChalisa.png";
   }
-
 
   getItemLanguageTags(category: string, itemKey: string): ItemLanguageTag[] {
     //TODO: get tags from API

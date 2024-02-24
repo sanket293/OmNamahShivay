@@ -3,9 +3,22 @@ export enum Languages {
     Gujarati,
     English,
     Hindi,
+    Hindi1,
+    Hindi2,
+    Hindi3,
+    Hindi4,
     Marathi,
+    added,
+    NewLanguage,
     Telugu,
     Malyalam,
-    Kannad
+    Kannad,
+    Kannad1,
+    Kannad2,
+    Kannad3,
+    Kannad4,
+    Kannad5,
+    Kannad6,
+    Kannad7,
+
 }
- 

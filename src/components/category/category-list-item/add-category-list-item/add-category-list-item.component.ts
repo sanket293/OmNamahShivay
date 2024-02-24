@@ -29,7 +29,7 @@ export class AddCategoryListItemComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((route) => {
-      this.categoryListItem.CategoryListId = route["CategoryListItemId"];
+      this.categoryListItem.CategoryListId = route["CategoryListId"];
       this.categoryNameLabel = route["CategoryNameLabel"];
     });
   }

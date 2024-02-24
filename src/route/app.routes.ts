@@ -13,6 +13,7 @@ import { CategoryItemDisplayComponent } from '../components/category/category-it
 import { CategoryItemListDisplayComponent } from '../components/category/category-item-list-display/category-item-list-display.component';
 import { AddCategoryListComponent } from '../components/category/category-list/add-category-list/add-category-list.component';
 import { AddCategoryListItemComponent } from '../components/category/category-list-item/add-category-list-item/add-category-list-item.component';
+import { AddCategoryItemDisplayComponent } from '../components/category/category-item-list-display/add-category-item-display/add-category-item-display.component';
 
 export const routes: Routes = [
     {
@@ -66,12 +67,17 @@ export const routes: Routes = [
         component: CategoryListItemComponent
     },
     {
-        path: 'add-category-list-item/:CategoryListItemId/:CategoryNameLabel', 
+        path: 'add-category-list-item/:CategoryListId/:CategoryNameLabel', 
         component: AddCategoryListItemComponent
     },
  
-    
-    
+
+
+    {
+        path: 'add-category-item-display/:CategoryListItemId/:ItemKey', 
+        component: AddCategoryItemDisplayComponent
+    },
+  
     {
         path: 'CategoryList/:categoryItem/:itemKey/:language', //select one item out of many categoryItems i.e mahimna strotam in Sanskrit or Rudrashtakam in Gujarati
         component: CategoryItemDisplayComponent

@@ -23,8 +23,8 @@
                             class="card-img-top" alt="post-thumb">
                     </div>
                     <div class="card-body">
-                        <h3 class="h4 mb-3"><a class="post-title" routerLink="/add-category-list-item/0">Add new
-                                Item</a>
+                        <h3 class="h4 mb-3"><a class="post-title" routerLink="/add-category-list-item/0">
+                                Add new Item</a>
                         </h3>
                         <ul class="card-meta list-inline">
                             <li class="list-inline-item">
@@ -47,7 +47,8 @@
                         </div>
                         <div class="card-body">
                             <h3 class="h4 mb-3"><a class="post-title"
-                                    routerLink="/add-category-list-item-display/{{listItem.CategoryListItemId}}">{{listItem.Title}}</a>
+                                    routerLink="/add-category-item-display/{{listItem.CategoryListItemId}}/{{listItem.ItemKey}}">
+                                    {{listItem.Title}}</a>
                             </h3>
                             <ul class="card-meta list-inline" *ngIf="listItem.AvailableLanguages">
                                 <li class="list-inline-item"
