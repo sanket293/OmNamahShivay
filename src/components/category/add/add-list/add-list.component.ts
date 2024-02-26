@@ -31,7 +31,7 @@ export class AddListComponent implements OnInit {
 
   message: string = "";
   showLoader: boolean = false;
-  isActive: boolean = false;
+  isActive: boolean = true;
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((route) => {

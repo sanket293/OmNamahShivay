@@ -1,7 +1,7 @@
 import { CommonModule, Location } from '@angular/common';
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { LoaderComponent } from '../../../shared/loader/loader.component';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable, of } from 'rxjs';
@@ -18,11 +18,11 @@ import { GetItemsService } from '../../../../services/get-items/get-items.servic
   templateUrl: './add-item-display.component.html',
   styleUrl: './add-item-display.component.css'
 })
-export class AddItemDisplayComponent implements OnInit, OnChanges {
+export class AddItemDisplayComponent implements OnInit {
 
   showLoader: boolean = false;
   message: string = "";
-  isActive: boolean = false;
+  isActive: boolean = true;
   itemKey: string = "";
 
   categoryItemDisplay: CategoryItemDisplay = { CategoryItemDisplayId: 0, CategoryListItemId: 0, IsActive: 1, Title: "", CurrentLanguageId: 1, MarkDownContent: '', MarkDownFileUrl: '', TimeToRead: "1", AuthorId: 0 };
@@ -32,15 +32,10 @@ export class AddItemDisplayComponent implements OnInit, OnChanges {
   AutherList$: Observable<Auther[]> = of([]);
 
   constructor(private activatedRoute: ActivatedRoute,
-    private router: Router,
     private dialog: MatDialog,
     private location: Location,
     private getItemsService: GetItemsService,
     private addItemsService: AddItemsService) { }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    this.getAuthers();
-  }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((route) => {
@@ -62,6 +57,9 @@ export class AddItemDisplayComponent implements OnInit, OnChanges {
     this.AutherList$ = this.getItemsService.getAuthers();
   }
 
+  onRefreshAutherBtnClick() {
+    this.AutherList$ = this.getItemsService.getAuthers();
+  }
   onAddAutherBtnClick() {
     this.dialog.open(AddAutherDialogComponent);
   }

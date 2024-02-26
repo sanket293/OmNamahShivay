@@ -20,5 +20,6 @@ export enum Languages {
     Kannad5,
     Kannad6,
     Kannad7,
+    malyali=22
 
 }

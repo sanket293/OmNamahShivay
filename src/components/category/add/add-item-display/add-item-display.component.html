@@ -57,8 +57,13 @@
                                     {{auther.AutherName}}
                                 </option>
                             </select>
+                            <span class="input-group-btn horizontal-margin-5">
+                                <button class="btn btn-primary" (click)="onAddAutherBtnClick()" type="button">+
+                                    add</button>
+                            </span>
                             <span class="input-group-btn">
-                                <button class="btn btn-primary" (click)="onAddAutherBtnClick()" type="button">+ add</button>
+                                <button class="btn btn-primary" (click)="onRefreshAutherBtnClick()"
+                                    type="button">Refresh</button>
                             </span>
                         </div>
                     </div>

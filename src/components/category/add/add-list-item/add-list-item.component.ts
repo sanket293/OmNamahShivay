@@ -18,7 +18,7 @@ export class AddListItemComponent implements OnInit {
 
   showLoader: boolean = false;
   message: string = "";
-  isActive: boolean = false;
+  isActive: boolean = true;
   categoryNameLabel: string = "";
 
   categoryListItem: CategoryListItem = { CategoryListId: 0, CategoryListItemId: 0, DisplayOrder: "", ImageUrl: "", IsActive: 1, ItemKey: "", Title: "" };
