@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
-import { CategoriesComponent } from "../navigation/side-nav/categories/categories.component";
-import { TagsComponent } from "../navigation/side-nav/tags/tags.component";
- import { RecentPostComponent } from "../post/recent-post/recent-post.component";
-import { HomeBannerComponent } from "./home-banner/home-banner.component";
+import { CategoriesComponent } from "./categories/categories.component";
+import { TagsComponent } from "./tags/tags.component";
+ import { HomeBannerComponent } from "./home-banner/home-banner.component";
+import { PostListComponent } from "./post-list/post-list.component";
  
 @Component({
     selector: 'app-home',
     standalone: true,
     templateUrl: './home.component.html',
     styleUrl: './home.component.css',
-    imports: [CategoriesComponent, TagsComponent,   RecentPostComponent, HomeBannerComponent,  ]
+    imports: [CategoriesComponent, TagsComponent, HomeBannerComponent, PostListComponent]
 })
 export class HomeComponent {
 

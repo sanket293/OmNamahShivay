@@ -1,0 +1,44 @@
+<h2 class="h5 section-title">Recent Post <a style="float: right;" class="d-flex" routerLink="/add-post">
+        + Add </a></h2>
+
+<ng-container *ngFor="let post of (recentPosts$ | async)">
+    <article class="card mb-4">
+        <div class="post-slider">
+            <img [src]="post.postImageUrl" class="card-img-top" alt="post-thumb">
+        </div>
+        <div class="card-body">
+            <h3 class="mb-3"><a class="post-title" routerLink="/{{post.postUrl}}">{{post.postTitle}}</a>
+            </h3>
+            <ul class="card-meta list-inline">
+                <!-- <li class="list-inline-item">
+      <a href="author-single.html" class="card-meta-author">
+        <img src="/assets/images/john-doe.jpg" alt="John Doe">
+        <span>John Doe</span>
+      </a>
+    </li> -->
+                <li class="list-inline-item">
+                    <i class="ti-timer"></i>{{post.timeToRead}}
+                </li>
+                <li class="list-inline-item">
+                    <i class="ti-calendar"></i>{{post.postDate}}
+                </li>
+                <li class="list-inline-item">
+                    <ul class="card-meta-tag list-inline">
+
+                        <li class="list-inline-item">
+                            <a>{{ AppUtilites.getLanguageName( post.postLanguage ) }}</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <p>
+                {{
+                (post.postContent.length > 200 )?
+                post.postContent.slice(0,200)
+                :post.postContent
+                }}
+            </p>
+            <a routerLink="/{{post.postUrl}}" class="btn btn-outline-primary">Read More</a>
+        </div>
+    </article>
+</ng-container>
