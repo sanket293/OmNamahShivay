@@ -6,7 +6,8 @@ import { LoaderComponent } from "../../../shared/loader/loader.component";
 import { Observable, of } from "rxjs";
 import { CategoryList, CategoryEnumNotEntered, CategoryEnumTbl } from "../../../../model/category/categories.interface";
 import { ResponseMessage } from "../../../../model/response-message.model";
-import { CategoryService } from "../../../../services/category/category.service";
+import { AddItemsService } from "../../../../services/add-items/add-items.service";
+import { GetItemsService } from "../../../../services/get-items/get-items.service";
 
 @Component({
   selector: 'app-add-list',
@@ -19,7 +20,8 @@ export class AddListComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute,
     private router: Router,
-    private categoryService: CategoryService) { }
+    private addItemsService: AddItemsService,
+    private getItemsService:GetItemsService) { }
 
   categoryList: CategoryList = { CategoryEnumId: 1, CategoryNameLabel: "", CategoryNameLabelSanskrit: "", DisplayOrder: "", IsActive: 1 };
   categoryListId: number = 0;
@@ -36,7 +38,7 @@ export class AddListComponent implements OnInit {
       this.categoryListId = route["CategoryListId"];
     });
 
-    this.CategoryEnumNotEntered$ = this.categoryService.getNotEnteredCategoryEnums();
+    this.CategoryEnumNotEntered$ = this.getItemsService.getNotEnteredCategoryEnums();
   }
 
   onInsertRecordBtnClick() {
@@ -62,7 +64,7 @@ export class AddListComponent implements OnInit {
 
     this.categoryList.IsActive = +this.isActive;
 
-    this.categoryService.addCategoryList(this.categoryList).subscribe({
+    this.addItemsService.addCategoryList(this.categoryList).subscribe({
       next: (response: ResponseMessage) => {
         this.message = response.message;
         this.router.navigate(['']);

@@ -5,8 +5,8 @@ import { CategoryEnum } from '../../../../enums/category-enum.enum';
 import { Languages } from '../../../../enums/languages.enum';
 import { VCategoryListItem, VCategoryList } from '../../../../model/category/categories.interface';
 import { CategoryCardInfo } from '../../../../model/category/category-card-info.model';
-import { CategoryService } from '../../../../services/category/category.service';
 import { CommonModule } from '@angular/common';
+import { GetItemsService } from '../../../../services/get-items/get-items.service';
 
 @Component({
   selector: 'app-list-item',
@@ -20,16 +20,16 @@ export class ListItemComponent implements OnInit {
   categoryListItemInfo$: Observable<VCategoryListItem[]> = of([]);
   category!: VCategoryList | undefined;
 
-  constructor(private categoryService: CategoryService,
+  constructor(private getItemsService: GetItemsService,
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
 
     this.categoryListId = this.activatedRoute.snapshot.params['CategoryListId'];
 
-    this.categoryListItemInfo$ = this.categoryService.getCategoryListItem(this.categoryListId);
+    this.categoryListItemInfo$ = this.getItemsService.getCategoryListItem(this.categoryListId);
 
-    this.categoryService.getCategoryList().subscribe(
+    this.getItemsService.getCategoryList().subscribe(
       data => {
         this.category = data.find(f => f.CategoryListId.toString() === this.categoryListId)
       })
@@ -39,9 +39,6 @@ export class ListItemComponent implements OnInit {
     return Languages[languageId];
   }
 
-  // getRouteUrlForLanguageTag(item: CategoryCardInfo, languageId: number) {
-  //   return `/CategoryList/${CategoryEnum[item.category]}/${item.itemKey}/${Languages[languageId]}`; //Don't forget to use absolute path, put / infront of route, this will replace whole path insted of just append 
-  // }
 
   getPostUrl(item: CategoryCardInfo) {
     return `/CategoryList/${CategoryEnum[item.category]}/${item.itemKey}/${Languages[1]}`;
@@ -58,12 +55,6 @@ export class ListItemComponent implements OnInit {
       availableLanguages?.split(',').map(m => parseInt(m)).forEach(f => languages.push(Languages[f]?.toString()));
     }
     return languages;
-  }
-
-
-  getRouteUrlForLanguageTag(listItem: VCategoryListItem): string {
-    return "shree";
-    //TODO: send next page for update
   }
 
 }

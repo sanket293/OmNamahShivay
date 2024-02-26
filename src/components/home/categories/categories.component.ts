@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { CategoryService } from '../../../services/category/category.service';
 import { Observable, of } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { VCategoryList } from '../../../model/category/categories.interface';
+import { GetItemsService } from '../../../services/get-items/get-items.service';
 
 @Component({
   selector: 'app-categories',
@@ -16,10 +16,10 @@ export class CategoriesComponent implements OnInit {
 
   categories$: Observable<VCategoryList[]> = of([]);
 
-  constructor(private categoryService: CategoryService, private router: Router) { }
+  constructor(private getItemsService: GetItemsService, private router: Router) { }
 
   ngOnInit(): void {
-    this.categories$ = this.categoryService.getCategoryList();
+    this.categories$ = this.getItemsService.getCategoryList();
   }
 
 }

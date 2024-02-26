@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CategoryService } from '../../../services/category/category.service';
 import { CommonModule } from '@angular/common';
-import { Router, RouterModule } from '@angular/router';
-import { TagService } from '../../../services/tag/tag.service';
-import { ItemProperty } from '../../../model/ItemProperty.model';
-import { Category } from '../../../model/category/category.model';
-import { VCategoryList } from '../../../model/category/categories.interface';
+import { RouterModule } from '@angular/router';
+import { VCategoryList } from '../../../model/category/categories.interface'; 
+import { GetItemsService } from '../../../services/get-items/get-items.service';
 
 @Component({
   selector: 'app-header',
@@ -25,10 +22,11 @@ export class HeaderComponent {
 
   categories$: Observable<VCategoryList[]> | undefined;
 
-  constructor(private categoryService: CategoryService, private tagService: TagService, private router: Router) { }
+  constructor(private getItemsService: GetItemsService) { }
 
   ngOnInit(): void {
-    this.categories$ = this.categoryService.getCategoryList();
+    this.categories$ = this.getItemsService.getCategoryList();
   }
-
+  onAuthersClick() { }
+  onPostsClick() { }
 }

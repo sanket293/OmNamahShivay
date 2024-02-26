@@ -3,24 +3,24 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { RouterModule } from '@angular/router';
-import { CategoryService } from '../../../../services/category/category.service';
 import { ResponseMessage } from '../../../../model/response-message.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { LoaderComponent } from "../../loader/loader.component";
+import { AddItemsService } from '../../../../services/add-items/add-items.service';
 
 @Component({
-    selector: 'app-insert-dialog',
-    standalone: true,
-    templateUrl: './insert-dialog.component.html',
-    styleUrl: './insert-dialog.component.css',
-    imports: [MatDialogModule, MatButtonModule, RouterModule, CommonModule, FormsModule, LoaderComponent]
+  selector: 'app-insert-dialog',
+  standalone: true,
+  templateUrl: './insert-dialog.component.html',
+  styleUrl: './insert-dialog.component.css',
+  imports: [MatDialogModule, MatButtonModule, RouterModule, CommonModule, FormsModule, LoaderComponent]
 })
 export class InsertDialogComponent implements OnInit {
   constructor(@Inject(MAT_DIALOG_DATA) public tagType: string,
+    private addItemsService: AddItemsService,
     public dialogRef: MatDialogRef<InsertDialogComponent>,
-    private categoryService: CategoryService,
     private snackBar: MatSnackBar) { }
 
   enumValue: string = "";
@@ -30,7 +30,7 @@ export class InsertDialogComponent implements OnInit {
   }
 
   onInsertEnumClick() {
-    if(!this.enumValue){
+    if (!this.enumValue) {
       this.snackBar.open("Please enter enum value");
       return;
     }
@@ -43,7 +43,7 @@ export class InsertDialogComponent implements OnInit {
   }
 
   insertCategoryEnum() {
-    this.categoryService.addCategoryEnum(this.enumValue).subscribe({
+    this.addItemsService.addCategoryEnum(this.enumValue).subscribe({
       next: (response: ResponseMessage) => {
         if (response.success) {
           this.dialogRef.close();
@@ -65,7 +65,7 @@ export class InsertDialogComponent implements OnInit {
   }
 
   insertLanguageEnum() {
-    this.categoryService.addLanguageEnum(this.enumValue).subscribe({
+    this.addItemsService.addLanguageEnum(this.enumValue).subscribe({
       next: (response: ResponseMessage) => {
         if (response.success) {
           this.dialogRef.close();

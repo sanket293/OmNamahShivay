@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { TagService } from '../../../services/tag/tag.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { CategoryEnumTbl, LanguageEnumTbl } from '../../../model/category/categories.interface';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { InsertDialogComponent } from '../../shared/dialogs/insert-dialog/insert-dialog.component';
+import { GetItemsService } from '../../../services/get-items/get-items.service';
 
 @Component({
   selector: 'app-tags',
@@ -23,15 +23,15 @@ export class TagsComponent implements OnInit {
 
   languageEnums$: Observable<LanguageEnumTbl[]> = of([]);
 
-  constructor(private tagService: TagService, private dialog: MatDialog) { }
+  constructor(private getItemsService: GetItemsService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
 
     if (this.tagType === "CategoryEnum")
-      this.categoryEnums$ = this.tagService.getCategoryEnumTags();
+      this.categoryEnums$ = this.getItemsService.getCategoryEnums();
 
     if (this.tagType === "LanguageEnum")
-      this.languageEnums$ = this.tagService.getLanguageEnumTags();
+      this.languageEnums$ = this.getItemsService.getLanguageEnums();
   }
 
   openDialog() {

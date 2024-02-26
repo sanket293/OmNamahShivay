@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Auther } from '../../model/auther.model';
-import { CategoryEnumTbl, CategoryEnumNotEntered, LanguageEnumTbl, VCategoryList, VCategoryListItem } from '../../model/category/categories.interface';
+import { CategoryEnumTbl, CategoryEnumNotEntered, LanguageEnumTbl, VCategoryList, VCategoryListItem, Auther } from '../../model/category/categories.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -39,4 +38,5 @@ export class GetItemsService {
   getAuthers(): Observable<Auther[]> {
     return this.http.get<Auther[]>("https://omnamahshivay-api.onrender.com/getAuthers");
   }
+
 }

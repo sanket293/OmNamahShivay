@@ -7,8 +7,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { Observable, of } from 'rxjs';
 import { Auther, CategoryItemDisplay, LanguageEnumTbl } from '../../../../model/category/categories.interface';
 import { ResponseMessage } from '../../../../model/response-message.model';
-import { CategoryService } from '../../../../services/category/category.service';
 import { AddAutherDialogComponent } from '../../../shared/dialogs/add-auther-dialog/add-auther-dialog.component';
+import { AddItemsService } from '../../../../services/add-items/add-items.service';
+import { GetItemsService } from '../../../../services/get-items/get-items.service';
 
 @Component({
   selector: 'app-add-item-display',
@@ -34,7 +35,8 @@ export class AddItemDisplayComponent implements OnInit, OnChanges {
     private router: Router,
     private dialog: MatDialog,
     private location: Location,
-    private categoryService: CategoryService) { }
+    private getItemsService: GetItemsService,
+    private addItemsService: AddItemsService) { }
 
   ngOnChanges(changes: SimpleChanges): void {
     this.getAuthers();
@@ -45,7 +47,7 @@ export class AddItemDisplayComponent implements OnInit, OnChanges {
       this.categoryItemDisplay.CategoryListItemId = route["CategoryListItemId"];
       this.itemKey = route["ItemKey"];
 
-      this.categoryService.getLanguageEnumNotEntered(this.categoryItemDisplay.CategoryListItemId)
+      this.getItemsService.getLanguageEnumNotEntered(this.categoryItemDisplay.CategoryListItemId)
         .subscribe({
           next: ((langs) => {
             this.LanguagesEnumNotEntered = langs;
@@ -57,7 +59,7 @@ export class AddItemDisplayComponent implements OnInit, OnChanges {
   }
 
   getAuthers() {
-    this.AutherList$ = this.categoryService.getAuthers();
+    this.AutherList$ = this.getItemsService.getAuthers();
   }
 
   onAddAutherBtnClick() {
@@ -79,7 +81,7 @@ export class AddItemDisplayComponent implements OnInit, OnChanges {
 
     this.categoryItemDisplay.IsActive = +this.isActive;
 
-    this.categoryService.addCategoryItemDisplay(this.categoryItemDisplay).subscribe({
+    this.addItemsService.addCategoryItemDisplay(this.categoryItemDisplay).subscribe({
       next: (response: ResponseMessage) => {
         this.message = response.message;
         // this.router.navigate([`/CategoryList/${this.categoryItemDisplay.CategoryListId}`]);

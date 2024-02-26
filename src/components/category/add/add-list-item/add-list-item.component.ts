@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { CategoryListItem } from '../../../../model/category/categories.interface';
 import { ResponseMessage } from '../../../../model/response-message.model';
-import { CategoryService } from '../../../../services/category/category.service';
 import { LoaderComponent } from "../../../shared/loader/loader.component";
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { AddItemsService } from '../../../../services/add-items/add-items.service';
 
 @Component({
   selector: 'app-add-list-item',
@@ -25,7 +25,7 @@ export class AddListItemComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute,
     private router: Router,
-    private categoryService: CategoryService) { }
+    private addItemsService: AddItemsService) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((route) => {
@@ -55,7 +55,7 @@ export class AddListItemComponent implements OnInit {
     this.categoryListItem.IsActive = +this.isActive;
     console.log(JSON.stringify(this.categoryListItem));
 
-    this.categoryService.addCategoryListItem(this.categoryListItem).subscribe({
+    this.addItemsService.addCategoryListItem(this.categoryListItem).subscribe({
       next: (response: ResponseMessage) => {
         this.message = response.message;
         this.router.navigate([`/show-list-item/${this.categoryListItem.CategoryListId}`]);

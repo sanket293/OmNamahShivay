@@ -1,7 +1,0 @@
-.ti-pencil:before {
-    content: "\e61c";
-    font-size: xx-large;
-    color: black;
-}
-
-.show-cursor { cursor: pointer; }

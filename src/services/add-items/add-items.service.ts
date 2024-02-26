@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Auther } from '../../model/auther.model';
-import { CategoryList, CategoryListItem, CategoryItemDisplay, CategoryEnumTbl, LanguageEnumTbl } from '../../model/category/categories.interface';
+import { CategoryList, CategoryListItem, CategoryItemDisplay, CategoryEnumTbl, LanguageEnumTbl, Auther } from '../../model/category/categories.interface';
 import { ResponseMessage } from '../../model/response-message.model';
 import { HttpClient } from '@angular/common/http';
 
@@ -9,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AddItemsService {
-  
+
   constructor(private http: HttpClient) { }
 
   addCategoryList(categoryList: CategoryList): Observable<ResponseMessage> {
