@@ -55,15 +55,15 @@ export const routes: Routes = [
         component: CategoryListComponent
     },
     {
-        path: 'CategoryList/:categoryListItem', //select one catagory out of many i.e stuties
+        path: 'CategoryList/:categoryItem', //select one catagory out of many i.e stuties
         component: CategoryListItemComponent
     },
     {
-        path: 'CategoryList/:categoryListItem/:itemKey/:language', //select one item out of many categoryItems i.e mahimna strotam in Sanskrit or Rudrashtakam in Gujarati
+        path: 'CategoryList/:categoryItem/:itemKey/:language', //select one item out of many categoryItems i.e mahimna strotam in Sanskrit or Rudrashtakam in Gujarati
         component: CategoryItemDisplayComponent
     },
     {
-        path: 'CategoryList/:itemKey/:language', //select one item out of many categoryItems i.e mahimna strotam in Sanskrit or Rudrashtakam in Gujarati
+        path: 'CategoryList/:itemKey/:language', //select one item out of many categoryItems i.e Shiv names 108, 1000
         component: CategoryItemListDisplayComponent
     },
 
