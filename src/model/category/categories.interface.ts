@@ -17,7 +17,7 @@ export interface Auther {
   AutherId: string;
   AutherName: string,
   AutherImageUrl: string,
-  AutherForPost?:boolean
+  AutherForPost?: boolean
 }
 
 export interface CategoryList {
@@ -70,6 +70,7 @@ export interface CategoryItemDisplay {
   IsActive: number;
   TimeToRead: string;
   AuthorId: number;
+  ItemImageUrl?: string;
 }
 
 export interface VCategoryItemDisplay {
@@ -84,4 +85,5 @@ export interface VCategoryItemDisplay {
   AuthorId: number;
   AutherName: string;
   AutherImageUr: string;
+  ItemImageUrl?: string;
 }
