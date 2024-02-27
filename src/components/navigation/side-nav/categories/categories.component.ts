@@ -3,7 +3,6 @@ import { CategoryService } from '../../../../services/category/category.service'
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { Category } from '../../../../model/category/category.model';
 import { VCategoryList } from '../../../../model/categories.interface';
 
 @Component({
@@ -22,6 +21,8 @@ export class CategoriesComponent implements OnInit {
   ngOnInit(): void {
     this.categories$ = this.categoryService.getCategoryList();
   }
-  getRouteLink(category: VCategoryList): string { return ""; }
+  getRouteLink(category: VCategoryList): string {
+    return `/ListItem/${category.CategoryListId}/${category.CategoryNameLabelSanskrit}`; //TODO: create parma link
+  }
 
 }

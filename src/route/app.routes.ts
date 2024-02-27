@@ -6,7 +6,7 @@ import { ContactUsComponent } from '../components/navigation/header/contact-us/c
 import { PrivacyPolicyComponent } from '../components/navigation/footer/privacy-policy/privacy-policy.component';
 import { TermsConditionsComponent } from '../components/navigation/footer/terms-conditions/terms-conditions.component';
 import { PostComponent } from '../components/post/post.component';
-import { CategoryListComponent } from '../components/category/list/category-list/category-list.component';
+import { CategoryListComponent } from '../components/category/list/category-list.component';
 import { CategoryListItemComponent } from '../components/category/list-item/category-list-item/category-list-item.component';
 import { CategoryItemDisplayComponent } from '../components/category/item-display/category-item-display/category-item-display.component';
 import { CategoryItemListDisplayComponent } from '../components/category/item-display/category-item-list-display/category-item-list-display.component';
@@ -22,11 +22,7 @@ export const routes: Routes = [
         path: 'home',
         redirectTo: 'Home',
         pathMatch: 'full'
-    },
-    {
-        path: '**',
-        component: ErrorComponent
-    },
+    }, 
     {
         path: 'Home',
         component: HomeComponent
@@ -83,5 +79,8 @@ export const routes: Routes = [
     //     path: 'CategoryList/:itemKey/:language', //select one item out of many categoryItems i.e Shiv names 108, 1000
     //     component: CategoryItemListDisplayComponent
     // },
-
+    {
+        path: '**',
+        component: ErrorComponent
+    },
 ];

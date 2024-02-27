@@ -29,8 +29,8 @@ export class CategoryListItemComponent {
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    var categoryItemStr = this.route.snapshot.params['categoryListItem'];
-    this.categoryListItemInfo$ = this.categoryService.getCategoryListItem("this.categoryListId");
+    const categoryListId:string = this.route.snapshot.params['categoryListId'];
+    this.categoryListItemInfo$ = this.categoryService.getCategoryListItem(categoryListId);
   }
 
   getLanguageName(languageId: number) {
