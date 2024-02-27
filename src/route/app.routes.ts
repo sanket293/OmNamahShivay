@@ -10,6 +10,7 @@ import { CategoryListComponent } from '../components/category/list/category-list
 import { CategoryListItemComponent } from '../components/category/list-item/category-list-item/category-list-item.component';
 import { CategoryItemDisplayComponent } from '../components/category/item-display/category-item-display/category-item-display.component';
 import { CategoryItemListDisplayComponent } from '../components/category/item-display/category-item-list-display/category-item-list-display.component';
+import { ItemDisplayComponent } from '../components/category/item-display/item-display/item-display.component';
 
 export const routes: Routes = [
     {
@@ -22,7 +23,10 @@ export const routes: Routes = [
         redirectTo: 'Home',
         pathMatch: 'full'
     },
-    // Header n Footer
+    {
+        path: '**',
+        component: ErrorComponent
+    },
     {
         path: 'Home',
         component: HomeComponent
@@ -50,26 +54,34 @@ export const routes: Routes = [
     },
     //Categories
     {
-        path: 'CategoryList', //list of all categories i.e stutiess, mantras, bhajans etc...
+        path: 'List/:parmaLinkDescription',
         component: CategoryListComponent
     },
     {
-        path: 'CategoryList/:categoryItem', //select one catagory out of many i.e stuties
+        path: 'ListItem/:categoryListId/:parmaLinkDescription',
         component: CategoryListItemComponent
     },
     {
-        path: 'CategoryList/:categoryItem/:itemKey/:language', //select one item out of many categoryItems i.e mahimna strotam in Sanskrit or Rudrashtakam in Gujarati
-        component: CategoryItemDisplayComponent
-    },
-    {
-        path: 'CategoryList/:itemKey/:language', //select one item out of many categoryItems i.e Shiv names 108, 1000
-        component: CategoryItemListDisplayComponent
+        path: 'ItemDisplay/:categoryListItemId/:parmaLinkDescription',
+        component: ItemDisplayComponent
     },
 
-    {
-        path: '**',
-        component: ErrorComponent
-    },
+
+    // {
+    //     path: 'CategoryList', //list of all categories i.e stutiess, mantras, bhajans etc...
+    //     component: CategoryListComponent
+    // },
+    // {
+    //     path: 'CategoryList//:CategoryListId', //select one catagory out of many i.e stuties
+    //     component: CategoryListItemComponent
+    // },
+    // {
+    //     path: 'CategoryList/:categoryItem/:itemKey/:language', //select one item out of many categoryItems i.e mahimna strotam in Sanskrit or Rudrashtakam in Gujarati
+    //     component: CategoryItemDisplayComponent
+    // },
+    // {
+    //     path: 'CategoryList/:itemKey/:language', //select one item out of many categoryItems i.e Shiv names 108, 1000
+    //     component: CategoryItemListDisplayComponent
+    // },
+
 ];
-
-
