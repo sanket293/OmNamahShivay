@@ -1,13 +1,12 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from '../components/home/home.component';
 import { ErrorComponent } from '../components/shared/error/error.component';
-import { AppStrings } from '../constants/appstrings.model';
 import { AboutUsComponent } from '../components/navigation/header/about-us/about-us.component';
 import { ContactUsComponent } from '../components/navigation/header/contact-us/contact-us.component';
 import { PrivacyPolicyComponent } from '../components/navigation/footer/privacy-policy/privacy-policy.component';
 import { TermsConditionsComponent } from '../components/navigation/footer/terms-conditions/terms-conditions.component';
 import { PostComponent } from '../components/post/post.component';
- import { CategoryListComponent } from '../components/category/list/category-list/category-list.component';
+import { CategoryListComponent } from '../components/category/list/category-list/category-list.component';
 import { CategoryListItemComponent } from '../components/category/list-item/category-list-item/category-list-item.component';
 import { CategoryItemDisplayComponent } from '../components/category/item-display/category-item-display/category-item-display.component';
 import { CategoryItemListDisplayComponent } from '../components/category/item-display/category-item-list-display/category-item-list-display.component';
@@ -20,7 +19,7 @@ export const routes: Routes = [
     },
     {
         path: 'home',
-        redirectTo: AppStrings.RedirectHome,
+        redirectTo: 'Home',
         pathMatch: 'full'
     },
     // Header n Footer

@@ -3,8 +3,7 @@ import { Observable, of } from 'rxjs';
 import { CategoryEnum } from '../../enums/category-enum.enum';
 import { Languages } from '../../enums/languages.enum';
 import { ItemProperty } from '../../model/ItemProperty.model';
-import { AppStrings } from '../../constants/appstrings.model';
-
+ 
 @Injectable({
   providedIn: 'root'
 })
@@ -21,7 +20,8 @@ export class TagService {
         language: Languages.Sanskrit,
         name: "शिवमहिम्न:स्तोत्र",
         itemKey: "ShivMahimnaStotam",
-        routeUrl: `/CategoryList/${AppStrings.Stuties}/ShivMahimnaStotam/${Languages[Languages.Sanskrit]}`
+        routeUrl: ``
+        // routeUrl: `/CategoryList/${AppStrings.Stuties}/ShivMahimnaStotam/${Languages[Languages.Sanskrit]}`
       },
       {
         category: CategoryEnum.Ashtaks,
@@ -42,7 +42,8 @@ export class TagService {
         language: Languages.Sanskrit,
         name: "श्री शिव चालीसा",
         itemKey: "ShivChalisa",
-        routeUrl: `/CategoryList/${AppStrings.ShivChalisa}/ShivChalisa/${Languages[Languages.Sanskrit]}`
+        routeUrl: ``
+        // routeUrl: `/CategoryList/${AppStrings.ShivChalisa}/ShivChalisa/${Languages[Languages.Sanskrit]}`
       },
       {
         category: CategoryEnum.ShivPooja,
