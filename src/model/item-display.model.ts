@@ -1,5 +1,4 @@
-import { ItemProperty } from "./ItemProperty.model";
-import { Auther } from "./auther.model";
+import { Auther } from "./categories.interface";
 import { ItemLanguageTag } from "./item-language-tag.model";
 
 export interface ItemDisplay {
@@ -9,5 +8,5 @@ export interface ItemDisplay {
     availableInLanguages: ItemLanguageTag[];
     currentItemLanguage: string;
     markDownContantUrl: string;
-    auther:Auther;
+    auther: Auther;
 }

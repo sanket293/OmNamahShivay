@@ -158,5 +158,16 @@ export class PostService {
     return of(this.recentPost.find(f => f.postId === postId));
   }
 
+  // //Posts
+  // getAllPosts(): Observable<VPostDetails[]> {
+  //   return this.http.get<VPostDetails[]>(`https://omnamahshivay-api.onrender.com/getAllPosts`);
+  // }
+
+  // getPostDetails(postId: number): Observable<VPostDetails> {
+  //   return this.http.get<VPostDetails>(`https://omnamahshivay-api.onrender.com/getPostDetails/${postId}`);
+  // }
+
+
+
   constructor() { }
 }

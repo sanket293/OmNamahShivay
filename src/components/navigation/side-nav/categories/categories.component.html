@@ -3,8 +3,8 @@
   <ul class="list-unstyled widget-list">
 
     <li *ngFor="let category of (categories$ | async)">
-      <a routerLink="{{category.routeUrl}}" class="d-flex">{{category.categoryNameSanskrit}}
-        <small class="ml-auto">({{category.itemCount}})</small>
+      <a routerLink="{{getRouteLink(category)}}" class="d-flex">{{category.CategoryNameLabelSanskrit}}
+        <small class="ml-auto">({{category.ItemCount}})</small>
       </a>
     </li>
 

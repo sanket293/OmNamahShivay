@@ -2,11 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { MarkdownComponent, MarkdownService } from 'ngx-markdown';
-import { RecentPostComponent } from '../../post/recent-post/recent-post.component';
-import { LanguageTagsComponent } from '../../shared/language-tags/language-tags.component';
+import { RecentPostComponent } from '../../../post/recent-post/recent-post.component';
+import { LanguageTagsComponent } from '../../../shared/language-tags/language-tags.component';
 import { Observable } from 'rxjs';
-import { ItemDisplay } from '../../../model/item-display.model';
-import { ItemDisplayService } from '../../../services/item-display/item-display.service';
+import { ItemDisplay } from '../../../../model/item-display.model';
+import { CategoryService } from '../../../../services/category/category.service';
 
 @Component({
   selector: 'app-category-item-display',
@@ -21,7 +21,8 @@ export class CategoryItemDisplayComponent implements OnInit {
   markdown$: Observable<string> | undefined;
 
   constructor(public activatedRoute: ActivatedRoute, public router: Router, private mdService: MarkdownService,
-    private itemDisplayService: ItemDisplayService) { }
+    private categoryService: CategoryService
+  ) { }
 
   ngOnInit() {
 
@@ -32,11 +33,13 @@ export class CategoryItemDisplayComponent implements OnInit {
       let itemKey = routeParameters.get('itemKey') ?? "";
       let language = routeParameters.get('language') ?? "";
 
-      this.itemDisplayService.getItemDisplayDetails(category, itemKey, language).subscribe((itemDisplay: ItemDisplay) => {
-        this.itemDisplay = itemDisplay;
-        this.markdown$ = this.mdService.getSource(this.itemDisplay.markDownContantUrl)
-      });
+      // this.itemDisplayService.getItemDisplayDetails(category, itemKey, language).subscribe((itemDisplay: ItemDisplay) => {
+      //   this.itemDisplay = itemDisplay;
+      //   this.markdown$ = this.mdService.getSource(this.itemDisplay.markDownContantUrl)
+      // });
 
+
+      this.categoryService.getCategoryItemDisplay(); //TODO: get the value
     });
   }
 

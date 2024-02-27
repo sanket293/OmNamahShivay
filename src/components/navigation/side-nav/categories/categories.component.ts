@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
- import { CategoryService } from '../../../../services/category/category.service';
+import { CategoryService } from '../../../../services/category/category.service';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Category } from '../../../../model/category/category.model';
+import { VCategoryList } from '../../../../model/categories.interface';
 
 @Component({
   selector: 'app-categories',
@@ -14,13 +15,13 @@ import { Category } from '../../../../model/category/category.model';
 })
 export class CategoriesComponent implements OnInit {
 
-  categories$: Observable<Category[]> | undefined ;
-  
+  categories$: Observable<VCategoryList[]> | undefined;
+
   constructor(private categoryService: CategoryService) { }
 
   ngOnInit(): void {
-  this.categories$ =  this.categoryService.getCategoryList();
+    this.categories$ = this.categoryService.getCategoryList();
   }
-
+  getRouteLink(category: VCategoryList): string { return ""; }
 
 }
