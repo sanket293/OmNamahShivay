@@ -4,10 +4,10 @@
 <ng-container *ngFor="let post of (recentPosts$ | async)">
     <article class="card mb-4">
         <div class="post-slider">
-            <img [src]="post.postImageUrl" class="card-img-top" alt="post-thumb">
+            <img [src]="post.PostImageUrl" class="card-img-top" alt="post-thumb">
         </div>
         <div class="card-body">
-            <h3 class="mb-3"><a class="post-title" routerLink="/{{post.postUrl}}">{{post.postTitle}}</a>
+            <h3 class="mb-3"><a class="post-title" routerLink="/show-post-details/{{post.PostId}}">{{post.Title}}</a>
             </h3>
             <ul class="card-meta list-inline">
                 <!-- <li class="list-inline-item">
@@ -17,28 +17,28 @@
       </a>
     </li> -->
                 <li class="list-inline-item">
-                    <i class="ti-timer"></i>{{post.timeToRead}}
+                    <i class="ti-timer"></i>{{post.TimeToRead}}
                 </li>
                 <li class="list-inline-item">
-                    <i class="ti-calendar"></i>{{post.postDate}}
+                    <i class="ti-calendar"></i>{{post.PostDate}}
                 </li>
                 <li class="list-inline-item">
                     <ul class="card-meta-tag list-inline">
 
                         <li class="list-inline-item">
-                            <a>{{ AppUtilites.getLanguageName( post.postLanguage ) }}</a>
+                            <a>{{ AppUtilites.getLanguageName( post.PostLanguage ) }}</a>
                         </li>
                     </ul>
                 </li>
             </ul>
             <p>
                 {{
-                (post.postContent.length > 200 )?
-                post.postContent.slice(0,200)
-                :post.postContent
+                (post.PostContent.length > 200 )?
+                post.PostContent.slice(0,200)
+                :post.PostContent
                 }}
             </p>
-            <a routerLink="/{{post.postUrl}}" class="btn btn-outline-primary">Read More</a>
+            <a routerLink="/show-post-details/{{post.PostId}}" class="btn btn-outline-primary">Read More</a>
         </div>
     </article>
 </ng-container>

@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
-import { CategoryListItem } from '../../../../model/category/categories.interface';
-import { ResponseMessage } from '../../../../model/response-message.model';
-import { LoaderComponent } from "../../../shared/loader/loader.component";
+import { CategoryListItem } from '../../../model/category/categories.interface';
+import { ResponseMessage } from '../../../model/response-message.model';
+import { LoaderComponent } from "../../shared/loader/loader.component";
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { AddItemsService } from '../../../../services/add-items/add-items.service';
+import { AddItemsService } from '../../../services/add-items/add-items.service';
 
 @Component({
   selector: 'app-add-list-item',

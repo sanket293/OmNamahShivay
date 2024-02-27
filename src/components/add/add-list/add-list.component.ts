@@ -2,12 +2,12 @@ import { CommonModule } from "@angular/common";
 import { Component, OnInit } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { ActivatedRoute, Router, RouterModule } from "@angular/router";
-import { LoaderComponent } from "../../../shared/loader/loader.component";
+import { LoaderComponent } from "../../shared/loader/loader.component";
 import { Observable, of } from "rxjs";
-import { CategoryList, CategoryEnumNotEntered, CategoryEnumTbl } from "../../../../model/category/categories.interface";
-import { ResponseMessage } from "../../../../model/response-message.model";
-import { AddItemsService } from "../../../../services/add-items/add-items.service";
-import { GetItemsService } from "../../../../services/get-items/get-items.service";
+import { CategoryList, CategoryEnumNotEntered, CategoryEnumTbl } from "../../../model/category/categories.interface";
+import { ResponseMessage } from "../../../model/response-message.model";
+import { AddItemsService } from "../../../services/add-items/add-items.service";
+import { GetItemsService } from "../../../services/get-items/get-items.service";
 
 @Component({
   selector: 'app-add-list',

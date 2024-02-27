@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { AppUtilites } from '../../../constants/apputilities.model';
-import { Post } from '../../../model/post.model';
-import { PostService } from '../../../services/post/post.service';
+import { VPostDetails } from '../../../model/post.model';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { CategoriesComponent } from '../categories/categories.component';
 import { TagsComponent } from '../tags/tags.component';
+import { GetItemsService } from '../../../services/get-items/get-items.service';
 
 @Component({
   selector: 'app-post-list',
@@ -19,12 +19,12 @@ import { TagsComponent } from '../tags/tags.component';
 export class PostListComponent implements OnInit {
   AppUtilites = AppUtilites;
 
-  constructor(private postService: PostService) { }
+  constructor(private getItemsService: GetItemsService) { }
 
-  recentPosts$: Observable<Post[]> | undefined;
+  recentPosts$: Observable<VPostDetails[]> = of([]);
 
   ngOnInit(): void {
     // Post
-    this.recentPosts$ = this.postService.getRecentPossts();
+    this.recentPosts$ = this.getItemsService.getAllPosts();
   }
 }

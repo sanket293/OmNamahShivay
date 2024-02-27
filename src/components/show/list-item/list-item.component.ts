@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import { CategoryEnum } from '../../../../enums/category-enum.enum';
-import { Languages } from '../../../../enums/languages.enum';
-import { VCategoryListItem, VCategoryList } from '../../../../model/category/categories.interface';
-import { CategoryCardInfo } from '../../../../model/category/category-card-info.model';
+import { CategoryEnum } from '../../../enums/category-enum.enum';
+import { Languages } from '../../../enums/languages.enum';
+import { VCategoryListItem, VCategoryList } from '../../../model/category/categories.interface';
+import { CategoryCardInfo } from '../../../model/category/category-card-info.model';
 import { CommonModule } from '@angular/common';
-import { GetItemsService } from '../../../../services/get-items/get-items.service';
+import { GetItemsService } from '../../../services/get-items/get-items.service';
 
 @Component({
   selector: 'app-list-item',

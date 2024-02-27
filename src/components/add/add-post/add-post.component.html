@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-9 mx-auto">
-                <h1 class="mb-4">Item Display</h1>
+                <h1 class="mb-4">Add Post</h1>
             </div>
         </div>
     </div>
@@ -27,32 +27,46 @@
                 </div>
 
                 <form method="POST" action="#">
+
                     <div class="form-group">
-                        <label for="CategoryListId">Item Key : <strong>{{itemKey}} </strong></label>
+                        <label for="Title">Title (*)</label>
+                        <input type="text" name="Title" id="Title" [(ngModel)]="post.Title"
+                            class="form-control" minlength="1" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="CurrentLanguageId">Select Current Language</label>
-                        <select class="form-control" id="select-currrent-language" name="select-currrent-language"
-                            [(ngModel)]="categoryItemDisplay.CurrentLanguageId" required>
-                            <option *ngFor="let language of LanguagesEnumNotEntered"
-                                [ngValue]="language.LanguageEnumId">
+                        <label for="CurrentLanguageId">Select Post Language</label>
+                        <select class="form-control" id="select-post-language" name="select-post-language"
+                            [(ngModel)]="post.PostLanguage" required>
+                            <option *ngFor="let language of (allLanguages$|async)" [ngValue]="language.LanguageEnumId">
                                 {{language.LanguageEnum}}
                             </option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="Title">Title (*)</label>
-                        <input type="text" name="Title" id="Title" [(ngModel)]="categoryItemDisplay.Title"
-                            class="form-control" minlength="1" required>
+                        <label for="PostContent">Post Content</label>
+                        <input type="text" name="PostContent" id="PostContent" class="form-control" minlength="1"
+                            [(ngModel)]="post.PostContent">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="TimeToRead">Time To Read (mins) (*)</label>
+                        <input type="text" name="TimeToRead" id="TimeToRead" class="form-control" minlength="1"
+                            [(ngModel)]="post.TimeToRead" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="PostDate">Date (*)</label>
+                        <input type="date" name="PostDate" id="PostDate" class="form-control" minlength="1"
+                            [(ngModel)]="post.PostDate" required>
                     </div>
 
                     <div class="form-group">
                         <label for="CategoryAutherId">Auther</label>
                         <div class="input-group">
                             <select class="form-control" id="select-auther" name="select-auther"
-                                [(ngModel)]="categoryItemDisplay.AuthorId" required>
+                                [(ngModel)]="post.PostAutherId" required>
                                 <option *ngFor="let auther of (AutherList$|async)" [ngValue]="auther.AutherId">
                                     {{auther.AutherName}}
                                 </option>
@@ -66,23 +80,6 @@
                                     type="button">Refresh</button>
                             </span>
                         </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="MarkDownFileUrl">MarkDown File Url</label>
-                        <input type="text" name="MarkDownFileUrl" id="MarkDownFileUrl" class="form-control"
-                            minlength="1" [(ngModel)]="categoryItemDisplay.MarkDownFileUrl">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="MarkDownContent">MarkDown Content</label>
-                        <input type="text" name="MarkDownContent" id="MarkDownContent" class="form-control"
-                            minlength="1" [(ngModel)]="categoryItemDisplay.MarkDownContent">
-                    </div>
-                    <div class="form-group">
-                        <label for="TimeToRead">Time To Read (mins) (*)</label>
-                        <input type="text" name="TimeToRead" id="TimeToRead" class="form-control" minlength="1"
-                            [(ngModel)]="categoryItemDisplay.TimeToRead" required>
                     </div>
 
                     <div class="form-group">

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { CategoryEnumTbl, CategoryEnumNotEntered, LanguageEnumTbl, VCategoryList, VCategoryListItem, Auther } from '../../model/category/categories.interface';
+import { Post, VPostDetails } from '../../model/post.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import { CategoryEnumTbl, CategoryEnumNotEntered, LanguageEnumTbl, VCategoryList
 export class GetItemsService {
   constructor(private http: HttpClient) {
   }
-
+  //Categories
   getCategoryEnums(): Observable<CategoryEnumTbl[]> {
     return this.http.get<CategoryEnumTbl[]>("https://omnamahshivay-api.onrender.com/getCategoryEnums");
   }
@@ -37,6 +38,16 @@ export class GetItemsService {
 
   getAuthers(): Observable<Auther[]> {
     return this.http.get<Auther[]>("https://omnamahshivay-api.onrender.com/getAuthers");
+  }
+
+
+  //Posts
+  getAllPosts(): Observable<VPostDetails[]> {
+    return this.http.get<VPostDetails[]>(`https://omnamahshivay-api.onrender.com/getAllPosts`);
+  }
+
+  getPostDetails(postId: number): Observable<VPostDetails> {
+    return this.http.get<VPostDetails>(`https://omnamahshivay-api.onrender.com/getPostDetails/${postId}`);
   }
 
 }

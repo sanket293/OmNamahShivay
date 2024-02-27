@@ -2,14 +2,14 @@ import { CommonModule, Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, RouterModule } from '@angular/router';
-import { LoaderComponent } from '../../../shared/loader/loader.component';
+import { LoaderComponent } from '../../shared/loader/loader.component';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable, of } from 'rxjs';
-import { Auther, CategoryItemDisplay, LanguageEnumTbl } from '../../../../model/category/categories.interface';
-import { ResponseMessage } from '../../../../model/response-message.model';
-import { AddAutherDialogComponent } from '../../../shared/dialogs/add-auther-dialog/add-auther-dialog.component';
-import { AddItemsService } from '../../../../services/add-items/add-items.service';
-import { GetItemsService } from '../../../../services/get-items/get-items.service';
+import { Auther, CategoryItemDisplay, LanguageEnumTbl } from '../../../model/category/categories.interface';
+import { ResponseMessage } from '../../../model/response-message.model';
+import { AddAutherDialogComponent } from '../../shared/dialogs/add-auther-dialog/add-auther-dialog.component';
+import { AddItemsService } from '../../../services/add-items/add-items.service';
+import { GetItemsService } from '../../../services/get-items/get-items.service';
 
 @Component({
   selector: 'app-add-item-display',
@@ -58,7 +58,7 @@ export class AddItemDisplayComponent implements OnInit {
   }
 
   onRefreshAutherBtnClick() {
-    this.AutherList$ = this.getItemsService.getAuthers();
+    this.getAuthers();
   }
   onAddAutherBtnClick() {
     this.dialog.open(AddAutherDialogComponent);

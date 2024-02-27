@@ -3,6 +3,7 @@ import { Observable, of } from 'rxjs';
 import { CategoryList, CategoryListItem, CategoryItemDisplay, CategoryEnumTbl, LanguageEnumTbl, Auther } from '../../model/category/categories.interface';
 import { ResponseMessage } from '../../model/response-message.model';
 import { HttpClient } from '@angular/common/http';
+import { Post } from '../../model/post.model';
 
 @Injectable({
   providedIn: 'root'
@@ -111,4 +112,18 @@ export class AddItemsService {
     }
   }
 
+  addPost(post: Post) : Observable<ResponseMessage> {
+    try {
+      const headers = { 'Content-Type': 'application/json' };
+      let url = "https://omnamahshivay-api.onrender.com/addPost"
+      return this.http.post<ResponseMessage>(url, JSON.stringify(post), { headers });
+    } catch (ex) {
+      var errResponseMsg: ResponseMessage = {
+        success: false,
+        message: "Cannot enter new Post. See error for more details",
+        error: JSON.stringify(ex)
+      };
+      return of(errResponseMsg);
+    }
+  }
 }

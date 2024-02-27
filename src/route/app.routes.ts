@@ -2,11 +2,12 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from '../components/home/home.component';
 import { ErrorComponent } from '../components/shared/error/error.component';
 import { AppStrings } from '../constants/appstrings.model';
-import { PostComponent } from '../components/post/post.component';
-import { ListItemComponent } from '../components/category/show/list-item/list-item.component';
-import { AddListItemComponent } from '../components/category/add/add-list-item/add-list-item.component';
-import { AddListComponent } from '../components/category/add/add-list/add-list.component';
-import { AddItemDisplayComponent } from '../components/category/add/add-item-display/add-item-display.component';
+import { PostComponent } from '../components/show/post/post.component';
+import { ListItemComponent } from '../components/show/list-item/list-item.component';
+import { AddListItemComponent } from '../components/add/add-list-item/add-list-item.component';
+import { AddListComponent } from '../components/add/add-list/add-list.component';
+import { AddItemDisplayComponent } from '../components/add/add-item-display/add-item-display.component';
+import { AddPostComponent } from '../components/add/add-post/add-post.component';
 
 export const routes: Routes = [
     {
@@ -26,8 +27,12 @@ export const routes: Routes = [
     },
     //Posts
     {
-        path: 'Post/:postId',
+        path: 'show-post-details/:postId',
         component: PostComponent
+    },
+    {
+        path: 'add-post',
+        component: AddPostComponent
     },
     //Category
     {
@@ -47,12 +52,11 @@ export const routes: Routes = [
         component: AddItemDisplayComponent
     },
 
-
     {
         path: '**',
         component: ErrorComponent
     },
- 
+
 ];
 
 

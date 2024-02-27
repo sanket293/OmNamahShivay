@@ -16,7 +16,8 @@ export interface LanguageEnumTbl {
 export interface Auther {
   AutherId: string;
   AutherName: string,
-  AutherImageUrl: string
+  AutherImageUrl: string,
+  AutherForPost?:boolean
 }
 
 export interface CategoryList {
