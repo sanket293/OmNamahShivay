@@ -58,7 +58,7 @@ export interface VCategoryListItem {
   AvailableLanguages: string;
   ImageUrl: string;
 }
-
+ 
 export interface CategoryItemDisplay {
   CategoryItemDisplayId: number;
   CategoryListItemId: number;
@@ -69,6 +69,7 @@ export interface CategoryItemDisplay {
   IsActive: number;
   TimeToRead: string;
   AuthorId: number;
+  ItemImageUrl?: string;
 }
 
 export interface VCategoryItemDisplay {
@@ -83,4 +84,5 @@ export interface VCategoryItemDisplay {
   AuthorId: number;
   AutherName: string;
   AutherImageUr: string;
+  ItemImageUrl?: string;
 }

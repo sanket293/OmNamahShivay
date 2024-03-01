@@ -10,7 +10,7 @@ import { CategoryListComponent } from '../components/category/list/category-list
 import { CategoryListItemComponent } from '../components/category/list-item/category-list-item/category-list-item.component';
 import { CategoryItemDisplayComponent } from '../components/category/item-display/category-item-display/category-item-display.component';
 import { CategoryItemListDisplayComponent } from '../components/category/item-display/category-item-list-display/category-item-list-display.component';
-import { ItemDisplayComponent } from '../components/category/item-display/item-display/item-display.component';
+import { ItemDisplayComponent } from '../components/category/item-display/-item-display/item-display.component';
 
 export const routes: Routes = [
     {
@@ -22,7 +22,7 @@ export const routes: Routes = [
         path: 'home',
         redirectTo: 'Home',
         pathMatch: 'full'
-    }, 
+    },
     {
         path: 'Home',
         component: HomeComponent
@@ -58,8 +58,8 @@ export const routes: Routes = [
         component: CategoryListItemComponent
     },
     {
-        path: 'ItemDisplay/:categoryListItemId/:parmaLinkDescription',
-        component: ItemDisplayComponent
+        path: 'ItemDisplay/:parmaLinkDescription/:categoryListItemId/:languageId/:availableLanguages',
+        component: CategoryItemDisplayComponent
     },
 
 

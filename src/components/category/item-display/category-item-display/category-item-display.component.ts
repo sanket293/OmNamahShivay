@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
-import { MarkdownComponent, MarkdownService } from 'ngx-markdown';
+import { MarkdownComponent } from 'ngx-markdown';
 import { RecentPostComponent } from '../../../post/recent-post/recent-post.component';
 import { LanguageTagsComponent } from '../../../shared/language-tags/language-tags.component';
 import { Observable } from 'rxjs';
-import { ItemDisplay } from '../../../../model/item-display.model';
 import { CategoryService } from '../../../../services/category/category.service';
+import { VCategoryItemDisplay } from '../../../../model/categories.interface';
+import { Languages } from '../../../../enums/languages.enum';
 
 @Component({
   selector: 'app-category-item-display',
@@ -17,29 +18,20 @@ import { CategoryService } from '../../../../services/category/category.service'
 })
 export class CategoryItemDisplayComponent implements OnInit {
 
-  itemDisplay: ItemDisplay | undefined;
-  markdown$: Observable<string> | undefined;
+  itemDisplay$: Observable<VCategoryItemDisplay> | undefined;
 
-  constructor(public activatedRoute: ActivatedRoute, public router: Router, private mdService: MarkdownService,
-    private categoryService: CategoryService
-  ) { }
+  constructor(public activatedRoute: ActivatedRoute, public router: Router, private categoryService: CategoryService) { }
 
   ngOnInit() {
-
     this.activatedRoute.paramMap.subscribe((routeParameters) => {
 
-      let category = this.activatedRoute.snapshot.params['categoryListItem'];
+      let categoryListItemId = routeParameters.get('categoryListItemId') ?? "";
+      let languageId = Number(routeParameters.get('languageId')) ?? Languages.Sanskrit;
+      let availableLanguages = routeParameters.get('availableLanguages') ?? languageId.toString();
 
-      let itemKey = routeParameters.get('itemKey') ?? "";
-      let language = routeParameters.get('language') ?? "";
+      this.itemDisplay$ = this.categoryService.getCategoryItemDisplay(categoryListItemId, languageId);
 
-      // this.itemDisplayService.getItemDisplayDetails(category, itemKey, language).subscribe((itemDisplay: ItemDisplay) => {
-      //   this.itemDisplay = itemDisplay;
-      //   this.markdown$ = this.mdService.getSource(this.itemDisplay.markDownContantUrl)
-      // });
-
-
-      this.categoryService.getCategoryItemDisplay(); //TODO: get the value
+      //TODO: get all languages
     });
   }
 

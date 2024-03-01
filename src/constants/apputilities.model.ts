@@ -14,5 +14,16 @@ export class AppUtilites {
 
     public static getLanguageName(languageEnum: Languages = Languages.Hindi): string {
         return Languages[languageEnum].toString();
-      }
+    }
+ 
+    public static getAvailableLanguagesId(availableLanguages: string): Languages[] {
+        let languages: Languages[] = [];
+        if (availableLanguages) {
+            if (!availableLanguages.includes(',')) return [parseInt(availableLanguages)];
+
+            availableLanguages?.split(',').map(m => parseInt(m)).forEach(langId => languages.push(langId));
+        }
+        return languages;
+    }
+
 }

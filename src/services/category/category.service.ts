@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { VCategoryList, VCategoryListItem, Auther } from '../../model/categories.interface';
+import { VCategoryList, VCategoryListItem, Auther, VCategoryItemDisplay } from '../../model/categories.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -20,9 +20,8 @@ export class CategoryService {
     return this.http.get<VCategoryListItem[]>(`https://omnamahshivay-api.onrender.com/getCategoryListItem/${categoryListId}`);
   }
 
-  getCategoryItemDisplay() {
-
-    //TODO: get
+  getCategoryItemDisplay(categoryListItemId: string, languageId: number): Observable<VCategoryItemDisplay> {
+    return this.http.get<VCategoryItemDisplay>(`https://omnamahshivay-api.onrender.com/getCategoryItemDisplay/${categoryListItemId}/${languageId}`);
   }
 
   getAuthers(): Observable<Auther[]> {

@@ -25,18 +25,17 @@
                             <h3 class="h4 mb-3"><a class="post-title" [routerLink]="getPostUrl(item)">{{item.Title}}</a>
                             </h3>
                             <ul class="card-meta list-inline">
-                                <li class="list-inline-item" *ngFor="let language of item.AvailableLanguages">
+                                <li class="list-inline-item"
+                                    *ngFor="let languageId of AppUtilites.getAvailableLanguagesId(item.AvailableLanguages) ">
                                     <ul class="card-meta-tag list-inline">
                                         <li class="list-inline-item">
-                                            <a
-                                                [routerLink]="getRouteUrlForLanguageTag(item, language)">{{language}}</a>
+                                            <a [routerLink]="getItemDisplayRouteLink(item, languageId)">{{
+                                                AppUtilites.getLanguageName(languageId) }}</a>
                                         </li>
                                     </ul>
                                 </li>
                             </ul>
-                            <!-- <a routerLink="{{item.routeUrl}}" class="btn btn-outline-primary">Read More</a> -->
                         </div>
-
                     </article>
                 </div>
             </ng-container>

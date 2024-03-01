@@ -6,29 +6,30 @@
             <div class=" col-lg-9 mb-5 mb-lg-0">
                 <article>
                     <div class="post-slider mb-4">
-                        <img [src]="itemDisplay?.posterUrl" class="card-img" alt="item-post-image">
+                        <img [src]="(itemDisplay$|async)?.ItemImageUrl" class="card-img" alt="item-post-image">
                     </div>
 
-                    <h2 class="h2">{{itemDisplay?.title}}</h2>
+                    <h2 class="h2">{{(itemDisplay$|async)?.Title}}</h2>
 
                     <ul class="card-meta my-3 list-inline">
                         <li class="list-inline-item">
-                            <!-- <a class="card-meta-author">
-                                <img [src]="itemDisplay?.auther?.authorImageUrl">
-                                <span>{{itemDisplay?.auther?.authorName}}</span>
-                            </a> -->
+                            <a class="card-meta-author">
+                                <img [src]="(itemDisplay$|async)?.AutherImageUr ?? '/assets/images/auther/shivay.png'">
+                                <span>{{ (itemDisplay$|async)?.AutherName }}</span>
+                            </a>
                         </li>
                         <li class="list-inline-item">
-                            <i class="ti-timer"></i>{{itemDisplay?.timeToRead}}
+                            <i class="ti-timer"></i>{{(itemDisplay$|async)?.TimeToRead}} mins to read
                         </li>
 
                         <li class="list-inline-item">
-                            <app-language-tags [itemLanguageTags]="(itemDisplay?.availableInLanguages)">
-                            </app-language-tags>
+                            <!-- //TODO: get the item also availabe in other languages -->
+                            <!-- <app-language-tags [itemLanguageTags]="((itemDisplay$|async)?.availableInLanguages)">
+                            </app-language-tags> -->
                         </li>
                     </ul>
                     <div class="content">
-                        <markdown [data]="markdown$ |async"></markdown>
+                        <markdown [data]="(itemDisplay$|async)?.MarkDownContent"></markdown>
                         <hr>
                     </div>
                 </article>

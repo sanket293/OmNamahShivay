@@ -1,0 +1,2 @@
+- add loader when click on cat list or when redireccting from one pg to another
+- if img is null place holdder img should display
