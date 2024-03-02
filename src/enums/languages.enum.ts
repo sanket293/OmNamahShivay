@@ -12,16 +12,18 @@
 
 export enum Languages {
     Sanskrit = 11,
-    Gujarati,
+    Hindi=12,
+    added=20,
+    NewLanguage=21,
+    malyali=22,
+    Gujarati=23,
     English,
-    Hindi,
     Hindi1,
     Hindi2,
     Hindi3,
     Hindi4,
     Marathi,
-    added,
-    NewLanguage,
+    
     Telugu,
     Malyalam,
     Kannad,
@@ -32,6 +34,6 @@ export enum Languages {
     Kannad5,
     Kannad6,
     Kannad7,
-    malyali=22
+     
 
 }
