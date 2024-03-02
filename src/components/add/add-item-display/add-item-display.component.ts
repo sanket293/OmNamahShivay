@@ -60,6 +60,7 @@ export class AddItemDisplayComponent implements OnInit {
   onRefreshAutherBtnClick() {
     this.getAuthers();
   }
+
   onAddAutherBtnClick() {
     this.dialog.open(AddAutherDialogComponent);
   }
@@ -75,6 +76,10 @@ export class AddItemDisplayComponent implements OnInit {
     if (this.message) {
       this.showLoader = false;
       return;
+    }
+
+    if (!this.categoryItemDisplay.ItemImageUrl) {
+      this.categoryItemDisplay.ItemImageUrl = "/assets/images/no-item-display-img.png";
     }
 
     this.categoryItemDisplay.IsActive = +this.isActive;

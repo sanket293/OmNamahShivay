@@ -28,6 +28,10 @@ export class AddAutherDialogComponent {
   showLoader: boolean = false;
 
   onInsertRecordBtnClick() {
+    if(!this.auther.AutherName){
+      this.snackBar.open("Please enter Auther's name");
+      return ;
+    }
     this.addItemsService.addAuther(this.auther).subscribe({
       next: (response: ResponseMessage) => {
         if (response.success) {
