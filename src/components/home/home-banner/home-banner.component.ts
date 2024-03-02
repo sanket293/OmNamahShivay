@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ItemProperty } from '../../../model/ItemProperty.model';
 import { TagService } from '../../../services/tag/tag.service';
-import { AppUtilites } from '../../../constants/apputilities.model';
+import { AppUtilites } from '../../../utilities/apputilities.model';
 
 @Component({
   selector: 'app-home-banner',

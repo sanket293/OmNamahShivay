@@ -10,7 +10,7 @@ import { VCategoryItemDisplay } from '../../../../model/categories.interface';
 import { Languages } from '../../../../enums/languages.enum';
 import { LoaderComponent } from "../../../shared/loader/loader.component";
 import { ItemLanguageTag } from '../../../../model/item-language-tag.model';
-import { AppUtilites } from '../../../../constants/apputilities.model';
+import { AppUtilites } from '../../../../utilities/apputilities.model';
 
 @Component({
   selector: 'app-category-item-display',

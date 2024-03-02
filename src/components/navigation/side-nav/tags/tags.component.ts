@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemProperty } from '../../../../model/ItemProperty.model';
  import { TagService } from '../../../../services/tag/tag.service';
-import { AppUtilites } from '../../../../constants/apputilities.model';
+import { AppUtilites } from '../../../../utilities/apputilities.model';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 

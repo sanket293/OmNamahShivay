@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { MarkdownComponent, MarkdownService } from 'ngx-markdown';
 import { Languages } from '../../enums/languages.enum';
-import { AppUtilites } from '../../constants/apputilities.model';
+import { AppUtilites } from '../../utilities/apputilities.model';
 
 @Component({
   selector: 'app-post',

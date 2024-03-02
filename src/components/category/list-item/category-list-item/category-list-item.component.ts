@@ -5,7 +5,7 @@ import { CategoryService } from '../../../../services/category/category.service'
 import { CommonModule } from '@angular/common';
 import { Languages } from '../../../../enums/languages.enum';
 import { VCategoryListItem } from '../../../../model/categories.interface';
-import { AppUtilites } from '../../../../constants/apputilities.model';
+import { AppUtilites } from '../../../../utilities/apputilities.model';
 
 @Component({
   selector: 'app-category-list-item',
@@ -40,7 +40,8 @@ export class CategoryListItemComponent {
   }
 
   getItemDisplayRouteLink(item: VCategoryListItem, language: Languages) {
-    return `/ItemDisplay/${item.ItemKey}/${item.CategoryListItemId}/${language}/${item.AvailableLanguages}`; //TODO: set parma link
+    //TODO: set parma link    path: 'ItemDisplay/:parmaLinkDescription/:categoryListItemId/:languageId/:availableLanguages',
+    return `/ItemDisplay/${(item.ParmaLinkDescription ?? item.ItemKey)}/${item.CategoryListItemId}/${language}/${item.AvailableLanguages}`;
   }
 
   getPostUrl(item: VCategoryListItem) {

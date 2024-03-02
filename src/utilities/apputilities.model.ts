@@ -35,11 +35,11 @@ export class AppUtilites {
     // }
 
     static getRouteUrlLangItemDisplay(availableLanguages: string, itemDisplay: VCategoryItemDisplay): ItemLanguageTag[] {
-        //TODO: get perma link 
+        //TODO: fix perma link 
         let itemLanguageTagList: ItemLanguageTag[] = [];
         this.getAvailableLanguagesId(availableLanguages).forEach(langs => {
             var langName = this.getLanguageName(langs);
-            var routeUrl = `/ItemDisplay/parmalink-desc/${itemDisplay.CategoryListItemId}/${langs}/${availableLanguages}`;
+            var routeUrl = `/ItemDisplay/${(itemDisplay.ParmaLinkDescription) ?? itemDisplay.Title}/${itemDisplay.CategoryListItemId}/${langs}/${availableLanguages}`;
             itemLanguageTagList.push({ name: langName, routeUrl: routeUrl });
         });
         return itemLanguageTagList;
