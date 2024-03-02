@@ -1,5 +1,7 @@
 import { Languages } from "../enums/languages.enum";
 import { ItemProperty } from "../model/ItemProperty.model";
+import { VCategoryItemDisplay } from "../model/categories.interface";
+import { ItemLanguageTag } from "../model/item-language-tag.model";
 
 export class AppUtilites {
 
@@ -15,7 +17,7 @@ export class AppUtilites {
     public static getLanguageName(languageEnum: Languages = Languages.Hindi): string {
         return Languages[languageEnum].toString();
     }
- 
+
     public static getAvailableLanguagesId(availableLanguages: string): Languages[] {
         let languages: Languages[] = [];
         if (availableLanguages) {
@@ -25,5 +27,23 @@ export class AppUtilites {
         }
         return languages;
     }
+
+    // public static getAvailableLanguagesName(availableLanguages: string): string[] {
+    //     let languages: string[] = [];
+    //     this.getAvailableLanguagesId(availableLanguages).forEach(langs => languages.push(this.getLanguageName(langs)));
+    //     return languages;
+    // }
+
+    static getRouteUrlLangItemDisplay(availableLanguages: string, itemDisplay: VCategoryItemDisplay): ItemLanguageTag[] {
+        //TODO: get perma link 
+        let itemLanguageTagList: ItemLanguageTag[] = [];
+        this.getAvailableLanguagesId(availableLanguages).forEach(langs => {
+            var langName = this.getLanguageName(langs);
+            var routeUrl = `/ItemDisplay/parmalink-desc/${itemDisplay.CategoryListItemId}/${langs}/${availableLanguages}`;
+            itemLanguageTagList.push({ name: langName, routeUrl: routeUrl });
+        });
+        return itemLanguageTagList;
+    }
+
 
 }

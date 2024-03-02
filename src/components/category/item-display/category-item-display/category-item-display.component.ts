@@ -9,6 +9,8 @@ import { CategoryService } from '../../../../services/category/category.service'
 import { VCategoryItemDisplay } from '../../../../model/categories.interface';
 import { Languages } from '../../../../enums/languages.enum';
 import { LoaderComponent } from "../../../shared/loader/loader.component";
+import { ItemLanguageTag } from '../../../../model/item-language-tag.model';
+import { AppUtilites } from '../../../../constants/apputilities.model';
 
 @Component({
   selector: 'app-category-item-display',
@@ -19,21 +21,23 @@ import { LoaderComponent } from "../../../shared/loader/loader.component";
 })
 export class CategoryItemDisplayComponent implements OnInit {
 
+  availableLanguages: string = ""; //TODO: default language, let it from app utilities
   itemDisplay$: Observable<VCategoryItemDisplay> | undefined;
   constructor(public activatedRoute: ActivatedRoute, public router: Router, private categoryService: CategoryService) { }
-  // showLoader: boolean = false;
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe((routeParameters) => {
 
       let categoryListItemId = routeParameters.get('categoryListItemId') ?? "";
       let languageId = Number(routeParameters.get('languageId')) ?? Languages.Sanskrit;
-      let availableLanguages = routeParameters.get('availableLanguages') ?? languageId.toString();
+      this.availableLanguages = routeParameters.get('availableLanguages') ?? languageId.toString();
 
       this.itemDisplay$ = this.categoryService.getCategoryItemDisplay(categoryListItemId, languageId);
-
-      //TODO: get all languages
     });
+  }
+
+  getItemLanguageTags(itemDisplay: VCategoryItemDisplay): ItemLanguageTag[] {
+    return AppUtilites.getRouteUrlLangItemDisplay(this.availableLanguages, itemDisplay);
   }
 
 }

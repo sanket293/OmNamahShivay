@@ -9,9 +9,7 @@ import { PostComponent } from '../components/post/post.component';
 import { CategoryListComponent } from '../components/category/list/category-list.component';
 import { CategoryListItemComponent } from '../components/category/list-item/category-list-item/category-list-item.component';
 import { CategoryItemDisplayComponent } from '../components/category/item-display/category-item-display/category-item-display.component';
-import { CategoryItemListDisplayComponent } from '../components/category/item-display/category-item-list-display/category-item-list-display.component';
-import { ItemDisplayComponent } from '../components/category/item-display/-item-display/item-display.component';
-
+  
 export const routes: Routes = [
     {
         path: '',

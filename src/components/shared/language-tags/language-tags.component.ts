@@ -11,6 +11,5 @@ import { ItemLanguageTag } from '../../../model/item-language-tag.model';
   styleUrl: './language-tags.component.css'
 })
 export class LanguageTagsComponent {
-  @Input() itemLanguageTags: ItemLanguageTag[] | undefined;
-
+  @Input() itemLanguageTags: ItemLanguageTag[] = [];
 }

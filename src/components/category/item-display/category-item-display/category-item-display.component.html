@@ -23,9 +23,8 @@
                         </li>
 
                         <li class="list-inline-item">
-                            <!-- //TODO: get the item also availabe in other languages -->
-                            <!-- <app-language-tags [itemLanguageTags]="((itemDisplay$|async)?.availableInLanguages)">
-                            </app-language-tags> -->
+                            <app-language-tags [itemLanguageTags]="getItemLanguageTags(itemDisplay)">
+                            </app-language-tags>
                         </li>
                     </ul>
                     <div class="content">
