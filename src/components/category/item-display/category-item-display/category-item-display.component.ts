@@ -8,19 +8,20 @@ import { Observable } from 'rxjs';
 import { CategoryService } from '../../../../services/category/category.service';
 import { VCategoryItemDisplay } from '../../../../model/categories.interface';
 import { Languages } from '../../../../enums/languages.enum';
+import { LoaderComponent } from "../../../shared/loader/loader.component";
 
 @Component({
   selector: 'app-category-item-display',
   standalone: true,
-  imports: [CommonModule, RecentPostComponent, MarkdownComponent, LanguageTagsComponent, RouterModule],
   templateUrl: './category-item-display.component.html',
-  styleUrl: './category-item-display.component.css'
+  styleUrl: './category-item-display.component.css',
+  imports: [CommonModule, RecentPostComponent, MarkdownComponent, LanguageTagsComponent, RouterModule, LoaderComponent]
 })
 export class CategoryItemDisplayComponent implements OnInit {
 
   itemDisplay$: Observable<VCategoryItemDisplay> | undefined;
-
   constructor(public activatedRoute: ActivatedRoute, public router: Router, private categoryService: CategoryService) { }
+  // showLoader: boolean = false;
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe((routeParameters) => {

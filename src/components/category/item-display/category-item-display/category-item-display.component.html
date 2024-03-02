@@ -4,22 +4,22 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class=" col-lg-9 mb-5 mb-lg-0">
-                <article>
+                <article *ngIf="itemDisplay$ | async as itemDisplay; else loading">
                     <div class="post-slider mb-4">
-                        <img [src]="(itemDisplay$|async)?.ItemImageUrl" class="card-img" alt="item-post-image">
+                        <img [src]="itemDisplay?.ItemImageUrl" class="card-img" alt="item-post-image">
                     </div>
 
-                    <h2 class="h2">{{(itemDisplay$|async)?.Title}}</h2>
+                    <h2 class="h2">{{itemDisplay?.Title}}</h2>
 
                     <ul class="card-meta my-3 list-inline">
                         <li class="list-inline-item">
                             <a class="card-meta-author">
-                                <img [src]="(itemDisplay$|async)?.AutherImageUr ?? '/assets/images/auther/shivay.png'">
-                                <span>{{ (itemDisplay$|async)?.AutherName }}</span>
+                                <img [src]="itemDisplay?.AutherImageUrl">
+                                <span>{{ itemDisplay?.AutherName }}</span>
                             </a>
                         </li>
                         <li class="list-inline-item">
-                            <i class="ti-timer"></i>{{(itemDisplay$|async)?.TimeToRead}} mins to read
+                            <i class="ti-timer"></i>{{itemDisplay?.TimeToRead}} mins to read
                         </li>
 
                         <li class="list-inline-item">
@@ -34,9 +34,13 @@
                     </div>
                 </article>
 
+                <ng-template #loading>
+                    <app-loader [showLoader]="true"></app-loader>
+                </ng-template>
+
             </div>
 
-            <app-recent-post></app-recent-post>
+            <app-recent-post #showLoader></app-recent-post>
 
         </div>
     </div>

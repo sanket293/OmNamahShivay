@@ -83,6 +83,6 @@ export interface VCategoryItemDisplay {
   TimeToRead: string;
   AuthorId: number;
   AutherName: string;
-  AutherImageUr: string;
+  AutherImageUrl: string;
   ItemImageUrl?: string;
 }
