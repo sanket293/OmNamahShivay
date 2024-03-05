@@ -9,9 +9,9 @@ import { CategoryService } from '../../../../services/category/category.service'
 import { VCategoryItemDisplay } from '../../../../model/categories.interface';
 import { Languages } from '../../../../enums/languages.enum';
 import { LoaderComponent } from "../../../shared/loader/loader.component";
-import { ItemLanguageTag } from '../../../../model/item-language-tag.model';
-import { AppUtilites } from '../../../../utilities/apputilities.model';
-
+ import { AppUtilites } from '../../../../utilities/apputilities.model';
+import { Tag } from '../../../../model/tags.interface';
+ 
 @Component({
   selector: 'app-category-item-display',
   standalone: true,
@@ -36,7 +36,7 @@ export class CategoryItemDisplayComponent implements OnInit {
     });
   }
 
-  getItemLanguageTags(itemDisplay: VCategoryItemDisplay): ItemLanguageTag[] {
+  getItemLanguageTags(itemDisplay: VCategoryItemDisplay): Tag[] {
     return AppUtilites.getRouteUrlLangItemDisplay(this.availableLanguages, itemDisplay);
   }
 

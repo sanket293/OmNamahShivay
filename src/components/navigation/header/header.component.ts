@@ -5,8 +5,7 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { TagService } from '../../../services/tag/tag.service';
 import { ItemProperty } from '../../../model/ItemProperty.model';
-import { Category } from '../../../model/category/category.model';
-import { VCategoryList } from '../../../model/categories.interface';
+ import { VCategoryList } from '../../../model/categories.interface';
 
 @Component({
   selector: 'app-header',

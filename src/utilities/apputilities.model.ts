@@ -1,7 +1,7 @@
 import { Languages } from "../enums/languages.enum";
 import { ItemProperty } from "../model/ItemProperty.model";
 import { VCategoryItemDisplay } from "../model/categories.interface";
-import { ItemLanguageTag } from "../model/item-language-tag.model";
+import { Tag } from "../model/tags.interface";
 
 export class AppUtilites {
 
@@ -28,15 +28,9 @@ export class AppUtilites {
         return languages;
     }
 
-    // public static getAvailableLanguagesName(availableLanguages: string): string[] {
-    //     let languages: string[] = [];
-    //     this.getAvailableLanguagesId(availableLanguages).forEach(langs => languages.push(this.getLanguageName(langs)));
-    //     return languages;
-    // }
-
-    static getRouteUrlLangItemDisplay(availableLanguages: string, itemDisplay: VCategoryItemDisplay): ItemLanguageTag[] {
+    static getRouteUrlLangItemDisplay(availableLanguages: string, itemDisplay: VCategoryItemDisplay): Tag[] {
         //TODO: fix perma link 
-        let itemLanguageTagList: ItemLanguageTag[] = [];
+        let itemLanguageTagList: Tag[] = [];
         this.getAvailableLanguagesId(availableLanguages).forEach(langs => {
             var langName = this.getLanguageName(langs);
             var routeUrl = `/ItemDisplay/${(itemDisplay.ParmaLinkDescription) ?? itemDisplay.Title}/${itemDisplay.CategoryListItemId}/${langs}/${availableLanguages}`;

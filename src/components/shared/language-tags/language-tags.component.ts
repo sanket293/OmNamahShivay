@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ItemLanguageTag } from '../../../model/item-language-tag.model';
-
+import { Tag } from '../../../model/tags.interface';
+  
 @Component({
   selector: 'app-language-tags',
   standalone: true,
@@ -11,5 +11,6 @@ import { ItemLanguageTag } from '../../../model/item-language-tag.model';
   styleUrl: './language-tags.component.css'
 })
 export class LanguageTagsComponent {
-  @Input() itemLanguageTags: ItemLanguageTag[] = [];
+  @Input() itemLanguageTags: Tag[] = [];
+
 }
