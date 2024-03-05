@@ -1,3 +1,10 @@
 - add loader when click on cat list or when redireccting from one pg to another
 - if img is null place holdder img should display
 - do somethiing for tag, get it from service
+- do refactor for tags, creaet a model which only has name and route url
+    - this should be external component which will accept the above model(name and url) array, so that I can ue it in langs, side nav tags, and home banner tags
+- create a service specially for tags (side nav and home banner)
+- on Admin side => show all select box to create the parma link
+- check where should i put parmalink, i.r after domain name or at the end?
+- on admin side when adding parmalink, i can use generate button to generate it from values selected so user don't need to write manually
+- show loader while image is loading

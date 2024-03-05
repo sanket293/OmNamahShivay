@@ -5,10 +5,9 @@ import { TagsComponent } from "../../navigation/side-nav/tags/tags.component";
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Post } from '../../../model/post.model';
 import { PostService } from '../../../services/post/post.service';
-import { Languages } from '../../../enums/languages.enum';
 import { AppUtilites } from '../../../utilities/apputilities.model';
+import { VPostDetails } from '../../../model/posts.interface';
 
 @Component({
     selector: 'app-recent-post',
@@ -18,18 +17,20 @@ import { AppUtilites } from '../../../utilities/apputilities.model';
     imports: [CategoriesComponent, SocialLinksComponent, TagsComponent, RouterModule, CommonModule]
 })
 export class RecentPostComponent implements OnInit {
+
     AppUtilites = AppUtilites;
 
     constructor(private postService: PostService) { }
 
-    recentPosts$: Observable<Post[]> | undefined;
+    recentPosts$: Observable<VPostDetails[]> | undefined;
 
     ngOnInit(): void {
         // Post
-        this.recentPosts$ = this.postService.getRecentPossts();
+        this.recentPosts$ = this.postService.getAllPosts();
     }
-    // getLanguageName(languageEnum: Languages = Languages.Hindi): string {
-    //     return Languages[languageEnum].toString();
-    // }
+
+    getPostUrl(post: VPostDetails): string {
+        return "";
+    }
 }
 
