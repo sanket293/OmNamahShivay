@@ -16,7 +16,7 @@ export class TagService {
 
     let tags: ItemProperty[] = [
       {
-        category: CategoryEnum.Stuties,
+        category: CategoryEnum.Stutie,
         language: Languages.Sanskrit,
         name: "शिवमहिम्न:स्तोत्र",
         itemKey: "ShivMahimnaStotam",
@@ -45,13 +45,13 @@ export class TagService {
         routeUrl: ``
         // routeUrl: `/CategoryList/${AppStrings.ShivChalisa}/ShivChalisa/${Languages[Languages.Sanskrit]}`
       },
-      {
-        category: CategoryEnum.ShivPooja,
-        language: Languages.Sanskrit,
-        name: "शिव मानस पूजा",
-        itemKey: "ShivManasPooja",
-        routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.ShivPooja]}/ShivManasPooja/${Languages[Languages.Sanskrit]}`
-      },
+      // {
+      //   category: CategoryEnum.ShivPooja,
+      //   language: Languages.Sanskrit,
+      //   name: "शिव मानस पूजा",
+      //   itemKey: "ShivManasPooja",
+      //   routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.ShivPooja]}/ShivManasPooja/${Languages[Languages.Sanskrit]}`
+      // },
       // {
       //   category: CategoryEnum.Stuties,
       //   language: Languages.Sanskrit,
@@ -89,11 +89,11 @@ export class TagService {
 
     let tags: ItemProperty[] = [
       {
-        category: CategoryEnum.Stuties,
+        category: CategoryEnum.Stutie,
         language: Languages.Sanskrit,
         name: "शिवमहिम्न:स्तोत्र",
         itemKey: "ShivMahimnaStotam",
-        routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Stuties]}/ShivMahimnaStotam/${Languages[Languages.Sanskrit]}`
+        routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Stutie]}/ShivMahimnaStotam/${Languages[Languages.Sanskrit]}`
       },
       {
         category: CategoryEnum.Ashtaks,
@@ -103,11 +103,11 @@ export class TagService {
         routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Ashtaks]}/Lingashtakam/${Languages[Languages.Sanskrit]}`
       },
       {
-        category: CategoryEnum.ShivPooja,
+        category: CategoryEnum.Pooja,
         language: Languages.Sanskrit,
         name: "शिव मानस पूजा",
         itemKey: "ShivManasPooja",
-        routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.ShivPooja]}/ShivManasPooja/${Languages[Languages.Sanskrit]}`
+        routeUrl: `/CategoryList/${CategoryEnum[CategoryEnum.Pooja]}/ShivManasPooja/${Languages[Languages.Sanskrit]}`
       },
 
       {

@@ -86,6 +86,7 @@ export interface VCategoryItemDisplay {
   AuthorId: number;
   AutherName: string;
   AutherImageUrl: string;
-  ItemImageUrl?: string;
+  ImageUrl?: string;
   ParmaLinkDescription?: string;
+  ItemKey:string;
 }

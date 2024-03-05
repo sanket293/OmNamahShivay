@@ -6,7 +6,7 @@
             <div class=" col-lg-9 mb-5 mb-lg-0">
                 <article *ngIf="itemDisplay$ | async as itemDisplay; else loading">
                     <div class="post-slider mb-4">
-                        <img [src]="itemDisplay?.ItemImageUrl" class="card-img" alt="item-post-image">
+                        <img [src]="itemDisplay?.ImageUrl" class="card-img" alt="item-post-image">
                     </div>
 
                     <h2 class="h2">{{itemDisplay?.Title}}</h2>
