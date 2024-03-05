@@ -88,4 +88,5 @@ export interface VCategoryItemDisplay {
   AutherImageUrl: string;   
   ImageUrl?: string;
   ParmaLinkDescription?: string;
+  ItemKey:string;
 }
