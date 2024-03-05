@@ -30,7 +30,7 @@ export class RecentPostComponent implements OnInit {
     }
 
     getPostUrl(post: VPostDetails): string {
-        return "";
+        return `/Post/${post.PostId}`;
     }
 }
 

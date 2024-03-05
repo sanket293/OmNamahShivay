@@ -6,10 +6,10 @@
             <div class=" col-lg-9 mb-5 mb-lg-0">
                 <article>
                     <div class="post-slider mb-4">
-                        <img [src]="(post$|async)?.postImageUrl" class="card-img" alt="item-post-image">
+                        <img [src]="(post$|async)?.PostImageUrl" class="card-img" alt="item-post-image">
                     </div>
 
-                    <h2 class="h2">{{(post$|async)?.postTitle}}</h2>
+                    <h2 class="h2">{{(post$|async)?.Title}}</h2>
 
                     <ul class="card-meta my-3 list-inline">
                         <!-- <li class="list-inline-item">
@@ -19,26 +19,26 @@
                             </a>
                         </li> -->
                         <li class="list-inline-item">
-                            <i class="ti-timer"></i>{{(post$|async)?.timeToRead}}
+                            <i class="ti-timer"></i>{{(post$|async)?.TimeToRead}} mins to read
                         </li>
 
 
                         <li class="list-inline-item">
-                            <i class="ti-calendar"></i>{{(post$|async)?.postDate}}
+                            <i class="ti-calendar"></i>{{(post$|async)?.PostDate}}
                         </li>
 
                         <li class="list-inline-item">
                             <ul class="card-meta-tag list-inline">
 
                                 <li class="list-inline-item">
-                                    <a>{{ AppUtilites.getLanguageName( (post$|async)?.postLanguage ) }}</a>
+                                    <a>{{ AppUtilites.getLanguageName( (post$|async)?.PostLanguage ) }}</a>
                                 </li>
                             </ul>
                         </li>
                     </ul>
 
                     <div class="content">
-                        <markdown [data]="( post$ |async)?.postContent"></markdown>
+                        <markdown [data]="( post$ |async)?.PostContent"></markdown>
                         <hr>
                     </div>
                 </article>
