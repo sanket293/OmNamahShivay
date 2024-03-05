@@ -71,6 +71,7 @@ export interface CategoryItemDisplay {
   TimeToRead: string;
   AuthorId: number;
   ItemImageUrl?: string;
+  ParmaLinkDescription?: string;
 }
 
 export interface VCategoryItemDisplay {
@@ -86,4 +87,5 @@ export interface VCategoryItemDisplay {
   AutherName: string;
   AutherImageUr: string;
   ItemImageUrl?: string;
+  ParmaLinkDescription?: string;
 }

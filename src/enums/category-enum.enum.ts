@@ -1,18 +1,16 @@
 export enum CategoryEnum {
-
-    Stuties = 1001,
-    Ashtaks = 1002,
-    ShivPooja = 1003,
-    Mantras,
-    // Status,
-    Jyortilingas12,
-    // Bhajans,
-    ShivNames108,
-    ShivNames1000,
-    // Images,
-    ShivChalisa,
-    // SongLyrics,
-    //ShivMahaPuran     
-    //Vrats,
-    Katha123
+    Stutie=11,
+    Ashtaks=12,
+    Bhajans=12,
+    Mantras=13,
+    Pooja=13,
+    ShivChalisa=14,
+    Names=14,
+    Jyortilingas=15,
+    Katha=15,
+    ShivMahaPuran=16,
+    Vrats=16,
+    SongLyrics=17,
+    Images=17,
+    Statues=18,
 }
