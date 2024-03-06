@@ -3,10 +3,10 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { CategoryEnum } from '../../../enums/category-enum.enum';
 import { Languages } from '../../../enums/languages.enum';
-import { VCategoryListItem, VCategoryList } from '../../../model/category/categories.interface';
-import { CategoryCardInfo } from '../../../model/category/category-card-info.model';
+import { VCategoryListItem, VCategoryList } from '../../../model/categories.interface';
 import { CommonModule } from '@angular/common';
 import { GetItemsService } from '../../../services/get-items/get-items.service';
+import { Tags } from '../../../model/tags.interface';
 
 @Component({
   selector: 'app-list-item',
@@ -40,9 +40,9 @@ export class ListItemComponent implements OnInit {
   }
 
 
-  getPostUrl(item: CategoryCardInfo) {
-    return `/CategoryList/${CategoryEnum[item.category]}/${item.itemKey}/${Languages[1]}`;
-  }
+  // getPostUrl(item: Tags) {
+  //   return `/CategoryList/${CategoryEnum[item.category]}/${item.itemKey}/${Languages[1]}`;
+  // }
 
   getAvailableLanguages(availableLanguages: string): string[] {
 
@@ -57,5 +57,5 @@ export class ListItemComponent implements OnInit {
     return languages;
   }
 }
- 
+
 

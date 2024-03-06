@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
-import { CategoryListItem } from '../../../model/category/categories.interface';
+import { CategoryListItem } from '../../../model/categories.interface';
 import { ResponseMessage } from '../../../model/response-message.model';
 import { LoaderComponent } from "../../shared/loader/loader.component";
 import { CommonModule } from '@angular/common';

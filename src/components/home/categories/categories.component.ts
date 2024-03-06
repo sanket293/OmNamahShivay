@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
-import { VCategoryList } from '../../../model/category/categories.interface';
+import { VCategoryList } from '../../../model/categories.interface';
 import { GetItemsService } from '../../../services/get-items/get-items.service';
 
 @Component({

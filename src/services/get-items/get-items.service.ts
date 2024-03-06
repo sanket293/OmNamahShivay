@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { CategoryEnumTbl, CategoryEnumNotEntered, LanguageEnumTbl, VCategoryList, VCategoryListItem, Auther } from '../../model/category/categories.interface';
+import { CategoryEnumTbl, CategoryEnumNotEntered, LanguageEnumTbl, VCategoryList, VCategoryListItem, Auther } from '../../model/categories.interface';
 import { Post, VPostDetails } from '../../model/post.model';
 
 @Injectable({

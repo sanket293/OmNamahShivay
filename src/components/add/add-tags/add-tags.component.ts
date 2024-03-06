@@ -1,42 +1,42 @@
 import { CommonModule } from '@angular/common';
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
-import { RouterModule } from '@angular/router';
-import { LoaderComponent } from '../../loader/loader.component'; 
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ResponseMessage } from '../../../../model/response-message.model';
-import { Auther } from '../../../../model/category/categories.interface';
-import { AddItemsService } from '../../../../services/add-items/add-items.service';
-
+import { RouterModule } from '@angular/router';
+import { ResponseMessage } from '../../../model/response-message.model';
+import { AddItemsService } from '../../../services/add-items/add-items.service';
+import { LoaderComponent } from '../../shared/loader/loader.component';
+import { AddAutherDialogComponent } from '../add-auther-dialog/add-auther-dialog.component';
+import { Tags } from '../../../model/tags.interface';
 @Component({
-  selector: 'app-add-auther-dialog',
+  selector: 'app-add-tags',
   standalone: true,
   imports: [MatDialogModule, MatButtonModule, RouterModule, CommonModule, FormsModule, LoaderComponent],
-  templateUrl: './add-auther-dialog.component.html',
-  styleUrl: './add-auther-dialog.component.css'
+  templateUrl: './add-tags.component.html',
+  styleUrl: './add-tags.component.css'
 })
-export class AddAutherDialogComponent {
-
+export class AddTagsComponent {
   constructor(
     public dialogRef: MatDialogRef<AddAutherDialogComponent>,
     private addItemsService: AddItemsService,
     private snackBar: MatSnackBar) { }
 
-  auther: Auther = { AutherId: "0", AutherImageUrl: "", AutherName: "" };
+  tag: Tags = { Name: "", RouteUrl: "" }
   showLoader: boolean = false;
 
   onInsertRecordBtnClick() {
-    if(!this.auther.AutherName){
-      this.snackBar.open("Please enter Auther's name");
-      return ;
+    if (!this.tag.Name) {
+      this.snackBar.open("Please enter tag name");
+      return;
     }
-    this.addItemsService.addAuther(this.auther).subscribe({
+
+    this.addItemsService.addTags(this.tag).subscribe({
       next: (response: ResponseMessage) => {
         if (response.success) {
           this.dialogRef.close();
-          this.snackBar.open("successfully inserted Auther!");
+          this.snackBar.open("successfully inserted Tag!");
         } else {
           this.snackBar.open("There is something wrong, check console log");
           console.log("There is something wrong: " + JSON.stringify(response.error));

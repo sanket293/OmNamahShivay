@@ -8,6 +8,7 @@ import { AddListItemComponent } from '../components/add/add-list-item/add-list-i
 import { AddListComponent } from '../components/add/add-list/add-list.component';
 import { AddItemDisplayComponent } from '../components/add/add-item-display/add-item-display.component';
 import { AddPostComponent } from '../components/add/add-post/add-post.component';
+import { AddTagsComponent } from '../components/add/add-tags/add-tags.component';
 
 export const routes: Routes = [
     {
@@ -52,6 +53,11 @@ export const routes: Routes = [
         component: AddItemDisplayComponent
     },
 
+    //Tag
+    {
+        path: 'add-tag',
+        component: AddTagsComponent
+    },
     {
         path: '**',
         component: ErrorComponent

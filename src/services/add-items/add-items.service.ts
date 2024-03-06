@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { CategoryList, CategoryListItem, CategoryItemDisplay, CategoryEnumTbl, LanguageEnumTbl, Auther } from '../../model/category/categories.interface';
+import { CategoryList, CategoryListItem, CategoryItemDisplay, CategoryEnumTbl, LanguageEnumTbl, Auther } from '../../model/categories.interface';
 import { ResponseMessage } from '../../model/response-message.model';
 import { HttpClient } from '@angular/common/http';
 import { Post } from '../../model/post.model';
+import { Tags } from '../../model/tags.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -112,7 +113,7 @@ export class AddItemsService {
     }
   }
 
-  addPost(post: Post) : Observable<ResponseMessage> {
+  addPost(post: Post): Observable<ResponseMessage> {
     try {
       const headers = { 'Content-Type': 'application/json' };
       let url = "https://omnamahshivay-api.onrender.com/addPost"
@@ -121,6 +122,21 @@ export class AddItemsService {
       var errResponseMsg: ResponseMessage = {
         success: false,
         message: "Cannot enter new Post. See error for more details",
+        error: JSON.stringify(ex)
+      };
+      return of(errResponseMsg);
+    }
+  }
+
+  addTags(tag: Tags): Observable<ResponseMessage> {
+    try {
+      const headers = { 'Content-Type': 'application/json' };
+      let url = "https://omnamahshivay-api.onrender.com/addTag"
+      return this.http.post<ResponseMessage>(url, JSON.stringify(tag), { headers });
+    } catch (ex) {
+      var errResponseMsg: ResponseMessage = {
+        success: false,
+        message: "Cannot enter new tag. See error for more details",
         error: JSON.stringify(ex)
       };
       return of(errResponseMsg);

@@ -2,9 +2,9 @@ import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import { CategoryEnumTbl, LanguageEnumTbl } from '../../../model/category/categories.interface';
+import { CategoryEnumTbl, LanguageEnumTbl } from '../../../model/categories.interface';
 import { MatDialog } from '@angular/material/dialog';
-import { InsertDialogComponent } from '../../shared/dialogs/insert-dialog/insert-dialog.component';
+import { InsertDialogComponent } from '../../add/insert-dialog/insert-dialog.component';
 import { GetItemsService } from '../../../services/get-items/get-items.service';
 
 @Component({

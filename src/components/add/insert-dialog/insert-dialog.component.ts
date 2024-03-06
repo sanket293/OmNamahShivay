@@ -5,10 +5,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatDialogModule } from '@angular/material/dialog';
 import { RouterModule } from '@angular/router';
-import { ResponseMessage } from '../../../../model/response-message.model';
+import { ResponseMessage } from '../../../model/response-message.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { LoaderComponent } from "../../loader/loader.component";
-import { AddItemsService } from '../../../../services/add-items/add-items.service';
+import { LoaderComponent } from "../../shared/loader/loader.component";
+import { AddItemsService } from '../../../services/add-items/add-items.service';
 
 @Component({
   selector: 'app-insert-dialog',
