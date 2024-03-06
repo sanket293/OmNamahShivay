@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ItemProperty } from '../../../../model/ItemProperty.model';
- import { TagService } from '../../../../services/tag/tag.service';
+import { TagService } from '../../../../services/tag/tag.service';
 import { AppUtilites } from '../../../../utilities/apputilities.model';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { Tag } from '../../../../model/tags.interface';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-tags',
@@ -15,22 +16,12 @@ import { RouterModule } from '@angular/router';
 
 export class TagsComponent implements OnInit {
 
-  sideNavBannerTags: ItemProperty[] = [];
+  sideNavBannerTags$: Observable<Tag[]> = of([]);
 
   constructor(private tagService: TagService) { }
 
-  ngOnInit(): void { 
-    this.tagService.getSideNavTags().subscribe({
-      next: (tags: ItemProperty[]) => {
-        this.sideNavBannerTags = tags;
-      },
-      error: (error) => {
-        console.log('Something is wrong' + JSON.stringify(error));
-      },
-      complete: () => {
-        this.sideNavBannerTags = AppUtilites.shuffle(this.sideNavBannerTags);
-      }
-    });
+  ngOnInit(): void {
+    this.sideNavBannerTags$ = this.tagService.getSideNavTags();
   }
- 
+
 }

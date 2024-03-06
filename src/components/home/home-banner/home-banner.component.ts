@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ItemProperty } from '../../../model/ItemProperty.model';
 import { TagService } from '../../../services/tag/tag.service';
-import { AppUtilites } from '../../../utilities/apputilities.model';
+import { Tag } from '../../../model/tags.interface';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-home-banner',
@@ -14,23 +14,12 @@ import { AppUtilites } from '../../../utilities/apputilities.model';
 })
 export class HomeBannerComponent implements OnInit {
 
-  homeBannerTags: ItemProperty[] = [];
-  // static AppStrings: AppStrings;
+  homeBannerTags$: Observable<Tag[]> = of([]);
 
   constructor(private tagService: TagService) { }
 
   ngOnInit(): void {
-    this.tagService.getHomeBannerTags().subscribe({
-      next: (tags: ItemProperty[]) => {
-        this.homeBannerTags = tags;
-      },
-      error: (error) => {
-        console.log('Something is wrong' + JSON.stringify(error));
-      },
-      complete: () => {
-        this.homeBannerTags = AppUtilites.shuffle(this.homeBannerTags);
-      }
-    });
+    this.homeBannerTags$ = this.tagService.getHomeBannerTags();
   }
 
 }

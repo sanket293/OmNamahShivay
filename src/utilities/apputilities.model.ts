@@ -1,11 +1,11 @@
 import { Languages } from "../enums/languages.enum";
-import { ItemProperty } from "../model/ItemProperty.model";
+// import { ItemProperty } from "../model/ItemProperty.model";
 import { VCategoryItemDisplay } from "../model/categories.interface";
 import { Tag } from "../model/tags.interface";
 
 export class AppUtilites {
 
-    public static shuffle = (array: ItemProperty[]) => {
+    public static shuffle = (array: Tag[]) => {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [array[i], array[j]] = [array[j], array[i]];
