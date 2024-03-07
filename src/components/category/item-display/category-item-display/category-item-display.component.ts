@@ -10,7 +10,7 @@ import { VCategoryItemDisplay } from '../../../../model/categories.interface';
 import { Languages } from '../../../../enums/languages.enum';
 import { LoaderComponent } from "../../../shared/loader/loader.component";
  import { AppUtilites } from '../../../../utilities/apputilities.model';
-import { Tag } from '../../../../model/tags.interface';
+import { Tags } from '../../../../model/tags.interface';
  
 @Component({
   selector: 'app-category-item-display',
@@ -36,7 +36,7 @@ export class CategoryItemDisplayComponent implements OnInit {
     });
   }
 
-  getItemLanguageTags(itemDisplay: VCategoryItemDisplay): Tag[] {
+  getItemLanguageTags(itemDisplay: VCategoryItemDisplay): Tags[] {
     return AppUtilites.getRouteUrlLangItemDisplay(this.availableLanguages, itemDisplay);
   }
 

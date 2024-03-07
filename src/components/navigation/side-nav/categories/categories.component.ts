@@ -22,7 +22,7 @@ export class CategoriesComponent implements OnInit {
     this.categories$ = this.categoryService.getCategoryList();
   }
   getRouteLink(category: VCategoryList): string {
-    return `/ListItem/${category.CategoryListId}/${category.CategoryNameLabelSanskrit}`; //TODO: create parma link
+    return `/ListItem/${category.CategoryNameLabelSanskrit}/${category.CategoryListId}`; //TODO: create parma link
   }
 
 }

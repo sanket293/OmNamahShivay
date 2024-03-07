@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { TagService } from '../../../services/tag/tag.service';
 import { VCategoryList } from '../../../model/categories.interface';
-import { Tag } from '../../../model/tags.interface';
+import { Tags } from '../../../model/tags.interface';
 
 @Component({
   selector: 'app-header',
@@ -24,7 +24,7 @@ export class HeaderComponent {
   }
 
   categories$: Observable<VCategoryList[]> | undefined;
-  tags$: Observable<Tag[]> = of([]);
+  tags$: Observable<Tags[]> = of([]);
 
   constructor(private categoryService: CategoryService, private tagService: TagService, private router: Router) { }
 

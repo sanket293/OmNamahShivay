@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Tag } from '../../model/tags.interface';
+import { Tags } from '../../model/tags.interface';
 import { AppUtilites } from '../../utilities/apputilities.model';
 
 @Injectable({
@@ -11,21 +11,21 @@ export class TagService {
 
   constructor() { }
 
-  getHomeBannerTags(): Observable<Tag[]> {
+  getHomeBannerTags(): Observable<Tags[]> {
     //TODO: limit the entry
-    return of(AppUtilites.shuffle(this.tags.filter(f => f.showOnHomeBanner)))
+    return of(AppUtilites.shuffle(this.tags.filter(f => f.ShowOnHomeBanner)))
   }
-  getSideNavTags(): Observable<Tag[]> {
-    return of(AppUtilites.shuffle(this.tags.filter(f => !f.showOnHomeBanner)))
+  getSideNavTags(): Observable<Tags[]> {
+    return of(AppUtilites.shuffle(this.tags.filter(f => !f.ShowOnHomeBanner)))
   }
 
 
   //TODO: get this from api
-  tags: Tag[] = [
+  tags: Tags[] = [
     {
-      name: "शिवमहिम्न:स्तोत्र",
-      routeUrl: ``,
-      showOnHomeBanner: true
+      Name: "शिवमहिम्न:स्तोत्र",
+      RouteUrl: ``,
+      ShowOnHomeBanner: true
     },
   ];
 

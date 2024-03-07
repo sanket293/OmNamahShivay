@@ -1,6 +1,5 @@
-export interface Tag {
-    name: string;
-    routeUrl: string;
-    showOnHomeBanner?: boolean
+export interface Tags {
+    Name: string;
+    RouteUrl: string;
+    ShowOnHomeBanner?: boolean
 }
-

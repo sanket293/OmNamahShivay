@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TagService } from '../../../services/tag/tag.service';
-import { Tag } from '../../../model/tags.interface';
+import { Tags } from '../../../model/tags.interface';
 import { Observable, of } from 'rxjs';
 
 @Component({
@@ -14,7 +14,7 @@ import { Observable, of } from 'rxjs';
 })
 export class HomeBannerComponent implements OnInit {
 
-  homeBannerTags$: Observable<Tag[]> = of([]);
+  homeBannerTags$: Observable<Tags[]> = of([]);
 
   constructor(private tagService: TagService) { }
 

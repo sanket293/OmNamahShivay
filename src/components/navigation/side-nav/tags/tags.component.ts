@@ -3,7 +3,7 @@ import { TagService } from '../../../../services/tag/tag.service';
 import { AppUtilites } from '../../../../utilities/apputilities.model';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { Tag } from '../../../../model/tags.interface';
+import { Tags } from '../../../../model/tags.interface';
 import { Observable, of } from 'rxjs';
 
 @Component({
@@ -16,7 +16,7 @@ import { Observable, of } from 'rxjs';
 
 export class TagsComponent implements OnInit {
 
-  sideNavBannerTags$: Observable<Tag[]> = of([]);
+  sideNavBannerTags$: Observable<Tags[]> = of([]);
 
   constructor(private tagService: TagService) { }
 

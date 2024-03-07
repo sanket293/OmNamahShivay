@@ -52,31 +52,13 @@ export const routes: Routes = [
         component: CategoryListComponent
     },
     {
-        path: 'ListItem/:categoryListId/:parmaLinkDescription',
+        path: 'ListItem/:parmaLinkDescription/:categoryListId',
         component: CategoryListItemComponent
     },
     {
         path: 'ItemDisplay/:parmaLinkDescription/:categoryListItemId/:languageId/:availableLanguages',
         component: CategoryItemDisplayComponent
     },
-
-
-    // {
-    //     path: 'CategoryList', //list of all categories i.e stutiess, mantras, bhajans etc...
-    //     component: CategoryListComponent
-    // },
-    // {
-    //     path: 'CategoryList//:CategoryListId', //select one catagory out of many i.e stuties
-    //     component: CategoryListItemComponent
-    // },
-    // {
-    //     path: 'CategoryList/:categoryItem/:itemKey/:language', //select one item out of many categoryItems i.e mahimna strotam in Sanskrit or Rudrashtakam in Gujarati
-    //     component: CategoryItemDisplayComponent
-    // },
-    // {
-    //     path: 'CategoryList/:itemKey/:language', //select one item out of many categoryItems i.e Shiv names 108, 1000
-    //     component: CategoryItemListDisplayComponent
-    // },
     {
         path: '**',
         component: ErrorComponent
