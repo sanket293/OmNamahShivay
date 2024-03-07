@@ -47,6 +47,7 @@ export interface CategoryListItem {
   DisplayOrder: string;
   IsActive: number;
   ImageUrl: string;
+  ParmaLinkDescription?: string; //TODO: remove it from here, think about it may not required
 }
 
 export interface VCategoryListItem {
@@ -58,6 +59,7 @@ export interface VCategoryListItem {
   IsActive: number;
   AvailableLanguages: string;
   ImageUrl: string;
+  ParmaLinkDescription?: string;
 }
 
 export interface CategoryItemDisplay {

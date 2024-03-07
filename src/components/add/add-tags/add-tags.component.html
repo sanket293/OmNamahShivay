@@ -7,15 +7,53 @@
     <div class="col-lg-12 mx-auto">
 
       <div class="form-group">
+        <label for="Route Url">Generated URL : </label>
+        <label> {{ routeUrl$|async }}</label>
+      </div>
+
+      <div class="form-group">
         <label for="AutherName">Tag Name (*)</label>
         <input type="text" [(ngModel)]="tag.Name" name="AutherName" id="AutherName" class="form-control" minlength="1"
           placeholder="Auther's Name" required>
       </div>
-      <!-- <div class="form-group">
-        <label for="AutherImageUrl">Auther Image Url</label>
-        <input type="text" [(ngModel)]="auther.AutherImageUrl" name="AutherImageUrl" id="AutherImageUrl" class="form-control" minlength="1"
-          placeholder="Auther Image Url" required>
-      </div> -->
+
+
+      <div class="form-group">
+        <label for="SelectCategory">Select Category</label>
+        <select class="form-control" id="select-category" name="select-category" [ngModel]="selectedCategoryListId"
+          (ngModelChange)="onCategoryChange($event)" required>
+          <option *ngFor="let category of (categoryList$|async)" [ngValue]="category.CategoryListId">
+            {{category.CategoryNameLabelSanskrit}}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="SelectCategoryListItem">Select Category List Item</label>
+        <select class="form-control" id="select-category-list-item" name="select-category-list-item"
+          [ngModel]="selectedCategoryListItemId" (ngModelChange)="onCategoryListItemChange($event)" required>
+          <option *ngFor="let listItem of (categoryListItem$|async)" [ngValue]="listItem.CategoryListItemId">
+            {{listItem.Title}}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="selectListItemLanguage">Select List Item Language</label>
+        <select class="form-control" id="selectListItemLanguage" name="selectListItemLanguage"
+          [ngModel]="selectListItemLanguage" (ngModelChange)="onItemLanguageChange($event)" required>
+          <option *ngFor="let language of (itemLanguages)" [ngValue]="language">
+            {{ getLanguageName(language) }}
+          </option>
+        </select>
+      </div>
+
+
+      <div class="form-group">
+        <label for="IsHomePage">Show at Home Page</label>
+        <input type="checkbox" name="IsHomePage" id="IsHomePage" class="form-control"
+            style="width: 20px;" [(ngModel)]="isHomePage" required>
+    </div>
 
     </div>
   </div>
