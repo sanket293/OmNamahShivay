@@ -13,4 +13,5 @@ export enum CategoryEnum {
     SongLyrics=17,
     Images=17,
     Statues=18,
+    Aarti=19
 }

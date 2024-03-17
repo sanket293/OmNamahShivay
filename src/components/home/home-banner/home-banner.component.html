@@ -7,8 +7,7 @@
 
         <ul class="list-inline widget-list-inline">
           <li class="list-inline-item" *ngFor="let tag of (homeBannerTags$|async)">
-            <a [routerLink]="tag.RouteUrl" [state]="{ item:tag }">{{tag.Name}}</a>
-            <!-- TODO: check state is required? -->
+            <a [routerLink]="tag.RouteUrl">{{tag.Name}}</a>
           </li>
         </ul>
 
