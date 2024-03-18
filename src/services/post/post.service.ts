@@ -1,14 +1,25 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-// import { Post } from '../../model/post.model';
-import { Languages } from '../../enums/languages.enum';
+import { Observable, of } from 'rxjs';  
 import { VPostDetails } from '../../model/posts.interface';
 import { HttpClient } from '@angular/common/http';
+import { AppUtilites } from '../../utilities/apputilities.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostService {
+
+  constructor(private http: HttpClient) {}
+  
+  //Posts
+  getAllPosts(): Observable<VPostDetails[]> {
+    return this.http.get<VPostDetails[]>(`${AppUtilites.API_BASE_URL}getAllPosts`);
+  }
+
+  getPostDetails(postId: number): Observable<VPostDetails> {
+    return this.http.get<VPostDetails>(`${AppUtilites.API_BASE_URL}getPostDetails/${postId}`);
+  } 
+}
 
 //   recentPost: Post[] = [
 //     {
@@ -160,18 +171,3 @@ export class PostService {
   //   return of(this.recentPost.find(f => f.postId === postId));
   // }
 
-
-  constructor(private http: HttpClient) {}
-  
-  //Posts
-  getAllPosts(): Observable<VPostDetails[]> {
-    return this.http.get<VPostDetails[]>(`https://omnamahshivay-api.onrender.com/getAllPosts`);
-  }
-
-  getPostDetails(postId: number): Observable<VPostDetails> {
-    return this.http.get<VPostDetails>(`https://omnamahshivay-api.onrender.com/getPostDetails/${postId}`);
-  }
-
-
- 
-}

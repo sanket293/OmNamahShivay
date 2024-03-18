@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable} from 'rxjs';
 import { Tags } from '../../model/tags.interface'; 
 import { HttpClient } from '@angular/common/http';
+import { AppUtilites } from '../../utilities/apputilities.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +13,9 @@ export class TagService {
   constructor(private http: HttpClient) { }
 
   getHomeBannerTags(): Observable<Tags[]> {
-    return this.http.get<Tags[]>("https://omnamahshivay-api.onrender.com/getHomeTags");
+    return this.http.get<Tags[]>(`${AppUtilites.API_BASE_URL}getHomeTags`);
   }
   getSideNavTags(): Observable<Tags[]> {
-    return this.http.get<Tags[]>("https://omnamahshivay-api.onrender.com/getSideNavTags");
+    return this.http.get<Tags[]>(`${AppUtilites.API_BASE_URL}getSideNavTags`);
   }
 }

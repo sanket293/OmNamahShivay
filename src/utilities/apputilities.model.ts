@@ -5,6 +5,8 @@ import { Tags } from "../model/tags.interface";
 
 export class AppUtilites {
 
+    public static API_BASE_URL = "http://18.222.183.218:7000/";
+
     public static shuffle = (array: Tags[]) => {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
