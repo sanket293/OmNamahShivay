@@ -1,5 +1,5 @@
 import { CommonModule, Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { LoaderComponent } from '../../shared/loader/loader.component';
@@ -10,6 +10,7 @@ import { ResponseMessage } from '../../../model/response-message.model';
 import { AddAutherDialogComponent } from '../add-auther-dialog/add-auther-dialog.component';
 import { AddItemsService } from '../../../services/add-items/add-items.service';
 import { GetItemsService } from '../../../services/get-items/get-items.service';
+import { Languages } from '../../../enums/languages.enum';
 
 @Component({
   selector: 'app-add-item-display',
@@ -36,6 +37,10 @@ export class AddItemDisplayComponent implements OnInit {
     private location: Location,
     private getItemsService: GetItemsService,
     private addItemsService: AddItemsService) { }
+
+    onSelectChanges(): void {
+    this.categoryItemDisplay.ParmaLinkDescription = `${this.itemKey}-in-${Languages[this.categoryItemDisplay.CurrentLanguageId]}`;
+  }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((route) => {
@@ -92,6 +97,8 @@ export class AddItemDisplayComponent implements OnInit {
       },
       error: (err) => {
         this.message = "There is some error: " + JSON.stringify(err);
+        this.showLoader = false;
+
       },
       complete: () => {
         this.showLoader = false;

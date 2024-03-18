@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { CategoryListItem } from '../../../model/categories.interface';
 import { ResponseMessage } from '../../../model/response-message.model';
@@ -26,6 +26,10 @@ export class AddListItemComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute,
     private router: Router,
     private addItemsService: AddItemsService) { }
+
+  onInputChanges(): void {
+    this.categoryListItem.ParmaLinkDescription = `${this.categoryListItem.ItemKey}`;
+  }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((route) => {
@@ -62,6 +66,7 @@ export class AddListItemComponent implements OnInit {
       },
       error: (err) => {
         this.message = "There is some error: " + JSON.stringify(err);
+        this.showLoader = false;
       },
       complete: () => {
         this.showLoader = false;

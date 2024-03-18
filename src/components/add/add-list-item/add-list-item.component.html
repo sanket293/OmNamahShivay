@@ -32,7 +32,7 @@
                     </div>
                     <div class="form-group">
                         <label for="ItemKey">Item Key</label>
-                        <input type="text" name="ItemKey" id="ItemKey" class="form-control" minlength="1"
+                        <input type="text" name="ItemKey" id="ItemKey" class="form-control" minlength="1" (change)="onInputChanges()"
                             [(ngModel)]="categoryListItem.ItemKey" required>
                     </div>
 
@@ -52,6 +52,12 @@
                         <label for="DisplayOrder">Display Order</label>
                         <input type="text" name="DisplayOrder" id="DisplayOrder" class="form-control" minlength="1"
                             [(ngModel)]="categoryListItem.DisplayOrder" required>
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="ParmaLinkDescription">Parma Link Description</label>
+                        <input type="text" name="ParmaLinkDescription" id="ParmaLinkDescription" class="form-control" minlength="1"
+                            [(ngModel)]="categoryListItem.ParmaLinkDescription" required>
                     </div>
 
                     <div class="form-group">

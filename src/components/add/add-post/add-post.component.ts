@@ -75,6 +75,7 @@ export class AddPostComponent implements OnInit {
       },
       error: (err) => {
         this.message = "There is some error: " + JSON.stringify(err);
+        this.showLoader = false;
       },
       complete: () => {
         this.showLoader = false;

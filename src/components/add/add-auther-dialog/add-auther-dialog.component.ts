@@ -45,6 +45,7 @@ export class AddAutherDialogComponent {
       error: (err) => {
         this.snackBar.open("There is something wrong, check console log");
         console.log("There is some error: " + JSON.stringify(err));
+        this.showLoader = false;
       },
       complete: () => {
         this.showLoader = false;

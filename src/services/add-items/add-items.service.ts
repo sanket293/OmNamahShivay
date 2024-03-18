@@ -5,6 +5,7 @@ import { ResponseMessage } from '../../model/response-message.model';
 import { HttpClient } from '@angular/common/http';
 import { Post } from '../../model/post.model';
 import { Tags } from '../../model/tags.interface';
+import { AppUtilites } from '../../constants/apputilities.model';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class AddItemsService {
   addCategoryList(categoryList: CategoryList): Observable<ResponseMessage> {
     try {
       const headers = { 'Content-Type': 'application/json' };
-      let url = "https://omnamahshivay-api.onrender.com/addCategoryList"
+      let url = `${AppUtilites.API_BASE_URL}addCategoryList`;
       return this.http.post<ResponseMessage>(url, JSON.stringify(categoryList), { headers });
     } catch (ex) {
       var errResponseMsg: ResponseMessage = {
@@ -31,7 +32,7 @@ export class AddItemsService {
   addCategoryListItem(categoryListItem: CategoryListItem): Observable<ResponseMessage> {
     try {
       const headers = { 'Content-Type': 'application/json' };
-      let url = "https://omnamahshivay-api.onrender.com/addCategoryListItem"
+      let url = `${AppUtilites.API_BASE_URL}addCategoryListItem`;
       return this.http.post<ResponseMessage>(url, JSON.stringify(categoryListItem), { headers });
     } catch (ex) {
       var errResponseMsg: ResponseMessage = {
@@ -46,7 +47,8 @@ export class AddItemsService {
   addCategoryItemDisplay(categoryItemDisplay: CategoryItemDisplay): Observable<ResponseMessage> {
     try {
       const headers = { 'Content-Type': 'application/json' };
-      let url = "https://omnamahshivay-api.onrender.com/addCategoryItemDisplay"
+      // let url = "https://omnamahshivay-api.onrender.com/addCategoryItemDisplay"
+      let url = `${AppUtilites.API_BASE_URL}addCategoryItemDisplay`;
       return this.http.post<ResponseMessage>(url, JSON.stringify(categoryItemDisplay), { headers });
     } catch (ex) {
       var errResponseMsg: ResponseMessage = {
@@ -60,13 +62,12 @@ export class AddItemsService {
 
   addCategoryEnum(categoryEnum: string) {
     try {
-
       var categoryEnumObj: CategoryEnumTbl = {
         CategoryEnum: categoryEnum
       }
-
       const headers = { 'Content-Type': 'application/json' };
-      let url = "https://omnamahshivay-api.onrender.com/addCategoryEnum"
+      // let url = "https://omnamahshivay-api.onrender.com/addCategoryEnum"
+      let url = `${AppUtilites.API_BASE_URL}addCategoryEnum`;
       return this.http.post<ResponseMessage>(url, JSON.stringify(categoryEnumObj), { headers });
     } catch (ex) {
       var errResponseMsg: ResponseMessage = {
@@ -85,7 +86,9 @@ export class AddItemsService {
       }
 
       const headers = { 'Content-Type': 'application/json' };
-      let url = "https://omnamahshivay-api.onrender.com/addLanguageEnum"
+      // let url = "https://omnamahshivay-api.onrender.com/addLanguageEnum"
+      let url = `${AppUtilites.API_BASE_URL}addLanguageEnum`;
+
       return this.http.post<ResponseMessage>(url, JSON.stringify(languageEnumObj), { headers });
 
     } catch (ex) {
@@ -101,7 +104,9 @@ export class AddItemsService {
   addAuther(auther: Auther) {
     try {
       const headers = { 'Content-Type': 'application/json' };
-      let url = "https://omnamahshivay-api.onrender.com/addAuther"
+      // let url = "https://omnamahshivay-api.onrender.com/addAuther"
+      let url = `${AppUtilites.API_BASE_URL}addAuther`;
+
       return this.http.post<ResponseMessage>(url, JSON.stringify(auther), { headers });
     } catch (ex) {
       var errResponseMsg: ResponseMessage = {
@@ -116,7 +121,10 @@ export class AddItemsService {
   addPost(post: Post): Observable<ResponseMessage> {
     try {
       const headers = { 'Content-Type': 'application/json' };
-      let url = "https://omnamahshivay-api.onrender.com/addPost"
+      // let url = "https://omnamahshivay-api.onrender.com/addPost" 
+      let url = `${AppUtilites.API_BASE_URL}addPost`;
+
+
       return this.http.post<ResponseMessage>(url, JSON.stringify(post), { headers });
     } catch (ex) {
       var errResponseMsg: ResponseMessage = {
@@ -131,7 +139,9 @@ export class AddItemsService {
   addTags(tag: Tags): Observable<ResponseMessage> {
     try {
       const headers = { 'Content-Type': 'application/json' };
-      let url = "https://omnamahshivay-api.onrender.com/addTag"
+      // let url = "https://omnamahshivay-api.onrender.com/addTag"
+      let url = `${AppUtilites.API_BASE_URL}addTag`;
+ 
       return this.http.post<ResponseMessage>(url, JSON.stringify(tag), { headers });
     } catch (ex) {
       var errResponseMsg: ResponseMessage = {
