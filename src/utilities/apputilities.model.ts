@@ -1,6 +1,6 @@
 import { Languages } from "../enums/languages.enum";
 // import { ItemProperty } from "../model/ItemProperty.model";
-import { VCategoryItemDisplay } from "../model/categories.interface";
+import { VCategoryItemDisplay, VCategoryList } from "../model/categories.interface";
 import { Tags } from "../model/tags.interface";
 
 export class AppUtilites {
@@ -15,6 +15,9 @@ export class AppUtilites {
         return array;
     };
 
+    public static getCategoryRouteLink(category: VCategoryList): string {
+        return `/ListItem/${category.CategoryNameLabelSanskrit}/${category.CategoryListId}`; //TODO: create parma link
+      }
 
     public static getLanguageName(languageEnum: Languages = Languages.Hindi): string {
         return Languages[languageEnum]?.toString() ?? "Hindi";

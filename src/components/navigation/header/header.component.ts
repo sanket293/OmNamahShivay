@@ -6,6 +6,7 @@ import { Router, RouterModule } from '@angular/router';
 import { TagService } from '../../../services/tag/tag.service';
 import { VCategoryList } from '../../../model/categories.interface';
 import { Tags } from '../../../model/tags.interface';
+import { AppUtilites } from '../../../utilities/apputilities.model';
 
 @Component({
   selector: 'app-header',
@@ -17,8 +18,7 @@ import { Tags } from '../../../model/tags.interface';
 export class HeaderComponent {
 
   onNavLinkClick(category: VCategoryList) {
-    const routeUrl = ""; //TODO: Get the same route URL as I got in side nav cat list
-    this.router.navigate([routeUrl]).then(() => {
+    this.router.navigate([AppUtilites.getCategoryRouteLink(category)]).then(() => {
       window.location.reload();
     });
   }

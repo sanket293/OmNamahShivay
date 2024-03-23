@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { VCategoryList } from '../../../../model/categories.interface';
+import { AppUtilites } from '../../../../utilities/apputilities.model';
 
 @Component({
   selector: 'app-categories',
@@ -13,7 +14,7 @@ import { VCategoryList } from '../../../../model/categories.interface';
   styleUrl: './categories.component.css'
 })
 export class CategoriesComponent implements OnInit {
-
+  AppUtilites = AppUtilites;
   categories$: Observable<VCategoryList[]> | undefined;
 
   constructor(private categoryService: CategoryService) { }
