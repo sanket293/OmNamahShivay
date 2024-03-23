@@ -24,10 +24,9 @@ export class PostComponent implements OnInit {
 
   constructor(public activatedRoute: ActivatedRoute, public router: Router, private postService: PostService) { }
 
-  ngOnInit() {
-
+  ngOnInit() { 
     this.activatedRoute.paramMap.subscribe((routeParameters) => {
-      let postId = routeParameters.get('postId') ?? 0; //TODO: create one or any default post for this 
+      let postId = routeParameters.get('postId') ?? 1; //TODO: create one or any default post for this 
       this.post$ = this.postService.getPostDetails(+postId);
     });
 

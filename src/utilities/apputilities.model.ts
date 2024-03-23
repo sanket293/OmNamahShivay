@@ -17,7 +17,7 @@ export class AppUtilites {
 
 
     public static getLanguageName(languageEnum: Languages = Languages.Hindi): string {
-        return Languages[languageEnum].toString();
+        return Languages[languageEnum]?.toString() ?? "Hindi";
     }
 
     public static getAvailableLanguagesId(availableLanguages: string): Languages[] {
