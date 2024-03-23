@@ -5,7 +5,7 @@ import { Tags } from "../model/tags.interface";
 
 export class AppUtilites {
 
-    public static API_BASE_URL = "http://18.222.183.218:7000/";
+    public static API_BASE_URL = "https://omnamahshivay-api-4f107e2d42b2.herokuapp.com/";
 
     public static shuffle = (array: Tags[]) => {
         for (let i = array.length - 1; i > 0; i--) {
