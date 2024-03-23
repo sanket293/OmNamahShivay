@@ -12,12 +12,12 @@
                     <h2 class="h2">{{(post$|async)?.Title}}</h2>
 
                     <ul class="card-meta my-3 list-inline">
-                        <!-- <li class="list-inline-item">
-                            <a [routerLink]="post?.auther?.autherPageUrl" class="card-meta-author">
-                                <img [src]="itemDisplay?.auther?.authorImageUrl">
-                                <span>{{itemDisplay?.auther?.authorName}}</span>
+                        <li class="list-inline-item">
+                            <a class="card-meta-author">
+                                <img [src]="(post$|async)?.AutherImageUrl">
+                                <span>{{(post$|async)?.AutherName}}</span>
                             </a>
-                        </li> -->
+                        </li>
                         <li class="list-inline-item">
                             <i class="ti-timer"></i>{{(post$|async)?.TimeToRead}} mins to read
                         </li>
