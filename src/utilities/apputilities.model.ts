@@ -5,7 +5,7 @@ import { Tags } from "../model/tags.interface";
 
 export class AppUtilites {
 
-    public static API_BASE_URL = "https://omnamahshivayapi.azurewebsites.net/";
+    public static API_BASE_URL = "https://www.omnamahshivay.online/";
 
     public static shuffle = (array: Tags[]) => {
         for (let i = array.length - 1; i > 0; i--) {
