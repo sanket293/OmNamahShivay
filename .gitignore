@@ -1,3 +1,5 @@
 node_modules
-dist
-angular
+dist 
+./.angular/cache/17.1.1/omnamahshivay
+./.angular/cache/17.1.1/vite
+
