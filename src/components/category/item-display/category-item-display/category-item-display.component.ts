@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
-import { MarkdownComponent } from 'ngx-markdown';
+// import { MarkdownComponent } from 'ngx-markdown';
 import { RecentPostComponent } from '../../../post/recent-post/recent-post.component';
 import { LanguageTagsComponent } from '../../../shared/language-tags/language-tags.component';
 import { Observable } from 'rxjs';
@@ -17,7 +17,9 @@ import { Tags } from '../../../../model/tags.interface';
   standalone: true,
   templateUrl: './category-item-display.component.html',
   styleUrl: './category-item-display.component.css',
-  imports: [CommonModule, RecentPostComponent, MarkdownComponent, LanguageTagsComponent, RouterModule, LoaderComponent]
+  imports: [CommonModule, RecentPostComponent,
+    //  MarkdownComponent,
+      LanguageTagsComponent, RouterModule, LoaderComponent]
 })
 export class CategoryItemDisplayComponent implements OnInit {
 

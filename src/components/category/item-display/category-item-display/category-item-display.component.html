@@ -28,7 +28,9 @@
                         </li>
                     </ul>
                     <div class="content">
-                        <markdown [data]="(itemDisplay$|async)?.MarkDownContent"></markdown>
+                        <!-- <markdown [data]="(itemDisplay$|async)?.MarkDownContent"></markdown> -->
+                        <label>{{(itemDisplay$|async)?.MarkDownContent}}</label>
+
                         <hr>
                     </div>
                 </article>

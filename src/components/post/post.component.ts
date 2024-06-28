@@ -4,7 +4,7 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { PostService } from '../../services/post/post.service';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
-import { MarkdownComponent, MarkdownService } from 'ngx-markdown';
+// import { MarkdownComponent, MarkdownService } from 'ngx-markdown';
 import { Languages } from '../../enums/languages.enum';
 import { AppUtilites } from '../../utilities/apputilities.model';
 import { VPostDetails } from '../../model/posts.interface';
@@ -12,7 +12,9 @@ import { VPostDetails } from '../../model/posts.interface';
 @Component({
   selector: 'app-post',
   standalone: true,
-  imports: [RouterModule, CommonModule, MarkdownComponent],
+  imports: [RouterModule, CommonModule,
+    //  MarkdownComponent
+    ],
   templateUrl: './post.component.html',
   styleUrl: './post.component.css'
 })

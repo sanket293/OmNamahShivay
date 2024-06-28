@@ -38,7 +38,9 @@
                     </ul>
 
                     <div class="content">
-                        <markdown [data]="( post$ |async)?.PostContent"></markdown>
+                        <!-- <markdown [data]="( post$ |async)?.PostContent"></markdown> -->
+
+                        <label>{{( post$ |async)?.PostContent}}</label>
                         <hr>
                     </div>
                 </article>

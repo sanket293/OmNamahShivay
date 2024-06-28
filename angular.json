@@ -34,9 +34,9 @@
             ],
             "styles": [
               "src/assets/plugins/bootstrap/bootstrap.min.css",
-              "src/assets/plugins/themify-icons/themify-icons.css", 
-              "src/assets/plugins/slick/slick.css", 
-              "src/assets/css/style.css",  
+              "src/assets/plugins/themify-icons/themify-icons.css",
+              "src/assets/plugins/slick/slick.css",
+              "src/assets/css/style.css",
               "src/styles.css"
             ],
             "scripts": [
@@ -48,7 +48,12 @@
               "src/assets/plugins/search/mark.js",
               "src/assets/plugins/search/search.js",
               "src/assets/js/script.js"
-            ]
+            ],
+            "server": "src/main.server.ts",
+            "prerender": true,
+            "ssr": {
+              "entry": "server.ts"
+            }
           },
           "configurations": {
             "production": {
