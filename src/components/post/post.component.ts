@@ -8,15 +8,14 @@ import { CommonModule } from '@angular/common';
 import { Languages } from '../../enums/languages.enum';
 import { AppUtilites } from '../../utilities/apputilities.model';
 import { VPostDetails } from '../../model/posts.interface';
+import { MarkdownComponent } from "../shared/markdown/markdown.component";
 
 @Component({
-  selector: 'app-post',
-  standalone: true,
-  imports: [RouterModule, CommonModule,
-    //  MarkdownComponent
-    ],
-  templateUrl: './post.component.html',
-  styleUrl: './post.component.css'
+    selector: 'app-post',
+    standalone: true,
+    templateUrl: './post.component.html',
+    styleUrl: './post.component.css',
+    imports: [RouterModule, CommonModule, MarkdownComponent]
 })
 export class PostComponent implements OnInit {
 

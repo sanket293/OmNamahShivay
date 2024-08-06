@@ -14,18 +14,20 @@
 
         <ng-container *ngFor="let post of (recentPosts$ | async)">
           <article class="card mb-4">
-            <div class="post-slider">
-              <img [src]="post.PostImageUrl" class="card-img-top" alt="post-thumb">
+
+            <div style="overflow: hidden;">
+              <img [src]="post.PostImageUrl" class="card-img-top" alt="omNamahShivay-post-thumb">
             </div>
+           
             <div class="card-body">
               <h3 class="mb-3"><a class="post-title" [routerLink]="getPostUrl(post)">{{post.Title}}</a></h3>
               <ul class="card-meta list-inline">
                 <li class="list-inline-item">
-                <a class="card-meta-author">
-                  <img src="{{post.AutherImageUrl}}" alt="Shivay">
-                  <span>{{post.AutherName}}</span>
-                </a>
-              </li>
+                  <a class="card-meta-author">
+                    <img src="{{post.AutherImageUrl}}" alt="Shivay">
+                    <span>{{post.AutherName}}</span>
+                  </a>
+                </li>
                 <li class="list-inline-item">
                   <i class="ti-timer"></i>{{post.TimeToRead}} mins to read
                 </li>

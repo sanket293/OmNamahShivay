@@ -11,15 +11,16 @@ import { Languages } from '../../../../enums/languages.enum';
 import { LoaderComponent } from "../../../shared/loader/loader.component";
  import { AppUtilites } from '../../../../utilities/apputilities.model';
 import { Tags } from '../../../../model/tags.interface';
+import { MarkdownComponent } from "../../../shared/markdown/markdown.component";
  
 @Component({
-  selector: 'app-category-item-display',
-  standalone: true,
-  templateUrl: './category-item-display.component.html',
-  styleUrl: './category-item-display.component.css',
-  imports: [CommonModule, RecentPostComponent,
-    //  MarkdownComponent,
-      LanguageTagsComponent, RouterModule, LoaderComponent]
+    selector: 'app-category-item-display',
+    standalone: true,
+    templateUrl: './category-item-display.component.html',
+    styleUrl: './category-item-display.component.css',
+    imports: [CommonModule, RecentPostComponent,
+        //  MarkdownComponent,
+        LanguageTagsComponent, RouterModule, LoaderComponent, MarkdownComponent]
 })
 export class CategoryItemDisplayComponent implements OnInit {
 
