@@ -1,4 +1,4 @@
-<div class="banner text-center no-bg no-bottom-padding">
+<div class="banner text-center no-bg" [ngClass]="isMobile? 'no-bottom-padding':''">
     <div class="container">
         <div class="row">
             <div class="col-lg-9 mx-auto">
@@ -18,7 +18,7 @@
             <ng-container *ngFor="let item of (categoryListItemInfo$|async)">
                 <div class="col-lg-4 mb-3">
                     <article class="card">
-                        <div class="post-slider slider-sm">
+                        <div class="post-slider slider-sm" *ngIf="!isMobile">
                             <img [src]="item.ImageUrl" class="card-img-top" alt="post-thumb">
                         </div>
                         <div class="card-body">

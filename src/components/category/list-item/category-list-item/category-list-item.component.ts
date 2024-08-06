@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { Languages } from '../../../../enums/languages.enum';
 import { VCategoryListItem } from '../../../../model/categories.interface';
 import { AppUtilites } from '../../../../utilities/apputilities.model';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
   selector: 'app-category-list-item',
@@ -23,11 +24,15 @@ export class CategoryListItemComponent {
 
   categoryListItemInfo$: Observable<VCategoryListItem[]> = of([]);
   AppUtilites = AppUtilites;
-
+  isMobile = false;
+  
   constructor(private categoryService: CategoryService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private deviceService: DeviceDetectorService) { }
 
   ngOnInit(): void {
+    this.isMobile = this.deviceService.isMobile();
+
     const categoryListId: string = this.route.snapshot.params['categoryListId'];
 
     this.categoryService.getCategoryList().subscribe((categories) => {
