@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:omnamahshivay": "node dist/omnamahshivay/server/server.mjs"
+    "serve:ssr:omnamahshivay": "node dist/omnamahshivay/server/server.mjs",
+    "build:ssr": "ng build --configuration=production && ng run omnamahshivay:server:production"
   },
   "private": true,
   "dependencies": {
