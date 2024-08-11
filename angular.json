@@ -21,8 +21,9 @@
           "options": {
             "outputPath": "dist/omnamahshivay",
             "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": [
+              "src/polyfills.ts"
+            ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
@@ -47,13 +48,7 @@
               "src/assets/plugins/search/mark.js",
               "src/assets/plugins/search/search.js",
               "src/assets/js/script.js"
-            ],
-            "browser": "src/main.ts",
-            "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
+            ]
           },
           "configurations": {
             "production": {
@@ -92,7 +87,7 @@
           "defaultConfiguration": "development"
         },
         "server": {
-          "builder": "@angular-devkit/build-angular:server",
+          "builder": "@nguniversal/builders:server",
           "options": {
             "outputPath": "dist/omnamahshivay-server",
             "main": "src/main.server.ts",
